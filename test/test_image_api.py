@@ -26,10 +26,31 @@ class TestImageApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_delete_an_image(self) -> None:
+        """Test case for delete_an_image
+
+        Delete an image
+        """
+        pass
+
+    def test_fetch_name_availability_for_images(self) -> None:
+        """Test case for fetch_name_availability_for_images
+
+        Fetch name availability for Images
+        """
+        pass
+
+    def test_get_private_image_details(self) -> None:
+        """Test case for get_private_image_details
+
+        Get Private Image Details
+        """
+        pass
+
     def test_list_images(self) -> None:
         """Test case for list_images
 
-        List images
+        List Images
         """
         pass
 

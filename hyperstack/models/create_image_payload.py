@@ -17,22 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ..models.pagination_data import PaginationData
-from ..models.resource_level_billing_history_resources import ResourceLevelBillingHistoryResources
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ResourceLevelBillingHistory(BaseModel):
+class CreateImagePayload(BaseModel):
     """
-    ResourceLevelBillingHistory
+    CreateImagePayload
     """ # noqa: E501
-    billing_history: Optional[List[ResourceLevelBillingHistoryResources]] = None
-    org_id: Optional[StrictInt] = None
-    pagination: Optional[PaginationData] = None
-    total_count: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["billing_history", "org_id", "pagination", "total_count"]
+    labels: Optional[List[StrictStr]] = Field(default=None, description="List of labels to attach to the image")
+    name: StrictStr = Field(description="Name for the new custom image")
+    __properties: ClassVar[List[str]] = ["labels", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +48,7 @@ class ResourceLevelBillingHistory(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ResourceLevelBillingHistory from a JSON string"""
+        """Create an instance of CreateImagePayload from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,21 +69,11 @@ class ResourceLevelBillingHistory(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in billing_history (list)
-        _items = []
-        if self.billing_history:
-            for _item_billing_history in self.billing_history:
-                if _item_billing_history:
-                    _items.append(_item_billing_history.to_dict())
-            _dict['billing_history'] = _items
-        # override the default output from pydantic by calling `to_dict()` of pagination
-        if self.pagination:
-            _dict['pagination'] = self.pagination.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ResourceLevelBillingHistory from a dict"""
+        """Create an instance of CreateImagePayload from a dict"""
         if obj is None:
             return None
 
@@ -95,10 +81,8 @@ class ResourceLevelBillingHistory(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "billing_history": [ResourceLevelBillingHistoryResources.from_dict(_item) for _item in obj["billing_history"]] if obj.get("billing_history") is not None else None,
-            "org_id": obj.get("org_id"),
-            "pagination": PaginationData.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
-            "total_count": obj.get("total_count")
+            "labels": obj.get("labels"),
+            "name": obj.get("name")
         })
         return _obj
 

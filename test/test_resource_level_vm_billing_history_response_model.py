@@ -49,6 +49,10 @@ class TestResourceLevelVmBillingHistoryResponseModel(unittest.TestCase):
                                 usage_time = 1.337, ), )
                         ], 
                     org_id = 56, 
+                    pagination = hyperstack.models.pagination_data.PaginationData(
+                        page = 56, 
+                        pages = 56, 
+                        per_page = 56, ), 
                     total_count = 56, ),
                 message = '',
                 status = True

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **billing_history** | [**List[ResourceLevelBillingHistoryResources]**](ResourceLevelBillingHistoryResources.md) |  | [optional] 
 **org_id** | **int** |  | [optional] 
+**pagination** | [**PaginationData**](PaginationData.md) |  | [optional] 
 **total_count** | **int** |  | [optional] 
 
 ## Example

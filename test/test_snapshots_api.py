@@ -26,6 +26,13 @@ class TestSnapshotsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_create_an_image_from_a_snapshot(self) -> None:
+        """Test case for create_an_image_from_a_snapshot
+
+        Create an image from a snapshot
+        """
+        pass
+
     def test_delete_snapshot(self) -> None:
         """Test case for delete_snapshot
 

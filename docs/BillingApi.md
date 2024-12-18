@@ -764,7 +764,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_billing_history_of_snapshot_for_a_specific_billing_cycle**
-> ResourceLevelVolumeBillingHistoryResponseModel retrieve_billing_history_of_snapshot_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search)
+> ResourceLevelVolumeBillingHistoryResponseModel retrieve_billing_history_of_snapshot_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search, page=page, per_page=per_page)
 
 Retrieve Billing History of Snapshot for a specific Billing Cycle
 
@@ -811,10 +811,12 @@ with hyperstack.ApiClient(configuration) as api_client:
     start_date = 'start_date_example' # str | Date should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
     end_date = 'end_date_example' # str | Date should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
     search = 'search_example' # str | Search by Volume \"Name\" or \"ID\" (optional)
+    page = 'page_example' # str | Page number (optional)
+    per_page = 'per_page_example' # str | Number of items to return per page (optional)
 
     try:
         # Retrieve Billing History of Snapshot for a specific Billing Cycle
-        api_response = api_instance.retrieve_billing_history_of_snapshot_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search)
+        api_response = api_instance.retrieve_billing_history_of_snapshot_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search, page=page, per_page=per_page)
         print("The response of BillingApi->retrieve_billing_history_of_snapshot_for_a_specific_billing_cycle:\n")
         pprint(api_response)
     except Exception as e:
@@ -831,6 +833,8 @@ Name | Type | Description  | Notes
  **start_date** | **str**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
  **end_date** | **str**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
  **search** | **str**| Search by Volume \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **page** | **str**| Page number | [optional] 
+ **per_page** | **str**| Number of items to return per page | [optional] 
 
 ### Return type
 
@@ -859,7 +863,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_billing_history_of_virtual_machine_for_a_specific_billing_cycle**
-> ResourceLevelVmBillingHistoryResponseModel retrieve_billing_history_of_virtual_machine_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search)
+> ResourceLevelVmBillingHistoryResponseModel retrieve_billing_history_of_virtual_machine_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search, per_page=per_page, page=page)
 
 Retrieve Billing History of Virtual Machine for a specific Billing Cycle
 
@@ -906,10 +910,12 @@ with hyperstack.ApiClient(configuration) as api_client:
     start_date = 'start_date_example' # str | Date should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
     end_date = 'end_date_example' # str | Date should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
     search = 'search_example' # str | Search by Virtual Machine \"Name\" or \"ID\" (optional)
+    per_page = 'per_page_example' # str | Number of items to return per page (optional)
+    page = 'page_example' # str | Page number (optional)
 
     try:
         # Retrieve Billing History of Virtual Machine for a specific Billing Cycle
-        api_response = api_instance.retrieve_billing_history_of_virtual_machine_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search)
+        api_response = api_instance.retrieve_billing_history_of_virtual_machine_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search, per_page=per_page, page=page)
         print("The response of BillingApi->retrieve_billing_history_of_virtual_machine_for_a_specific_billing_cycle:\n")
         pprint(api_response)
     except Exception as e:
@@ -926,6 +932,8 @@ Name | Type | Description  | Notes
  **start_date** | **str**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
  **end_date** | **str**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
  **search** | **str**| Search by Virtual Machine \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **per_page** | **str**| Number of items to return per page | [optional] 
+ **page** | **str**| Page number | [optional] 
 
 ### Return type
 
@@ -954,7 +962,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_billing_history_of_volume_for_a_specific_billing_cycle**
-> ResourceLevelVolumeBillingHistoryResponseModel retrieve_billing_history_of_volume_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search)
+> ResourceLevelVolumeBillingHistoryResponseModel retrieve_billing_history_of_volume_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search, per_page=per_page, page=page)
 
 Retrieve Billing History of Volume for a specific Billing Cycle
 
@@ -1001,10 +1009,12 @@ with hyperstack.ApiClient(configuration) as api_client:
     start_date = 'start_date_example' # str | Date should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
     end_date = 'end_date_example' # str | Date should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
     search = 'search_example' # str | Search by Volume \"Name\" or \"ID\" (optional)
+    per_page = 'per_page_example' # str | Number of items to return per page (optional)
+    page = 'page_example' # str | Page number (optional)
 
     try:
         # Retrieve Billing History of Volume for a specific Billing Cycle
-        api_response = api_instance.retrieve_billing_history_of_volume_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search)
+        api_response = api_instance.retrieve_billing_history_of_volume_for_a_specific_billing_cycle(start_date=start_date, end_date=end_date, search=search, per_page=per_page, page=page)
         print("The response of BillingApi->retrieve_billing_history_of_volume_for_a_specific_billing_cycle:\n")
         pprint(api_response)
     except Exception as e:
@@ -1021,6 +1031,8 @@ Name | Type | Description  | Notes
  **start_date** | **str**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
  **end_date** | **str**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
  **search** | **str**| Search by Volume \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **per_page** | **str**| Number of items to return per page | [optional] 
+ **page** | **str**| Page number | [optional] 
 
 ### Return type
 

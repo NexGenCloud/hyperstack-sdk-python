@@ -4,6 +4,7 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_an_image_from_a_snapshot**](SnapshotsApi.md#create_an_image_from_a_snapshot) | **POST** /core/snapshots/{snapshot_id}/image | Create an image from a snapshot
 [**delete_snapshot**](SnapshotsApi.md#delete_snapshot) | **DELETE** /core/snapshots/{id} | Delete snapshot
 [**fetch_snapshot_name_availability**](SnapshotsApi.md#fetch_snapshot_name_availability) | **GET** /core/snapshots/name-availability/{name} | Fetch snapshot name availability
 [**restore_a_snapshot**](SnapshotsApi.md#restore_a_snapshot) | **POST** /core/snapshots/{id}/restore | Restore a snapshot
@@ -11,12 +12,106 @@ Method | HTTP request | Description
 [**retrieve_list_of_snapshots_with_pagination**](SnapshotsApi.md#retrieve_list_of_snapshots_with_pagination) | **GET** /core/snapshots | Retrieve list of snapshots with pagination
 
 
+# **create_an_image_from_a_snapshot**
+> CreateImage create_an_image_from_a_snapshot(snapshot_id, payload)
+
+Create an image from a snapshot
+
+Create a new custom image from an existing snapshot.Requires a name and any labels for your new custom image.
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (accessToken):
+
+```python
+import hyperstack
+from hyperstack.models.create_image import CreateImage
+from hyperstack.models.create_image_payload import CreateImagePayload
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: accessToken
+configuration.api_key['accessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['accessToken'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.SnapshotsApi(api_client)
+    snapshot_id = 56 # int | 
+    payload = hyperstack.CreateImagePayload() # CreateImagePayload | 
+
+    try:
+        # Create an image from a snapshot
+        api_response = api_instance.create_an_image_from_a_snapshot(snapshot_id, payload)
+        print("The response of SnapshotsApi->create_an_image_from_a_snapshot:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SnapshotsApi->create_an_image_from_a_snapshot: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **snapshot_id** | **int**|  | 
+ **payload** | [**CreateImagePayload**](CreateImagePayload.md)|  | 
+
+### Return type
+
+[**CreateImage**](CreateImage.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Creation of image successful. |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_snapshot**
 > ResponseModel delete_snapshot(id)
 
 Delete snapshot
 
-Delete a snapshot. Provide the snapshot ID in the path to delete the specified snapshot.
+Delete a snapshot. Provide the snapshot ID in the path to delete the specified snapshot. If the snapshot is connected with an image, that image will also bedeleted and the deleted image ID will be returned in the success message response.
 
 ### Example
 

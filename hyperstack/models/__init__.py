@@ -71,6 +71,8 @@ from .create_environment import CreateEnvironment
 from .create_firewall_payload import CreateFirewallPayload
 from .create_firewall_rule_payload import CreateFirewallRulePayload
 from .create_gpu import CreateGPU
+from .create_image import CreateImage
+from .create_image_payload import CreateImagePayload
 from .create_instances_payload import CreateInstancesPayload
 from .create_instances_response import CreateInstancesResponse
 from .create_profile_payload import CreateProfilePayload
@@ -167,6 +169,7 @@ from .getcreditandthresholdinfoinresponse import Getcreditandthresholdinfoinresp
 from .graph_datetime_value_model import GraphDatetimeValueModel
 from .historical_instance import HistoricalInstance
 from .historical_instances_fields import HistoricalInstancesFields
+from .image import Image
 from .image_fields import ImageFields
 from .image_get_response import ImageGetResponse
 from .image_logos import ImageLogos
@@ -236,6 +239,7 @@ from .organizationcreditrechargelimitresponse import Organizationcreditrechargel
 from .organizationthresholdsresponse import Organizationthresholdsresponse
 from .organizationthresholdupdateresponse import Organizationthresholdupdateresponse
 from .overview_info import OverviewInfo
+from .pagination_data import PaginationData
 from .payment_details_fields import PaymentDetailsFields
 from .payment_details_response import PaymentDetailsResponse
 from .payment_initiate_fields import PaymentInitiateFields

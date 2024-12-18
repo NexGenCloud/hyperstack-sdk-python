@@ -37,7 +37,7 @@ class CreateInstancesPayload(BaseModel):
     environment_name: StrictStr = Field(description="The name of the [environment](https://infrahub-doc.nexgencloud.com/docs/features/environments-available-features) in which the virtual machine is to be created.")
     flavor: Optional[FlavorObjectFields] = None
     flavor_name: StrictStr = Field(description="The name of the GPU hardware configuration ([flavor](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors)) for the virtual machines being created.")
-    image_name: Optional[StrictStr] = Field(default=None, description="The [operating system (OS) image](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/images) name designated for installation on the virtual machine.")
+    image_name: Optional[StrictStr] = Field(default=None, description="The [operating system (OS) image](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/images) name designated for installation on the virtual machine.It also accepts custom, private images, created from [existing snapshots](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/custom-images).")
     key_name: StrictStr = Field(description="The name of the existing SSH key pair to be used for secure access to the virtual machine. For additional information on SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/getting-started/create-keypair).")
     labels: Optional[List[StrictStr]] = None
     name: Annotated[str, Field(strict=True, max_length=50)] = Field(description="The name of the virtual machine being created.")

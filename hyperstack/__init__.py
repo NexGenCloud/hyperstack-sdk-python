@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.2.0"
+__version__ = "0.1.23"
 
 # import apis into sdk package
 from .api.calculate_api import CalculateApi
@@ -131,6 +131,8 @@ from .models.create_environment import CreateEnvironment
 from .models.create_firewall_payload import CreateFirewallPayload
 from .models.create_firewall_rule_payload import CreateFirewallRulePayload
 from .models.create_gpu import CreateGPU
+from .models.create_image import CreateImage
+from .models.create_image_payload import CreateImagePayload
 from .models.create_instances_payload import CreateInstancesPayload
 from .models.create_instances_response import CreateInstancesResponse
 from .models.create_profile_payload import CreateProfilePayload
@@ -227,6 +229,7 @@ from .models.getcreditandthresholdinfoinresponse import Getcreditandthresholdinf
 from .models.graph_datetime_value_model import GraphDatetimeValueModel
 from .models.historical_instance import HistoricalInstance
 from .models.historical_instances_fields import HistoricalInstancesFields
+from .models.image import Image
 from .models.image_fields import ImageFields
 from .models.image_get_response import ImageGetResponse
 from .models.image_logos import ImageLogos
@@ -296,6 +299,7 @@ from .models.organizationcreditrechargelimitresponse import Organizationcreditre
 from .models.organizationthresholdsresponse import Organizationthresholdsresponse
 from .models.organizationthresholdupdateresponse import Organizationthresholdupdateresponse
 from .models.overview_info import OverviewInfo
+from .models.pagination_data import PaginationData
 from .models.payment_details_fields import PaymentDetailsFields
 from .models.payment_details_response import PaymentDetailsResponse
 from .models.payment_initiate_fields import PaymentInitiateFields

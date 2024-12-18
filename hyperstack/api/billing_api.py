@@ -2435,6 +2435,8 @@ class BillingApi:
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search by Volume \"Name\" or \"ID\"")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Page number")] = None,
+        per_page: Annotated[Optional[StrictStr], Field(description="Number of items to return per page")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2458,6 +2460,10 @@ class BillingApi:
         :type end_date: str
         :param search: Search by Volume \"Name\" or \"ID\"
         :type search: str
+        :param page: Page number
+        :type page: str
+        :param per_page: Number of items to return per page
+        :type per_page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2484,6 +2490,8 @@ class BillingApi:
             start_date=start_date,
             end_date=end_date,
             search=search,
+            page=page,
+            per_page=per_page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2515,6 +2523,8 @@ class BillingApi:
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search by Volume \"Name\" or \"ID\"")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Page number")] = None,
+        per_page: Annotated[Optional[StrictStr], Field(description="Number of items to return per page")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2538,6 +2548,10 @@ class BillingApi:
         :type end_date: str
         :param search: Search by Volume \"Name\" or \"ID\"
         :type search: str
+        :param page: Page number
+        :type page: str
+        :param per_page: Number of items to return per page
+        :type per_page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2564,6 +2578,8 @@ class BillingApi:
             start_date=start_date,
             end_date=end_date,
             search=search,
+            page=page,
+            per_page=per_page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2595,6 +2611,8 @@ class BillingApi:
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search by Volume \"Name\" or \"ID\"")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Page number")] = None,
+        per_page: Annotated[Optional[StrictStr], Field(description="Number of items to return per page")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2618,6 +2636,10 @@ class BillingApi:
         :type end_date: str
         :param search: Search by Volume \"Name\" or \"ID\"
         :type search: str
+        :param page: Page number
+        :type page: str
+        :param per_page: Number of items to return per page
+        :type per_page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2644,6 +2666,8 @@ class BillingApi:
             start_date=start_date,
             end_date=end_date,
             search=search,
+            page=page,
+            per_page=per_page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2670,6 +2694,8 @@ class BillingApi:
         start_date,
         end_date,
         search,
+        page,
+        per_page,
         _request_auth,
         _content_type,
         _headers,
@@ -2703,6 +2729,14 @@ class BillingApi:
         if search is not None:
             
             _query_params.append(('search', search))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        if per_page is not None:
+            
+            _query_params.append(('per_page', per_page))
             
         # process the header parameters
         # process the form parameters
@@ -2748,6 +2782,8 @@ class BillingApi:
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search by Virtual Machine \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictStr], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2771,6 +2807,10 @@ class BillingApi:
         :type end_date: str
         :param search: Search by Virtual Machine \"Name\" or \"ID\"
         :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: str
+        :param page: Page number
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2797,6 +2837,8 @@ class BillingApi:
             start_date=start_date,
             end_date=end_date,
             search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2828,6 +2870,8 @@ class BillingApi:
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search by Virtual Machine \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictStr], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2851,6 +2895,10 @@ class BillingApi:
         :type end_date: str
         :param search: Search by Virtual Machine \"Name\" or \"ID\"
         :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: str
+        :param page: Page number
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2877,6 +2925,8 @@ class BillingApi:
             start_date=start_date,
             end_date=end_date,
             search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2908,6 +2958,8 @@ class BillingApi:
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search by Virtual Machine \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictStr], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2931,6 +2983,10 @@ class BillingApi:
         :type end_date: str
         :param search: Search by Virtual Machine \"Name\" or \"ID\"
         :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: str
+        :param page: Page number
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2957,6 +3013,8 @@ class BillingApi:
             start_date=start_date,
             end_date=end_date,
             search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2983,6 +3041,8 @@ class BillingApi:
         start_date,
         end_date,
         search,
+        per_page,
+        page,
         _request_auth,
         _content_type,
         _headers,
@@ -3016,6 +3076,14 @@ class BillingApi:
         if search is not None:
             
             _query_params.append(('search', search))
+            
+        if per_page is not None:
+            
+            _query_params.append(('per_page', per_page))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
             
         # process the header parameters
         # process the form parameters
@@ -3061,6 +3129,8 @@ class BillingApi:
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search by Volume \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictStr], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3084,6 +3154,10 @@ class BillingApi:
         :type end_date: str
         :param search: Search by Volume \"Name\" or \"ID\"
         :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: str
+        :param page: Page number
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3110,6 +3184,8 @@ class BillingApi:
             start_date=start_date,
             end_date=end_date,
             search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3141,6 +3217,8 @@ class BillingApi:
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search by Volume \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictStr], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3164,6 +3242,10 @@ class BillingApi:
         :type end_date: str
         :param search: Search by Volume \"Name\" or \"ID\"
         :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: str
+        :param page: Page number
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3190,6 +3272,8 @@ class BillingApi:
             start_date=start_date,
             end_date=end_date,
             search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3221,6 +3305,8 @@ class BillingApi:
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         search: Annotated[Optional[StrictStr], Field(description="Search by Volume \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictStr], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictStr], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3244,6 +3330,10 @@ class BillingApi:
         :type end_date: str
         :param search: Search by Volume \"Name\" or \"ID\"
         :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: str
+        :param page: Page number
+        :type page: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3270,6 +3360,8 @@ class BillingApi:
             start_date=start_date,
             end_date=end_date,
             search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3296,6 +3388,8 @@ class BillingApi:
         start_date,
         end_date,
         search,
+        per_page,
+        page,
         _request_auth,
         _content_type,
         _headers,
@@ -3329,6 +3423,14 @@ class BillingApi:
         if search is not None:
             
             _query_params.append(('search', search))
+            
+        if per_page is not None:
+            
+            _query_params.append(('per_page', per_page))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
             
         # process the header parameters
         # process the form parameters
