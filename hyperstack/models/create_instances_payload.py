@@ -34,6 +34,7 @@ class CreateInstancesPayload(BaseModel):
     callback_url: Optional[Annotated[str, Field(strict=True, max_length=250)]] = Field(default=None, description="An optional URL where actions performed on the virtual machine will be sent. For additional information on event callbacks, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).")
     count: StrictInt = Field(description="The number of virtual machines to be created.")
     create_bootable_volume: Optional[StrictBool] = Field(default=None, description="Indicates whether to create a bootable volume for the virtual machine. When set to `true`, a bootable volume will be created; the default value is `false`.")
+    enable_port_randomization: Optional[StrictBool] = Field(default=True, description="Indicates whether to enable port randomization.This setting is only effective if 'assign_floating_ip' is true. Defaults to true.")
     environment_name: StrictStr = Field(description="The name of the [environment](https://infrahub-doc.nexgencloud.com/docs/features/environments-available-features) in which the virtual machine is to be created.")
     flavor: Optional[FlavorObjectFields] = None
     flavor_name: StrictStr = Field(description="The name of the GPU hardware configuration ([flavor](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors)) for the virtual machines being created.")
@@ -45,7 +46,7 @@ class CreateInstancesPayload(BaseModel):
     security_rules: Optional[List[CreateSecurityRulePayload]] = None
     user_data: Optional[StrictStr] = Field(default=None, description="Optional initialization configuration commands to manage the configuration of a virtual machine at launch using cloud-init scripts. For more information about custom VM configuration using cloud-init, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/initialization-configuration).")
     volume_name: Optional[StrictStr] = Field(default=None, description="The names of the volume(s) to be attached to the virtual machine being created.")
-    __properties: ClassVar[List[str]] = ["assign_floating_ip", "callback_url", "count", "create_bootable_volume", "environment_name", "flavor", "flavor_name", "image_name", "key_name", "labels", "name", "profile", "security_rules", "user_data", "volume_name"]
+    __properties: ClassVar[List[str]] = ["assign_floating_ip", "callback_url", "count", "create_bootable_volume", "enable_port_randomization", "environment_name", "flavor", "flavor_name", "image_name", "key_name", "labels", "name", "profile", "security_rules", "user_data", "volume_name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -115,6 +116,7 @@ class CreateInstancesPayload(BaseModel):
             "callback_url": obj.get("callback_url"),
             "count": obj.get("count"),
             "create_bootable_volume": obj.get("create_bootable_volume"),
+            "enable_port_randomization": obj.get("enable_port_randomization") if obj.get("enable_port_randomization") is not None else True,
             "environment_name": obj.get("environment_name"),
             "flavor": FlavorObjectFields.from_dict(obj["flavor"]) if obj.get("flavor") is not None else None,
             "flavor_name": obj.get("flavor_name"),

@@ -39,6 +39,7 @@ class TestCreateInstancesPayload(unittest.TestCase):
                 callback_url = '',
                 count = 56,
                 create_bootable_volume = True,
+                enable_port_randomization = True,
                 environment_name = '',
                 flavor = hyperstack.models.flavor_object_fields.FlavorObjectFields(
                     cpu = 56, 

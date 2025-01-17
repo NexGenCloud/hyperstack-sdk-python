@@ -36,6 +36,7 @@ class TestInstance(unittest.TestCase):
         if include_optional:
             return Instance(
                 instance = hyperstack.models.instance_fields.InstanceFields(
+                    callback_url = '', 
                     contract_id = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     environment = hyperstack.models.instance_environment_fields.InstanceEnvironmentFields(
@@ -68,6 +69,8 @@ class TestInstance(unittest.TestCase):
                     locked = True, 
                     name = '', 
                     os = '', 
+                    port_randomization = True, 
+                    port_randomization_status = '', 
                     power_state = '', 
                     security_rules = [
                         hyperstack.models.security_rules_fieldsfor_instance.SecurityRulesFieldsforInstance(

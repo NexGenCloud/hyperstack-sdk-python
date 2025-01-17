@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**callback_url** | **str** |  | [optional] 
 **contract_id** | **int** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
 **environment** | [**InstanceEnvironmentFields**](InstanceEnvironmentFields.md) |  | [optional] 
@@ -19,6 +20,8 @@ Name | Type | Description | Notes
 **locked** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **os** | **str** |  | [optional] 
+**port_randomization** | **bool** |  | [optional] 
+**port_randomization_status** | **str** |  | [optional] 
 **power_state** | **str** |  | [optional] 
 **security_rules** | [**List[SecurityRulesFieldsforInstance]**](SecurityRulesFieldsforInstance.md) |  | [optional] 
 **status** | **str** |  | [optional] 

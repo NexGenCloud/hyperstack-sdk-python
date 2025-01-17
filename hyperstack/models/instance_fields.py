@@ -33,6 +33,7 @@ class InstanceFields(BaseModel):
     """
     InstanceFields
     """ # noqa: E501
+    callback_url: Optional[StrictStr] = None
     contract_id: Optional[StrictInt] = None
     created_at: Optional[datetime] = None
     environment: Optional[InstanceEnvironmentFields] = None
@@ -47,12 +48,14 @@ class InstanceFields(BaseModel):
     locked: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
     os: Optional[StrictStr] = None
+    port_randomization: Optional[StrictBool] = None
+    port_randomization_status: Optional[StrictStr] = None
     power_state: Optional[StrictStr] = None
     security_rules: Optional[List[SecurityRulesFieldsforInstance]] = None
     status: Optional[StrictStr] = None
     vm_state: Optional[StrictStr] = None
     volume_attachments: Optional[List[VolumeAttachmentFields]] = None
-    __properties: ClassVar[List[str]] = ["contract_id", "created_at", "environment", "fixed_ip", "flavor", "floating_ip", "floating_ip_status", "id", "image", "keypair", "labels", "locked", "name", "os", "power_state", "security_rules", "status", "vm_state", "volume_attachments"]
+    __properties: ClassVar[List[str]] = ["callback_url", "contract_id", "created_at", "environment", "fixed_ip", "flavor", "floating_ip", "floating_ip_status", "id", "image", "keypair", "labels", "locked", "name", "os", "port_randomization", "port_randomization_status", "power_state", "security_rules", "status", "vm_state", "volume_attachments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -131,6 +134,7 @@ class InstanceFields(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "callback_url": obj.get("callback_url"),
             "contract_id": obj.get("contract_id"),
             "created_at": obj.get("created_at"),
             "environment": InstanceEnvironmentFields.from_dict(obj["environment"]) if obj.get("environment") is not None else None,
@@ -145,6 +149,8 @@ class InstanceFields(BaseModel):
             "locked": obj.get("locked"),
             "name": obj.get("name"),
             "os": obj.get("os"),
+            "port_randomization": obj.get("port_randomization"),
+            "port_randomization_status": obj.get("port_randomization_status"),
             "power_state": obj.get("power_state"),
             "security_rules": [SecurityRulesFieldsforInstance.from_dict(_item) for _item in obj["security_rules"]] if obj.get("security_rules") is not None else None,
             "status": obj.get("status"),

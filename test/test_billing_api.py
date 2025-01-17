@@ -54,6 +54,13 @@ class TestBillingApi(unittest.TestCase):
         """
         pass
 
+    def test_retrieve_billing_history_of_a_specific_snapshot_for_a_specific_billing_cycle(self) -> None:
+        """Test case for retrieve_billing_history_of_a_specific_snapshot_for_a_specific_billing_cycle
+
+        Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+        """
+        pass
+
     def test_retrieve_billing_history_of_a_specific_virtual_machine_for_a_specific_billing_cycle(self) -> None:
         """Test case for retrieve_billing_history_of_a_specific_virtual_machine_for_a_specific_billing_cycle
 
@@ -63,13 +70,6 @@ class TestBillingApi(unittest.TestCase):
 
     def test_retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle(self) -> None:
         """Test case for retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle
-
-        Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-        """
-        pass
-
-    def test_retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle_0(self) -> None:
-        """Test case for retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle_0
 
         Retrieve Billing History of a Specific Volume for a specific Billing Cycle
         """

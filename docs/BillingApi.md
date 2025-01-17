@@ -8,9 +8,9 @@ Method | HTTP request | Description
 [**get_billing_usage**](BillingApi.md#get_billing_usage) | **GET** /billing/billing/usage | GET: Billing usage
 [**get_last_day_cost**](BillingApi.md#get_last_day_cost) | **GET** /billing/billing/last-day-cost | GET: Last Day Cost
 [**retrieve_billing_history_for_a_specific_billing_cycle**](BillingApi.md#retrieve_billing_history_for_a_specific_billing_cycle) | **GET** /billing/billing/history | Retrieve Billing History for a specific Billing Cycle
+[**retrieve_billing_history_of_a_specific_snapshot_for_a_specific_billing_cycle**](BillingApi.md#retrieve_billing_history_of_a_specific_snapshot_for_a_specific_billing_cycle) | **GET** /billing/billing/history/snapshot/{snapshot_id} | Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
 [**retrieve_billing_history_of_a_specific_virtual_machine_for_a_specific_billing_cycle**](BillingApi.md#retrieve_billing_history_of_a_specific_virtual_machine_for_a_specific_billing_cycle) | **GET** /billing/billing/history/virtual-machine/{vm_id} | Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
-[**retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle**](BillingApi.md#retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle) | **GET** /billing/billing/history/snapshot/{snapshot_id} | Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-[**retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle_0**](BillingApi.md#retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle_0) | **GET** /billing/billing/history/volume/{volume_id} | Retrieve Billing History of a Specific Volume for a specific Billing Cycle
+[**retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle**](BillingApi.md#retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle) | **GET** /billing/billing/history/volume/{volume_id} | Retrieve Billing History of a Specific Volume for a specific Billing Cycle
 [**retrieve_billing_history_of_contract_for_a_specific_billing_cycle**](BillingApi.md#retrieve_billing_history_of_contract_for_a_specific_billing_cycle) | **GET** /billing/billing/history/contract | Retrieve Billing History of Contract for a specific Billing Cycle
 [**retrieve_billing_history_of_snapshot_for_a_specific_billing_cycle**](BillingApi.md#retrieve_billing_history_of_snapshot_for_a_specific_billing_cycle) | **GET** /billing/billing/history/snapshot | Retrieve Billing History of Snapshot for a specific Billing Cycle
 [**retrieve_billing_history_of_virtual_machine_for_a_specific_billing_cycle**](BillingApi.md#retrieve_billing_history_of_virtual_machine_for_a_specific_billing_cycle) | **GET** /billing/billing/history/virtual-machine | Retrieve Billing History of Virtual Machine for a specific Billing Cycle
@@ -387,6 +387,101 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **retrieve_billing_history_of_a_specific_snapshot_for_a_specific_billing_cycle**
+> ResourceLevelVolumeBillingDetailsResponseModel retrieve_billing_history_of_a_specific_snapshot_for_a_specific_billing_cycle(snapshot_id, start_date=start_date, end_date=end_date)
+
+Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+
+Retrieve billing history of a specific Snapshot for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (accessToken):
+
+```python
+import hyperstack
+from hyperstack.models.resource_level_volume_billing_details_response_model import ResourceLevelVolumeBillingDetailsResponseModel
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: accessToken
+configuration.api_key['accessToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['accessToken'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.BillingApi(api_client)
+    snapshot_id = 56 # int | 
+    start_date = 'start_date_example' # str | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
+    end_date = 'end_date_example' # str | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
+
+    try:
+        # Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+        api_response = api_instance.retrieve_billing_history_of_a_specific_snapshot_for_a_specific_billing_cycle(snapshot_id, start_date=start_date, end_date=end_date)
+        print("The response of BillingApi->retrieve_billing_history_of_a_specific_snapshot_for_a_specific_billing_cycle:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BillingApi->retrieve_billing_history_of_a_specific_snapshot_for_a_specific_billing_cycle: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **snapshot_id** | **int**|  | 
+ **start_date** | **str**| Datetime should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **end_date** | **str**| Datetime should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ResourceLevelVolumeBillingDetailsResponseModel**](ResourceLevelVolumeBillingDetailsResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **retrieve_billing_history_of_a_specific_virtual_machine_for_a_specific_billing_cycle**
 > ResourceLevelVMBillingDetailsResponseModel retrieve_billing_history_of_a_specific_virtual_machine_for_a_specific_billing_cycle(vm_id, start_date=start_date, end_date=end_date)
 
@@ -483,102 +578,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle**
-> ResourceLevelVolumeBillingDetailsResponseModel retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle(snapshot_id, start_date=start_date, end_date=end_date)
-
-Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-
-Retrieve billing history of a specific Snapshot for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-
-### Example
-
-* Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
-
-```python
-import hyperstack
-from hyperstack.models.resource_level_volume_billing_details_response_model import ResourceLevelVolumeBillingDetailsResponseModel
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.BillingApi(api_client)
-    snapshot_id = 56 # int | 
-    start_date = 'start_date_example' # str | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
-    end_date = 'end_date_example' # str | Datetime should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
-
-    try:
-        # Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-        api_response = api_instance.retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle(snapshot_id, start_date=start_date, end_date=end_date)
-        print("The response of BillingApi->retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling BillingApi->retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **snapshot_id** | **int**|  | 
- **start_date** | **str**| Datetime should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
- **end_date** | **str**| Datetime should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
-
-### Return type
-
-[**ResourceLevelVolumeBillingDetailsResponseModel**](ResourceLevelVolumeBillingDetailsResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle_0**
-> ResourceLevelVolumeBillingDetailsResponseModel retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle_0(volume_id, start_date=start_date, end_date=end_date)
+> ResourceLevelVolumeBillingDetailsResponseModel retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle(volume_id, start_date=start_date, end_date=end_date)
 
 Retrieve Billing History of a Specific Volume for a specific Billing Cycle
 
@@ -628,11 +628,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-        api_response = api_instance.retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle_0(volume_id, start_date=start_date, end_date=end_date)
-        print("The response of BillingApi->retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle_0:\n")
+        api_response = api_instance.retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle(volume_id, start_date=start_date, end_date=end_date)
+        print("The response of BillingApi->retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BillingApi->retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle_0: %s\n" % e)
+        print("Exception when calling BillingApi->retrieve_billing_history_of_a_specific_volume_for_a_specific_billing_cycle: %s\n" % e)
 ```
 
 
