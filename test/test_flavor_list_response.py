@@ -36,14 +36,15 @@ class TestFlavorListResponse(unittest.TestCase):
         if include_optional:
             return FlavorListResponse(
                 data = [
-                    hyperstack.models.flavor_item_get_response.FlavorItemGetResponse(
+                    hyperstack.models.flavor_item_get_response.Flavor_Item_Get_Response(
                         flavors = [
-                            hyperstack.models.flavor_fields.FlavorFields(
+                            hyperstack.models.flavor_fields.Flavor_Fields(
                                 cpu = 56, 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 disk = 56, 
                                 display_name = '', 
                                 ephemeral = 56, 
+                                features = hyperstack.models.features.features(), 
                                 gpu = '', 
                                 gpu_count = 56, 
                                 id = 56, 

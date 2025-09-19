@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** |  | [optional] 
-**environment** | **str** |  | [optional] 
+**environment** | [**KeypairEnvironmentFields**](KeypairEnvironmentFields.md) |  | [optional] 
 **fingerprint** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 

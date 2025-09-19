@@ -35,12 +35,22 @@ class TestVolumeFields(unittest.TestCase):
         model = VolumeFields()
         if include_optional:
             return VolumeFields(
+                attachments = [
+                    hyperstack.models.attachments_fields_for_volume.Attachments_Fields_for_Volume(
+                        device = '', 
+                        id = 56, 
+                        instance_id = 56, 
+                        protected = True, 
+                        status = '', )
+                    ],
                 bootable = True,
                 callback_url = '',
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 description = '',
-                environment = hyperstack.models.environment_fieldsfor_volume.EnvironmentFieldsforVolume(
-                    name = '', ),
+                environment = hyperstack.models.environment_fields_for_volume.Environment_Fields_for_Volume(
+                    features = hyperstack.models.features.features(), 
+                    name = '', 
+                    region = '', ),
                 id = 56,
                 image_id = 56,
                 name = '',

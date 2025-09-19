@@ -60,7 +60,7 @@ class RbacRoleApi:
     ) -> RbacRoleDetailResponseModel:
         """Create RBAC Role
 
-        Creates an RBAC role that can be assigned to users, granting them access to specific resource actions. Provide the configuration of the RBAC role, including its name, description, and list of permissions and policy IDs in the request body. For additional information on creating RBAC roles, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/create-rbac-role).
+        Creates an RBAC role that can be assigned to users, granting them access to specific resource actions. Provide the configuration of the RBAC role, including its name, description, and list of permissions and policy IDs in the request body. For additional information on creating RBAC roles, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/create-rbac-role).
 
         :param payload: (required)
         :type payload: CreateUpdateRbacRolePayload
@@ -131,7 +131,7 @@ class RbacRoleApi:
     ) -> ApiResponse[RbacRoleDetailResponseModel]:
         """Create RBAC Role
 
-        Creates an RBAC role that can be assigned to users, granting them access to specific resource actions. Provide the configuration of the RBAC role, including its name, description, and list of permissions and policy IDs in the request body. For additional information on creating RBAC roles, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/create-rbac-role).
+        Creates an RBAC role that can be assigned to users, granting them access to specific resource actions. Provide the configuration of the RBAC role, including its name, description, and list of permissions and policy IDs in the request body. For additional information on creating RBAC roles, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/create-rbac-role).
 
         :param payload: (required)
         :type payload: CreateUpdateRbacRolePayload
@@ -202,7 +202,7 @@ class RbacRoleApi:
     ) -> RESTResponseType:
         """Create RBAC Role
 
-        Creates an RBAC role that can be assigned to users, granting them access to specific resource actions. Provide the configuration of the RBAC role, including its name, description, and list of permissions and policy IDs in the request body. For additional information on creating RBAC roles, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/create-rbac-role).
+        Creates an RBAC role that can be assigned to users, granting them access to specific resource actions. Provide the configuration of the RBAC role, including its name, description, and list of permissions and policy IDs in the request body. For additional information on creating RBAC roles, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/create-rbac-role).
 
         :param payload: (required)
         :type payload: CreateUpdateRbacRolePayload
@@ -306,8 +306,7 @@ class RbacRoleApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -347,7 +346,7 @@ class RbacRoleApi:
     ) -> CommonResponseModel:
         """Delete RBAC Role
 
-        Deletes an RBAC role by providing its ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/delete-rbac-role).
+        Deletes an RBAC role by providing its ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/delete-rbac-role).
 
         :param id: (required)
         :type id: int
@@ -418,7 +417,7 @@ class RbacRoleApi:
     ) -> ApiResponse[CommonResponseModel]:
         """Delete RBAC Role
 
-        Deletes an RBAC role by providing its ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/delete-rbac-role).
+        Deletes an RBAC role by providing its ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/delete-rbac-role).
 
         :param id: (required)
         :type id: int
@@ -489,7 +488,7 @@ class RbacRoleApi:
     ) -> RESTResponseType:
         """Delete RBAC Role
 
-        Deletes an RBAC role by providing its ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/delete-rbac-role).
+        Deletes an RBAC role by providing its ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/delete-rbac-role).
 
         :param id: (required)
         :type id: int
@@ -580,8 +579,7 @@ class RbacRoleApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -620,7 +618,7 @@ class RbacRoleApi:
     ) -> GetRbacRolesResponseModel:
         """List RBAC Roles
 
-        Retrieves a list of RBAC roles that can be assigned to the users within an organization. For additional information on RBAC roles, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/list-rbac-roles).
+        Retrieves a list of RBAC roles that can be assigned to the users within an organization. For additional information on RBAC roles, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/list-rbac-roles).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -686,7 +684,7 @@ class RbacRoleApi:
     ) -> ApiResponse[GetRbacRolesResponseModel]:
         """List RBAC Roles
 
-        Retrieves a list of RBAC roles that can be assigned to the users within an organization. For additional information on RBAC roles, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/list-rbac-roles).
+        Retrieves a list of RBAC roles that can be assigned to the users within an organization. For additional information on RBAC roles, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/list-rbac-roles).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -752,7 +750,7 @@ class RbacRoleApi:
     ) -> RESTResponseType:
         """List RBAC Roles
 
-        Retrieves a list of RBAC roles that can be assigned to the users within an organization. For additional information on RBAC roles, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/list-rbac-roles).
+        Retrieves a list of RBAC roles that can be assigned to the users within an organization. For additional information on RBAC roles, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/list-rbac-roles).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -836,8 +834,7 @@ class RbacRoleApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -877,7 +874,7 @@ class RbacRoleApi:
     ) -> RbacRoleDetailResponseModelFixed:
         """Retrieve RBAC Role Details
 
-        Retrieves the details of a specified RBAC role by providing the RBAC role ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/retrieve-rbac-details).
+        Retrieves the details of a specified RBAC role by providing the RBAC role ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/retrieve-rbac-details).
 
         :param id: (required)
         :type id: int
@@ -948,7 +945,7 @@ class RbacRoleApi:
     ) -> ApiResponse[RbacRoleDetailResponseModelFixed]:
         """Retrieve RBAC Role Details
 
-        Retrieves the details of a specified RBAC role by providing the RBAC role ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/retrieve-rbac-details).
+        Retrieves the details of a specified RBAC role by providing the RBAC role ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/retrieve-rbac-details).
 
         :param id: (required)
         :type id: int
@@ -1019,7 +1016,7 @@ class RbacRoleApi:
     ) -> RESTResponseType:
         """Retrieve RBAC Role Details
 
-        Retrieves the details of a specified RBAC role by providing the RBAC role ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/retrieve-rbac-details).
+        Retrieves the details of a specified RBAC role by providing the RBAC role ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/retrieve-rbac-details).
 
         :param id: (required)
         :type id: int
@@ -1110,8 +1107,7 @@ class RbacRoleApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -1152,7 +1148,7 @@ class RbacRoleApi:
     ) -> RbacRoleDetailResponseModel:
         """Update RBAC Role
 
-        Updates an RBAC role by providing the role ID in the path and the modified role configuration in the request body, including its name, description, and list of permissions and policy IDs. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/update-rbac-role).
+        Updates an RBAC role by providing the role ID in the path and the modified role configuration in the request body, including its name, description, and list of permissions and policy IDs. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/update-rbac-role).
 
         :param id: (required)
         :type id: int
@@ -1227,7 +1223,7 @@ class RbacRoleApi:
     ) -> ApiResponse[RbacRoleDetailResponseModel]:
         """Update RBAC Role
 
-        Updates an RBAC role by providing the role ID in the path and the modified role configuration in the request body, including its name, description, and list of permissions and policy IDs. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/update-rbac-role).
+        Updates an RBAC role by providing the role ID in the path and the modified role configuration in the request body, including its name, description, and list of permissions and policy IDs. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/update-rbac-role).
 
         :param id: (required)
         :type id: int
@@ -1302,7 +1298,7 @@ class RbacRoleApi:
     ) -> RESTResponseType:
         """Update RBAC Role
 
-        Updates an RBAC role by providing the role ID in the path and the modified role configuration in the request body, including its name, description, and list of permissions and policy IDs. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/update-rbac-role).
+        Updates an RBAC role by providing the role ID in the path and the modified role configuration in the request body, including its name, description, and list of permissions and policy IDs. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/update-rbac-role).
 
         :param id: (required)
         :type id: int
@@ -1412,8 +1408,7 @@ class RbacRoleApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

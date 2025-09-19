@@ -5,14 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**deployment_mode** | **str** |  | [optional] [default to 'full']
 **environment_name** | **str** |  | 
-**image_name** | **str** |  | 
 **keypair_name** | **str** |  | 
 **kubernetes_version** | **str** |  | 
+**master_count** | **int** |  | [optional] 
 **master_flavor_name** | **str** |  | 
 **name** | **str** |  | 
-**node_count** | **int** |  | 
-**node_flavor_name** | **str** |  | 
+**node_count** | **int** |  | [optional] 
+**node_flavor_name** | **str** |  | [optional] 
+**node_groups** | [**List[CreateClusterNodeGroupPayload]**](CreateClusterNodeGroupPayload.md) |  | [optional] 
 
 ## Example
 

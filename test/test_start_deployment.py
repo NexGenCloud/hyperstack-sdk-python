@@ -35,7 +35,7 @@ class TestStartDeployment(unittest.TestCase):
         model = StartDeployment()
         if include_optional:
             return StartDeployment(
-                deployment = hyperstack.models.deployment_fieldsforstartdeployments.DeploymentFieldsforstartdeployments(
+                deployment = hyperstack.models.deployment_fields_for_start_deployments.Deployment_Fields_for_start_deployments(
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     description = '', 
                     id = 56, 

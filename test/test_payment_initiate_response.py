@@ -35,7 +35,7 @@ class TestPaymentInitiateResponse(unittest.TestCase):
         model = PaymentInitiateResponse()
         if include_optional:
             return PaymentInitiateResponse(
-                data = hyperstack.models.payment_initiate_fields.PaymentInitiateFields(
+                data = hyperstack.models.payment_initiate_fields.Payment_Initiate_Fields(
                     payment_id = '', ),
                 message = '',
                 status = True

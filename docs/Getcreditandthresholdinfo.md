@@ -1,4 +1,4 @@
-# Getcreditandthresholdinfo
+# GetCreditAndThresholdInfo
 
 
 ## Properties
@@ -12,19 +12,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from hyperstack.models.getcreditandthresholdinfo import Getcreditandthresholdinfo
+from hyperstack.models.get_credit_and_threshold_info import GetCreditAndThresholdInfo
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of Getcreditandthresholdinfo from a JSON string
-getcreditandthresholdinfo_instance = Getcreditandthresholdinfo.from_json(json)
+# create an instance of GetCreditAndThresholdInfo from a JSON string
+get_credit_and_threshold_info_instance = GetCreditAndThresholdInfo.from_json(json)
 # print the JSON string representation of the object
-print(Getcreditandthresholdinfo.to_json())
+print(GetCreditAndThresholdInfo.to_json())
 
 # convert the object into a dict
-getcreditandthresholdinfo_dict = getcreditandthresholdinfo_instance.to_dict()
-# create an instance of Getcreditandthresholdinfo from a dict
-getcreditandthresholdinfo_from_dict = Getcreditandthresholdinfo.from_dict(getcreditandthresholdinfo_dict)
+get_credit_and_threshold_info_dict = get_credit_and_threshold_info_instance.to_dict()
+# create an instance of GetCreditAndThresholdInfo from a dict
+get_credit_and_threshold_info_from_dict = GetCreditAndThresholdInfo.from_dict(get_credit_and_threshold_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

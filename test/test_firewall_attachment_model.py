@@ -38,7 +38,7 @@ class TestFirewallAttachmentModel(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 id = 56,
                 status = '',
-                vm = hyperstack.models.firewall_attachment_vm_model.FirewallAttachmentVMModel(
+                vm = hyperstack.models.firewall_attachment_vm_model.Firewall_Attachment_VM_Model(
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     environment = '', 
                     flavor = '', 

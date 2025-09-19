@@ -40,6 +40,7 @@ class TestFlavorFields(unittest.TestCase):
                 disk = 56,
                 display_name = '',
                 ephemeral = 56,
+                features = None,
                 gpu = '',
                 gpu_count = 56,
                 id = 56,

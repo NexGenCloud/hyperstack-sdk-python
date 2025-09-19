@@ -41,6 +41,7 @@ class TestSnapshots(unittest.TestCase):
                 page_size = 56,
                 snapshots = [
                     hyperstack.models.snapshot_fields.SnapshotFields(
+                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
                         has_floating_ip = True, 
                         id = 56, 
@@ -52,6 +53,7 @@ class TestSnapshots(unittest.TestCase):
                         region_id = 56, 
                         size = 56, 
                         status = '', 
+                        updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         vm_id = 56, )
                     ],
                 status = True

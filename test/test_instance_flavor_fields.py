@@ -38,9 +38,15 @@ class TestInstanceFlavorFields(unittest.TestCase):
                 cpu = 56,
                 disk = 56,
                 ephemeral = 56,
+                features = hyperstack.models.features.features(),
                 gpu = '',
                 gpu_count = 56,
                 id = 56,
+                labels = [
+                    hyperstack.models.flavor_label_fields.FlavorLabelFields(
+                        id = 56, 
+                        label = '', )
+                    ],
                 name = '',
                 ram = 1.337
             )

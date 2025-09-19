@@ -36,7 +36,6 @@ class TestCreateSnapshotPayload(unittest.TestCase):
         if include_optional:
             return CreateSnapshotPayload(
                 description = '',
-                is_image = True,
                 labels = [
                     ''
                     ],
@@ -45,7 +44,6 @@ class TestCreateSnapshotPayload(unittest.TestCase):
         else:
             return CreateSnapshotPayload(
                 description = '',
-                is_image = True,
                 name = '',
         )
         """

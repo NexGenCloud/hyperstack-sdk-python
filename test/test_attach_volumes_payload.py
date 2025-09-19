@@ -35,6 +35,7 @@ class TestAttachVolumesPayload(unittest.TestCase):
         model = AttachVolumesPayload()
         if include_optional:
             return AttachVolumesPayload(
+                protected = True,
                 volume_ids = [
                     56
                     ]

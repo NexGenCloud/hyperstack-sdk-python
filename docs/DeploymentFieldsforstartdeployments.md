@@ -1,4 +1,4 @@
-# DeploymentFieldsforstartdeployments
+# DeploymentFieldsForStartDeployments
 
 
 ## Properties
@@ -16,19 +16,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from hyperstack.models.deployment_fieldsforstartdeployments import DeploymentFieldsforstartdeployments
+from hyperstack.models.deployment_fields_for_start_deployments import DeploymentFieldsForStartDeployments
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of DeploymentFieldsforstartdeployments from a JSON string
-deployment_fieldsforstartdeployments_instance = DeploymentFieldsforstartdeployments.from_json(json)
+# create an instance of DeploymentFieldsForStartDeployments from a JSON string
+deployment_fields_for_start_deployments_instance = DeploymentFieldsForStartDeployments.from_json(json)
 # print the JSON string representation of the object
-print(DeploymentFieldsforstartdeployments.to_json())
+print(DeploymentFieldsForStartDeployments.to_json())
 
 # convert the object into a dict
-deployment_fieldsforstartdeployments_dict = deployment_fieldsforstartdeployments_instance.to_dict()
-# create an instance of DeploymentFieldsforstartdeployments from a dict
-deployment_fieldsforstartdeployments_from_dict = DeploymentFieldsforstartdeployments.from_dict(deployment_fieldsforstartdeployments_dict)
+deployment_fields_for_start_deployments_dict = deployment_fields_for_start_deployments_instance.to_dict()
+# create an instance of DeploymentFieldsForStartDeployments from a dict
+deployment_fields_for_start_deployments_from_dict = DeploymentFieldsForStartDeployments.from_dict(deployment_fields_for_start_deployments_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

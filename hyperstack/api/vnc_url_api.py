@@ -39,9 +39,9 @@ class VncUrlApi:
 
 
     @validate_call
-    def get_vnc_console_link(
+    def get_vnc_url(
         self,
-        virtual_machine_id: StrictInt,
+        vm_id: StrictInt,
         job_id: StrictInt,
         _request_timeout: Union[
             None,
@@ -58,9 +58,10 @@ class VncUrlApi:
     ) -> VNCURL:
         """Get VNC Console Link
 
+        Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
 
-        :param virtual_machine_id: (required)
-        :type virtual_machine_id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param job_id: (required)
         :type job_id: int
         :param _request_timeout: timeout setting for this request. If one
@@ -85,8 +86,8 @@ class VncUrlApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_vnc_console_link_serialize(
-            virtual_machine_id=virtual_machine_id,
+        _param = self._get_vnc_url_serialize(
+            vm_id=vm_id,
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -113,9 +114,9 @@ class VncUrlApi:
 
 
     @validate_call
-    def get_vnc_console_link_with_http_info(
+    def get_vnc_url_with_http_info(
         self,
-        virtual_machine_id: StrictInt,
+        vm_id: StrictInt,
         job_id: StrictInt,
         _request_timeout: Union[
             None,
@@ -132,9 +133,10 @@ class VncUrlApi:
     ) -> ApiResponse[VNCURL]:
         """Get VNC Console Link
 
+        Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
 
-        :param virtual_machine_id: (required)
-        :type virtual_machine_id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param job_id: (required)
         :type job_id: int
         :param _request_timeout: timeout setting for this request. If one
@@ -159,8 +161,8 @@ class VncUrlApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_vnc_console_link_serialize(
-            virtual_machine_id=virtual_machine_id,
+        _param = self._get_vnc_url_serialize(
+            vm_id=vm_id,
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -187,9 +189,9 @@ class VncUrlApi:
 
 
     @validate_call
-    def get_vnc_console_link_without_preload_content(
+    def get_vnc_url_without_preload_content(
         self,
-        virtual_machine_id: StrictInt,
+        vm_id: StrictInt,
         job_id: StrictInt,
         _request_timeout: Union[
             None,
@@ -206,9 +208,10 @@ class VncUrlApi:
     ) -> RESTResponseType:
         """Get VNC Console Link
 
+        Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
 
-        :param virtual_machine_id: (required)
-        :type virtual_machine_id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param job_id: (required)
         :type job_id: int
         :param _request_timeout: timeout setting for this request. If one
@@ -233,8 +236,8 @@ class VncUrlApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_vnc_console_link_serialize(
-            virtual_machine_id=virtual_machine_id,
+        _param = self._get_vnc_url_serialize(
+            vm_id=vm_id,
             job_id=job_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -256,9 +259,9 @@ class VncUrlApi:
         return response_data.response
 
 
-    def _get_vnc_console_link_serialize(
+    def _get_vnc_url_serialize(
         self,
-        virtual_machine_id,
+        vm_id,
         job_id,
         _request_auth,
         _content_type,
@@ -281,8 +284,8 @@ class VncUrlApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if virtual_machine_id is not None:
-            _path_params['virtual_machine_id'] = virtual_machine_id
+        if vm_id is not None:
+            _path_params['vm_id'] = vm_id
         if job_id is not None:
             _path_params['job_id'] = job_id
         # process the query parameters
@@ -302,13 +305,12 @@ class VncUrlApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/core/virtual-machines/{virtual_machine_id}/console/{job_id}',
+            resource_path='/core/virtual-machines/{vm_id}/console/{job_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -325,9 +327,9 @@ class VncUrlApi:
 
 
     @validate_call
-    def request_instance_console(
+    def get_vnc_url2(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -343,9 +345,10 @@ class VncUrlApi:
     ) -> RequestConsole:
         """Request Instance Console
 
+        Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -368,8 +371,8 @@ class VncUrlApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._request_instance_console_serialize(
-            id=id,
+        _param = self._get_vnc_url2_serialize(
+            vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -395,9 +398,9 @@ class VncUrlApi:
 
 
     @validate_call
-    def request_instance_console_with_http_info(
+    def get_vnc_url2_with_http_info(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -413,9 +416,10 @@ class VncUrlApi:
     ) -> ApiResponse[RequestConsole]:
         """Request Instance Console
 
+        Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -438,8 +442,8 @@ class VncUrlApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._request_instance_console_serialize(
-            id=id,
+        _param = self._get_vnc_url2_serialize(
+            vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -465,9 +469,9 @@ class VncUrlApi:
 
 
     @validate_call
-    def request_instance_console_without_preload_content(
+    def get_vnc_url2_without_preload_content(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -483,9 +487,10 @@ class VncUrlApi:
     ) -> RESTResponseType:
         """Request Instance Console
 
+        Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -508,8 +513,8 @@ class VncUrlApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._request_instance_console_serialize(
-            id=id,
+        _param = self._get_vnc_url2_serialize(
+            vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -530,9 +535,9 @@ class VncUrlApi:
         return response_data.response
 
 
-    def _request_instance_console_serialize(
+    def _get_vnc_url2_serialize(
         self,
-        id,
+        vm_id,
         _request_auth,
         _content_type,
         _headers,
@@ -554,8 +559,8 @@ class VncUrlApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
+        if vm_id is not None:
+            _path_params['vm_id'] = vm_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -573,13 +578,12 @@ class VncUrlApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/core/virtual-machines/{id}/request-console',
+            resource_path='/core/virtual-machines/{vm_id}/request-console',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

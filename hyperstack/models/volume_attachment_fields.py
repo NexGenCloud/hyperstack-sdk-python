@@ -18,9 +18,9 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ..models.volume_fieldsfor_instance import VolumeFieldsforInstance
+from ..models.volume_fields_for_instance import VolumeFieldsForInstance
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,9 +30,11 @@ class VolumeAttachmentFields(BaseModel):
     """ # noqa: E501
     created_at: Optional[datetime] = None
     device: Optional[StrictStr] = None
+    id: Optional[StrictInt] = None
+    protected: Optional[StrictBool] = None
     status: Optional[StrictStr] = None
-    volume: Optional[VolumeFieldsforInstance] = None
-    __properties: ClassVar[List[str]] = ["created_at", "device", "status", "volume"]
+    volume: Optional[VolumeFieldsForInstance] = None
+    __properties: ClassVar[List[str]] = ["created_at", "device", "id", "protected", "status", "volume"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,8 +92,10 @@ class VolumeAttachmentFields(BaseModel):
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
             "device": obj.get("device"),
+            "id": obj.get("id"),
+            "protected": obj.get("protected"),
             "status": obj.get("status"),
-            "volume": VolumeFieldsforInstance.from_dict(obj["volume"]) if obj.get("volume") is not None else None
+            "volume": VolumeFieldsForInstance.from_dict(obj["volume"]) if obj.get("volume") is not None else None
         })
         return _obj
 

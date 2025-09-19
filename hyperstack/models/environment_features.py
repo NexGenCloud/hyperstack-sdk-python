@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,8 +26,19 @@ class EnvironmentFeatures(BaseModel):
     """
     EnvironmentFeatures
     """ # noqa: E501
+    green_status: Optional[StrictStr] = None
     network_optimised: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["network_optimised"]
+    __properties: ClassVar[List[str]] = ["green_status", "network_optimised"]
+
+    @field_validator('green_status')
+    def green_status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['GREEN', 'PARTIALLY_GREEN', 'NOT_GREEN']):
+            raise ValueError("must be one of enum values ('GREEN', 'PARTIALLY_GREEN', 'NOT_GREEN')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,6 +91,7 @@ class EnvironmentFeatures(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "green_status": obj.get("green_status"),
             "network_optimised": obj.get("network_optimised")
         })
         return _obj

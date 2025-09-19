@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **Dict[str, str]** | The data object which contains the configuration of the virtual machine profile being created. | 
+**data** | **Dict[str, str]** | The data object containing the configuration details of the virtual machine profile being created. | 
 **description** | **str** | The optional description for the profile being created. | [optional] 
 **name** | **str** | The name of the profile being created. | 
 

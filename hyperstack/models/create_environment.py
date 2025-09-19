@@ -28,7 +28,7 @@ class CreateEnvironment(BaseModel):
     CreateEnvironment
     """ # noqa: E501
     name: Annotated[str, Field(strict=True, max_length=50)] = Field(description="The name of the environment being created.")
-    region: StrictStr = Field(description="The geographic location of the data center where the environment is being created. To learn more about regions, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/regions).")
+    region: StrictStr = Field(description="The geographic location of the data center where the environment is being created. To learn more about regions, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/features/regions).")
     __properties: ClassVar[List[str]] = ["name", "region"]
 
     model_config = ConfigDict(

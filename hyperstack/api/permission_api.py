@@ -54,7 +54,7 @@ class PermissionApi:
     ) -> GetPermissionsResponseModel:
         """List Permissions
 
-        Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/permissions).
+        Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://docs...cloud/docs/api-reference/auth-resources/permission/permissions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -120,7 +120,7 @@ class PermissionApi:
     ) -> ApiResponse[GetPermissionsResponseModel]:
         """List Permissions
 
-        Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/permissions).
+        Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://docs...cloud/docs/api-reference/auth-resources/permission/permissions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -186,7 +186,7 @@ class PermissionApi:
     ) -> RESTResponseType:
         """List Permissions
 
-        Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/permissions).
+        Retrieves a list of permissions that users can be granted to access a particular resource action. For additional information on permissions, [click here](https://docs...cloud/docs/api-reference/auth-resources/permission/permissions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -270,8 +270,7 @@ class PermissionApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

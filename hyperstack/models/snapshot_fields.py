@@ -17,6 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -26,6 +27,7 @@ class SnapshotFields(BaseModel):
     """
     SnapshotFields
     """ # noqa: E501
+    created_at: datetime = Field(description="Creation timestamp")
     description: StrictStr = Field(description="Description of the snapshot")
     has_floating_ip: Optional[StrictBool] = Field(default=None, description="Indicates if the VM had a floating IP assigned")
     id: StrictInt = Field(description="Snapshot ID")
@@ -35,8 +37,9 @@ class SnapshotFields(BaseModel):
     region_id: StrictInt = Field(description="Region where the snapshot will be available")
     size: StrictInt = Field(description="Size in GB of the snapshot")
     status: StrictStr = Field(description="Status of the snapshot")
+    updated_at: datetime = Field(description="Last update timestamp")
     vm_id: StrictInt = Field(description="ID of the VM from which the snapshot is created")
-    __properties: ClassVar[List[str]] = ["description", "has_floating_ip", "id", "is_image", "labels", "name", "region_id", "size", "status", "vm_id"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "has_floating_ip", "id", "is_image", "labels", "name", "region_id", "size", "status", "updated_at", "vm_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +92,7 @@ class SnapshotFields(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "has_floating_ip": obj.get("has_floating_ip"),
             "id": obj.get("id"),
@@ -98,6 +102,7 @@ class SnapshotFields(BaseModel):
             "region_id": obj.get("region_id"),
             "size": obj.get("size"),
             "status": obj.get("status"),
+            "updated_at": obj.get("updated_at"),
             "vm_id": obj.get("vm_id")
         })
         return _obj

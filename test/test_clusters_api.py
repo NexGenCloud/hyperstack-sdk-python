@@ -33,10 +33,38 @@ class TestClustersApi(unittest.TestCase):
         """
         pass
 
+    def test_create_node(self) -> None:
+        """Test case for create_node
+
+        Create Node
+        """
+        pass
+
+    def test_create_node_group(self) -> None:
+        """Test case for create_node_group
+
+        Create a node group in a cluster
+        """
+        pass
+
     def test_delete_a_cluster(self) -> None:
         """Test case for delete_a_cluster
 
         Delete a cluster
+        """
+        pass
+
+    def test_delete_a_node_group(self) -> None:
+        """Test case for delete_a_node_group
+
+        Delete a node group
+        """
+        pass
+
+    def test_delete_cluster_node(self) -> None:
+        """Test case for delete_cluster_node
+
+        Delete Cluster Node
         """
         pass
 
@@ -47,10 +75,24 @@ class TestClustersApi(unittest.TestCase):
         """
         pass
 
+    def test_get_cluster_master_flavors(self) -> None:
+        """Test case for get_cluster_master_flavors
+
+        Get Cluster Master Flavors
+        """
+        pass
+
+    def test_get_cluster_nodes(self) -> None:
+        """Test case for get_cluster_nodes
+
+        Get Cluster Nodes
+        """
+        pass
+
     def test_get_cluster_versions(self) -> None:
         """Test case for get_cluster_versions
 
-        GET Cluster Versions
+        List Cluster Versions
         """
         pass
 
@@ -65,6 +107,20 @@ class TestClustersApi(unittest.TestCase):
         """Test case for list_clusters
 
         List Clusters
+        """
+        pass
+
+    def test_list_node_groups(self) -> None:
+        """Test case for list_node_groups
+
+        List node groups for a cluster
+        """
+        pass
+
+    def test_retrieve_a_node_group(self) -> None:
+        """Test case for retrieve_a_node_group
+
+        Retrieve a node group in a cluster
         """
         pass
 

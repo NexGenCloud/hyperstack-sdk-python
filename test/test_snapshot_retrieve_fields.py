@@ -35,18 +35,32 @@ class TestSnapshotRetrieveFields(unittest.TestCase):
         model = SnapshotRetrieveFields()
         if include_optional:
             return SnapshotRetrieveFields(
+                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                custom_image = '',
                 description = '',
                 has_floating_ip = True,
                 id = 56,
                 is_image = True,
+                labels = '',
                 name = '',
+                region = '',
                 region_id = 56,
                 size = 56,
                 status = '',
-                vm_id = 56
+                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                vm_environment = '',
+                vm_flavor = '',
+                vm_id = 56,
+                vm_image = '',
+                vm_keypair = '',
+                vm_name = '',
+                vm_status = '',
+                volume_id = '',
+                volume_name = ''
             )
         else:
             return SnapshotRetrieveFields(
+                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 description = '',
                 id = 56,
                 is_image = True,
@@ -54,6 +68,7 @@ class TestSnapshotRetrieveFields(unittest.TestCase):
                 region_id = 56,
                 size = 56,
                 status = '',
+                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 vm_id = 56,
         )
         """

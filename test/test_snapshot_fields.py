@@ -35,6 +35,7 @@ class TestSnapshotFields(unittest.TestCase):
         model = SnapshotFields()
         if include_optional:
             return SnapshotFields(
+                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 description = '',
                 has_floating_ip = True,
                 id = 56,
@@ -46,10 +47,12 @@ class TestSnapshotFields(unittest.TestCase):
                 region_id = 56,
                 size = 56,
                 status = '',
+                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 vm_id = 56
             )
         else:
             return SnapshotFields(
+                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 description = '',
                 id = 56,
                 is_image = True,
@@ -57,6 +60,7 @@ class TestSnapshotFields(unittest.TestCase):
                 region_id = 56,
                 size = 56,
                 status = '',
+                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 vm_id = 56,
         )
         """

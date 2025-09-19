@@ -1,4 +1,4 @@
-# Subscribeorunsubscribeupdatepayload
+# SubscribeOrUnsubscribeUpdatePayload
 
 
 ## Properties
@@ -10,19 +10,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from hyperstack.models.subscribeorunsubscribeupdatepayload import Subscribeorunsubscribeupdatepayload
+from hyperstack.models.subscribe_or_unsubscribe_update_payload import SubscribeOrUnsubscribeUpdatePayload
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of Subscribeorunsubscribeupdatepayload from a JSON string
-subscribeorunsubscribeupdatepayload_instance = Subscribeorunsubscribeupdatepayload.from_json(json)
+# create an instance of SubscribeOrUnsubscribeUpdatePayload from a JSON string
+subscribe_or_unsubscribe_update_payload_instance = SubscribeOrUnsubscribeUpdatePayload.from_json(json)
 # print the JSON string representation of the object
-print(Subscribeorunsubscribeupdatepayload.to_json())
+print(SubscribeOrUnsubscribeUpdatePayload.to_json())
 
 # convert the object into a dict
-subscribeorunsubscribeupdatepayload_dict = subscribeorunsubscribeupdatepayload_instance.to_dict()
-# create an instance of Subscribeorunsubscribeupdatepayload from a dict
-subscribeorunsubscribeupdatepayload_from_dict = Subscribeorunsubscribeupdatepayload.from_dict(subscribeorunsubscribeupdatepayload_dict)
+subscribe_or_unsubscribe_update_payload_dict = subscribe_or_unsubscribe_update_payload_instance.to_dict()
+# create an instance of SubscribeOrUnsubscribeUpdatePayload from a dict
+subscribe_or_unsubscribe_update_payload_from_dict = SubscribeOrUnsubscribeUpdatePayload.from_dict(subscribe_or_unsubscribe_update_payload_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -38,7 +38,7 @@ class PricebookApi:
 
 
     @validate_call
-    def retrive_pricebook(
+    def get_pricebook(
         self,
         _request_timeout: Union[
             None,
@@ -53,8 +53,9 @@ class PricebookApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[PricebookModel]:
-        """retrive_pricebook
+        """get_pricebook
 
+        Retrieves the Infrahub Pricebook, detailing hourly running costs for all resources offered by Infrahub. For more information on Pricebook [**click here**](None/docs/api-reference/pricebook-resources/pricebook/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -78,7 +79,7 @@ class PricebookApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrive_pricebook_serialize(
+        _param = self._get_pricebook_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -104,7 +105,7 @@ class PricebookApi:
 
 
     @validate_call
-    def retrive_pricebook_with_http_info(
+    def get_pricebook_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -119,8 +120,9 @@ class PricebookApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[PricebookModel]]:
-        """retrive_pricebook
+        """get_pricebook
 
+        Retrieves the Infrahub Pricebook, detailing hourly running costs for all resources offered by Infrahub. For more information on Pricebook [**click here**](None/docs/api-reference/pricebook-resources/pricebook/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -144,7 +146,7 @@ class PricebookApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrive_pricebook_serialize(
+        _param = self._get_pricebook_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -170,7 +172,7 @@ class PricebookApi:
 
 
     @validate_call
-    def retrive_pricebook_without_preload_content(
+    def get_pricebook_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -185,8 +187,9 @@ class PricebookApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """retrive_pricebook
+        """get_pricebook
 
+        Retrieves the Infrahub Pricebook, detailing hourly running costs for all resources offered by Infrahub. For more information on Pricebook [**click here**](None/docs/api-reference/pricebook-resources/pricebook/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -210,7 +213,7 @@ class PricebookApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrive_pricebook_serialize(
+        _param = self._get_pricebook_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -231,7 +234,7 @@ class PricebookApi:
         return response_data.response
 
 
-    def _retrive_pricebook_serialize(
+    def _get_pricebook_serialize(
         self,
         _request_auth,
         _content_type,
@@ -271,8 +274,7 @@ class PricebookApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

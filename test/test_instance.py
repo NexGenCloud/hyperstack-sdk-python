@@ -35,33 +35,40 @@ class TestInstance(unittest.TestCase):
         model = Instance()
         if include_optional:
             return Instance(
-                instance = hyperstack.models.instance_fields.InstanceFields(
+                instance = hyperstack.models.instance_fields.Instance_Fields(
                     callback_url = '', 
                     contract_id = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    environment = hyperstack.models.instance_environment_fields.InstanceEnvironmentFields(
-                        features = hyperstack.models.environment_features.EnvironmentFeatures(
+                    environment = hyperstack.models.instance_environment_fields.Instance_Environment_Fields(
+                        features = hyperstack.models.environment_features.Environment_Features(
+                            green_status = 'GREEN', 
                             network_optimised = True, ), 
                         id = 56, 
                         name = '', 
                         org_id = 56, 
                         region = '', ), 
+                    features = hyperstack.models.features.features(), 
                     fixed_ip = '', 
-                    flavor = hyperstack.models.instance_flavor_fields.InstanceFlavorFields(
+                    flavor = hyperstack.models.instance_flavor_fields.Instance_Flavor_Fields(
                         cpu = 56, 
                         disk = 56, 
                         ephemeral = 56, 
                         gpu = '', 
                         gpu_count = 56, 
                         id = 56, 
+                        labels = [
+                            hyperstack.models.flavor_label_fields.FlavorLabelFields(
+                                id = 56, 
+                                label = '', )
+                            ], 
                         name = '', 
                         ram = 1.337, ), 
                     floating_ip = '', 
                     floating_ip_status = '', 
                     id = 56, 
-                    image = hyperstack.models.instance_image_fields.InstanceImageFields(
+                    image = hyperstack.models.instance_image_fields.Instance_Image_Fields(
                         name = '', ), 
-                    keypair = hyperstack.models.instance_keypair_fields.InstanceKeypairFields(
+                    keypair = hyperstack.models.instance_keypair_fields.Instance_Keypair_Fields(
                         name = '', ), 
                     labels = [
                         ''
@@ -72,8 +79,9 @@ class TestInstance(unittest.TestCase):
                     port_randomization = True, 
                     port_randomization_status = '', 
                     power_state = '', 
+                    requires_public_ip = True, 
                     security_rules = [
-                        hyperstack.models.security_rules_fieldsfor_instance.SecurityRulesFieldsforInstance(
+                        hyperstack.models.security_rules_fields_for_instance.Security_Rules_Fields_for_Instance(
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             direction = '', 
                             ethertype = '', 
@@ -87,11 +95,13 @@ class TestInstance(unittest.TestCase):
                     status = '', 
                     vm_state = '', 
                     volume_attachments = [
-                        hyperstack.models.volume_attachment_fields.VolumeAttachmentFields(
+                        hyperstack.models.volume_attachment_fields.Volume_Attachment_Fields(
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             device = '', 
+                            id = 56, 
+                            protected = True, 
                             status = '', 
-                            volume = hyperstack.models.volume_fieldsfor_instance.VolumeFieldsforInstance(
+                            volume = hyperstack.models.volume_fields_for_instance.Volume_Fields_for_Instance(
                                 bootable = True, 
                                 description = '', 
                                 id = 56, 

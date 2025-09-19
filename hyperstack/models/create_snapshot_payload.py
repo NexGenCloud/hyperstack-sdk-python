@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,10 +27,9 @@ class CreateSnapshotPayload(BaseModel):
     CreateSnapshotPayload
     """ # noqa: E501
     description: StrictStr = Field(description="description")
-    is_image: StrictBool = Field(description="Indicates if the snapshot is an image")
     labels: Optional[List[StrictStr]] = Field(default=None, description="Labels associated with snapshot")
     name: StrictStr = Field(description="Snapshot name")
-    __properties: ClassVar[List[str]] = ["description", "is_image", "labels", "name"]
+    __properties: ClassVar[List[str]] = ["description", "labels", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,7 +83,6 @@ class CreateSnapshotPayload(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
-            "is_image": obj.get("is_image"),
             "labels": obj.get("labels"),
             "name": obj.get("name")
         })

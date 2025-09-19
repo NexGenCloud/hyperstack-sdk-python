@@ -24,7 +24,7 @@ from ..models.import_keypair_response import ImportKeypairResponse
 from ..models.keypairs import Keypairs
 from ..models.response_model import ResponseModel
 from ..models.update_keypair_name import UpdateKeypairName
-from ..models.update_keypairnameresponse import UpdateKeypairnameresponse
+from ..models.update_keypair_name_response import UpdateKeypairNameResponse
 
 from ..api_client import ApiClient, RequestSerialized
 from ..api_response import ApiResponse
@@ -63,7 +63,7 @@ class KeypairApi:
     ) -> ResponseModel:
         """Delete key pair
 
-        Permanently deletes a specified key pair. Include the key pair ID in the request path to remove the designated key pair.
+        Permanently deletes a specified key pair. Provide the key pair ID in the path to remove the designated key pair.
 
         :param id: (required)
         :type id: int
@@ -134,7 +134,7 @@ class KeypairApi:
     ) -> ApiResponse[ResponseModel]:
         """Delete key pair
 
-        Permanently deletes a specified key pair. Include the key pair ID in the request path to remove the designated key pair.
+        Permanently deletes a specified key pair. Provide the key pair ID in the path to remove the designated key pair.
 
         :param id: (required)
         :type id: int
@@ -205,7 +205,7 @@ class KeypairApi:
     ) -> RESTResponseType:
         """Delete key pair
 
-        Permanently deletes a specified key pair. Include the key pair ID in the request path to remove the designated key pair.
+        Permanently deletes a specified key pair. Provide the key pair ID in the path to remove the designated key pair.
 
         :param id: (required)
         :type id: int
@@ -296,8 +296,7 @@ class KeypairApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -337,7 +336,7 @@ class KeypairApi:
     ) -> ImportKeypairResponse:
         """Import key pair
 
-        Imports a new key pair for secure shell (SSH) access to your resources. To import a new key pair, include the key name, environment name, and public key in the request body. For additional information on importing SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/getting-started/create-keypair#importing-an-ssh-key).
+        Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/import-keypair).
 
         :param payload: (required)
         :type payload: ImportKeypairPayload
@@ -409,7 +408,7 @@ class KeypairApi:
     ) -> ApiResponse[ImportKeypairResponse]:
         """Import key pair
 
-        Imports a new key pair for secure shell (SSH) access to your resources. To import a new key pair, include the key name, environment name, and public key in the request body. For additional information on importing SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/getting-started/create-keypair#importing-an-ssh-key).
+        Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/import-keypair).
 
         :param payload: (required)
         :type payload: ImportKeypairPayload
@@ -481,7 +480,7 @@ class KeypairApi:
     ) -> RESTResponseType:
         """Import key pair
 
-        Imports a new key pair for secure shell (SSH) access to your resources. To import a new key pair, include the key name, environment name, and public key in the request body. For additional information on importing SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/getting-started/create-keypair#importing-an-ssh-key).
+        Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/import-keypair).
 
         :param payload: (required)
         :type payload: ImportKeypairPayload
@@ -586,8 +585,7 @@ class KeypairApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -629,7 +627,7 @@ class KeypairApi:
     ) -> Keypairs:
         """List key pairs
 
-        Retrieves a list of your existing SSH key pairs, providing details for each. For additional information on SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/keypairs-available-features).
+        Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/).
 
         :param page: Page Number
         :type page: str
@@ -707,7 +705,7 @@ class KeypairApi:
     ) -> ApiResponse[Keypairs]:
         """List key pairs
 
-        Retrieves a list of your existing SSH key pairs, providing details for each. For additional information on SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/keypairs-available-features).
+        Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/).
 
         :param page: Page Number
         :type page: str
@@ -785,7 +783,7 @@ class KeypairApi:
     ) -> RESTResponseType:
         """List key pairs
 
-        Retrieves a list of your existing SSH key pairs, providing details for each. For additional information on SSH key pairs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/keypairs-available-features).
+        Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/).
 
         :param page: Page Number
         :type page: str
@@ -893,8 +891,7 @@ class KeypairApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -932,10 +929,10 @@ class KeypairApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> UpdateKeypairnameresponse:
+    ) -> UpdateKeypairNameResponse:
         """Update key pair name
 
-        Updates the name of a specified key pair. Include the key pair ID in the request path and the new `name` of the key pair in the request body.
+        Updates the name of a specified key pair. Provide the key pair ID in the path, and include the new `name` in the request body.
 
         :param id: (required)
         :type id: int
@@ -973,7 +970,7 @@ class KeypairApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UpdateKeypairnameresponse",
+            '200': "UpdateKeypairNameResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '404': "ErrorResponseModel",
@@ -1007,10 +1004,10 @@ class KeypairApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[UpdateKeypairnameresponse]:
+    ) -> ApiResponse[UpdateKeypairNameResponse]:
         """Update key pair name
 
-        Updates the name of a specified key pair. Include the key pair ID in the request path and the new `name` of the key pair in the request body.
+        Updates the name of a specified key pair. Provide the key pair ID in the path, and include the new `name` in the request body.
 
         :param id: (required)
         :type id: int
@@ -1048,7 +1045,7 @@ class KeypairApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UpdateKeypairnameresponse",
+            '200': "UpdateKeypairNameResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '404': "ErrorResponseModel",
@@ -1085,7 +1082,7 @@ class KeypairApi:
     ) -> RESTResponseType:
         """Update key pair name
 
-        Updates the name of a specified key pair. Include the key pair ID in the request path and the new `name` of the key pair in the request body.
+        Updates the name of a specified key pair. Provide the key pair ID in the path, and include the new `name` in the request body.
 
         :param id: (required)
         :type id: int
@@ -1123,7 +1120,7 @@ class KeypairApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "UpdateKeypairnameresponse",
+            '200': "UpdateKeypairNameResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '404': "ErrorResponseModel",
@@ -1195,8 +1192,7 @@ class KeypairApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

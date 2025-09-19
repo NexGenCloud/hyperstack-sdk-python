@@ -26,8 +26,8 @@ class TestAssigningMemberRoleApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_assign_rbac_role(self) -> None:
-        """Test case for assign_rbac_role
+    def test_assign_rbac_role_to_user(self) -> None:
+        """Test case for assign_rbac_role_to_user
 
         Assign RBAC Role
         """

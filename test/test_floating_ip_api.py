@@ -26,8 +26,8 @@ class TestFloatingIpApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_attach_public_ip_to_virtual_machine(self) -> None:
-        """Test case for attach_public_ip_to_virtual_machine
+    def test_attach_public_ipto_virtual_machine(self) -> None:
+        """Test case for attach_public_ipto_virtual_machine
 
         Attach public IP to virtual machine
         """

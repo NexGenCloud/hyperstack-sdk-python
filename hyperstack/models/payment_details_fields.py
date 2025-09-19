@@ -32,12 +32,14 @@ class PaymentDetailsFields(BaseModel):
     currency: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     gateway_response: Optional[StrictStr] = None
+    invoice: Optional[StrictStr] = None
     paid_from: Optional[StrictStr] = None
     payment_id: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
+    tax_amount: Optional[Union[StrictFloat, StrictInt]] = None
     transaction_id: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
-    __properties: ClassVar[List[str]] = ["amount", "created_at", "currency", "description", "gateway_response", "paid_from", "payment_id", "status", "transaction_id", "updated_at"]
+    __properties: ClassVar[List[str]] = ["amount", "created_at", "currency", "description", "gateway_response", "invoice", "paid_from", "payment_id", "status", "tax_amount", "transaction_id", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,9 +97,11 @@ class PaymentDetailsFields(BaseModel):
             "currency": obj.get("currency"),
             "description": obj.get("description"),
             "gateway_response": obj.get("gateway_response"),
+            "invoice": obj.get("invoice"),
             "paid_from": obj.get("paid_from"),
             "payment_id": obj.get("payment_id"),
             "status": obj.get("status"),
+            "tax_amount": obj.get("tax_amount"),
             "transaction_id": obj.get("transaction_id"),
             "updated_at": obj.get("updated_at")
         })

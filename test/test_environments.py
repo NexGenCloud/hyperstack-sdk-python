@@ -37,9 +37,10 @@ class TestEnvironments(unittest.TestCase):
             return Environments(
                 count = 56,
                 environments = [
-                    hyperstack.models.environment_fields.EnvironmentFields(
+                    hyperstack.models.environment_fields.Environment_Fields(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        features = hyperstack.models.environment_features.EnvironmentFeatures(
+                        features = hyperstack.models.environment_features.Environment_Features(
+                            green_status = 'GREEN', 
                             network_optimised = True, ), 
                         id = 56, 
                         name = '', 

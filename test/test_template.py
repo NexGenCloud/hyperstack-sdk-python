@@ -37,7 +37,7 @@ class TestTemplate(unittest.TestCase):
             return Template(
                 message = '',
                 status = True,
-                template = hyperstack.models.template_fields.TemplateFields(
+                template = hyperstack.models.template_fields.Template_Fields(
                     content = '', 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     description = '', 

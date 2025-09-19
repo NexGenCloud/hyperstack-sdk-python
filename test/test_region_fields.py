@@ -35,7 +35,9 @@ class TestRegionFields(unittest.TestCase):
         model = RegionFields()
         if include_optional:
             return RegionFields(
+                country = '',
                 description = '',
+                green_status = 'GREEN',
                 id = 56,
                 name = ''
             )

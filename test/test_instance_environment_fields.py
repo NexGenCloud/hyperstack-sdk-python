@@ -35,7 +35,8 @@ class TestInstanceEnvironmentFields(unittest.TestCase):
         model = InstanceEnvironmentFields()
         if include_optional:
             return InstanceEnvironmentFields(
-                features = hyperstack.models.environment_features.EnvironmentFeatures(
+                features = hyperstack.models.environment_features.Environment_Features(
+                    green_status = 'GREEN', 
                     network_optimised = True, ),
                 id = 56,
                 name = '',

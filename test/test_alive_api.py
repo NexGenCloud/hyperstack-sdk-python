@@ -33,6 +33,12 @@ class TestAliveApi(unittest.TestCase):
         """
         pass
 
+    def test_get_doc(self) -> None:
+        """Test case for get_doc
+
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

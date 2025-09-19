@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**protected** | **bool** |  | [optional] [default to False]
 **volume_ids** | **List[int]** |  | [optional] 
 
 ## Example

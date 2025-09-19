@@ -37,8 +37,10 @@ class TestRegions(unittest.TestCase):
             return Regions(
                 message = '',
                 regions = [
-                    hyperstack.models.region_fields.RegionFields(
+                    hyperstack.models.region_fields.Region_Fields(
+                        country = '', 
                         description = '', 
+                        green_status = 'GREEN', 
                         id = 56, 
                         name = '', )
                     ],

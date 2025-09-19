@@ -39,7 +39,7 @@ class FirewallAttachmentApi:
 
 
     @validate_call
-    def attach_firewalls_to_vms(
+    def post_attach_security_groups(
         self,
         firewall_id: StrictInt,
         payload: AttachFirewallWithVM,
@@ -58,6 +58,7 @@ class FirewallAttachmentApi:
     ) -> ResponseModel:
         """Attach Firewalls to VMs
 
+        Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
 
         :param firewall_id: (required)
         :type firewall_id: int
@@ -85,7 +86,7 @@ class FirewallAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_firewalls_to_vms_serialize(
+        _param = self._post_attach_security_groups_serialize(
             firewall_id=firewall_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -115,7 +116,7 @@ class FirewallAttachmentApi:
 
 
     @validate_call
-    def attach_firewalls_to_vms_with_http_info(
+    def post_attach_security_groups_with_http_info(
         self,
         firewall_id: StrictInt,
         payload: AttachFirewallWithVM,
@@ -134,6 +135,7 @@ class FirewallAttachmentApi:
     ) -> ApiResponse[ResponseModel]:
         """Attach Firewalls to VMs
 
+        Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
 
         :param firewall_id: (required)
         :type firewall_id: int
@@ -161,7 +163,7 @@ class FirewallAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_firewalls_to_vms_serialize(
+        _param = self._post_attach_security_groups_serialize(
             firewall_id=firewall_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -191,7 +193,7 @@ class FirewallAttachmentApi:
 
 
     @validate_call
-    def attach_firewalls_to_vms_without_preload_content(
+    def post_attach_security_groups_without_preload_content(
         self,
         firewall_id: StrictInt,
         payload: AttachFirewallWithVM,
@@ -210,6 +212,7 @@ class FirewallAttachmentApi:
     ) -> RESTResponseType:
         """Attach Firewalls to VMs
 
+        Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
 
         :param firewall_id: (required)
         :type firewall_id: int
@@ -237,7 +240,7 @@ class FirewallAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_firewalls_to_vms_serialize(
+        _param = self._post_attach_security_groups_serialize(
             firewall_id=firewall_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -262,7 +265,7 @@ class FirewallAttachmentApi:
         return response_data.response
 
 
-    def _attach_firewalls_to_vms_serialize(
+    def _post_attach_security_groups_serialize(
         self,
         firewall_id,
         payload,
@@ -321,8 +324,7 @@ class FirewallAttachmentApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

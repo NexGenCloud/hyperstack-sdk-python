@@ -38,7 +38,13 @@ class TestClusterVersions(unittest.TestCase):
                 message = '',
                 status = True,
                 versions = [
-                    ''
+                    hyperstack.models.cluster_version.ClusterVersion(
+                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        id = 56, 
+                        image = hyperstack.models.image.image(), 
+                        region = hyperstack.models.region.region(), 
+                        updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        version = '', )
                     ]
             )
         else:

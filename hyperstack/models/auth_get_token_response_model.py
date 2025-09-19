@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ..models.token_fields import TokenFields
+from ..models.access_token_field import AccessTokenField
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,11 +27,10 @@ class AuthGetTokenResponseModel(BaseModel):
     """
     AuthGetTokenResponseModel
     """ # noqa: E501
-    first_login: Optional[StrictBool] = None
     message: Optional[StrictStr] = None
     status: Optional[StrictBool] = None
-    token: Optional[TokenFields] = None
-    __properties: ClassVar[List[str]] = ["first_login", "message", "status", "token"]
+    token: Optional[AccessTokenField] = None
+    __properties: ClassVar[List[str]] = ["message", "status", "token"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,10 +86,9 @@ class AuthGetTokenResponseModel(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "first_login": obj.get("first_login"),
             "message": obj.get("message"),
             "status": obj.get("status"),
-            "token": TokenFields.from_dict(obj["token"]) if obj.get("token") is not None else None
+            "token": AccessTokenField.from_dict(obj["token"]) if obj.get("token") is not None else None
         })
         return _obj
 

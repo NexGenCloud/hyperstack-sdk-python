@@ -40,6 +40,13 @@ class TestEnvironmentApi(unittest.TestCase):
         """
         pass
 
+    def test_fetch_environment_name_availability(self) -> None:
+        """Test case for fetch_environment_name_availability
+
+        Fetch environment name availability
+        """
+        pass
+
     def test_list_environments(self) -> None:
         """Test case for list_environments
 

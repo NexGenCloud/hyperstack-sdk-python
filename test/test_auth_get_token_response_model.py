@@ -35,13 +35,10 @@ class TestAuthGetTokenResponseModel(unittest.TestCase):
         model = AuthGetTokenResponseModel()
         if include_optional:
             return AuthGetTokenResponseModel(
-                first_login = True,
                 message = '',
                 status = True,
-                token = hyperstack.models.token_fields.TokenFields(
-                    access_token = '', 
-                    id_token = '', 
-                    refresh_token = '', )
+                token = hyperstack.models.access_token_field.AccessTokenField(
+                    access_token = '', )
             )
         else:
             return AuthGetTokenResponseModel(

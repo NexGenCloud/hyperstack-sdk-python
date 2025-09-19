@@ -42,7 +42,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def list_contracts(
+    def get_customer_contract(
         self,
         page: Optional[StrictInt] = None,
         per_page: Optional[StrictInt] = None,
@@ -61,7 +61,7 @@ class CustomerContractApi:
     ) -> GetCustomerContractsListResponseModel:
         """List Contracts
 
-        Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/contracts).
+        Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
 
         :param page:
         :type page: int
@@ -89,7 +89,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_contracts_serialize(
+        _param = self._get_customer_contract_serialize(
             page=page,
             per_page=per_page,
             _request_auth=_request_auth,
@@ -117,7 +117,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def list_contracts_with_http_info(
+    def get_customer_contract_with_http_info(
         self,
         page: Optional[StrictInt] = None,
         per_page: Optional[StrictInt] = None,
@@ -136,7 +136,7 @@ class CustomerContractApi:
     ) -> ApiResponse[GetCustomerContractsListResponseModel]:
         """List Contracts
 
-        Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/contracts).
+        Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
 
         :param page:
         :type page: int
@@ -164,7 +164,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_contracts_serialize(
+        _param = self._get_customer_contract_serialize(
             page=page,
             per_page=per_page,
             _request_auth=_request_auth,
@@ -192,7 +192,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def list_contracts_without_preload_content(
+    def get_customer_contract_without_preload_content(
         self,
         page: Optional[StrictInt] = None,
         per_page: Optional[StrictInt] = None,
@@ -211,7 +211,7 @@ class CustomerContractApi:
     ) -> RESTResponseType:
         """List Contracts
 
-        Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/contracts).
+        Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
 
         :param page:
         :type page: int
@@ -239,7 +239,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_contracts_serialize(
+        _param = self._get_customer_contract_serialize(
             page=page,
             per_page=per_page,
             _request_auth=_request_auth,
@@ -262,7 +262,7 @@ class CustomerContractApi:
         return response_data.response
 
 
-    def _list_contracts_serialize(
+    def _get_customer_contract_serialize(
         self,
         page,
         per_page,
@@ -312,8 +312,7 @@ class CustomerContractApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -335,7 +334,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def retrieve_contract_details(
+    def get_customer_contract_details(
         self,
         contract_id: StrictInt,
         _request_timeout: Union[
@@ -353,7 +352,7 @@ class CustomerContractApi:
     ) -> CustomerContractDetailResponseModel:
         """Retrieve Contract Details
 
-        Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/pricebook-resources/retrieve-contract-details).
+        Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
 
         :param contract_id: (required)
         :type contract_id: int
@@ -379,7 +378,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_contract_details_serialize(
+        _param = self._get_customer_contract_details_serialize(
             contract_id=contract_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -407,7 +406,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def retrieve_contract_details_with_http_info(
+    def get_customer_contract_details_with_http_info(
         self,
         contract_id: StrictInt,
         _request_timeout: Union[
@@ -425,7 +424,7 @@ class CustomerContractApi:
     ) -> ApiResponse[CustomerContractDetailResponseModel]:
         """Retrieve Contract Details
 
-        Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/pricebook-resources/retrieve-contract-details).
+        Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
 
         :param contract_id: (required)
         :type contract_id: int
@@ -451,7 +450,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_contract_details_serialize(
+        _param = self._get_customer_contract_details_serialize(
             contract_id=contract_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -479,7 +478,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def retrieve_contract_details_without_preload_content(
+    def get_customer_contract_details_without_preload_content(
         self,
         contract_id: StrictInt,
         _request_timeout: Union[
@@ -497,7 +496,7 @@ class CustomerContractApi:
     ) -> RESTResponseType:
         """Retrieve Contract Details
 
-        Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/pricebook-resources/retrieve-contract-details).
+        Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
 
         :param contract_id: (required)
         :type contract_id: int
@@ -523,7 +522,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_contract_details_serialize(
+        _param = self._get_customer_contract_details_serialize(
             contract_id=contract_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -546,7 +545,7 @@ class CustomerContractApi:
         return response_data.response
 
 
-    def _retrieve_contract_details_serialize(
+    def _get_customer_contract_details_serialize(
         self,
         contract_id,
         _request_auth,
@@ -589,8 +588,7 @@ class CustomerContractApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -612,7 +610,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def retrieve_gpu_allocation_graph_for_contract(
+    def get_customer_contract_gpu_allocation_graph(
         self,
         contract_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -662,7 +660,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_gpu_allocation_graph_for_contract_serialize(
+        _param = self._get_customer_contract_gpu_allocation_graph_serialize(
             contract_id=contract_id,
             start_date=start_date,
             end_date=end_date,
@@ -692,7 +690,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def retrieve_gpu_allocation_graph_for_contract_with_http_info(
+    def get_customer_contract_gpu_allocation_graph_with_http_info(
         self,
         contract_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -742,7 +740,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_gpu_allocation_graph_for_contract_serialize(
+        _param = self._get_customer_contract_gpu_allocation_graph_serialize(
             contract_id=contract_id,
             start_date=start_date,
             end_date=end_date,
@@ -772,7 +770,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def retrieve_gpu_allocation_graph_for_contract_without_preload_content(
+    def get_customer_contract_gpu_allocation_graph_without_preload_content(
         self,
         contract_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -822,7 +820,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_gpu_allocation_graph_for_contract_serialize(
+        _param = self._get_customer_contract_gpu_allocation_graph_serialize(
             contract_id=contract_id,
             start_date=start_date,
             end_date=end_date,
@@ -847,7 +845,7 @@ class CustomerContractApi:
         return response_data.response
 
 
-    def _retrieve_gpu_allocation_graph_for_contract_serialize(
+    def _get_customer_contract_gpu_allocation_graph_serialize(
         self,
         contract_id,
         start_date,
@@ -900,8 +898,7 @@ class CustomerContractApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

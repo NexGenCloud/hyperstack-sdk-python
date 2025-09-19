@@ -4,20 +4,21 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_fetch_user_info**](UserApi.md#get_fetch_user_info) | **GET** /billing/user/info | GET: Fetch User Info
-[**post_insert_user_info**](UserApi.md#post_insert_user_info) | **POST** /billing/user/info | POST: Insert user info
-[**put_update_user_info**](UserApi.md#put_update_user_info) | **PUT** /billing/user/info | PUT: Update user info
+[**get_user**](UserApi.md#get_user) | **GET** /billing/user/info | GET: Retrieve billing info
+[**post_user**](UserApi.md#post_user) | **POST** /billing/user/info | POST: Insert billing info
+[**put_user**](UserApi.md#put_user) | **PUT** /billing/user/info | PUT: Update billing info
 
 
-# **get_fetch_user_info**
-> UsersInfoListResponse get_fetch_user_info()
+# **get_user**
+> UsersInfoListResponse get_user()
 
-GET: Fetch User Info
+GET: Retrieve billing info
+
+Retrieve the billing details associated with your organization.
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -42,24 +43,18 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.UserApi(api_client)
 
     try:
-        # GET: Fetch User Info
-        api_response = api_instance.get_fetch_user_info()
-        print("The response of UserApi->get_fetch_user_info:\n")
+        # GET: Retrieve billing info
+        api_response = api_instance.get_user()
+        print("The response of UserApi->get_user:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->get_fetch_user_info: %s\n" % e)
+        print("Exception when calling UserApi->get_user: %s\n" % e)
 ```
 
 
@@ -74,7 +69,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -94,20 +89,21 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post_insert_user_info**
-> AddUserInfoSuccessResponseModel post_insert_user_info(payload)
+# **post_user**
+> AddUserInfoSuccessResponseModel post_user(payload)
 
-POST: Insert user info
+POST: Insert billing info
+
+Add billing details associated with your organization in the request body.
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
 from hyperstack.models.add_user_info_success_response_model import AddUserInfoSuccessResponseModel
-from hyperstack.models.userinfopostpayload import Userinfopostpayload
+from hyperstack.models.user_info_post_payload import UserInfoPostPayload
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -128,25 +124,19 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.UserApi(api_client)
-    payload = hyperstack.Userinfopostpayload() # Userinfopostpayload | 
+    payload = hyperstack.UserInfoPostPayload() # UserInfoPostPayload | 
 
     try:
-        # POST: Insert user info
-        api_response = api_instance.post_insert_user_info(payload)
-        print("The response of UserApi->post_insert_user_info:\n")
+        # POST: Insert billing info
+        api_response = api_instance.post_user(payload)
+        print("The response of UserApi->post_user:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->post_insert_user_info: %s\n" % e)
+        print("Exception when calling UserApi->post_user: %s\n" % e)
 ```
 
 
@@ -156,7 +146,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**Userinfopostpayload**](Userinfopostpayload.md)|  | 
+ **payload** | [**UserInfoPostPayload**](UserInfoPostPayload.md)|  | 
 
 ### Return type
 
@@ -164,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -184,20 +174,21 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **put_update_user_info**
-> AddUserInfoSuccessResponseModel put_update_user_info(payload)
+# **put_user**
+> AddUserInfoSuccessResponseModel put_user(payload)
 
-PUT: Update user info
+PUT: Update billing info
+
+Update the billing information for your organization in the request body.
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
 from hyperstack.models.add_user_info_success_response_model import AddUserInfoSuccessResponseModel
-from hyperstack.models.userinfopostpayload import Userinfopostpayload
+from hyperstack.models.user_info_post_payload import UserInfoPostPayload
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -218,25 +209,19 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.UserApi(api_client)
-    payload = hyperstack.Userinfopostpayload() # Userinfopostpayload | 
+    payload = hyperstack.UserInfoPostPayload() # UserInfoPostPayload | 
 
     try:
-        # PUT: Update user info
-        api_response = api_instance.put_update_user_info(payload)
-        print("The response of UserApi->put_update_user_info:\n")
+        # PUT: Update billing info
+        api_response = api_instance.put_user(payload)
+        print("The response of UserApi->put_user:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserApi->put_update_user_info: %s\n" % e)
+        print("Exception when calling UserApi->put_user: %s\n" % e)
 ```
 
 
@@ -246,7 +231,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**Userinfopostpayload**](Userinfopostpayload.md)|  | 
+ **payload** | [**UserInfoPostPayload**](UserInfoPostPayload.md)|  | 
 
 ### Return type
 
@@ -254,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

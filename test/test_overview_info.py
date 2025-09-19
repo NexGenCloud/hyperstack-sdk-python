@@ -35,19 +35,19 @@ class TestOverviewInfo(unittest.TestCase):
         model = OverviewInfo()
         if include_optional:
             return OverviewInfo(
-                container = hyperstack.models.container_overview_fields.ContainerOverviewFields(
+                container = hyperstack.models.container_overview_fields.Container_Overview_Fields(
                     cost_per_hour = 1.337, 
                     count = 56, 
                     gpus = 56, 
                     ram = 1.337, 
                     vcpus = 56, ),
-                instance = hyperstack.models.instance_overview_fields.InstanceOverviewFields(
+                instance = hyperstack.models.instance_overview_fields.Instance_Overview_Fields(
                     cost_per_hour = 1.337, 
                     count = 56, 
                     gpus = 56, 
                     ram = 1.337, 
                     vcpus = 56, ),
-                volume = hyperstack.models.volume_overview_fields.VolumeOverviewFields(
+                volume = hyperstack.models.volume_overview_fields.Volume_Overview_Fields(
                     cost_per_hour = 1.337, 
                     count = 56, 
                     using = 56, )

@@ -1,4 +1,4 @@
-# Billingmetricesfields
+# BillingMetricesFields
 
 
 ## Properties
@@ -20,19 +20,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from hyperstack.models.billingmetricesfields import Billingmetricesfields
+from hyperstack.models.billing_metrices_fields import BillingMetricesFields
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of Billingmetricesfields from a JSON string
-billingmetricesfields_instance = Billingmetricesfields.from_json(json)
+# create an instance of BillingMetricesFields from a JSON string
+billing_metrices_fields_instance = BillingMetricesFields.from_json(json)
 # print the JSON string representation of the object
-print(Billingmetricesfields.to_json())
+print(BillingMetricesFields.to_json())
 
 # convert the object into a dict
-billingmetricesfields_dict = billingmetricesfields_instance.to_dict()
-# create an instance of Billingmetricesfields from a dict
-billingmetricesfields_from_dict = Billingmetricesfields.from_dict(billingmetricesfields_dict)
+billing_metrices_fields_dict = billing_metrices_fields_instance.to_dict()
+# create an instance of BillingMetricesFields from a dict
+billing_metrices_fields_from_dict = BillingMetricesFields.from_dict(billing_metrices_fields_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

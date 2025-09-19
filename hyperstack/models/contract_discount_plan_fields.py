@@ -32,10 +32,11 @@ class ContractDiscountPlanFields(BaseModel):
     discount_status: Optional[StrictStr] = None
     discount_type: Optional[StrictStr] = None
     id: Optional[StrictInt] = None
+    remaining_count: Optional[StrictInt] = None
     resource_count: Optional[StrictInt] = None
     resource_id: Optional[StrictInt] = None
     resource_name: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["discount_amount", "discount_code", "discount_percent", "discount_status", "discount_type", "id", "resource_count", "resource_id", "resource_name"]
+    __properties: ClassVar[List[str]] = ["discount_amount", "discount_code", "discount_percent", "discount_status", "discount_type", "id", "remaining_count", "resource_count", "resource_id", "resource_name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +95,7 @@ class ContractDiscountPlanFields(BaseModel):
             "discount_status": obj.get("discount_status"),
             "discount_type": obj.get("discount_type"),
             "id": obj.get("id"),
+            "remaining_count": obj.get("remaining_count"),
             "resource_count": obj.get("resource_count"),
             "resource_id": obj.get("resource_id"),
             "resource_name": obj.get("resource_name")

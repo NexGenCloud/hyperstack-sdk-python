@@ -40,8 +40,8 @@ class TestComplianceApi(unittest.TestCase):
         """
         pass
 
-    def test_retrieve_gpu_compliance(self) -> None:
-        """Test case for retrieve_gpu_compliance
+    def test_retrieve_compliance(self) -> None:
+        """Test case for retrieve_compliance
 
         Retrieve GPU compliance
         """

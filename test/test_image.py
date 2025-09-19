@@ -35,7 +35,7 @@ class TestImage(unittest.TestCase):
         model = Image()
         if include_optional:
             return Image(
-                image = hyperstack.models.image_fields.ImageFields(
+                image = hyperstack.models.image_fields.Image_Fields(
                     description = '', 
                     display_size = '', 
                     id = 56, 

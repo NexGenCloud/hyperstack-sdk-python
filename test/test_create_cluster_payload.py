@@ -35,25 +35,29 @@ class TestCreateClusterPayload(unittest.TestCase):
         model = CreateClusterPayload()
         if include_optional:
             return CreateClusterPayload(
+                deployment_mode = 'full',
                 environment_name = '',
-                image_name = '',
                 keypair_name = '',
                 kubernetes_version = '',
-                master_flavor_name = '',
-                name = '',
-                node_count = 56,
-                node_flavor_name = ''
-            )
-        else:
-            return CreateClusterPayload(
-                environment_name = '',
-                image_name = '',
-                keypair_name = '',
-                kubernetes_version = '',
+                master_count = 2,
                 master_flavor_name = '',
                 name = '',
                 node_count = 56,
                 node_flavor_name = '',
+                node_groups = [
+                    hyperstack.models.create_cluster_node_group_payload.Create_ClusterNodeGroup_payload(
+                        count = 1, 
+                        flavor_name = '', 
+                        name = '', )
+                    ]
+            )
+        else:
+            return CreateClusterPayload(
+                environment_name = '',
+                keypair_name = '',
+                kubernetes_version = '',
+                master_flavor_name = '',
+                name = '',
         )
         """
 

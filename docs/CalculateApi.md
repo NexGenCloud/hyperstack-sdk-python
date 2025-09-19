@@ -4,11 +4,11 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_billing_rate_for_resource**](CalculateApi.md#retrieve_billing_rate_for_resource) | **GET** /pricebook/calculate/resource/{resource_type}/{id} | Retrieve Billing Rate for Resource
+[**get_calculate2**](CalculateApi.md#get_calculate2) | **GET** /pricebook/calculate/resource/{resource_type}/{id} | Retrieve Billing Rate for Resource
 
 
-# **retrieve_billing_rate_for_resource**
-> ResourceBillingResponseForCustomer retrieve_billing_rate_for_resource(resource_type, id)
+# **get_calculate2**
+> ResourceBillingResponseForCustomer get_calculate2(resource_type, id)
 
 Retrieve Billing Rate for Resource
 
@@ -17,7 +17,6 @@ Calculate the hourly billing rate of a specified resource by including the resou
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -42,12 +41,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -57,11 +50,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Billing Rate for Resource
-        api_response = api_instance.retrieve_billing_rate_for_resource(resource_type, id)
-        print("The response of CalculateApi->retrieve_billing_rate_for_resource:\n")
+        api_response = api_instance.get_calculate2(resource_type, id)
+        print("The response of CalculateApi->get_calculate2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CalculateApi->retrieve_billing_rate_for_resource: %s\n" % e)
+        print("Exception when calling CalculateApi->get_calculate2: %s\n" % e)
 ```
 
 
@@ -80,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

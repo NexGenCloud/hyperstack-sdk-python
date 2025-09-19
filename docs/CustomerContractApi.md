@@ -4,22 +4,21 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_contracts**](CustomerContractApi.md#list_contracts) | **GET** /pricebook/contracts | List Contracts
-[**retrieve_contract_details**](CustomerContractApi.md#retrieve_contract_details) | **GET** /pricebook/contracts/{contract_id} | Retrieve Contract Details
-[**retrieve_gpu_allocation_graph_for_contract**](CustomerContractApi.md#retrieve_gpu_allocation_graph_for_contract) | **GET** /pricebook/contracts/{contract_id}/gpu_allocation_graph | Retrieve GPU Allocation Graph for Contract
+[**get_customer_contract**](CustomerContractApi.md#get_customer_contract) | **GET** /pricebook/contracts | List Contracts
+[**get_customer_contract_details**](CustomerContractApi.md#get_customer_contract_details) | **GET** /pricebook/contracts/{contract_id} | Retrieve Contract Details
+[**get_customer_contract_gpu_allocation_graph**](CustomerContractApi.md#get_customer_contract_gpu_allocation_graph) | **GET** /pricebook/contracts/{contract_id}/gpu_allocation_graph | Retrieve GPU Allocation Graph for Contract
 
 
-# **list_contracts**
-> GetCustomerContractsListResponseModel list_contracts(page=page, per_page=per_page)
+# **get_customer_contract**
+> GetCustomerContractsListResponseModel get_customer_contract(page=page, per_page=per_page)
 
 List Contracts
 
-Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](https://infrahub-doc.nexgencloud.com/docs/billing-and-payment/contracts).
+Retrieves a list of contracts and their details, including the terms of each contract and the discounts applied to all resources under each contract. Pagination can be controlled using the `page` and `per_page` query parameters. For additional information about contracts, click [**here**](None/docs/billing-and-payment/contracts).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -44,12 +43,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -59,11 +52,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # List Contracts
-        api_response = api_instance.list_contracts(page=page, per_page=per_page)
-        print("The response of CustomerContractApi->list_contracts:\n")
+        api_response = api_instance.get_customer_contract(page=page, per_page=per_page)
+        print("The response of CustomerContractApi->get_customer_contract:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerContractApi->list_contracts: %s\n" % e)
+        print("Exception when calling CustomerContractApi->get_customer_contract: %s\n" % e)
 ```
 
 
@@ -82,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -101,17 +94,16 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_contract_details**
-> CustomerContractDetailResponseModel retrieve_contract_details(contract_id)
+# **get_customer_contract_details**
+> CustomerContractDetailResponseModel get_customer_contract_details(contract_id)
 
 Retrieve Contract Details
 
-Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/pricebook-resources/retrieve-contract-details).
+Retrieve details of a specific contract by providing the contract ID in the path. The endpoint returns the contract object along with its associated discount plans. For more information, [**click here**](None/docs/api-reference/pricebook-resources/retrieve-contract-details).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -136,12 +128,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -150,11 +136,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Contract Details
-        api_response = api_instance.retrieve_contract_details(contract_id)
-        print("The response of CustomerContractApi->retrieve_contract_details:\n")
+        api_response = api_instance.get_customer_contract_details(contract_id)
+        print("The response of CustomerContractApi->get_customer_contract_details:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerContractApi->retrieve_contract_details: %s\n" % e)
+        print("Exception when calling CustomerContractApi->get_customer_contract_details: %s\n" % e)
 ```
 
 
@@ -172,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -192,8 +178,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_gpu_allocation_graph_for_contract**
-> ContractGPUAllocationGraphResponse retrieve_gpu_allocation_graph_for_contract(contract_id, start_date=start_date, end_date=end_date)
+# **get_customer_contract_gpu_allocation_graph**
+> ContractGPUAllocationGraphResponse get_customer_contract_gpu_allocation_graph(contract_id, start_date=start_date, end_date=end_date)
 
 Retrieve GPU Allocation Graph for Contract
 
@@ -202,7 +188,6 @@ Retrieve GPU allocation count graph for a specific contract by providing the con
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -227,12 +212,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -243,11 +222,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve GPU Allocation Graph for Contract
-        api_response = api_instance.retrieve_gpu_allocation_graph_for_contract(contract_id, start_date=start_date, end_date=end_date)
-        print("The response of CustomerContractApi->retrieve_gpu_allocation_graph_for_contract:\n")
+        api_response = api_instance.get_customer_contract_gpu_allocation_graph(contract_id, start_date=start_date, end_date=end_date)
+        print("The response of CustomerContractApi->get_customer_contract_gpu_allocation_graph:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CustomerContractApi->retrieve_gpu_allocation_graph_for_contract: %s\n" % e)
+        print("Exception when calling CustomerContractApi->get_customer_contract_gpu_allocation_graph: %s\n" % e)
 ```
 
 
@@ -267,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

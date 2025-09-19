@@ -1,4 +1,4 @@
-# OrganizationThresholdfields
+# OrganizationThresholdFields
 
 
 ## Properties
@@ -14,19 +14,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from hyperstack.models.organization_thresholdfields import OrganizationThresholdfields
+from hyperstack.models.organization_threshold_fields import OrganizationThresholdFields
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of OrganizationThresholdfields from a JSON string
-organization_thresholdfields_instance = OrganizationThresholdfields.from_json(json)
+# create an instance of OrganizationThresholdFields from a JSON string
+organization_threshold_fields_instance = OrganizationThresholdFields.from_json(json)
 # print the JSON string representation of the object
-print(OrganizationThresholdfields.to_json())
+print(OrganizationThresholdFields.to_json())
 
 # convert the object into a dict
-organization_thresholdfields_dict = organization_thresholdfields_instance.to_dict()
-# create an instance of OrganizationThresholdfields from a dict
-organization_thresholdfields_from_dict = OrganizationThresholdfields.from_dict(organization_thresholdfields_dict)
+organization_threshold_fields_dict = organization_threshold_fields_instance.to_dict()
+# create an instance of OrganizationThresholdFields from a dict
+organization_threshold_fields_from_dict = OrganizationThresholdFields.from_dict(organization_threshold_fields_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

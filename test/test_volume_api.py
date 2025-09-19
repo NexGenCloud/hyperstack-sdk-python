@@ -68,6 +68,13 @@ class TestVolumeApi(unittest.TestCase):
         """
         pass
 
+    def test_update_volume(self) -> None:
+        """Test case for update_volume
+
+        Update volume fields
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

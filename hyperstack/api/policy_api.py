@@ -54,7 +54,7 @@ class PolicyApi:
     ) -> GetPoliciesResponseModel:
         """List Policies
 
-        Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/policies).
+        Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://docs...cloud/docs/api-reference/auth-resources/policies).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -120,7 +120,7 @@ class PolicyApi:
     ) -> ApiResponse[GetPoliciesResponseModel]:
         """List Policies
 
-        Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/policies).
+        Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://docs...cloud/docs/api-reference/auth-resources/policies).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -186,7 +186,7 @@ class PolicyApi:
     ) -> RESTResponseType:
         """List Policies
 
-        Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/policies).
+        Retrieves a list of policies available for addition to RBAC roles. For additional information on policies, [click here](https://docs...cloud/docs/api-reference/auth-resources/policies).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -270,8 +270,7 @@ class PolicyApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

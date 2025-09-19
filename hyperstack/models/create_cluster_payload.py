@@ -17,8 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
+from ..models.create_cluster_node_group_payload import CreateClusterNodeGroupPayload
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,15 +28,27 @@ class CreateClusterPayload(BaseModel):
     """
     CreateClusterPayload
     """ # noqa: E501
+    deployment_mode: Optional[StrictStr] = 'full'
     environment_name: StrictStr
-    image_name: StrictStr
     keypair_name: StrictStr
     kubernetes_version: StrictStr
+    master_count: Optional[Annotated[int, Field(le=3, strict=True, ge=2)]] = None
     master_flavor_name: StrictStr
     name: StrictStr
-    node_count: StrictInt
-    node_flavor_name: StrictStr
-    __properties: ClassVar[List[str]] = ["environment_name", "image_name", "keypair_name", "kubernetes_version", "master_flavor_name", "name", "node_count", "node_flavor_name"]
+    node_count: Optional[StrictInt] = None
+    node_flavor_name: Optional[StrictStr] = None
+    node_groups: Optional[List[CreateClusterNodeGroupPayload]] = None
+    __properties: ClassVar[List[str]] = ["deployment_mode", "environment_name", "keypair_name", "kubernetes_version", "master_count", "master_flavor_name", "name", "node_count", "node_flavor_name", "node_groups"]
+
+    @field_validator('deployment_mode')
+    def deployment_mode_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['full', 'standard']):
+            raise ValueError("must be one of enum values ('full', 'standard')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,6 +89,13 @@ class CreateClusterPayload(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in node_groups (list)
+        _items = []
+        if self.node_groups:
+            for _item_node_groups in self.node_groups:
+                if _item_node_groups:
+                    _items.append(_item_node_groups.to_dict())
+            _dict['node_groups'] = _items
         return _dict
 
     @classmethod
@@ -87,14 +108,16 @@ class CreateClusterPayload(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "deployment_mode": obj.get("deployment_mode") if obj.get("deployment_mode") is not None else 'full',
             "environment_name": obj.get("environment_name"),
-            "image_name": obj.get("image_name"),
             "keypair_name": obj.get("keypair_name"),
             "kubernetes_version": obj.get("kubernetes_version"),
+            "master_count": obj.get("master_count"),
             "master_flavor_name": obj.get("master_flavor_name"),
             "name": obj.get("name"),
             "node_count": obj.get("node_count"),
-            "node_flavor_name": obj.get("node_flavor_name")
+            "node_flavor_name": obj.get("node_flavor_name"),
+            "node_groups": [CreateClusterNodeGroupPayload.from_dict(_item) for _item in obj["node_groups"]] if obj.get("node_groups") is not None else None
         })
         return _obj
 

@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**green_status** | **str** |  | [optional] 
 **network_optimised** | **bool** |  | [optional] 
 
 ## Example

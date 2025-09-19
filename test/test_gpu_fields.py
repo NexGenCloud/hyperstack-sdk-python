@@ -40,7 +40,7 @@ class TestGPUFields(unittest.TestCase):
                 id = 56,
                 name = '',
                 regions = [
-                    hyperstack.models.gpu_region_fields.GPURegionFields(
+                    hyperstack.models.gpu_region_fields.GPU_Region_Fields(
                         id = 56, 
                         name = '', )
                     ],

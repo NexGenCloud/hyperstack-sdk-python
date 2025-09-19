@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** | description | 
-**is_image** | **bool** | Indicates if the snapshot is an image | 
 **labels** | **List[str]** | Labels associated with snapshot | [optional] 
 **name** | **str** | Snapshot name | 
 

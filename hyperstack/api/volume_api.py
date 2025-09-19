@@ -22,6 +22,8 @@ from typing_extensions import Annotated
 from ..models.create_volume_payload import CreateVolumePayload
 from ..models.name_available_model import NameAvailableModel
 from ..models.response_model import ResponseModel
+from ..models.update_volume_payload import UpdateVolumePayload
+from ..models.update_volume_response import UpdateVolumeResponse
 from ..models.volume import Volume
 from ..models.volume_types import VolumeTypes
 from ..models.volumes import Volumes
@@ -63,7 +65,7 @@ class VolumeApi:
     ) -> Volume:
         """Create volume
 
-        Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+        Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/create-volume).
 
         :param payload: (required)
         :type payload: CreateVolumePayload
@@ -136,7 +138,7 @@ class VolumeApi:
     ) -> ApiResponse[Volume]:
         """Create volume
 
-        Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+        Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/create-volume).
 
         :param payload: (required)
         :type payload: CreateVolumePayload
@@ -209,7 +211,7 @@ class VolumeApi:
     ) -> RESTResponseType:
         """Create volume
 
-        Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+        Creates a volume that can be attached to a virtual machine, expanding its storage capacity. Specify the volume type and custom configuration in the request body. For additional details on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/create-volume).
 
         :param payload: (required)
         :type payload: CreateVolumePayload
@@ -315,8 +317,7 @@ class VolumeApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -340,7 +341,7 @@ class VolumeApi:
     @validate_call
     def delete_volume(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -358,8 +359,8 @@ class VolumeApi:
 
         Deletes a volume permanently. Provide the volume ID in the path to specify the volume to be deleted.
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -383,7 +384,7 @@ class VolumeApi:
         """ # noqa: E501
 
         _param = self._delete_volume_serialize(
-            id=id,
+            volume_id=volume_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -411,7 +412,7 @@ class VolumeApi:
     @validate_call
     def delete_volume_with_http_info(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -429,8 +430,8 @@ class VolumeApi:
 
         Deletes a volume permanently. Provide the volume ID in the path to specify the volume to be deleted.
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -454,7 +455,7 @@ class VolumeApi:
         """ # noqa: E501
 
         _param = self._delete_volume_serialize(
-            id=id,
+            volume_id=volume_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -482,7 +483,7 @@ class VolumeApi:
     @validate_call
     def delete_volume_without_preload_content(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -500,8 +501,8 @@ class VolumeApi:
 
         Deletes a volume permanently. Provide the volume ID in the path to specify the volume to be deleted.
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -525,7 +526,7 @@ class VolumeApi:
         """ # noqa: E501
 
         _param = self._delete_volume_serialize(
-            id=id,
+            volume_id=volume_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -548,7 +549,7 @@ class VolumeApi:
 
     def _delete_volume_serialize(
         self,
-        id,
+        volume_id,
         _request_auth,
         _content_type,
         _headers,
@@ -570,8 +571,8 @@ class VolumeApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
+        if volume_id is not None:
+            _path_params['volume_id'] = volume_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -589,13 +590,12 @@ class VolumeApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/core/volumes/{id}',
+            resource_path='/core/volumes/{volume_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -627,7 +627,7 @@ class VolumeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Volumes:
+    ) -> Volume:
         """Fetch Volume Details
 
         Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
@@ -665,7 +665,7 @@ class VolumeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Volumes",
+            '200': "Volume",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -699,7 +699,7 @@ class VolumeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Volumes]:
+    ) -> ApiResponse[Volume]:
         """Fetch Volume Details
 
         Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
@@ -737,7 +737,7 @@ class VolumeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Volumes",
+            '200': "Volume",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -809,7 +809,7 @@ class VolumeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Volumes",
+            '200': "Volume",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -866,13 +866,12 @@ class VolumeApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/core/volume/{volume_id}',
+            resource_path='/core/volumes/{volume_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1140,8 +1139,7 @@ class VolumeApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -1396,8 +1394,7 @@ class VolumeApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -1440,7 +1437,7 @@ class VolumeApi:
     ) -> Volumes:
         """List volumes
 
-        Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+        Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/).
 
         :param page: Page Number
         :type page: str
@@ -1522,7 +1519,7 @@ class VolumeApi:
     ) -> ApiResponse[Volumes]:
         """List volumes
 
-        Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+        Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/).
 
         :param page: Page Number
         :type page: str
@@ -1604,7 +1601,7 @@ class VolumeApi:
     ) -> RESTResponseType:
         """List volumes
 
-        Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/volumes-available-features).
+        Returns a list of your existing volumes, providing details for each. For more information on volumes, [**click here**]({Config.INFRAHUB_DOCS_BASE}/docs/api-reference/core-resources/volumes/).
 
         :param page: Page Number
         :type page: str
@@ -1720,13 +1717,316 @@ class VolumeApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/core/volumes',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_volume(
+        self,
+        volume_id: StrictInt,
+        payload: UpdateVolumePayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> UpdateVolumeResponse:
+        """Update volume fields
+
+        Update volume properties. Currently supports updating the environment by providing 'environment_name'. The volume must not be attached to any instance when changing environments, and the target environment must be in the same region.
+
+        :param volume_id: (required)
+        :type volume_id: int
+        :param payload: (required)
+        :type payload: UpdateVolumePayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_volume_serialize(
+            volume_id=volume_id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateVolumeResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '409': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_volume_with_http_info(
+        self,
+        volume_id: StrictInt,
+        payload: UpdateVolumePayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[UpdateVolumeResponse]:
+        """Update volume fields
+
+        Update volume properties. Currently supports updating the environment by providing 'environment_name'. The volume must not be attached to any instance when changing environments, and the target environment must be in the same region.
+
+        :param volume_id: (required)
+        :type volume_id: int
+        :param payload: (required)
+        :type payload: UpdateVolumePayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_volume_serialize(
+            volume_id=volume_id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateVolumeResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '409': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_volume_without_preload_content(
+        self,
+        volume_id: StrictInt,
+        payload: UpdateVolumePayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update volume fields
+
+        Update volume properties. Currently supports updating the environment by providing 'environment_name'. The volume must not be attached to any instance when changing environments, and the target environment must be in the same region.
+
+        :param volume_id: (required)
+        :type volume_id: int
+        :param payload: (required)
+        :type payload: UpdateVolumePayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_volume_serialize(
+            volume_id=volume_id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateVolumeResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '409': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_volume_serialize(
+        self,
+        volume_id,
+        payload,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if volume_id is not None:
+            _path_params['volume_id'] = volume_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if payload is not None:
+            _body_params = payload
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PATCH',
+            resource_path='/core/volumes/{volume_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

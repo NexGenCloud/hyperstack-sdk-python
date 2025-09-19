@@ -38,10 +38,12 @@ class TestAttachVolumes(unittest.TestCase):
                 message = '',
                 status = True,
                 volume_attachments = [
-                    hyperstack.models.attach_volume_fields.AttachVolumeFields(
+                    hyperstack.models.attach_volume_fields.Attach_Volume_Fields(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        device = '', 
                         id = 56, 
                         instance_id = 56, 
+                        protected = True, 
                         status = '', 
                         volume_id = 56, )
                     ]

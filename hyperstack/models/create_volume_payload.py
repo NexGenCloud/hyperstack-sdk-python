@@ -29,7 +29,7 @@ class CreateVolumePayload(BaseModel):
     """ # noqa: E501
     callback_url: Optional[Annotated[str, Field(strict=True, max_length=250)]] = Field(default=None, description="A URL that can be attached to the volume you are creating. This `callback_url` will post any action events that occur to your volume to the provided URL.")
     description: Optional[StrictStr] = Field(default=None, description="A brief description or comment about the volume.")
-    environment_name: StrictStr = Field(description="The name of the [environment](https://infrahub-doc.nexgencloud.com/docs/features/environments-available-features) within which the volume is being created.")
+    environment_name: StrictStr = Field(description="The name of the [environment](https://docs...cloud/docs/api-reference/core-resources/environments/) within which the volume is being created.")
     image_id: Optional[StrictInt] = Field(default=None, description="The ID of the operating system image that will be associated with the volume. By providing an `image_id` in the create volume request, you will create a bootable volume.")
     name: Annotated[str, Field(strict=True, max_length=50)] = Field(description="The name of the volume being created.")
     size: StrictInt = Field(description="The size of the volume in GB. 1048576GB storage capacity per volume.")

@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import StrictStr
+from pydantic import StrictInt
 from ..models.instance_events import InstanceEvents
 
 from ..api_client import ApiClient, RequestSerialized
@@ -40,7 +40,7 @@ class VirtualMachineEventsApi:
     @validate_call
     def list_virtual_machine_events(
         self,
-        virtual_machine_id: StrictStr,
+        vm_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -56,10 +56,10 @@ class VirtualMachineEventsApi:
     ) -> InstanceEvents:
         """List virtual machine events
 
-        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
+        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs...cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
 
-        :param virtual_machine_id: (required)
-        :type virtual_machine_id: str
+        :param vm_id: (required)
+        :type vm_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -83,7 +83,7 @@ class VirtualMachineEventsApi:
         """ # noqa: E501
 
         _param = self._list_virtual_machine_events_serialize(
-            virtual_machine_id=virtual_machine_id,
+            vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -111,7 +111,7 @@ class VirtualMachineEventsApi:
     @validate_call
     def list_virtual_machine_events_with_http_info(
         self,
-        virtual_machine_id: StrictStr,
+        vm_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -127,10 +127,10 @@ class VirtualMachineEventsApi:
     ) -> ApiResponse[InstanceEvents]:
         """List virtual machine events
 
-        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
+        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs...cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
 
-        :param virtual_machine_id: (required)
-        :type virtual_machine_id: str
+        :param vm_id: (required)
+        :type vm_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -154,7 +154,7 @@ class VirtualMachineEventsApi:
         """ # noqa: E501
 
         _param = self._list_virtual_machine_events_serialize(
-            virtual_machine_id=virtual_machine_id,
+            vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -182,7 +182,7 @@ class VirtualMachineEventsApi:
     @validate_call
     def list_virtual_machine_events_without_preload_content(
         self,
-        virtual_machine_id: StrictStr,
+        vm_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -198,10 +198,10 @@ class VirtualMachineEventsApi:
     ) -> RESTResponseType:
         """List virtual machine events
 
-        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
+        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs...cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
 
-        :param virtual_machine_id: (required)
-        :type virtual_machine_id: str
+        :param vm_id: (required)
+        :type vm_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -225,7 +225,7 @@ class VirtualMachineEventsApi:
         """ # noqa: E501
 
         _param = self._list_virtual_machine_events_serialize(
-            virtual_machine_id=virtual_machine_id,
+            vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -248,7 +248,7 @@ class VirtualMachineEventsApi:
 
     def _list_virtual_machine_events_serialize(
         self,
-        virtual_machine_id,
+        vm_id,
         _request_auth,
         _content_type,
         _headers,
@@ -270,8 +270,8 @@ class VirtualMachineEventsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if virtual_machine_id is not None:
-            _path_params['virtual_machine_id'] = virtual_machine_id
+        if vm_id is not None:
+            _path_params['vm_id'] = vm_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -289,13 +289,12 @@ class VirtualMachineEventsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/core/virtual-machines/{virtual_machine_id}/events',
+            resource_path='/core/virtual-machines/{vm_id}/events',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

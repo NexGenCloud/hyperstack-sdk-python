@@ -36,13 +36,13 @@ class TestGPUList(unittest.TestCase):
         if include_optional:
             return GPUList(
                 gpu_list = [
-                    hyperstack.models.gpu_fields.GPUFields(
+                    hyperstack.models.gpu_fields.GPU_Fields(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         example_metadata = '', 
                         id = 56, 
                         name = '', 
                         regions = [
-                            hyperstack.models.gpu_region_fields.GPURegionFields(
+                            hyperstack.models.gpu_region_fields.GPU_Region_Fields(
                                 id = 56, 
                                 name = '', )
                             ], 

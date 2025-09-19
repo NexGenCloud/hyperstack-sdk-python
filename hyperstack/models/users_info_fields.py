@@ -39,9 +39,10 @@ class UsersInfoFields(BaseModel):
     organization_id: Optional[StrictInt] = None
     phone: Optional[StrictStr] = None
     state: Optional[StrictStr] = None
+    stripe_user_id: Optional[StrictStr] = None
     vat_number: Optional[StrictStr] = None
     zip_code: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["billing_address1", "billing_address2", "business", "company_name", "country", "created_at", "email", "id", "name", "organization_id", "phone", "state", "vat_number", "zip_code"]
+    __properties: ClassVar[List[str]] = ["billing_address1", "billing_address2", "business", "company_name", "country", "created_at", "email", "id", "name", "organization_id", "phone", "state", "stripe_user_id", "vat_number", "zip_code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +107,7 @@ class UsersInfoFields(BaseModel):
             "organization_id": obj.get("organization_id"),
             "phone": obj.get("phone"),
             "state": obj.get("state"),
+            "stripe_user_id": obj.get("stripe_user_id"),
             "vat_number": obj.get("vat_number"),
             "zip_code": obj.get("zip_code")
         })

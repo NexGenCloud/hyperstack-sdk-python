@@ -36,7 +36,7 @@ class TestDeployments(unittest.TestCase):
         if include_optional:
             return Deployments(
                 deployments = [
-                    hyperstack.models.deployment_fields.DeploymentFields(
+                    hyperstack.models.deployment_fields.Deployment_Fields(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
                         id = 56, 

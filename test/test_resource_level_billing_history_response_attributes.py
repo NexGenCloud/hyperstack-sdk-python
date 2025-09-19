@@ -35,6 +35,7 @@ class TestResourceLevelBillingHistoryResponseAttributes(unittest.TestCase):
         model = ResourceLevelBillingHistoryResponseAttributes()
         if include_optional:
             return ResourceLevelBillingHistoryResponseAttributes(
+                contract_id = 56,
                 id = '',
                 infrahub_id = 56,
                 resource_name = '',

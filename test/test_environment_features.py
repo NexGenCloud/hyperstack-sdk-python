@@ -35,6 +35,7 @@ class TestEnvironmentFeatures(unittest.TestCase):
         model = EnvironmentFeatures()
         if include_optional:
             return EnvironmentFeatures(
+                green_status = 'GREEN',
                 network_optimised = True
             )
         else:

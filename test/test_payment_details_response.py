@@ -35,15 +35,17 @@ class TestPaymentDetailsResponse(unittest.TestCase):
         model = PaymentDetailsResponse()
         if include_optional:
             return PaymentDetailsResponse(
-                data = hyperstack.models.payment_details_fields.PaymentDetailsFields(
+                data = hyperstack.models.payment_details_fields.Payment_Details_Fields(
                     amount = 1.337, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     currency = '', 
                     description = '', 
                     gateway_response = '', 
+                    invoice = '', 
                     paid_from = '', 
                     payment_id = '', 
                     status = '', 
+                    tax_amount = 1.337, 
                     transaction_id = '', 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),
                 message = '',

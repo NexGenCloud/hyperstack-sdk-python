@@ -38,7 +38,7 @@ class CalculateApi:
 
 
     @validate_call
-    def retrieve_billing_rate_for_resource(
+    def get_calculate2(
         self,
         resource_type: StrictStr,
         id: StrictInt,
@@ -85,7 +85,7 @@ class CalculateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_billing_rate_for_resource_serialize(
+        _param = self._get_calculate2_serialize(
             resource_type=resource_type,
             id=id,
             _request_auth=_request_auth,
@@ -113,7 +113,7 @@ class CalculateApi:
 
 
     @validate_call
-    def retrieve_billing_rate_for_resource_with_http_info(
+    def get_calculate2_with_http_info(
         self,
         resource_type: StrictStr,
         id: StrictInt,
@@ -160,7 +160,7 @@ class CalculateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_billing_rate_for_resource_serialize(
+        _param = self._get_calculate2_serialize(
             resource_type=resource_type,
             id=id,
             _request_auth=_request_auth,
@@ -188,7 +188,7 @@ class CalculateApi:
 
 
     @validate_call
-    def retrieve_billing_rate_for_resource_without_preload_content(
+    def get_calculate2_without_preload_content(
         self,
         resource_type: StrictStr,
         id: StrictInt,
@@ -235,7 +235,7 @@ class CalculateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_billing_rate_for_resource_serialize(
+        _param = self._get_calculate2_serialize(
             resource_type=resource_type,
             id=id,
             _request_auth=_request_auth,
@@ -258,7 +258,7 @@ class CalculateApi:
         return response_data.response
 
 
-    def _retrieve_billing_rate_for_resource_serialize(
+    def _get_calculate2_serialize(
         self,
         resource_type,
         id,
@@ -304,8 +304,7 @@ class CalculateApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

@@ -20,7 +20,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ..models.environment_fieldsfor_volume import EnvironmentFieldsforVolume
+from ..models.attachments_fields_for_volume import AttachmentsFieldsForVolume
+from ..models.environment_fields_for_volume import EnvironmentFieldsForVolume
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,11 +29,12 @@ class VolumeFields(BaseModel):
     """
     VolumeFields
     """ # noqa: E501
+    attachments: Optional[List[AttachmentsFieldsForVolume]] = None
     bootable: Optional[StrictBool] = None
     callback_url: Optional[StrictStr] = None
     created_at: Optional[datetime] = None
     description: Optional[StrictStr] = None
-    environment: Optional[EnvironmentFieldsforVolume] = None
+    environment: Optional[EnvironmentFieldsForVolume] = None
     id: Optional[StrictInt] = None
     image_id: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
@@ -41,7 +43,7 @@ class VolumeFields(BaseModel):
     status: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
     volume_type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["bootable", "callback_url", "created_at", "description", "environment", "id", "image_id", "name", "os_image", "size", "status", "updated_at", "volume_type"]
+    __properties: ClassVar[List[str]] = ["attachments", "bootable", "callback_url", "created_at", "description", "environment", "id", "image_id", "name", "os_image", "size", "status", "updated_at", "volume_type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +84,13 @@ class VolumeFields(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in attachments (list)
+        _items = []
+        if self.attachments:
+            for _item_attachments in self.attachments:
+                if _item_attachments:
+                    _items.append(_item_attachments.to_dict())
+            _dict['attachments'] = _items
         # override the default output from pydantic by calling `to_dict()` of environment
         if self.environment:
             _dict['environment'] = self.environment.to_dict()
@@ -97,11 +106,12 @@ class VolumeFields(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "attachments": [AttachmentsFieldsForVolume.from_dict(_item) for _item in obj["attachments"]] if obj.get("attachments") is not None else None,
             "bootable": obj.get("bootable"),
             "callback_url": obj.get("callback_url"),
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
-            "environment": EnvironmentFieldsforVolume.from_dict(obj["environment"]) if obj.get("environment") is not None else None,
+            "environment": EnvironmentFieldsForVolume.from_dict(obj["environment"]) if obj.get("environment") is not None else None,
             "id": obj.get("id"),
             "image_id": obj.get("image_id"),
             "name": obj.get("name"),

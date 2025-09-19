@@ -1,4 +1,4 @@
-# Userinfopostpayload
+# UserInfoPostPayload
 
 
 ## Properties
@@ -20,19 +20,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from hyperstack.models.userinfopostpayload import Userinfopostpayload
+from hyperstack.models.user_info_post_payload import UserInfoPostPayload
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of Userinfopostpayload from a JSON string
-userinfopostpayload_instance = Userinfopostpayload.from_json(json)
+# create an instance of UserInfoPostPayload from a JSON string
+user_info_post_payload_instance = UserInfoPostPayload.from_json(json)
 # print the JSON string representation of the object
-print(Userinfopostpayload.to_json())
+print(UserInfoPostPayload.to_json())
 
 # convert the object into a dict
-userinfopostpayload_dict = userinfopostpayload_instance.to_dict()
-# create an instance of Userinfopostpayload from a dict
-userinfopostpayload_from_dict = Userinfopostpayload.from_dict(userinfopostpayload_dict)
+user_info_post_payload_dict = user_info_post_payload_instance.to_dict()
+# create an instance of UserInfoPostPayload from a dict
+user_info_post_payload_from_dict = UserInfoPostPayload.from_dict(user_info_post_payload_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

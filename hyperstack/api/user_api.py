@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from ..models.add_user_info_success_response_model import AddUserInfoSuccessResponseModel
-from ..models.userinfopostpayload import Userinfopostpayload
+from ..models.user_info_post_payload import UserInfoPostPayload
 from ..models.users_info_list_response import UsersInfoListResponse
 
 from ..api_client import ApiClient, RequestSerialized
@@ -39,7 +39,7 @@ class UserApi:
 
 
     @validate_call
-    def get_fetch_user_info(
+    def get_user(
         self,
         _request_timeout: Union[
             None,
@@ -54,8 +54,9 @@ class UserApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> UsersInfoListResponse:
-        """GET: Fetch User Info
+        """GET: Retrieve billing info
 
+        Retrieve the billing details associated with your organization.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -79,7 +80,7 @@ class UserApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_fetch_user_info_serialize(
+        _param = self._get_user_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -106,7 +107,7 @@ class UserApi:
 
 
     @validate_call
-    def get_fetch_user_info_with_http_info(
+    def get_user_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -121,8 +122,9 @@ class UserApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[UsersInfoListResponse]:
-        """GET: Fetch User Info
+        """GET: Retrieve billing info
 
+        Retrieve the billing details associated with your organization.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -146,7 +148,7 @@ class UserApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_fetch_user_info_serialize(
+        _param = self._get_user_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -173,7 +175,7 @@ class UserApi:
 
 
     @validate_call
-    def get_fetch_user_info_without_preload_content(
+    def get_user_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -188,8 +190,9 @@ class UserApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """GET: Fetch User Info
+        """GET: Retrieve billing info
 
+        Retrieve the billing details associated with your organization.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -213,7 +216,7 @@ class UserApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_fetch_user_info_serialize(
+        _param = self._get_user_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -235,7 +238,7 @@ class UserApi:
         return response_data.response
 
 
-    def _get_fetch_user_info_serialize(
+    def _get_user_serialize(
         self,
         _request_auth,
         _content_type,
@@ -275,8 +278,7 @@ class UserApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -298,9 +300,9 @@ class UserApi:
 
 
     @validate_call
-    def post_insert_user_info(
+    def post_user(
         self,
-        payload: Userinfopostpayload,
+        payload: UserInfoPostPayload,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -314,11 +316,12 @@ class UserApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AddUserInfoSuccessResponseModel:
-        """POST: Insert user info
+        """POST: Insert billing info
 
+        Add billing details associated with your organization in the request body.
 
         :param payload: (required)
-        :type payload: Userinfopostpayload
+        :type payload: UserInfoPostPayload
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -341,7 +344,7 @@ class UserApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._post_insert_user_info_serialize(
+        _param = self._post_user_serialize(
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -369,9 +372,9 @@ class UserApi:
 
 
     @validate_call
-    def post_insert_user_info_with_http_info(
+    def post_user_with_http_info(
         self,
-        payload: Userinfopostpayload,
+        payload: UserInfoPostPayload,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -385,11 +388,12 @@ class UserApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AddUserInfoSuccessResponseModel]:
-        """POST: Insert user info
+        """POST: Insert billing info
 
+        Add billing details associated with your organization in the request body.
 
         :param payload: (required)
-        :type payload: Userinfopostpayload
+        :type payload: UserInfoPostPayload
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -412,7 +416,7 @@ class UserApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._post_insert_user_info_serialize(
+        _param = self._post_user_serialize(
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -440,9 +444,9 @@ class UserApi:
 
 
     @validate_call
-    def post_insert_user_info_without_preload_content(
+    def post_user_without_preload_content(
         self,
-        payload: Userinfopostpayload,
+        payload: UserInfoPostPayload,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -456,11 +460,12 @@ class UserApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """POST: Insert user info
+        """POST: Insert billing info
 
+        Add billing details associated with your organization in the request body.
 
         :param payload: (required)
-        :type payload: Userinfopostpayload
+        :type payload: UserInfoPostPayload
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -483,7 +488,7 @@ class UserApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._post_insert_user_info_serialize(
+        _param = self._post_user_serialize(
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -506,7 +511,7 @@ class UserApi:
         return response_data.response
 
 
-    def _post_insert_user_info_serialize(
+    def _post_user_serialize(
         self,
         payload,
         _request_auth,
@@ -562,8 +567,7 @@ class UserApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -585,9 +589,9 @@ class UserApi:
 
 
     @validate_call
-    def put_update_user_info(
+    def put_user(
         self,
-        payload: Userinfopostpayload,
+        payload: UserInfoPostPayload,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -601,11 +605,12 @@ class UserApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AddUserInfoSuccessResponseModel:
-        """PUT: Update user info
+        """PUT: Update billing info
 
+        Update the billing information for your organization in the request body.
 
         :param payload: (required)
-        :type payload: Userinfopostpayload
+        :type payload: UserInfoPostPayload
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -628,7 +633,7 @@ class UserApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_update_user_info_serialize(
+        _param = self._put_user_serialize(
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -656,9 +661,9 @@ class UserApi:
 
 
     @validate_call
-    def put_update_user_info_with_http_info(
+    def put_user_with_http_info(
         self,
-        payload: Userinfopostpayload,
+        payload: UserInfoPostPayload,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -672,11 +677,12 @@ class UserApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AddUserInfoSuccessResponseModel]:
-        """PUT: Update user info
+        """PUT: Update billing info
 
+        Update the billing information for your organization in the request body.
 
         :param payload: (required)
-        :type payload: Userinfopostpayload
+        :type payload: UserInfoPostPayload
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -699,7 +705,7 @@ class UserApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_update_user_info_serialize(
+        _param = self._put_user_serialize(
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -727,9 +733,9 @@ class UserApi:
 
 
     @validate_call
-    def put_update_user_info_without_preload_content(
+    def put_user_without_preload_content(
         self,
-        payload: Userinfopostpayload,
+        payload: UserInfoPostPayload,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -743,11 +749,12 @@ class UserApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """PUT: Update user info
+        """PUT: Update billing info
 
+        Update the billing information for your organization in the request body.
 
         :param payload: (required)
-        :type payload: Userinfopostpayload
+        :type payload: UserInfoPostPayload
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -770,7 +777,7 @@ class UserApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_update_user_info_serialize(
+        _param = self._put_user_serialize(
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -793,7 +800,7 @@ class UserApi:
         return response_data.response
 
 
-    def _put_update_user_info_serialize(
+    def _put_user_serialize(
         self,
         payload,
         _request_auth,
@@ -849,8 +856,7 @@ class UserApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

@@ -4,22 +4,23 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_view_credit_and_threshold**](CreditApi.md#get_view_credit_and_threshold) | **GET** /billing/user-credit/credit | GET: View credit and threshold
+[**get_credit2**](CreditApi.md#get_credit2) | **GET** /billing/user-credit/credit | GET: View credit and threshold
 
 
-# **get_view_credit_and_threshold**
-> Getcreditandthresholdinfoinresponse get_view_credit_and_threshold()
+# **get_credit2**
+> GetCreditAndThresholdInfoInResponse get_credit2()
 
 GET: View credit and threshold
+
+Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](None/docs/api-reference/billing-resources/retrieve-credit-balance/).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
-from hyperstack.models.getcreditandthresholdinfoinresponse import Getcreditandthresholdinfoinresponse
+from hyperstack.models.get_credit_and_threshold_info_in_response import GetCreditAndThresholdInfoInResponse
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -40,12 +41,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -53,11 +48,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # GET: View credit and threshold
-        api_response = api_instance.get_view_credit_and_threshold()
-        print("The response of CreditApi->get_view_credit_and_threshold:\n")
+        api_response = api_instance.get_credit2()
+        print("The response of CreditApi->get_credit2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CreditApi->get_view_credit_and_threshold: %s\n" % e)
+        print("Exception when calling CreditApi->get_credit2: %s\n" % e)
 ```
 
 
@@ -68,11 +63,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Getcreditandthresholdinfoinresponse**](Getcreditandthresholdinfoinresponse.md)
+[**GetCreditAndThresholdInfoInResponse**](GetCreditAndThresholdInfoInResponse.md)
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
