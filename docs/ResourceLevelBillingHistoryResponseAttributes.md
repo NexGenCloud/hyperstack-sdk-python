@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**contract_id** | **int** |  | [optional] 
 **id** | **str** |  | [optional] 
 **infrahub_id** | **int** |  | [optional] 
 **resource_name** | **str** |  | [optional] 

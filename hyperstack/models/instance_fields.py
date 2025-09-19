@@ -24,7 +24,7 @@ from ..models.instance_environment_fields import InstanceEnvironmentFields
 from ..models.instance_flavor_fields import InstanceFlavorFields
 from ..models.instance_image_fields import InstanceImageFields
 from ..models.instance_keypair_fields import InstanceKeypairFields
-from ..models.security_rules_fieldsfor_instance import SecurityRulesFieldsforInstance
+from ..models.security_rules_fields_for_instance import SecurityRulesFieldsForInstance
 from ..models.volume_attachment_fields import VolumeAttachmentFields
 from typing import Optional, Set
 from typing_extensions import Self
@@ -37,6 +37,7 @@ class InstanceFields(BaseModel):
     contract_id: Optional[StrictInt] = None
     created_at: Optional[datetime] = None
     environment: Optional[InstanceEnvironmentFields] = None
+    features: Optional[Dict[str, Any]] = None
     fixed_ip: Optional[StrictStr] = None
     flavor: Optional[InstanceFlavorFields] = None
     floating_ip: Optional[StrictStr] = None
@@ -51,11 +52,12 @@ class InstanceFields(BaseModel):
     port_randomization: Optional[StrictBool] = None
     port_randomization_status: Optional[StrictStr] = None
     power_state: Optional[StrictStr] = None
-    security_rules: Optional[List[SecurityRulesFieldsforInstance]] = None
+    requires_public_ip: Optional[StrictBool] = None
+    security_rules: Optional[List[SecurityRulesFieldsForInstance]] = None
     status: Optional[StrictStr] = None
     vm_state: Optional[StrictStr] = None
     volume_attachments: Optional[List[VolumeAttachmentFields]] = None
-    __properties: ClassVar[List[str]] = ["callback_url", "contract_id", "created_at", "environment", "fixed_ip", "flavor", "floating_ip", "floating_ip_status", "id", "image", "keypair", "labels", "locked", "name", "os", "port_randomization", "port_randomization_status", "power_state", "security_rules", "status", "vm_state", "volume_attachments"]
+    __properties: ClassVar[List[str]] = ["callback_url", "contract_id", "created_at", "environment", "features", "fixed_ip", "flavor", "floating_ip", "floating_ip_status", "id", "image", "keypair", "labels", "locked", "name", "os", "port_randomization", "port_randomization_status", "power_state", "requires_public_ip", "security_rules", "status", "vm_state", "volume_attachments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -138,6 +140,7 @@ class InstanceFields(BaseModel):
             "contract_id": obj.get("contract_id"),
             "created_at": obj.get("created_at"),
             "environment": InstanceEnvironmentFields.from_dict(obj["environment"]) if obj.get("environment") is not None else None,
+            "features": obj.get("features"),
             "fixed_ip": obj.get("fixed_ip"),
             "flavor": InstanceFlavorFields.from_dict(obj["flavor"]) if obj.get("flavor") is not None else None,
             "floating_ip": obj.get("floating_ip"),
@@ -152,7 +155,8 @@ class InstanceFields(BaseModel):
             "port_randomization": obj.get("port_randomization"),
             "port_randomization_status": obj.get("port_randomization_status"),
             "power_state": obj.get("power_state"),
-            "security_rules": [SecurityRulesFieldsforInstance.from_dict(_item) for _item in obj["security_rules"]] if obj.get("security_rules") is not None else None,
+            "requires_public_ip": obj.get("requires_public_ip"),
+            "security_rules": [SecurityRulesFieldsForInstance.from_dict(_item) for _item in obj["security_rules"]] if obj.get("security_rules") is not None else None,
             "status": obj.get("status"),
             "vm_state": obj.get("vm_state"),
             "volume_attachments": [VolumeAttachmentFields.from_dict(_item) for _item in obj["volume_attachments"]] if obj.get("volume_attachments") is not None else None

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **disk** | **int** |  | [optional] 
 **display_name** | **str** |  | [optional] 
 **ephemeral** | **int** |  | [optional] 
+**features** | **object** |  | [optional] 
 **gpu** | **str** |  | [optional] 
 **gpu_count** | **int** |  | [optional] 
 **id** | **int** |  | [optional] 

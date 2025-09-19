@@ -46,6 +46,7 @@ class TestCustomerContractDetailResponseModel(unittest.TestCase):
                             discount_status = '', 
                             discount_type = '', 
                             id = 56, 
+                            remaining_count = 56, 
                             resource_count = 56, 
                             resource_id = 56, 
                             resource_name = '', )

@@ -26,22 +26,22 @@ class TestCustomerContractApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_list_contracts(self) -> None:
-        """Test case for list_contracts
+    def test_get_customer_contract(self) -> None:
+        """Test case for get_customer_contract
 
         List Contracts
         """
         pass
 
-    def test_retrieve_contract_details(self) -> None:
-        """Test case for retrieve_contract_details
+    def test_get_customer_contract_details(self) -> None:
+        """Test case for get_customer_contract_details
 
         Retrieve Contract Details
         """
         pass
 
-    def test_retrieve_gpu_allocation_graph_for_contract(self) -> None:
-        """Test case for retrieve_gpu_allocation_graph_for_contract
+    def test_get_customer_contract_gpu_allocation_graph(self) -> None:
+        """Test case for get_customer_contract_gpu_allocation_graph
 
         Retrieve GPU Allocation Graph for Contract
         """

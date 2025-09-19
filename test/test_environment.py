@@ -35,9 +35,10 @@ class TestEnvironment(unittest.TestCase):
         model = Environment()
         if include_optional:
             return Environment(
-                environment = hyperstack.models.environment_fields.EnvironmentFields(
+                environment = hyperstack.models.environment_fields.Environment_Fields(
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    features = hyperstack.models.environment_features.EnvironmentFeatures(
+                    features = hyperstack.models.environment_features.Environment_Features(
+                        green_status = 'GREEN', 
                         network_optimised = True, ), 
                     id = 56, 
                     name = '', 

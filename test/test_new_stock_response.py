@@ -36,9 +36,9 @@ class TestNewStockResponse(unittest.TestCase):
         if include_optional:
             return NewStockResponse(
                 models = [
-                    hyperstack.models.new_model_response.NewModelResponse(
+                    hyperstack.models.new_model_response.New_Model_Response(
                         available = '', 
-                        configurations = hyperstack.models.new_configurations_response.NewConfigurationsResponse(
+                        configurations = hyperstack.models.new_configurations_response.New_Configurations_Response(
                             10x = 56, 
                             1x = 56, 
                             2x = 56, 

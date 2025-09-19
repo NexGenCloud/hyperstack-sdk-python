@@ -42,7 +42,7 @@ class CallbacksApi:
     @validate_call
     def attach_callback_to_virtual_machine(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -59,10 +59,10 @@ class CallbacksApi:
     ) -> AttachCallbackResponse:
         """Attach callback to virtual machine
 
-        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks#attach-a-callback-url-to-an-existing-virtual-machine).
+        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/attach-callback-vm).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -88,7 +88,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._attach_callback_to_virtual_machine_serialize(
-            id=id,
+            vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -117,7 +117,7 @@ class CallbacksApi:
     @validate_call
     def attach_callback_to_virtual_machine_with_http_info(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -134,10 +134,10 @@ class CallbacksApi:
     ) -> ApiResponse[AttachCallbackResponse]:
         """Attach callback to virtual machine
 
-        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks#attach-a-callback-url-to-an-existing-virtual-machine).
+        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/attach-callback-vm).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -163,7 +163,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._attach_callback_to_virtual_machine_serialize(
-            id=id,
+            vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -192,7 +192,7 @@ class CallbacksApi:
     @validate_call
     def attach_callback_to_virtual_machine_without_preload_content(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -209,10 +209,10 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Attach callback to virtual machine
 
-        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks#attach-a-callback-url-to-an-existing-virtual-machine).
+        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/attach-callback-vm).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -238,7 +238,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._attach_callback_to_virtual_machine_serialize(
-            id=id,
+            vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -262,7 +262,7 @@ class CallbacksApi:
 
     def _attach_callback_to_virtual_machine_serialize(
         self,
-        id,
+        vm_id,
         payload,
         _request_auth,
         _content_type,
@@ -285,8 +285,8 @@ class CallbacksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
+        if vm_id is not None:
+            _path_params['vm_id'] = vm_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -319,13 +319,12 @@ class CallbacksApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/core/virtual-machines/{id}/attach-callback',
+            resource_path='/core/virtual-machines/{vm_id}/attach-callback',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -344,7 +343,7 @@ class CallbacksApi:
     @validate_call
     def attach_callback_to_volume(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -361,10 +360,10 @@ class CallbacksApi:
     ) -> AttachCallbackResponse:
         """Attach callback to volume
 
-        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/attach-callback-volume).
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -390,7 +389,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._attach_callback_to_volume_serialize(
-            id=id,
+            volume_id=volume_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -419,7 +418,7 @@ class CallbacksApi:
     @validate_call
     def attach_callback_to_volume_with_http_info(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -436,10 +435,10 @@ class CallbacksApi:
     ) -> ApiResponse[AttachCallbackResponse]:
         """Attach callback to volume
 
-        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/attach-callback-volume).
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -465,7 +464,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._attach_callback_to_volume_serialize(
-            id=id,
+            volume_id=volume_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -494,7 +493,7 @@ class CallbacksApi:
     @validate_call
     def attach_callback_to_volume_without_preload_content(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -511,10 +510,10 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Attach callback to volume
 
-        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/attach-callback-volume).
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -540,7 +539,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._attach_callback_to_volume_serialize(
-            id=id,
+            volume_id=volume_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -564,7 +563,7 @@ class CallbacksApi:
 
     def _attach_callback_to_volume_serialize(
         self,
-        id,
+        volume_id,
         payload,
         _request_auth,
         _content_type,
@@ -587,8 +586,8 @@ class CallbacksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
+        if volume_id is not None:
+            _path_params['volume_id'] = volume_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -621,13 +620,12 @@ class CallbacksApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/core/volumes/{id}/attach-callback',
+            resource_path='/core/volumes/{volume_id}/attach-callback',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -646,7 +644,7 @@ class CallbacksApi:
     @validate_call
     def delete_virtual_machine_callback(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -662,10 +660,10 @@ class CallbacksApi:
     ) -> ResponseModel:
         """Delete virtual machine callback
 
-        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/delete-callback-vm).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -689,7 +687,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._delete_virtual_machine_callback_serialize(
-            id=id,
+            vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -717,7 +715,7 @@ class CallbacksApi:
     @validate_call
     def delete_virtual_machine_callback_with_http_info(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -733,10 +731,10 @@ class CallbacksApi:
     ) -> ApiResponse[ResponseModel]:
         """Delete virtual machine callback
 
-        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/delete-callback-vm).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -760,7 +758,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._delete_virtual_machine_callback_serialize(
-            id=id,
+            vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -788,7 +786,7 @@ class CallbacksApi:
     @validate_call
     def delete_virtual_machine_callback_without_preload_content(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -804,10 +802,10 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Delete virtual machine callback
 
-        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/delete-callback-vm).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -831,7 +829,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._delete_virtual_machine_callback_serialize(
-            id=id,
+            vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -854,7 +852,7 @@ class CallbacksApi:
 
     def _delete_virtual_machine_callback_serialize(
         self,
-        id,
+        vm_id,
         _request_auth,
         _content_type,
         _headers,
@@ -876,8 +874,8 @@ class CallbacksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
+        if vm_id is not None:
+            _path_params['vm_id'] = vm_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -895,13 +893,12 @@ class CallbacksApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/core/virtual-machines/{id}/delete-callback',
+            resource_path='/core/virtual-machines/{vm_id}/delete-callback',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -920,7 +917,7 @@ class CallbacksApi:
     @validate_call
     def delete_volume_callback(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -936,10 +933,10 @@ class CallbacksApi:
     ) -> ResponseModel:
         """Delete volume callback
 
-        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/delete-callback-volume).
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -963,7 +960,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._delete_volume_callback_serialize(
-            id=id,
+            volume_id=volume_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -991,7 +988,7 @@ class CallbacksApi:
     @validate_call
     def delete_volume_callback_with_http_info(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1007,10 +1004,10 @@ class CallbacksApi:
     ) -> ApiResponse[ResponseModel]:
         """Delete volume callback
 
-        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/delete-callback-volume).
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1034,7 +1031,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._delete_volume_callback_serialize(
-            id=id,
+            volume_id=volume_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1062,7 +1059,7 @@ class CallbacksApi:
     @validate_call
     def delete_volume_callback_without_preload_content(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1078,10 +1075,10 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Delete volume callback
 
-        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/delete-callback-volume).
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1105,7 +1102,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._delete_volume_callback_serialize(
-            id=id,
+            volume_id=volume_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1128,7 +1125,7 @@ class CallbacksApi:
 
     def _delete_volume_callback_serialize(
         self,
-        id,
+        volume_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1150,8 +1147,8 @@ class CallbacksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
+        if volume_id is not None:
+            _path_params['volume_id'] = volume_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1169,13 +1166,12 @@ class CallbacksApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/core/volumes/{id}/delete-callback',
+            resource_path='/core/volumes/{volume_id}/delete-callback',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1194,7 +1190,7 @@ class CallbacksApi:
     @validate_call
     def update_virtual_machine_callback(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -1211,10 +1207,10 @@ class CallbacksApi:
     ) -> AttachCallbackResponse:
         """Update virtual machine callback
 
-        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -1240,7 +1236,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._update_virtual_machine_callback_serialize(
-            id=id,
+            vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1269,7 +1265,7 @@ class CallbacksApi:
     @validate_call
     def update_virtual_machine_callback_with_http_info(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -1286,10 +1282,10 @@ class CallbacksApi:
     ) -> ApiResponse[AttachCallbackResponse]:
         """Update virtual machine callback
 
-        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -1315,7 +1311,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._update_virtual_machine_callback_serialize(
-            id=id,
+            vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1344,7 +1340,7 @@ class CallbacksApi:
     @validate_call
     def update_virtual_machine_callback_without_preload_content(
         self,
-        id: StrictInt,
+        vm_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -1361,10 +1357,10 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Update virtual machine callback
 
-        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms).
 
-        :param id: (required)
-        :type id: int
+        :param vm_id: (required)
+        :type vm_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -1390,7 +1386,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._update_virtual_machine_callback_serialize(
-            id=id,
+            vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1414,7 +1410,7 @@ class CallbacksApi:
 
     def _update_virtual_machine_callback_serialize(
         self,
-        id,
+        vm_id,
         payload,
         _request_auth,
         _content_type,
@@ -1437,8 +1433,8 @@ class CallbacksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
+        if vm_id is not None:
+            _path_params['vm_id'] = vm_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1471,13 +1467,12 @@ class CallbacksApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/core/virtual-machines/{id}/update-callback',
+            resource_path='/core/virtual-machines/{vm_id}/update-callback',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1496,7 +1491,7 @@ class CallbacksApi:
     @validate_call
     def update_volume_callback(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -1513,10 +1508,10 @@ class CallbacksApi:
     ) -> AttachCallbackResponse:
         """Update volume callback
 
-        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/update-callback-volume/).
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -1542,7 +1537,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._update_volume_callback_serialize(
-            id=id,
+            volume_id=volume_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1571,7 +1566,7 @@ class CallbacksApi:
     @validate_call
     def update_volume_callback_with_http_info(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -1588,10 +1583,10 @@ class CallbacksApi:
     ) -> ApiResponse[AttachCallbackResponse]:
         """Update volume callback
 
-        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/update-callback-volume/).
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -1617,7 +1612,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._update_volume_callback_serialize(
-            id=id,
+            volume_id=volume_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1646,7 +1641,7 @@ class CallbacksApi:
     @validate_call
     def update_volume_callback_without_preload_content(
         self,
-        id: StrictInt,
+        volume_id: StrictInt,
         payload: AttachCallbackPayload,
         _request_timeout: Union[
             None,
@@ -1663,10 +1658,10 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Update volume callback
 
-        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/update-callback-volume/).
 
-        :param id: (required)
-        :type id: int
+        :param volume_id: (required)
+        :type volume_id: int
         :param payload: (required)
         :type payload: AttachCallbackPayload
         :param _request_timeout: timeout setting for this request. If one
@@ -1692,7 +1687,7 @@ class CallbacksApi:
         """ # noqa: E501
 
         _param = self._update_volume_callback_serialize(
-            id=id,
+            volume_id=volume_id,
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1716,7 +1711,7 @@ class CallbacksApi:
 
     def _update_volume_callback_serialize(
         self,
-        id,
+        volume_id,
         payload,
         _request_auth,
         _content_type,
@@ -1739,8 +1734,8 @@ class CallbacksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
+        if volume_id is not None:
+            _path_params['volume_id'] = volume_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1773,13 +1768,12 @@ class CallbacksApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/core/volumes/{id}/update-callback',
+            resource_path='/core/volumes/{volume_id}/update-callback',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

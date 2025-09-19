@@ -5,10 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_login** | **bool** |  | [optional] 
 **message** | **str** |  | [optional] 
 **status** | **bool** |  | [optional] 
-**token** | [**TokenFields**](TokenFields.md) |  | [optional] 
+**token** | [**AccessTokenField**](AccessTokenField.md) |  | [optional] 
 
 ## Example
 

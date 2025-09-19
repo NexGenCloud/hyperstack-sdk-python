@@ -26,6 +26,32 @@ class TestAuthApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_change_organization_for_token(self) -> None:
+        """Test case for change_organization_for_token
+
+        """
+        pass
+
+    def test_disable_mfa(self) -> None:
+        """Test case for disable_mfa
+
+        """
+        pass
+
+    def test_get_user_mfa_status(self) -> None:
+        """Test case for get_user_mfa_status
+
+        Get MFA status for authenticated user
+        """
+        pass
+
+    def test_get_user_organizations(self) -> None:
+        """Test case for get_user_organizations
+
+        Get User Organizations
+        """
+        pass
+
     def test_retrieve_authenticated_user_details(self) -> None:
         """Test case for retrieve_authenticated_user_details
 

@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_environment**](EnvironmentApi.md#create_environment) | **POST** /core/environments | Create environment
 [**delete_environment**](EnvironmentApi.md#delete_environment) | **DELETE** /core/environments/{id} | Delete environment
+[**fetch_environment_name_availability**](EnvironmentApi.md#fetch_environment_name_availability) | **GET** /core/environments/name-availability/{name} | Fetch environment name availability
 [**list_environments**](EnvironmentApi.md#list_environments) | **GET** /core/environments | List environments
 [**retrieve_environment**](EnvironmentApi.md#retrieve_environment) | **GET** /core/environments/{id} | Retrieve environment
 [**update_environment**](EnvironmentApi.md#update_environment) | **PUT** /core/environments/{id} | Update environment
@@ -16,12 +17,11 @@ Method | HTTP request | Description
 
 Create environment
 
-Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://infrahub-doc.nexgencloud.com/docs/features/regions) in the request body.
+Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://docs.hyperstack.cloud/docs/resource-management/regions/) in the request body.
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -46,12 +46,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -83,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -113,7 +107,6 @@ Deletes an environment permanently. Provide the environment ID in the path to re
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -137,12 +130,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -174,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -193,17 +180,99 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **fetch_environment_name_availability**
+> NameAvailableModel fetch_environment_name_availability(name)
+
+Fetch environment name availability
+
+Check if a Environment name is available
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.name_available_model import NameAvailableModel
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.EnvironmentApi(api_client)
+    name = 'name_example' # str | 
+
+    try:
+        # Fetch environment name availability
+        api_response = api_instance.fetch_environment_name_availability(name)
+        print("The response of EnvironmentApi->fetch_environment_name_availability:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EnvironmentApi->fetch_environment_name_availability: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | 
+
+### Return type
+
+[**NameAvailableModel**](NameAvailableModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_environments**
 > Environments list_environments(page=page, page_size=page_size, search=search)
 
 List environments
 
-Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://infrahub-doc.nexgencloud.com/docs/features/regions), and the date and time of creation. For more information on environments, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/environments-available-features).
+Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/), and the date and time of creation. For more information on environments, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -227,12 +296,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -268,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -296,7 +359,6 @@ Retrieves details about a specific environment. Provide the environment ID in th
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -320,12 +382,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -357,7 +413,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -386,7 +442,6 @@ Updates the name of an existing environment. Provide the environment ID in the p
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -411,12 +466,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -450,7 +499,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

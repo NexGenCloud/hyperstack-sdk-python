@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,11 +28,13 @@ class AttachVolumeFields(BaseModel):
     AttachVolumeFields
     """ # noqa: E501
     created_at: Optional[datetime] = None
+    device: Optional[StrictStr] = None
     id: Optional[StrictInt] = None
     instance_id: Optional[StrictInt] = None
+    protected: Optional[StrictBool] = None
     status: Optional[StrictStr] = None
     volume_id: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["created_at", "id", "instance_id", "status", "volume_id"]
+    __properties: ClassVar[List[str]] = ["created_at", "device", "id", "instance_id", "protected", "status", "volume_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,8 +88,10 @@ class AttachVolumeFields(BaseModel):
 
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
+            "device": obj.get("device"),
             "id": obj.get("id"),
             "instance_id": obj.get("instance_id"),
+            "protected": obj.get("protected"),
             "status": obj.get("status"),
             "volume_id": obj.get("volume_id")
         })

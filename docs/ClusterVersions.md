@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **str** |  | [optional] 
 **status** | **bool** |  | [optional] 
-**versions** | **List[str]** |  | [optional] 
+**versions** | [**List[ClusterVersion]**](ClusterVersion.md) |  | [optional] 
 
 ## Example
 

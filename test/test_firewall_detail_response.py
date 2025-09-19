@@ -37,11 +37,11 @@ class TestFirewallDetailResponse(unittest.TestCase):
             return FirewallDetailResponse(
                 firewall = hyperstack.models.firewall_detail_fields.FirewallDetailFields(
                     attachments = [
-                        hyperstack.models.firewall_attachment_model.FirewallAttachmentModel(
+                        hyperstack.models.firewall_attachment_model.Firewall_Attachment_Model(
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             id = 56, 
                             status = '', 
-                            vm = hyperstack.models.firewall_attachment_vm_model.FirewallAttachmentVMModel(
+                            vm = hyperstack.models.firewall_attachment_vm_model.Firewall_Attachment_VM_Model(
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 environment = '', 
                                 flavor = '', 

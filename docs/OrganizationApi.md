@@ -14,12 +14,11 @@ Method | HTTP request | Description
 
 Remove Organization Member
 
-Removes a member from your organization. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/remove-member).
+Removes a member from your organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/remove-member).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -44,12 +43,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -81,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -104,12 +97,11 @@ Name | Type | Description  | Notes
 
 Retrieve Organization Information
 
-Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/retrieve-org-details).
+Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/retrieve-org-details).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -133,12 +125,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -166,7 +152,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -189,12 +175,11 @@ This endpoint does not need any parameter.
 
 Update Organization Information
 
-Updates the name of the organization. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/organization/update-org-name).
+Updates the name of the organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/update-org-name).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -219,12 +204,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -256,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

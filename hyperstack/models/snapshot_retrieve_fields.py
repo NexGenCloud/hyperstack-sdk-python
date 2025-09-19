@@ -17,6 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -26,16 +27,29 @@ class SnapshotRetrieveFields(BaseModel):
     """
     SnapshotRetrieveFields
     """ # noqa: E501
+    created_at: datetime = Field(description="Creation timestamp")
+    custom_image: Optional[StrictStr] = None
     description: StrictStr = Field(description="Description of the snapshot")
     has_floating_ip: Optional[StrictBool] = Field(default=None, description="Indicates if the VM had a floating IP assigned")
     id: StrictInt = Field(description="Snapshot ID")
     is_image: StrictBool = Field(description="Indicates if the snapshot is an image")
+    labels: Optional[StrictStr] = None
     name: StrictStr = Field(description="Snapshot name")
+    region: Optional[StrictStr] = None
     region_id: StrictInt = Field(description="Region where the snapshot will be available")
     size: StrictInt = Field(description="Size in GB of the snapshot")
     status: StrictStr = Field(description="Status of the snapshot")
+    updated_at: datetime = Field(description="Last update timestamp")
+    vm_environment: Optional[StrictStr] = None
+    vm_flavor: Optional[StrictStr] = None
     vm_id: StrictInt = Field(description="ID of the VM from which the snapshot is created")
-    __properties: ClassVar[List[str]] = ["description", "has_floating_ip", "id", "is_image", "name", "region_id", "size", "status", "vm_id"]
+    vm_image: Optional[StrictStr] = None
+    vm_keypair: Optional[StrictStr] = None
+    vm_name: Optional[StrictStr] = None
+    vm_status: Optional[StrictStr] = None
+    volume_id: Optional[StrictStr] = None
+    volume_name: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["created_at", "custom_image", "description", "has_floating_ip", "id", "is_image", "labels", "name", "region", "region_id", "size", "status", "updated_at", "vm_environment", "vm_flavor", "vm_id", "vm_image", "vm_keypair", "vm_name", "vm_status", "volume_id", "volume_name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,15 +102,28 @@ class SnapshotRetrieveFields(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "created_at": obj.get("created_at"),
+            "custom_image": obj.get("custom_image"),
             "description": obj.get("description"),
             "has_floating_ip": obj.get("has_floating_ip"),
             "id": obj.get("id"),
             "is_image": obj.get("is_image"),
+            "labels": obj.get("labels"),
             "name": obj.get("name"),
+            "region": obj.get("region"),
             "region_id": obj.get("region_id"),
             "size": obj.get("size"),
             "status": obj.get("status"),
-            "vm_id": obj.get("vm_id")
+            "updated_at": obj.get("updated_at"),
+            "vm_environment": obj.get("vm_environment"),
+            "vm_flavor": obj.get("vm_flavor"),
+            "vm_id": obj.get("vm_id"),
+            "vm_image": obj.get("vm_image"),
+            "vm_keypair": obj.get("vm_keypair"),
+            "vm_name": obj.get("vm_name"),
+            "vm_status": obj.get("vm_status"),
+            "volume_id": obj.get("volume_id"),
+            "volume_name": obj.get("volume_name")
         })
         return _obj
 

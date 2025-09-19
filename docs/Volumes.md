@@ -5,9 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**count** | **int** |  | [optional] 
 **message** | **str** |  | [optional] 
+**page** | **int** |  | [optional] 
+**page_size** | **int** |  | [optional] 
 **status** | **bool** |  | [optional] 
-**volume** | [**List[VolumeFields]**](VolumeFields.md) |  | [optional] 
+**volumes** | [**List[VolumesFields]**](VolumesFields.md) |  | [optional] 
 
 ## Example
 

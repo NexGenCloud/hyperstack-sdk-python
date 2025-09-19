@@ -26,45 +26,45 @@ class TestFirewallsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_add_firewall_rule_to_firewall(self) -> None:
-        """Test case for add_firewall_rule_to_firewall
-
-        Add firewall rule to firewall
-        """
-        pass
-
-    def test_create_firewall(self) -> None:
-        """Test case for create_firewall
-
-        Create firewall
-        """
-        pass
-
-    def test_delete_firewall(self) -> None:
-        """Test case for delete_firewall
+    def test_delete_security_group_details(self) -> None:
+        """Test case for delete_security_group_details
 
         Delete firewall
         """
         pass
 
-    def test_delete_firewall_rules_from_firewall(self) -> None:
-        """Test case for delete_firewall_rules_from_firewall
+    def test_delete_security_group_rule_delete(self) -> None:
+        """Test case for delete_security_group_rule_delete
 
         Delete firewall rules from firewall
         """
         pass
 
-    def test_list_firewalls(self) -> None:
-        """Test case for list_firewalls
+    def test_get_security_group(self) -> None:
+        """Test case for get_security_group
 
         List firewalls
         """
         pass
 
-    def test_retrieve_firewall_details(self) -> None:
-        """Test case for retrieve_firewall_details
+    def test_get_security_group_details(self) -> None:
+        """Test case for get_security_group_details
 
         Retrieve firewall details
+        """
+        pass
+
+    def test_post_security_group(self) -> None:
+        """Test case for post_security_group
+
+        Create firewall
+        """
+        pass
+
+    def test_post_security_group_rules(self) -> None:
+        """Test case for post_security_group_rules
+
+        Add firewall rule to firewall
         """
         pass
 

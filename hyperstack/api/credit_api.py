@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from ..models.getcreditandthresholdinfoinresponse import Getcreditandthresholdinfoinresponse
+from ..models.get_credit_and_threshold_info_in_response import GetCreditAndThresholdInfoInResponse
 
 from ..api_client import ApiClient, RequestSerialized
 from ..api_response import ApiResponse
@@ -37,7 +37,7 @@ class CreditApi:
 
 
     @validate_call
-    def get_view_credit_and_threshold(
+    def get_credit2(
         self,
         _request_timeout: Union[
             None,
@@ -51,9 +51,10 @@ class CreditApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Getcreditandthresholdinfoinresponse:
+    ) -> GetCreditAndThresholdInfoInResponse:
         """GET: View credit and threshold
 
+        Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](None/docs/api-reference/billing-resources/retrieve-credit-balance/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -77,7 +78,7 @@ class CreditApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_view_credit_and_threshold_serialize(
+        _param = self._get_credit2_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -85,7 +86,7 @@ class CreditApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Getcreditandthresholdinfoinresponse",
+            '200': "GetCreditAndThresholdInfoInResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -104,7 +105,7 @@ class CreditApi:
 
 
     @validate_call
-    def get_view_credit_and_threshold_with_http_info(
+    def get_credit2_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -118,9 +119,10 @@ class CreditApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Getcreditandthresholdinfoinresponse]:
+    ) -> ApiResponse[GetCreditAndThresholdInfoInResponse]:
         """GET: View credit and threshold
 
+        Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](None/docs/api-reference/billing-resources/retrieve-credit-balance/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -144,7 +146,7 @@ class CreditApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_view_credit_and_threshold_serialize(
+        _param = self._get_credit2_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -152,7 +154,7 @@ class CreditApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Getcreditandthresholdinfoinresponse",
+            '200': "GetCreditAndThresholdInfoInResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -171,7 +173,7 @@ class CreditApi:
 
 
     @validate_call
-    def get_view_credit_and_threshold_without_preload_content(
+    def get_credit2_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -188,6 +190,7 @@ class CreditApi:
     ) -> RESTResponseType:
         """GET: View credit and threshold
 
+        Retrieves the current credit balance for your [**organization**](/docs/rbac/organization). Ensuring a positive credit balance allows you to create resources. However, for prepaid accounts, if the credit balance falls below $0, all associated resources will be temporarily suspended until a [**payment**](/docs/api-reference/billing-resources/create-payment) is made. For additional information, [**click here**](None/docs/api-reference/billing-resources/retrieve-credit-balance/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -211,7 +214,7 @@ class CreditApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_view_credit_and_threshold_serialize(
+        _param = self._get_credit2_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -219,7 +222,7 @@ class CreditApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Getcreditandthresholdinfoinresponse",
+            '200': "GetCreditAndThresholdInfoInResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -233,7 +236,7 @@ class CreditApi:
         return response_data.response
 
 
-    def _get_view_credit_and_threshold_serialize(
+    def _get_credit2_serialize(
         self,
         _request_auth,
         _content_type,
@@ -273,8 +276,7 @@ class CreditApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

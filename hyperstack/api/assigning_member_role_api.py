@@ -40,7 +40,7 @@ class AssigningMemberRoleApi:
 
 
     @validate_call
-    def assign_rbac_role(
+    def assign_rbac_role_to_user(
         self,
         user_id: StrictInt,
         payload: AssignRbacRolePayload,
@@ -59,7 +59,7 @@ class AssigningMemberRoleApi:
     ) -> RbacRoleDetailResponseModel:
         """Assign RBAC Role
 
-        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
+        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
 
         :param user_id: (required)
         :type user_id: int
@@ -87,7 +87,7 @@ class AssigningMemberRoleApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._assign_rbac_role_serialize(
+        _param = self._assign_rbac_role_to_user_serialize(
             user_id=user_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -115,7 +115,7 @@ class AssigningMemberRoleApi:
 
 
     @validate_call
-    def assign_rbac_role_with_http_info(
+    def assign_rbac_role_to_user_with_http_info(
         self,
         user_id: StrictInt,
         payload: AssignRbacRolePayload,
@@ -134,7 +134,7 @@ class AssigningMemberRoleApi:
     ) -> ApiResponse[RbacRoleDetailResponseModel]:
         """Assign RBAC Role
 
-        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
+        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
 
         :param user_id: (required)
         :type user_id: int
@@ -162,7 +162,7 @@ class AssigningMemberRoleApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._assign_rbac_role_serialize(
+        _param = self._assign_rbac_role_to_user_serialize(
             user_id=user_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -190,7 +190,7 @@ class AssigningMemberRoleApi:
 
 
     @validate_call
-    def assign_rbac_role_without_preload_content(
+    def assign_rbac_role_to_user_without_preload_content(
         self,
         user_id: StrictInt,
         payload: AssignRbacRolePayload,
@@ -209,7 +209,7 @@ class AssigningMemberRoleApi:
     ) -> RESTResponseType:
         """Assign RBAC Role
 
-        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
+        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
 
         :param user_id: (required)
         :type user_id: int
@@ -237,7 +237,7 @@ class AssigningMemberRoleApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._assign_rbac_role_serialize(
+        _param = self._assign_rbac_role_to_user_serialize(
             user_id=user_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -260,7 +260,7 @@ class AssigningMemberRoleApi:
         return response_data.response
 
 
-    def _assign_rbac_role_serialize(
+    def _assign_rbac_role_to_user_serialize(
         self,
         user_id,
         payload,
@@ -319,8 +319,7 @@ class AssigningMemberRoleApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -360,7 +359,7 @@ class AssigningMemberRoleApi:
     ) -> CommonResponseModel:
         """Remove RBAC Role From User
 
-        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
+        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
 
         :param user_id: (required)
         :type user_id: int
@@ -431,7 +430,7 @@ class AssigningMemberRoleApi:
     ) -> ApiResponse[CommonResponseModel]:
         """Remove RBAC Role From User
 
-        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
+        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
 
         :param user_id: (required)
         :type user_id: int
@@ -502,7 +501,7 @@ class AssigningMemberRoleApi:
     ) -> RESTResponseType:
         """Remove RBAC Role From User
 
-        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
+        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
 
         :param user_id: (required)
         :type user_id: int
@@ -593,8 +592,7 @@ class AssigningMemberRoleApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

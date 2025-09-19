@@ -37,8 +37,10 @@ class TestVolumeAttachmentFields(unittest.TestCase):
             return VolumeAttachmentFields(
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 device = '',
+                id = 56,
+                protected = True,
                 status = '',
-                volume = hyperstack.models.volume_fieldsfor_instance.VolumeFieldsforInstance(
+                volume = hyperstack.models.volume_fields_for_instance.Volume_Fields_for_Instance(
                     bootable = True, 
                     description = '', 
                     id = 56, 

@@ -26,8 +26,8 @@ class TestCreditApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_get_view_credit_and_threshold(self) -> None:
-        """Test case for get_view_credit_and_threshold
+    def test_get_credit2(self) -> None:
+        """Test case for get_credit2
 
         GET: View credit and threshold
         """

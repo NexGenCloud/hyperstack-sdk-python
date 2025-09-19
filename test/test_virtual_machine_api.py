@@ -26,52 +26,17 @@ class TestVirtualMachineApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_add_firewall_rule_to_virtual_machine(self) -> None:
-        """Test case for add_firewall_rule_to_virtual_machine
-
-        Add firewall rule to virtual machine
-        """
-        pass
-
-    def test_attach_firewalls_to_a_virtual_machine(self) -> None:
-        """Test case for attach_firewalls_to_a_virtual_machine
-
-        Attach firewalls to a virtual machine
-        """
-        pass
-
-    def test_create_snapshot_from_a_virtual_machine(self) -> None:
-        """Test case for create_snapshot_from_a_virtual_machine
-
-        Create snapshot from a virtual machine
-        """
-        pass
-
-    def test_create_virtual_machines(self) -> None:
-        """Test case for create_virtual_machines
-
-        Create virtual machines
-        """
-        pass
-
-    def test_delete_firewall_rule_from_virtual_machine(self) -> None:
-        """Test case for delete_firewall_rule_from_virtual_machine
-
-        Delete firewall rule from virtual machine
-        """
-        pass
-
-    def test_delete_virtual_machine(self) -> None:
-        """Test case for delete_virtual_machine
+    def test_delete_instance(self) -> None:
+        """Test case for delete_instance
 
         Delete virtual machine
         """
         pass
 
-    def test_edit_virtual_machine_labels(self) -> None:
-        """Test case for edit_virtual_machine_labels
+    def test_delete_security_rule(self) -> None:
+        """Test case for delete_security_rule
 
-        Edit virtual machine labels
+        Delete firewall rule from virtual machine
         """
         pass
 
@@ -82,73 +47,122 @@ class TestVirtualMachineApi(unittest.TestCase):
         """
         pass
 
-    def test_hard_reboot_virtual_machine(self) -> None:
-        """Test case for hard_reboot_virtual_machine
-
-        Hard reboot virtual machine
-        """
-        pass
-
-    def test_hibernate_virtual_machine(self) -> None:
-        """Test case for hibernate_virtual_machine
-
-        Hibernate virtual machine
-        """
-        pass
-
-    def test_list_virtual_machines(self) -> None:
-        """Test case for list_virtual_machines
-
-        List virtual machines
-        """
-        pass
-
-    def test_resize_virtual_machine(self) -> None:
-        """Test case for resize_virtual_machine
-
-        Resize virtual machine
-        """
-        pass
-
-    def test_restore_virtual_machine_from_hibernation(self) -> None:
-        """Test case for restore_virtual_machine_from_hibernation
-
-        Restore virtual machine from hibernation
-        """
-        pass
-
-    def test_retrieve_virtual_machine_details(self) -> None:
-        """Test case for retrieve_virtual_machine_details
-
-        Retrieve virtual machine details
-        """
-        pass
-
-    def test_retrieve_virtual_machine_performance_metrics(self) -> None:
-        """Test case for retrieve_virtual_machine_performance_metrics
-
-        Retrieve virtual machine performance metrics
-        """
-        pass
-
-    def test_retrieve_virtual_machines_associated_with_a_contract(self) -> None:
-        """Test case for retrieve_virtual_machines_associated_with_a_contract
+    def test_get_contract_instances(self) -> None:
+        """Test case for get_contract_instances
 
         Retrieve virtual machines associated with a contract
         """
         pass
 
-    def test_start_virtual_machine(self) -> None:
-        """Test case for start_virtual_machine
+    def test_get_instance(self) -> None:
+        """Test case for get_instance
+
+        List virtual machines
+        """
+        pass
+
+    def test_get_instance2(self) -> None:
+        """Test case for get_instance2
+
+        Retrieve virtual machine details
+        """
+        pass
+
+    def test_get_instance3(self) -> None:
+        """Test case for get_instance3
+
+        Hard reboot virtual machine
+        """
+        pass
+
+    def test_get_instance4(self) -> None:
+        """Test case for get_instance4
 
         Start virtual machine
         """
         pass
 
-    def test_stop_virtual_machine(self) -> None:
-        """Test case for stop_virtual_machine
+    def test_get_instance5(self) -> None:
+        """Test case for get_instance5
 
         Stop virtual machine
+        """
+        pass
+
+    def test_get_instance_hibernate(self) -> None:
+        """Test case for get_instance_hibernate
+
+        Hibernate virtual machine
+        """
+        pass
+
+    def test_get_instance_hibernate_restore(self) -> None:
+        """Test case for get_instance_hibernate_restore
+
+        Restore virtual machine from hibernation
+        """
+        pass
+
+    def test_get_instance_logs(self) -> None:
+        """Test case for get_instance_logs
+
+        Get virtual machine logs
+        """
+        pass
+
+    def test_get_instance_metrics(self) -> None:
+        """Test case for get_instance_metrics
+
+        Retrieve virtual machine performance metrics
+        """
+        pass
+
+    def test_post_instance(self) -> None:
+        """Test case for post_instance
+
+        Create virtual machines
+        """
+        pass
+
+    def test_post_instance_attach_firewalls(self) -> None:
+        """Test case for post_instance_attach_firewalls
+
+        Attach firewalls to a virtual machine
+        """
+        pass
+
+    def test_post_instance_logs(self) -> None:
+        """Test case for post_instance_logs
+
+        Request virtual machine logs
+        """
+        pass
+
+    def test_post_instance_resize(self) -> None:
+        """Test case for post_instance_resize
+
+        Resize virtual machine
+        """
+        pass
+
+    def test_post_security_rule(self) -> None:
+        """Test case for post_security_rule
+
+        Add firewall rule to virtual machine
+        """
+        pass
+
+    def test_post_snapshots(self) -> None:
+        """Test case for post_snapshots
+
+        Create snapshot from a virtual machine
+        """
+        pass
+
+    def test_put_labels(self) -> None:
+        """Test case for put_labels
+
+        Edit virtual machine labels
         """
         pass
 

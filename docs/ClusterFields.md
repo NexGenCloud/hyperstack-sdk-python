@@ -12,9 +12,10 @@ Name | Type | Description | Notes
 **keypair_name** | **str** |  | [optional] 
 **kube_config** | **str** |  | [optional] 
 **kubernetes_version** | **str** |  | [optional] 
+**master_flavor** | [**ClusterFlavorFields**](ClusterFlavorFields.md) |  | [optional] 
 **name** | **str** |  | [optional] 
-**node_count** | **int** |  | [optional] 
-**node_flavor** | [**InstanceFlavorFields**](InstanceFlavorFields.md) |  | [optional] 
+**node_groups** | [**List[ClusterNodeGroupFields]**](ClusterNodeGroupFields.md) |  | [optional] 
+**nodes** | [**List[ClusterNodeFields]**](ClusterNodeFields.md) |  | [optional] 
 **status** | **str** |  | [optional] 
 **status_reason** | **str** |  | [optional] 
 

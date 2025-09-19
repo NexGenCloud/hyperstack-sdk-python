@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ..models.deployment_fieldsforstartdeployments import DeploymentFieldsforstartdeployments
+from ..models.deployment_fields_for_start_deployments import DeploymentFieldsForStartDeployments
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class StartDeployment(BaseModel):
     """
     StartDeployment
     """ # noqa: E501
-    deployment: Optional[DeploymentFieldsforstartdeployments] = None
+    deployment: Optional[DeploymentFieldsForStartDeployments] = None
     message: Optional[StrictStr] = None
     status: Optional[StrictBool] = None
     __properties: ClassVar[List[str]] = ["deployment", "message", "status"]
@@ -86,7 +86,7 @@ class StartDeployment(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "deployment": DeploymentFieldsforstartdeployments.from_dict(obj["deployment"]) if obj.get("deployment") is not None else None,
+            "deployment": DeploymentFieldsForStartDeployments.from_dict(obj["deployment"]) if obj.get("deployment") is not None else None,
             "message": obj.get("message"),
             "status": obj.get("status")
         })

@@ -52,9 +52,9 @@ class RegionApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Regions:
-        """List regions
+        """List Regions
 
-        Lists the currently available regions, each representing a distinct geographic location housing a data center. For additional information on regions, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/regions).
+        Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs...cloud/docs/resource-management/regions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -118,9 +118,9 @@ class RegionApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Regions]:
-        """List regions
+        """List Regions
 
-        Lists the currently available regions, each representing a distinct geographic location housing a data center. For additional information on regions, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/regions).
+        Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs...cloud/docs/resource-management/regions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -184,9 +184,9 @@ class RegionApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List regions
+        """List Regions
 
-        Lists the currently available regions, each representing a distinct geographic location housing a data center. For additional information on regions, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/regions).
+        Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs...cloud/docs/resource-management/regions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -270,8 +270,7 @@ class RegionApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

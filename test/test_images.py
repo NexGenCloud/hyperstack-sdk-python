@@ -36,9 +36,9 @@ class TestImages(unittest.TestCase):
         if include_optional:
             return Images(
                 images = [
-                    hyperstack.models.image_get_response.ImageGetResponse(
+                    hyperstack.models.image_get_response.Image_Get_Response(
                         images = [
-                            hyperstack.models.image_fields.ImageFields(
+                            hyperstack.models.image_fields.Image_Fields(
                                 description = '', 
                                 display_size = '', 
                                 id = 56, 

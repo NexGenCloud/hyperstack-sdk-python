@@ -38,6 +38,7 @@ class TestResourceLevelBillingHistory(unittest.TestCase):
                 billing_history = [
                     hyperstack.models.resource_level_billing_history_resources.ResourceLevelBillingHistoryResources(
                         attributes = hyperstack.models.resource_level_billing_history_response_attributes.ResourceLevelBillingHistoryResponseAttributes(
+                            contract_id = 56, 
                             id = '', 
                             infrahub_id = 56, 
                             resource_name = '', 

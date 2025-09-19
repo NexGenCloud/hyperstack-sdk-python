@@ -20,6 +20,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ..models.keypair_environment_fields import KeypairEnvironmentFields
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class KeypairFields(BaseModel):
     KeypairFields
     """ # noqa: E501
     created_at: Optional[datetime] = None
-    environment: Optional[StrictStr] = None
+    environment: Optional[KeypairEnvironmentFields] = None
     fingerprint: Optional[StrictStr] = None
     id: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
@@ -74,6 +75,9 @@ class KeypairFields(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of environment
+        if self.environment:
+            _dict['environment'] = self.environment.to_dict()
         return _dict
 
     @classmethod
@@ -87,7 +91,7 @@ class KeypairFields(BaseModel):
 
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
-            "environment": obj.get("environment"),
+            "environment": KeypairEnvironmentFields.from_dict(obj["environment"]) if obj.get("environment") is not None else None,
             "fingerprint": obj.get("fingerprint"),
             "id": obj.get("id"),
             "name": obj.get("name"),

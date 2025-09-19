@@ -26,10 +26,17 @@ class TestInviteApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_accept_invite(self) -> None:
+        """Test case for accept_invite
+
+        Accept Invite
+        """
+        pass
+
     def test_delete_invite(self) -> None:
         """Test case for delete_invite
 
-        Delete Invite
+        Accept Invite
         """
         pass
 

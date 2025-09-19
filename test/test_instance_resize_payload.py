@@ -35,7 +35,7 @@ class TestInstanceResizePayload(unittest.TestCase):
         model = InstanceResizePayload()
         if include_optional:
             return InstanceResizePayload(
-                flavor = hyperstack.models.flavor_object_fields.FlavorObjectFields(
+                flavor = hyperstack.models.flavor_object_fields.Flavor_Object_Fields(
                     cpu = 56, 
                     disk = 56, 
                     gpu = '', 

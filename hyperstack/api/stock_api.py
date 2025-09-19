@@ -54,7 +54,7 @@ class StockApi:
     ) -> NewStockRetriveResponse:
         """Retrieve GPU stocks
 
-        Returns information on current and upcoming GPU availability, organized by region and GPU model. For additional information on GPU stocks, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/gpu-stock-information).
+        Returns information on current and upcoming GPU availability, organized byregion and GPU model. For additional information on GPU stocks,[**click here**](https://docs...cloud/docs/hardware/gpu-stock-information).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -120,7 +120,7 @@ class StockApi:
     ) -> ApiResponse[NewStockRetriveResponse]:
         """Retrieve GPU stocks
 
-        Returns information on current and upcoming GPU availability, organized by region and GPU model. For additional information on GPU stocks, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/gpu-stock-information).
+        Returns information on current and upcoming GPU availability, organized byregion and GPU model. For additional information on GPU stocks,[**click here**](https://docs...cloud/docs/hardware/gpu-stock-information).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -186,7 +186,7 @@ class StockApi:
     ) -> RESTResponseType:
         """Retrieve GPU stocks
 
-        Returns information on current and upcoming GPU availability, organized by region and GPU model. For additional information on GPU stocks, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/gpu-stock-information).
+        Returns information on current and upcoming GPU availability, organized byregion and GPU model. For additional information on GPU stocks,[**click here**](https://docs...cloud/docs/hardware/gpu-stock-information).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -270,8 +270,7 @@ class StockApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

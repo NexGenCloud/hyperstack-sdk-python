@@ -4,18 +4,19 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrive_pricebook**](PricebookApi.md#retrive_pricebook) | **GET** /pricebook | 
+[**get_pricebook**](PricebookApi.md#get_pricebook) | **GET** /pricebook | 
 
 
-# **retrive_pricebook**
-> List[PricebookModel] retrive_pricebook()
+# **get_pricebook**
+> List[PricebookModel] get_pricebook()
 
 
+
+Retrieves the Infrahub Pricebook, detailing hourly running costs for all resources offered by Infrahub. For more information on Pricebook [**click here**](None/docs/api-reference/pricebook-resources/pricebook/).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -40,23 +41,17 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.PricebookApi(api_client)
 
     try:
-        api_response = api_instance.retrive_pricebook()
-        print("The response of PricebookApi->retrive_pricebook:\n")
+        api_response = api_instance.get_pricebook()
+        print("The response of PricebookApi->get_pricebook:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PricebookApi->retrive_pricebook: %s\n" % e)
+        print("Exception when calling PricebookApi->get_pricebook: %s\n" % e)
 ```
 
 
@@ -71,7 +66,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

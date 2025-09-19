@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_api_key**](ApiKeyApi.md#delete_api_key) | **DELETE** /api-key/{api_key_id} | Delete API Key
 [**generate_api_key**](ApiKeyApi.md#generate_api_key) | **POST** /api-key/generate | Generate API Key
-[**retrieve_api_keys**](ApiKeyApi.md#retrieve_api_keys) | **GET** /api-key | Retrieve API Keys
+[**retrieve_api_key**](ApiKeyApi.md#retrieve_api_key) | **GET** /api-key | Retrieve API Keys
 [**update_api_key**](ApiKeyApi.md#update_api_key) | **PUT** /api-key/{api_key_id} | Update API Key
 
 
@@ -20,7 +20,6 @@ Delete a specified API key by including the ID of the API key in the path.
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -44,12 +43,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -81,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -105,11 +98,10 @@ Name | Type | Description  | Notes
 
 Generate API Key
 
-Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/generate-api-key).
+Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
 
 ### Example
 
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -124,16 +116,6 @@ configuration = hyperstack.Configuration(
     host = "https://infrahub-api.nexgencloud.com/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -165,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -185,17 +167,16 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_api_keys**
-> GetApiKeysResponseModel retrieve_api_keys()
+# **retrieve_api_key**
+> GetApiKeysResponseModel retrieve_api_key()
 
 Retrieve API Keys
 
-Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/retrieve-api-key).
+Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -220,12 +201,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -233,11 +208,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve API Keys
-        api_response = api_instance.retrieve_api_keys()
-        print("The response of ApiKeyApi->retrieve_api_keys:\n")
+        api_response = api_instance.retrieve_api_key()
+        print("The response of ApiKeyApi->retrieve_api_key:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApiKeyApi->retrieve_api_keys: %s\n" % e)
+        print("Exception when calling ApiKeyApi->retrieve_api_key: %s\n" % e)
 ```
 
 
@@ -252,7 +227,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -280,7 +255,6 @@ Updates the name and optionally the description of a specified API key. Include 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -305,12 +279,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -344,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

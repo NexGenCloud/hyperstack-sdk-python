@@ -55,7 +55,7 @@ class UserPermissionApi:
     ) -> GetUserPermissionsResponseModel:
         """List My User Permissions
 
-        Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-my-permissions).
+        Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://docs...cloud/docs/api-reference/auth-resources/permission/list-my-permissions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -121,7 +121,7 @@ class UserPermissionApi:
     ) -> ApiResponse[GetUserPermissionsResponseModel]:
         """List My User Permissions
 
-        Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-my-permissions).
+        Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://docs...cloud/docs/api-reference/auth-resources/permission/list-my-permissions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -187,7 +187,7 @@ class UserPermissionApi:
     ) -> RESTResponseType:
         """List My User Permissions
 
-        Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-my-permissions).
+        Retrieves a list of permissions granted to your account. For additional information on your permissions, [click here](https://docs...cloud/docs/api-reference/auth-resources/permission/list-my-permissions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -271,8 +271,7 @@ class UserPermissionApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -312,7 +311,7 @@ class UserPermissionApi:
     ) -> GetUserPermissionsResponseModel:
         """List User Permissions
 
-        Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-user-permissions).
+        Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://docs...cloud/docs/api-reference/auth-resources/permission/list-user-permissions).
 
         :param id: (required)
         :type id: int
@@ -383,7 +382,7 @@ class UserPermissionApi:
     ) -> ApiResponse[GetUserPermissionsResponseModel]:
         """List User Permissions
 
-        Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-user-permissions).
+        Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://docs...cloud/docs/api-reference/auth-resources/permission/list-user-permissions).
 
         :param id: (required)
         :type id: int
@@ -454,7 +453,7 @@ class UserPermissionApi:
     ) -> RESTResponseType:
         """List User Permissions
 
-        Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/permission/list-user-permissions).
+        Retrieves a list of permissions granted to a specific user within your organization. Provide the ID of the user in the path. For additional information on user permissions, [click here](https://docs...cloud/docs/api-reference/auth-resources/permission/list-user-permissions).
 
         :param id: (required)
         :type id: int
@@ -545,8 +544,7 @@ class UserPermissionApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

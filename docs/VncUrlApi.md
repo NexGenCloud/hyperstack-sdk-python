@@ -4,19 +4,20 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_vnc_console_link**](VncUrlApi.md#get_vnc_console_link) | **GET** /core/virtual-machines/{virtual_machine_id}/console/{job_id} | Get VNC Console Link
-[**request_instance_console**](VncUrlApi.md#request_instance_console) | **GET** /core/virtual-machines/{id}/request-console | Request Instance Console
+[**get_vnc_url**](VncUrlApi.md#get_vnc_url) | **GET** /core/virtual-machines/{vm_id}/console/{job_id} | Get VNC Console Link
+[**get_vnc_url2**](VncUrlApi.md#get_vnc_url2) | **GET** /core/virtual-machines/{vm_id}/request-console | Request Instance Console
 
 
-# **get_vnc_console_link**
-> VNCURL get_vnc_console_link(virtual_machine_id, job_id)
+# **get_vnc_url**
+> VNCURL get_vnc_url(vm_id, job_id)
 
 Get VNC Console Link
+
+Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -41,26 +42,20 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.VncUrlApi(api_client)
-    virtual_machine_id = 56 # int | 
+    vm_id = 56 # int | 
     job_id = 56 # int | 
 
     try:
         # Get VNC Console Link
-        api_response = api_instance.get_vnc_console_link(virtual_machine_id, job_id)
-        print("The response of VncUrlApi->get_vnc_console_link:\n")
+        api_response = api_instance.get_vnc_url(vm_id, job_id)
+        print("The response of VncUrlApi->get_vnc_url:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VncUrlApi->get_vnc_console_link: %s\n" % e)
+        print("Exception when calling VncUrlApi->get_vnc_url: %s\n" % e)
 ```
 
 
@@ -70,7 +65,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **virtual_machine_id** | **int**|  | 
+ **vm_id** | **int**|  | 
  **job_id** | **int**|  | 
 
 ### Return type
@@ -79,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -98,15 +93,16 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **request_instance_console**
-> RequestConsole request_instance_console(id)
+# **get_vnc_url2**
+> RequestConsole get_vnc_url2(vm_id)
 
 Request Instance Console
+
+Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -131,25 +127,19 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.VncUrlApi(api_client)
-    id = 56 # int | 
+    vm_id = 56 # int | 
 
     try:
         # Request Instance Console
-        api_response = api_instance.request_instance_console(id)
-        print("The response of VncUrlApi->request_instance_console:\n")
+        api_response = api_instance.get_vnc_url2(vm_id)
+        print("The response of VncUrlApi->get_vnc_url2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VncUrlApi->request_instance_console: %s\n" % e)
+        print("Exception when calling VncUrlApi->get_vnc_url2: %s\n" % e)
 ```
 
 
@@ -159,7 +149,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**|  | 
+ **vm_id** | **int**|  | 
 
 ### Return type
 
@@ -167,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

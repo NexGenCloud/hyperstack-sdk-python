@@ -29,7 +29,7 @@ class TestRegionApi(unittest.TestCase):
     def test_list_regions(self) -> None:
         """Test case for list_regions
 
-        List regions
+        List Regions
         """
         pass
 

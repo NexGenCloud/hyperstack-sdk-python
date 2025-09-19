@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_compliance**](ComplianceApi.md#create_compliance) | **POST** /core/compliance | Create compliance
 [**delete_a_compliance**](ComplianceApi.md#delete_a_compliance) | **DELETE** /core/compliance/{gpu_model} | Delete a compliance
-[**retrieve_gpu_compliance**](ComplianceApi.md#retrieve_gpu_compliance) | **GET** /core/compliance | Retrieve GPU compliance
+[**retrieve_compliance**](ComplianceApi.md#retrieve_compliance) | **GET** /core/compliance | Retrieve GPU compliance
 [**update_a_compliance**](ComplianceApi.md#update_a_compliance) | **PUT** /core/compliance | Update a compliance
 
 
@@ -18,7 +18,6 @@ Create compliance
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -43,12 +42,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -80,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -109,7 +102,6 @@ Delete a compliance
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -133,12 +125,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -170,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -189,17 +175,16 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_gpu_compliance**
-> ComplianceResponse retrieve_gpu_compliance(gpu=gpu)
+# **retrieve_compliance**
+> ComplianceResponse retrieve_compliance(gpu=gpu)
 
 Retrieve GPU compliance
 
-Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors#adhering-to-gpu-compliance).
+Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -224,12 +209,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -238,11 +217,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve GPU compliance
-        api_response = api_instance.retrieve_gpu_compliance(gpu=gpu)
-        print("The response of ComplianceApi->retrieve_gpu_compliance:\n")
+        api_response = api_instance.retrieve_compliance(gpu=gpu)
+        print("The response of ComplianceApi->retrieve_compliance:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComplianceApi->retrieve_gpu_compliance: %s\n" % e)
+        print("Exception when calling ComplianceApi->retrieve_compliance: %s\n" % e)
 ```
 
 
@@ -260,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -288,7 +267,6 @@ Update a compliance
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -313,12 +291,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -350,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

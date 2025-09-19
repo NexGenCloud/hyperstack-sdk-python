@@ -37,7 +37,7 @@ class TestVNCURL(unittest.TestCase):
             return VNCURL(
                 message = '',
                 status = True,
-                vnc_url = hyperstack.models.vncurl_fields.VNCURLFields(
+                vnc_url = hyperstack.models.vnc_url_fields.VNC_URL_Fields(
                     id = 56, 
                     vnc_url = '', )
             )

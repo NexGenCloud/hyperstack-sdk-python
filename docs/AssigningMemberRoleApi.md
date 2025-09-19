@@ -4,21 +4,20 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**assign_rbac_role**](AssigningMemberRoleApi.md#assign_rbac_role) | **PUT** /auth/users/{user_id}/assign-roles | Assign RBAC Role
+[**assign_rbac_role_to_user**](AssigningMemberRoleApi.md#assign_rbac_role_to_user) | **PUT** /auth/users/{user_id}/assign-roles | Assign RBAC Role
 [**remove_rbac_role_from_user**](AssigningMemberRoleApi.md#remove_rbac_role_from_user) | **DELETE** /auth/users/{user_id}/roles | Remove RBAC Role From User
 
 
-# **assign_rbac_role**
-> RbacRoleDetailResponseModel assign_rbac_role(user_id, payload)
+# **assign_rbac_role_to_user**
+> RbacRoleDetailResponseModel assign_rbac_role_to_user(user_id, payload)
 
 Assign RBAC Role
 
-Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
+Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -44,12 +43,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -59,11 +52,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Assign RBAC Role
-        api_response = api_instance.assign_rbac_role(user_id, payload)
-        print("The response of AssigningMemberRoleApi->assign_rbac_role:\n")
+        api_response = api_instance.assign_rbac_role_to_user(user_id, payload)
+        print("The response of AssigningMemberRoleApi->assign_rbac_role_to_user:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AssigningMemberRoleApi->assign_rbac_role: %s\n" % e)
+        print("Exception when calling AssigningMemberRoleApi->assign_rbac_role_to_user: %s\n" % e)
 ```
 
 
@@ -82,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -106,12 +99,11 @@ Name | Type | Description  | Notes
 
 Remove RBAC Role From User
 
-Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
+Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -135,12 +127,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -172,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

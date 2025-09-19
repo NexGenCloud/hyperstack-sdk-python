@@ -6,8 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** |  | [optional] 
+**device** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
 **instance_id** | **int** |  | [optional] 
+**protected** | **bool** |  | [optional] 
 **status** | **str** |  | [optional] 
 **volume_id** | **int** |  | [optional] 
 

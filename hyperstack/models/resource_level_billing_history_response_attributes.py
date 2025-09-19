@@ -26,11 +26,12 @@ class ResourceLevelBillingHistoryResponseAttributes(BaseModel):
     """
     ResourceLevelBillingHistoryResponseAttributes
     """ # noqa: E501
+    contract_id: Optional[StrictInt] = None
     id: Optional[StrictStr] = None
     infrahub_id: Optional[StrictInt] = None
     resource_name: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "infrahub_id", "resource_name", "status"]
+    __properties: ClassVar[List[str]] = ["contract_id", "id", "infrahub_id", "resource_name", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,6 +84,7 @@ class ResourceLevelBillingHistoryResponseAttributes(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "contract_id": obj.get("contract_id"),
             "id": obj.get("id"),
             "infrahub_id": obj.get("infrahub_id"),
             "resource_name": obj.get("resource_name"),

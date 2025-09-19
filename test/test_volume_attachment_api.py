@@ -40,6 +40,13 @@ class TestVolumeAttachmentApi(unittest.TestCase):
         """
         pass
 
+    def test_update_a_volume_attachment(self) -> None:
+        """Test case for update_a_volume_attachment
+
+        Update a volume attachment
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

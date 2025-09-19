@@ -113,7 +113,6 @@ HTTPSignatureAuthSetting = TypedDict(
 AuthSettings = TypedDict(
     "AuthSettings",
     {
-        "accessToken": APIKeyAuthSetting,
         "apiKey": APIKeyAuthSetting,
     },
     total=False,
@@ -505,15 +504,6 @@ conf = hyperstack.Configuration(
         :return: The Auth Settings information dict.
         """
         auth: AuthSettings = {}
-        if 'accessToken' in self.api_key:
-            auth['accessToken'] = {
-                'type': 'api_key',
-                'in': 'header',
-                'key': 'Authorization',
-                'value': self.get_api_key_with_prefix(
-                    'accessToken',
-                ),
-            }
         if 'apiKey' in self.api_key:
             auth['apiKey'] = {
                 'type': 'api_key',
@@ -534,7 +524,7 @@ conf = hyperstack.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 1.0\n"\
-               "SDK Package Version: v1.25.0-alpha".\
+               "SDK Package Version: v1.41.0-alpha".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self) -> List[HostSetting]:

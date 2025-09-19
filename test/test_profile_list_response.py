@@ -37,7 +37,7 @@ class TestProfileListResponse(unittest.TestCase):
             return ProfileListResponse(
                 message = '',
                 profiles = [
-                    hyperstack.models.profile_fields.ProfileFields(
+                    hyperstack.models.profile_fields.Profile_Fields(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         data = '', 
                         description = '', 

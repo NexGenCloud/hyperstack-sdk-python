@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,8 +26,9 @@ class AttachVolumesPayload(BaseModel):
     """
     AttachVolumesPayload
     """ # noqa: E501
+    protected: Optional[StrictBool] = False
     volume_ids: Optional[List[StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["volume_ids"]
+    __properties: ClassVar[List[str]] = ["protected", "volume_ids"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,6 +81,7 @@ class AttachVolumesPayload(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "protected": obj.get("protected") if obj.get("protected") is not None else False,
             "volume_ids": obj.get("volume_ids")
         })
         return _obj

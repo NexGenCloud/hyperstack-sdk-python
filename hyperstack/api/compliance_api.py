@@ -310,8 +310,7 @@ class ComplianceApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -581,8 +580,7 @@ class ComplianceApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -604,7 +602,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def retrieve_gpu_compliance(
+    def retrieve_compliance(
         self,
         gpu: Annotated[Optional[StrictStr], Field(description="This is for gpu model")] = None,
         _request_timeout: Union[
@@ -622,7 +620,7 @@ class ComplianceApi:
     ) -> ComplianceResponse:
         """Retrieve GPU compliance
 
-        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors#adhering-to-gpu-compliance).
+        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs...cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
 
         :param gpu: This is for gpu model
         :type gpu: str
@@ -648,7 +646,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_gpu_compliance_serialize(
+        _param = self._retrieve_compliance_serialize(
             gpu=gpu,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -676,7 +674,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def retrieve_gpu_compliance_with_http_info(
+    def retrieve_compliance_with_http_info(
         self,
         gpu: Annotated[Optional[StrictStr], Field(description="This is for gpu model")] = None,
         _request_timeout: Union[
@@ -694,7 +692,7 @@ class ComplianceApi:
     ) -> ApiResponse[ComplianceResponse]:
         """Retrieve GPU compliance
 
-        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors#adhering-to-gpu-compliance).
+        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs...cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
 
         :param gpu: This is for gpu model
         :type gpu: str
@@ -720,7 +718,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_gpu_compliance_serialize(
+        _param = self._retrieve_compliance_serialize(
             gpu=gpu,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -748,7 +746,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def retrieve_gpu_compliance_without_preload_content(
+    def retrieve_compliance_without_preload_content(
         self,
         gpu: Annotated[Optional[StrictStr], Field(description="This is for gpu model")] = None,
         _request_timeout: Union[
@@ -766,7 +764,7 @@ class ComplianceApi:
     ) -> RESTResponseType:
         """Retrieve GPU compliance
 
-        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://infrahub-doc.nexgencloud.com/docs/hardware/flavors#adhering-to-gpu-compliance).
+        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs...cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
 
         :param gpu: This is for gpu model
         :type gpu: str
@@ -792,7 +790,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_gpu_compliance_serialize(
+        _param = self._retrieve_compliance_serialize(
             gpu=gpu,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -815,7 +813,7 @@ class ComplianceApi:
         return response_data.response
 
 
-    def _retrieve_gpu_compliance_serialize(
+    def _retrieve_compliance_serialize(
         self,
         gpu,
         _request_auth,
@@ -860,8 +858,7 @@ class ComplianceApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -1147,8 +1144,7 @@ class ComplianceApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

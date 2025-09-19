@@ -33,6 +33,7 @@ class FlavorFields(BaseModel):
     disk: Optional[StrictInt] = None
     display_name: Optional[StrictStr] = None
     ephemeral: Optional[StrictInt] = None
+    features: Optional[Dict[str, Any]] = None
     gpu: Optional[StrictStr] = None
     gpu_count: Optional[StrictInt] = None
     id: Optional[StrictInt] = None
@@ -41,7 +42,7 @@ class FlavorFields(BaseModel):
     ram: Optional[Union[StrictFloat, StrictInt]] = None
     region_name: Optional[StrictStr] = None
     stock_available: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["cpu", "created_at", "disk", "display_name", "ephemeral", "gpu", "gpu_count", "id", "labels", "name", "ram", "region_name", "stock_available"]
+    __properties: ClassVar[List[str]] = ["cpu", "created_at", "disk", "display_name", "ephemeral", "features", "gpu", "gpu_count", "id", "labels", "name", "ram", "region_name", "stock_available"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +107,7 @@ class FlavorFields(BaseModel):
             "disk": obj.get("disk"),
             "display_name": obj.get("display_name"),
             "ephemeral": obj.get("ephemeral"),
+            "features": obj.get("features"),
             "gpu": obj.get("gpu"),
             "gpu_count": obj.get("gpu_count"),
             "id": obj.get("id"),

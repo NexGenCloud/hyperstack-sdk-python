@@ -1,4 +1,4 @@
-# EditlabelofanexistingVMPayload
+# EditLabelOfAnExistingVMPayload
 
 
 ## Properties
@@ -10,19 +10,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from hyperstack.models.editlabelofanexisting_vm_payload import EditlabelofanexistingVMPayload
+from hyperstack.models.edit_label_of_an_existing_vm_payload import EditLabelOfAnExistingVMPayload
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of EditlabelofanexistingVMPayload from a JSON string
-editlabelofanexisting_vm_payload_instance = EditlabelofanexistingVMPayload.from_json(json)
+# create an instance of EditLabelOfAnExistingVMPayload from a JSON string
+edit_label_of_an_existing_vm_payload_instance = EditLabelOfAnExistingVMPayload.from_json(json)
 # print the JSON string representation of the object
-print(EditlabelofanexistingVMPayload.to_json())
+print(EditLabelOfAnExistingVMPayload.to_json())
 
 # convert the object into a dict
-editlabelofanexisting_vm_payload_dict = editlabelofanexisting_vm_payload_instance.to_dict()
-# create an instance of EditlabelofanexistingVMPayload from a dict
-editlabelofanexisting_vm_payload_from_dict = EditlabelofanexistingVMPayload.from_dict(editlabelofanexisting_vm_payload_dict)
+edit_label_of_an_existing_vm_payload_dict = edit_label_of_an_existing_vm_payload_instance.to_dict()
+# create an instance of EditLabelOfAnExistingVMPayload from a dict
+edit_label_of_an_existing_vm_payload_from_dict = EditLabelOfAnExistingVMPayload.from_dict(edit_label_of_an_existing_vm_payload_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

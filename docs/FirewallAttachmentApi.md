@@ -4,18 +4,19 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_firewalls_to_vms**](FirewallAttachmentApi.md#attach_firewalls_to_vms) | **POST** /core/firewalls/{firewall_id}/update-attachments | Attach Firewalls to VMs
+[**post_attach_security_groups**](FirewallAttachmentApi.md#post_attach_security_groups) | **POST** /core/firewalls/{firewall_id}/update-attachments | Attach Firewalls to VMs
 
 
-# **attach_firewalls_to_vms**
-> ResponseModel attach_firewalls_to_vms(firewall_id, payload)
+# **post_attach_security_groups**
+> ResponseModel post_attach_security_groups(firewall_id, payload)
 
 Attach Firewalls to VMs
+
+Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -41,12 +42,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -56,11 +51,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Attach Firewalls to VMs
-        api_response = api_instance.attach_firewalls_to_vms(firewall_id, payload)
-        print("The response of FirewallAttachmentApi->attach_firewalls_to_vms:\n")
+        api_response = api_instance.post_attach_security_groups(firewall_id, payload)
+        print("The response of FirewallAttachmentApi->post_attach_security_groups:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FirewallAttachmentApi->attach_firewalls_to_vms: %s\n" % e)
+        print("Exception when calling FirewallAttachmentApi->post_attach_security_groups: %s\n" % e)
 ```
 
 
@@ -79,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

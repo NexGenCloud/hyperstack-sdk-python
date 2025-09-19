@@ -1,4 +1,4 @@
-# Lastdaycostfields
+# LastDayCostFields
 
 
 ## Properties
@@ -13,19 +13,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from hyperstack.models.lastdaycostfields import Lastdaycostfields
+from hyperstack.models.last_day_cost_fields import LastDayCostFields
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of Lastdaycostfields from a JSON string
-lastdaycostfields_instance = Lastdaycostfields.from_json(json)
+# create an instance of LastDayCostFields from a JSON string
+last_day_cost_fields_instance = LastDayCostFields.from_json(json)
 # print the JSON string representation of the object
-print(Lastdaycostfields.to_json())
+print(LastDayCostFields.to_json())
 
 # convert the object into a dict
-lastdaycostfields_dict = lastdaycostfields_instance.to_dict()
-# create an instance of Lastdaycostfields from a dict
-lastdaycostfields_from_dict = Lastdaycostfields.from_dict(lastdaycostfields_dict)
+last_day_cost_fields_dict = last_day_cost_fields_instance.to_dict()
+# create an instance of LastDayCostFields from a dict
+last_day_cost_fields_from_dict = LastDayCostFields.from_dict(last_day_cost_fields_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

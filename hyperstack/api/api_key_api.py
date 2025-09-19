@@ -292,8 +292,7 @@ class ApiKeyApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -333,7 +332,7 @@ class ApiKeyApi:
     ) -> GenerateUpdateApiKeyResponseModel:
         """Generate API Key
 
-        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/generate-api-key).
+        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
 
         :param payload: (required)
         :type payload: GenerateUpdateApiKeyPayload
@@ -405,7 +404,7 @@ class ApiKeyApi:
     ) -> ApiResponse[GenerateUpdateApiKeyResponseModel]:
         """Generate API Key
 
-        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/generate-api-key).
+        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
 
         :param payload: (required)
         :type payload: GenerateUpdateApiKeyPayload
@@ -477,7 +476,7 @@ class ApiKeyApi:
     ) -> RESTResponseType:
         """Generate API Key
 
-        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/generate-api-key).
+        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
 
         :param payload: (required)
         :type payload: GenerateUpdateApiKeyPayload
@@ -582,7 +581,6 @@ class ApiKeyApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'accessToken'
         ]
 
         return self.api_client.param_serialize(
@@ -604,7 +602,7 @@ class ApiKeyApi:
 
 
     @validate_call
-    def retrieve_api_keys(
+    def retrieve_api_key(
         self,
         _request_timeout: Union[
             None,
@@ -621,7 +619,7 @@ class ApiKeyApi:
     ) -> GetApiKeysResponseModel:
         """Retrieve API Keys
 
-        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/retrieve-api-key).
+        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -645,7 +643,7 @@ class ApiKeyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_api_keys_serialize(
+        _param = self._retrieve_api_key_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -670,7 +668,7 @@ class ApiKeyApi:
 
 
     @validate_call
-    def retrieve_api_keys_with_http_info(
+    def retrieve_api_key_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -687,7 +685,7 @@ class ApiKeyApi:
     ) -> ApiResponse[GetApiKeysResponseModel]:
         """Retrieve API Keys
 
-        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/retrieve-api-key).
+        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -711,7 +709,7 @@ class ApiKeyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_api_keys_serialize(
+        _param = self._retrieve_api_key_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -736,7 +734,7 @@ class ApiKeyApi:
 
 
     @validate_call
-    def retrieve_api_keys_without_preload_content(
+    def retrieve_api_key_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -753,7 +751,7 @@ class ApiKeyApi:
     ) -> RESTResponseType:
         """Retrieve API Keys
 
-        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://infrahub-doc.nexgencloud.com/docs/api-reference/auth-resources/api-key/retrieve-api-key).
+        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -777,7 +775,7 @@ class ApiKeyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_api_keys_serialize(
+        _param = self._retrieve_api_key_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -797,7 +795,7 @@ class ApiKeyApi:
         return response_data.response
 
 
-    def _retrieve_api_keys_serialize(
+    def _retrieve_api_key_serialize(
         self,
         _request_auth,
         _content_type,
@@ -837,8 +835,7 @@ class ApiKeyApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -1139,8 +1136,7 @@ class ApiKeyApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

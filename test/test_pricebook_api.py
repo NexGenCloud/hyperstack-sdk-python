@@ -26,8 +26,8 @@ class TestPricebookApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_retrive_pricebook(self) -> None:
-        """Test case for retrive_pricebook
+    def test_get_pricebook(self) -> None:
+        """Test case for get_pricebook
 
         """
         pass

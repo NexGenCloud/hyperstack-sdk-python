@@ -4,14 +4,14 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_an_image**](ImageApi.md#delete_an_image) | **DELETE** /core/images/{id} | Delete an image
-[**fetch_name_availability_for_images**](ImageApi.md#fetch_name_availability_for_images) | **GET** /core/image/name-availability/{name} | Fetch name availability for Images
-[**get_private_image_details**](ImageApi.md#get_private_image_details) | **GET** /core/images/{id} | Get Private Image Details
-[**list_images**](ImageApi.md#list_images) | **GET** /core/images | List Images
+[**delete_image**](ImageApi.md#delete_image) | **DELETE** /core/images/{id} | Delete an image
+[**fetch_image_name_availability**](ImageApi.md#fetch_image_name_availability) | **GET** /core/image/name-availability/{name} | Fetch name availability for Images
+[**get_image_details**](ImageApi.md#get_image_details) | **GET** /core/images/{id} | Get Private Image Details
+[**list_images2**](ImageApi.md#list_images2) | **GET** /core/images | List Images
 
 
-# **delete_an_image**
-> ResponseModel delete_an_image(id)
+# **delete_image**
+> ResponseModel delete_image(id)
 
 Delete an image
 
@@ -20,7 +20,6 @@ Deletes an image permanently. Provide the image ID in the path to specify the im
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -45,12 +44,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -59,11 +52,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Delete an image
-        api_response = api_instance.delete_an_image(id)
-        print("The response of ImageApi->delete_an_image:\n")
+        api_response = api_instance.delete_image(id)
+        print("The response of ImageApi->delete_image:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ImageApi->delete_an_image: %s\n" % e)
+        print("Exception when calling ImageApi->delete_image: %s\n" % e)
 ```
 
 
@@ -81,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -100,8 +93,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fetch_name_availability_for_images**
-> NameAvailableModel fetch_name_availability_for_images(name)
+# **fetch_image_name_availability**
+> NameAvailableModel fetch_image_name_availability(name)
 
 Fetch name availability for Images
 
@@ -110,7 +103,6 @@ Check if an Image name is available
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -135,12 +127,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -149,11 +135,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Fetch name availability for Images
-        api_response = api_instance.fetch_name_availability_for_images(name)
-        print("The response of ImageApi->fetch_name_availability_for_images:\n")
+        api_response = api_instance.fetch_image_name_availability(name)
+        print("The response of ImageApi->fetch_image_name_availability:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ImageApi->fetch_name_availability_for_images: %s\n" % e)
+        print("Exception when calling ImageApi->fetch_image_name_availability: %s\n" % e)
 ```
 
 
@@ -171,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -190,8 +176,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_private_image_details**
-> Image get_private_image_details(id, include_related_vms=include_related_vms)
+# **get_image_details**
+> Image get_image_details(id, include_related_vms=include_related_vms)
 
 Get Private Image Details
 
@@ -200,7 +186,6 @@ Retrieve details of a specific image by providing the image ID.
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -225,12 +210,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -240,11 +219,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Get Private Image Details
-        api_response = api_instance.get_private_image_details(id, include_related_vms=include_related_vms)
-        print("The response of ImageApi->get_private_image_details:\n")
+        api_response = api_instance.get_image_details(id, include_related_vms=include_related_vms)
+        print("The response of ImageApi->get_image_details:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ImageApi->get_private_image_details: %s\n" % e)
+        print("Exception when calling ImageApi->get_image_details: %s\n" % e)
 ```
 
 
@@ -263,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -282,17 +261,16 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_images**
-> Images list_images(region=region, include_public=include_public, search=search, page=page, per_page=per_page)
+# **list_images2**
+> Images list_images2(region=region, include_public=include_public, search=search, page=page, per_page=per_page)
 
 List Images
 
-Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/images).
+Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/images).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -317,12 +295,6 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -335,11 +307,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # List Images
-        api_response = api_instance.list_images(region=region, include_public=include_public, search=search, page=page, per_page=per_page)
-        print("The response of ImageApi->list_images:\n")
+        api_response = api_instance.list_images2(region=region, include_public=include_public, search=search, page=page, per_page=per_page)
+        print("The response of ImageApi->list_images2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ImageApi->list_images: %s\n" % e)
+        print("Exception when calling ImageApi->list_images2: %s\n" % e)
 ```
 
 
@@ -361,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

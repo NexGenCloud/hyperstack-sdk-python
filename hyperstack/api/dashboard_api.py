@@ -54,7 +54,7 @@ class DashboardApi:
     ) -> DashboardInfoResponse:
         """Retrieve Dashboard
 
-        Returns hardware and pricing overview for your active resources, including virtual machines, containers, and volumes. For additional information on the Dashboard feature, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/dashboard).
+        Returns hardware and pricing overview for your active resources, includingvirtual machines, containers, and volumes. For more details on the Dashboard feature, [**click here**](https://docs...cloud/docs/resource-management/dashboard/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -120,7 +120,7 @@ class DashboardApi:
     ) -> ApiResponse[DashboardInfoResponse]:
         """Retrieve Dashboard
 
-        Returns hardware and pricing overview for your active resources, including virtual machines, containers, and volumes. For additional information on the Dashboard feature, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/dashboard).
+        Returns hardware and pricing overview for your active resources, includingvirtual machines, containers, and volumes. For more details on the Dashboard feature, [**click here**](https://docs...cloud/docs/resource-management/dashboard/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -186,7 +186,7 @@ class DashboardApi:
     ) -> RESTResponseType:
         """Retrieve Dashboard
 
-        Returns hardware and pricing overview for your active resources, including virtual machines, containers, and volumes. For additional information on the Dashboard feature, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/dashboard).
+        Returns hardware and pricing overview for your active resources, includingvirtual machines, containers, and volumes. For more details on the Dashboard feature, [**click here**](https://docs...cloud/docs/resource-management/dashboard/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -270,8 +270,7 @@ class DashboardApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

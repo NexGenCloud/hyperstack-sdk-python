@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from ..models.flavor_label_fields import FlavorLabelFields
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,12 +30,14 @@ class InstanceFlavorFields(BaseModel):
     cpu: Optional[StrictInt] = None
     disk: Optional[StrictInt] = None
     ephemeral: Optional[StrictInt] = None
+    features: Optional[Dict[str, Any]] = None
     gpu: Optional[StrictStr] = None
     gpu_count: Optional[StrictInt] = None
     id: Optional[StrictInt] = None
+    labels: Optional[List[FlavorLabelFields]] = None
     name: Optional[StrictStr] = None
     ram: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["cpu", "disk", "ephemeral", "gpu", "gpu_count", "id", "name", "ram"]
+    __properties: ClassVar[List[str]] = ["cpu", "disk", "ephemeral", "features", "gpu", "gpu_count", "id", "labels", "name", "ram"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,6 +78,13 @@ class InstanceFlavorFields(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in labels (list)
+        _items = []
+        if self.labels:
+            for _item_labels in self.labels:
+                if _item_labels:
+                    _items.append(_item_labels.to_dict())
+            _dict['labels'] = _items
         return _dict
 
     @classmethod
@@ -90,9 +100,11 @@ class InstanceFlavorFields(BaseModel):
             "cpu": obj.get("cpu"),
             "disk": obj.get("disk"),
             "ephemeral": obj.get("ephemeral"),
+            "features": obj.get("features"),
             "gpu": obj.get("gpu"),
             "gpu_count": obj.get("gpu_count"),
             "id": obj.get("id"),
+            "labels": [FlavorLabelFields.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
             "name": obj.get("name"),
             "ram": obj.get("ram")
         })

@@ -35,6 +35,73 @@ class TestContractInstanceFields(unittest.TestCase):
         model = ContractInstanceFields()
         if include_optional:
             return ContractInstanceFields(
+                cluster = hyperstack.models.cluster_fields.ClusterFields(
+                    api_address = '', 
+                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    environment_name = '', 
+                    id = 56, 
+                    keypair_name = '', 
+                    kube_config = '', 
+                    kubernetes_version = '', 
+                    master_flavor = hyperstack.models.cluster_flavor_fields.Cluster_Flavor_Fields(
+                        cpu = 56, 
+                        disk = 56, 
+                        ephemeral = 56, 
+                        features = hyperstack.models.features.features(), 
+                        gpu = '', 
+                        gpu_count = 56, 
+                        id = 56, 
+                        labels = [
+                            hyperstack.models.lable_resonse.LableResonse(
+                                id = 56, 
+                                label = '', )
+                            ], 
+                        name = '', 
+                        ram = 1.337, ), 
+                    name = '', 
+                    node_groups = [
+                        hyperstack.models.cluster_node_group_fields.ClusterNodeGroupFields(
+                            count = 56, 
+                            created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                            flavor = hyperstack.models.cluster_flavor_fields.Cluster_Flavor_Fields(
+                                cpu = 56, 
+                                disk = 56, 
+                                ephemeral = 56, 
+                                features = hyperstack.models.features.features(), 
+                                gpu = '', 
+                                gpu_count = 56, 
+                                id = 56, 
+                                name = '', 
+                                ram = 1.337, ), 
+                            id = 56, 
+                            name = '', 
+                            role = '', 
+                            updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                        ], 
+                    nodes = [
+                        hyperstack.models.cluster_node_fields.ClusterNodeFields(
+                            created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                            id = 56, 
+                            instance = hyperstack.models.cluster_node_instance_fields.ClusterNodeInstanceFields(
+                                contract_id = 56, 
+                                fixed_ip = '', 
+                                floating_ip = '', 
+                                floating_ip_status = '', 
+                                id = 56, 
+                                image_id = 56, 
+                                name = '', 
+                                status = '', ), 
+                            is_bastion = True, 
+                            node_group_id = 56, 
+                            node_group_name = '', 
+                            requires_public_ip = True, 
+                            role = '', 
+                            status = '', 
+                            status_reason = '', 
+                            updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                        ], 
+                    status = '', 
+                    status_reason = '', ),
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 flavor_name = '',
                 gpu_count = 56,

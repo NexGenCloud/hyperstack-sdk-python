@@ -43,7 +43,7 @@ class ImageApi:
 
 
     @validate_call
-    def delete_an_image(
+    def delete_image(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -87,7 +87,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_an_image_serialize(
+        _param = self._delete_image_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -114,7 +114,7 @@ class ImageApi:
 
 
     @validate_call
-    def delete_an_image_with_http_info(
+    def delete_image_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -158,7 +158,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_an_image_serialize(
+        _param = self._delete_image_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -185,7 +185,7 @@ class ImageApi:
 
 
     @validate_call
-    def delete_an_image_without_preload_content(
+    def delete_image_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -229,7 +229,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_an_image_serialize(
+        _param = self._delete_image_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -251,7 +251,7 @@ class ImageApi:
         return response_data.response
 
 
-    def _delete_an_image_serialize(
+    def _delete_image_serialize(
         self,
         id,
         _request_auth,
@@ -294,8 +294,7 @@ class ImageApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -317,7 +316,7 @@ class ImageApi:
 
 
     @validate_call
-    def fetch_name_availability_for_images(
+    def fetch_image_name_availability(
         self,
         name: StrictStr,
         _request_timeout: Union[
@@ -361,7 +360,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._fetch_name_availability_for_images_serialize(
+        _param = self._fetch_image_name_availability_serialize(
             name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -388,7 +387,7 @@ class ImageApi:
 
 
     @validate_call
-    def fetch_name_availability_for_images_with_http_info(
+    def fetch_image_name_availability_with_http_info(
         self,
         name: StrictStr,
         _request_timeout: Union[
@@ -432,7 +431,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._fetch_name_availability_for_images_serialize(
+        _param = self._fetch_image_name_availability_serialize(
             name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -459,7 +458,7 @@ class ImageApi:
 
 
     @validate_call
-    def fetch_name_availability_for_images_without_preload_content(
+    def fetch_image_name_availability_without_preload_content(
         self,
         name: StrictStr,
         _request_timeout: Union[
@@ -503,7 +502,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._fetch_name_availability_for_images_serialize(
+        _param = self._fetch_image_name_availability_serialize(
             name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -525,7 +524,7 @@ class ImageApi:
         return response_data.response
 
 
-    def _fetch_name_availability_for_images_serialize(
+    def _fetch_image_name_availability_serialize(
         self,
         name,
         _request_auth,
@@ -568,8 +567,7 @@ class ImageApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -591,7 +589,7 @@ class ImageApi:
 
 
     @validate_call
-    def get_private_image_details(
+    def get_image_details(
         self,
         id: StrictInt,
         include_related_vms: Optional[StrictBool] = None,
@@ -638,7 +636,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_private_image_details_serialize(
+        _param = self._get_image_details_serialize(
             id=id,
             include_related_vms=include_related_vms,
             _request_auth=_request_auth,
@@ -666,7 +664,7 @@ class ImageApi:
 
 
     @validate_call
-    def get_private_image_details_with_http_info(
+    def get_image_details_with_http_info(
         self,
         id: StrictInt,
         include_related_vms: Optional[StrictBool] = None,
@@ -713,7 +711,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_private_image_details_serialize(
+        _param = self._get_image_details_serialize(
             id=id,
             include_related_vms=include_related_vms,
             _request_auth=_request_auth,
@@ -741,7 +739,7 @@ class ImageApi:
 
 
     @validate_call
-    def get_private_image_details_without_preload_content(
+    def get_image_details_without_preload_content(
         self,
         id: StrictInt,
         include_related_vms: Optional[StrictBool] = None,
@@ -788,7 +786,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_private_image_details_serialize(
+        _param = self._get_image_details_serialize(
             id=id,
             include_related_vms=include_related_vms,
             _request_auth=_request_auth,
@@ -811,7 +809,7 @@ class ImageApi:
         return response_data.response
 
 
-    def _get_private_image_details_serialize(
+    def _get_image_details_serialize(
         self,
         id,
         include_related_vms,
@@ -859,8 +857,7 @@ class ImageApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(
@@ -882,7 +879,7 @@ class ImageApi:
 
 
     @validate_call
-    def list_images(
+    def list_images2(
         self,
         region: Annotated[Optional[StrictStr], Field(description="Region Name")] = None,
         include_public: Annotated[Optional[StrictBool], Field(description="Flag to include public images in the response (true/false). Default is true.")] = None,
@@ -904,7 +901,7 @@ class ImageApi:
     ) -> Images:
         """List Images
 
-        Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/images).
+        Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://docs...cloud/docs/virtual-machines/images).
 
         :param region: Region Name
         :type region: str
@@ -938,7 +935,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_images_serialize(
+        _param = self._list_images2_serialize(
             region=region,
             include_public=include_public,
             search=search,
@@ -970,7 +967,7 @@ class ImageApi:
 
 
     @validate_call
-    def list_images_with_http_info(
+    def list_images2_with_http_info(
         self,
         region: Annotated[Optional[StrictStr], Field(description="Region Name")] = None,
         include_public: Annotated[Optional[StrictBool], Field(description="Flag to include public images in the response (true/false). Default is true.")] = None,
@@ -992,7 +989,7 @@ class ImageApi:
     ) -> ApiResponse[Images]:
         """List Images
 
-        Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/images).
+        Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://docs...cloud/docs/virtual-machines/images).
 
         :param region: Region Name
         :type region: str
@@ -1026,7 +1023,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_images_serialize(
+        _param = self._list_images2_serialize(
             region=region,
             include_public=include_public,
             search=search,
@@ -1058,7 +1055,7 @@ class ImageApi:
 
 
     @validate_call
-    def list_images_without_preload_content(
+    def list_images2_without_preload_content(
         self,
         region: Annotated[Optional[StrictStr], Field(description="Region Name")] = None,
         include_public: Annotated[Optional[StrictBool], Field(description="Flag to include public images in the response (true/false). Default is true.")] = None,
@@ -1080,7 +1077,7 @@ class ImageApi:
     ) -> RESTResponseType:
         """List Images
 
-        Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/images).
+        Returns a list of all available operating system (OS) images, providing details about each image's corresponding virtual machine operating system. You can include the optional `region` parameter in the query string of the request to specifically return OS images from the designated region. Additionally, use the `include_public` parameter to specify whether to include public images in the response. For more information onOS images, [**click here**](https://docs...cloud/docs/virtual-machines/images).
 
         :param region: Region Name
         :type region: str
@@ -1114,7 +1111,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_images_serialize(
+        _param = self._list_images2_serialize(
             region=region,
             include_public=include_public,
             search=search,
@@ -1141,7 +1138,7 @@ class ImageApi:
         return response_data.response
 
 
-    def _list_images_serialize(
+    def _list_images2_serialize(
         self,
         region,
         include_public,
@@ -1206,8 +1203,7 @@ class ImageApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'apiKey', 
-            'accessToken'
+            'apiKey'
         ]
 
         return self.api_client.param_serialize(

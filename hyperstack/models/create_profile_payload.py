@@ -27,7 +27,7 @@ class CreateProfilePayload(BaseModel):
     """
     CreateProfilePayload
     """ # noqa: E501
-    data: Dict[str, StrictStr] = Field(description="The data object which contains the configuration of the virtual machine profile being created.")
+    data: Dict[str, StrictStr] = Field(description="The data object containing the configuration details of the virtual machine profile being created.")
     description: Optional[Annotated[str, Field(strict=True, max_length=150)]] = Field(default=None, description="The optional description for the profile being created.")
     name: Annotated[str, Field(strict=True, max_length=50)] = Field(description="The name of the profile being created.")
     __properties: ClassVar[List[str]] = ["data", "description", "name"]

@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ..models.cluster_version import ClusterVersion
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class ClusterVersions(BaseModel):
     """ # noqa: E501
     message: Optional[StrictStr] = None
     status: Optional[StrictBool] = None
-    versions: Optional[List[StrictStr]] = None
+    versions: Optional[List[ClusterVersion]] = None
     __properties: ClassVar[List[str]] = ["message", "status", "versions"]
 
     model_config = ConfigDict(
@@ -70,6 +71,13 @@ class ClusterVersions(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in versions (list)
+        _items = []
+        if self.versions:
+            for _item_versions in self.versions:
+                if _item_versions:
+                    _items.append(_item_versions.to_dict())
+            _dict['versions'] = _items
         return _dict
 
     @classmethod
@@ -84,7 +92,7 @@ class ClusterVersions(BaseModel):
         _obj = cls.model_validate({
             "message": obj.get("message"),
             "status": obj.get("status"),
-            "versions": obj.get("versions")
+            "versions": [ClusterVersion.from_dict(_item) for _item in obj["versions"]] if obj.get("versions") is not None else None
         })
         return _obj
 

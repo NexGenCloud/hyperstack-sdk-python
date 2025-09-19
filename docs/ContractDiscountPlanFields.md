@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **discount_status** | **str** |  | [optional] 
 **discount_type** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
+**remaining_count** | **int** |  | [optional] 
 **resource_count** | **int** |  | [optional] 
 **resource_id** | **int** |  | [optional] 
 **resource_name** | **str** |  | [optional] 

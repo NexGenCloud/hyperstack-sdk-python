@@ -4,25 +4,24 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_callback_to_virtual_machine**](CallbacksApi.md#attach_callback_to_virtual_machine) | **POST** /core/virtual-machines/{id}/attach-callback | Attach callback to virtual machine
-[**attach_callback_to_volume**](CallbacksApi.md#attach_callback_to_volume) | **POST** /core/volumes/{id}/attach-callback | Attach callback to volume
-[**delete_virtual_machine_callback**](CallbacksApi.md#delete_virtual_machine_callback) | **DELETE** /core/virtual-machines/{id}/delete-callback | Delete virtual machine callback
-[**delete_volume_callback**](CallbacksApi.md#delete_volume_callback) | **DELETE** /core/volumes/{id}/delete-callback | Delete volume callback
-[**update_virtual_machine_callback**](CallbacksApi.md#update_virtual_machine_callback) | **PUT** /core/virtual-machines/{id}/update-callback | Update virtual machine callback
-[**update_volume_callback**](CallbacksApi.md#update_volume_callback) | **PUT** /core/volumes/{id}/update-callback | Update volume callback
+[**attach_callback_to_virtual_machine**](CallbacksApi.md#attach_callback_to_virtual_machine) | **POST** /core/virtual-machines/{vm_id}/attach-callback | Attach callback to virtual machine
+[**attach_callback_to_volume**](CallbacksApi.md#attach_callback_to_volume) | **POST** /core/volumes/{volume_id}/attach-callback | Attach callback to volume
+[**delete_virtual_machine_callback**](CallbacksApi.md#delete_virtual_machine_callback) | **DELETE** /core/virtual-machines/{vm_id}/delete-callback | Delete virtual machine callback
+[**delete_volume_callback**](CallbacksApi.md#delete_volume_callback) | **DELETE** /core/volumes/{volume_id}/delete-callback | Delete volume callback
+[**update_virtual_machine_callback**](CallbacksApi.md#update_virtual_machine_callback) | **PUT** /core/virtual-machines/{vm_id}/update-callback | Update virtual machine callback
+[**update_volume_callback**](CallbacksApi.md#update_volume_callback) | **PUT** /core/volumes/{volume_id}/update-callback | Update volume callback
 
 
 # **attach_callback_to_virtual_machine**
-> AttachCallbackResponse attach_callback_to_virtual_machine(id, payload)
+> AttachCallbackResponse attach_callback_to_virtual_machine(vm_id, payload)
 
 Attach callback to virtual machine
 
-Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks#attach-a-callback-url-to-an-existing-virtual-machine).
+Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/attach-callback-vm).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -48,22 +47,16 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.CallbacksApi(api_client)
-    id = 56 # int | 
+    vm_id = 56 # int | 
     payload = hyperstack.AttachCallbackPayload() # AttachCallbackPayload | 
 
     try:
         # Attach callback to virtual machine
-        api_response = api_instance.attach_callback_to_virtual_machine(id, payload)
+        api_response = api_instance.attach_callback_to_virtual_machine(vm_id, payload)
         print("The response of CallbacksApi->attach_callback_to_virtual_machine:\n")
         pprint(api_response)
     except Exception as e:
@@ -77,7 +70,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**|  | 
+ **vm_id** | **int**|  | 
  **payload** | [**AttachCallbackPayload**](AttachCallbackPayload.md)|  | 
 
 ### Return type
@@ -86,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -106,16 +99,15 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **attach_callback_to_volume**
-> AttachCallbackResponse attach_callback_to_volume(id, payload)
+> AttachCallbackResponse attach_callback_to_volume(volume_id, payload)
 
 Attach callback to volume
 
-Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/attach-callback-volume).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -141,22 +133,16 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.CallbacksApi(api_client)
-    id = 56 # int | 
+    volume_id = 56 # int | 
     payload = hyperstack.AttachCallbackPayload() # AttachCallbackPayload | 
 
     try:
         # Attach callback to volume
-        api_response = api_instance.attach_callback_to_volume(id, payload)
+        api_response = api_instance.attach_callback_to_volume(volume_id, payload)
         print("The response of CallbacksApi->attach_callback_to_volume:\n")
         pprint(api_response)
     except Exception as e:
@@ -170,7 +156,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**|  | 
+ **volume_id** | **int**|  | 
  **payload** | [**AttachCallbackPayload**](AttachCallbackPayload.md)|  | 
 
 ### Return type
@@ -179,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -199,16 +185,15 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_virtual_machine_callback**
-> ResponseModel delete_virtual_machine_callback(id)
+> ResponseModel delete_virtual_machine_callback(vm_id)
 
 Delete virtual machine callback
 
-Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/delete-callback-vm).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -233,21 +218,15 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.CallbacksApi(api_client)
-    id = 56 # int | 
+    vm_id = 56 # int | 
 
     try:
         # Delete virtual machine callback
-        api_response = api_instance.delete_virtual_machine_callback(id)
+        api_response = api_instance.delete_virtual_machine_callback(vm_id)
         print("The response of CallbacksApi->delete_virtual_machine_callback:\n")
         pprint(api_response)
     except Exception as e:
@@ -261,7 +240,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**|  | 
+ **vm_id** | **int**|  | 
 
 ### Return type
 
@@ -269,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -289,16 +268,15 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_volume_callback**
-> ResponseModel delete_volume_callback(id)
+> ResponseModel delete_volume_callback(volume_id)
 
 Delete volume callback
 
-Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/delete-callback-volume).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -323,21 +301,15 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.CallbacksApi(api_client)
-    id = 56 # int | 
+    volume_id = 56 # int | 
 
     try:
         # Delete volume callback
-        api_response = api_instance.delete_volume_callback(id)
+        api_response = api_instance.delete_volume_callback(volume_id)
         print("The response of CallbacksApi->delete_volume_callback:\n")
         pprint(api_response)
     except Exception as e:
@@ -351,7 +323,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**|  | 
+ **volume_id** | **int**|  | 
 
 ### Return type
 
@@ -359,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -379,16 +351,15 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_virtual_machine_callback**
-> AttachCallbackResponse update_virtual_machine_callback(id, payload)
+> AttachCallbackResponse update_virtual_machine_callback(vm_id, payload)
 
 Update virtual machine callback
 
-Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -414,22 +385,16 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.CallbacksApi(api_client)
-    id = 56 # int | 
+    vm_id = 56 # int | 
     payload = hyperstack.AttachCallbackPayload() # AttachCallbackPayload | 
 
     try:
         # Update virtual machine callback
-        api_response = api_instance.update_virtual_machine_callback(id, payload)
+        api_response = api_instance.update_virtual_machine_callback(vm_id, payload)
         print("The response of CallbacksApi->update_virtual_machine_callback:\n")
         pprint(api_response)
     except Exception as e:
@@ -443,7 +408,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**|  | 
+ **vm_id** | **int**|  | 
  **payload** | [**AttachCallbackPayload**](AttachCallbackPayload.md)|  | 
 
 ### Return type
@@ -452,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 
@@ -472,16 +437,15 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_volume_callback**
-> AttachCallbackResponse update_volume_callback(id, payload)
+> AttachCallbackResponse update_volume_callback(volume_id, payload)
 
 Update volume callback
 
-Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://infrahub-doc.nexgencloud.com/docs/features/webhooks-callbacks).
+Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/update-callback-volume/).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -507,22 +471,16 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.CallbacksApi(api_client)
-    id = 56 # int | 
+    volume_id = 56 # int | 
     payload = hyperstack.AttachCallbackPayload() # AttachCallbackPayload | 
 
     try:
         # Update volume callback
-        api_response = api_instance.update_volume_callback(id, payload)
+        api_response = api_instance.update_volume_callback(volume_id, payload)
         print("The response of CallbacksApi->update_volume_callback:\n")
         pprint(api_response)
     except Exception as e:
@@ -536,7 +494,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**|  | 
+ **volume_id** | **int**|  | 
  **payload** | [**AttachCallbackPayload**](AttachCallbackPayload.md)|  | 
 
 ### Return type
@@ -545,7 +503,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

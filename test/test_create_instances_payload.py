@@ -41,7 +41,7 @@ class TestCreateInstancesPayload(unittest.TestCase):
                 create_bootable_volume = True,
                 enable_port_randomization = True,
                 environment_name = '',
-                flavor = hyperstack.models.flavor_object_fields.FlavorObjectFields(
+                flavor = hyperstack.models.flavor_object_fields.Flavor_Object_Fields(
                     cpu = 56, 
                     disk = 56, 
                     gpu = '', 
@@ -54,11 +54,11 @@ class TestCreateInstancesPayload(unittest.TestCase):
                     ''
                     ],
                 name = '',
-                profile = hyperstack.models.profile_object_fields.ProfileObjectFields(
+                profile = hyperstack.models.profile_object_fields.Profile_Object_Fields(
                     description = '', 
                     name = '', ),
                 security_rules = [
-                    hyperstack.models.create_security_rule_payload.CreateSecurityRulePayload(
+                    hyperstack.models.create_security_rule_payload.Create_Security_Rule_Payload(
                         direction = '', 
                         ethertype = '', 
                         protocol = 'any', 

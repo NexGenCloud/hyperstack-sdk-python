@@ -9,6 +9,7 @@ from .alive_api import AliveApi
 from .api_key_api import ApiKeyApi
 from .assigning_member_role_api import AssigningMemberRoleApi
 from .auth_api import AuthApi
+from .beta_access_api import BetaAccessApi
 from .billing_api import BillingApi
 from .callbacks_api import CallbacksApi
 from .cluster_events_api import ClusterEventsApi
@@ -27,6 +28,7 @@ from .image_api import ImageApi
 from .invite_api import InviteApi
 from .keypair_api import KeypairApi
 from .organization_api import OrganizationApi
+from .partner_config_api import PartnerConfigApi
 from .payment_api import PaymentApi
 from .permission_api import PermissionApi
 from .policy_api import PolicyApi

@@ -8,9 +8,11 @@ Name | Type | Description | Notes
 **cpu** | **int** |  | [optional] 
 **disk** | **int** |  | [optional] 
 **ephemeral** | **int** |  | [optional] 
+**features** | **object** |  | [optional] 
 **gpu** | **str** |  | [optional] 
 **gpu_count** | **int** |  | [optional] 
 **id** | **int** |  | [optional] 
+**labels** | [**List[FlavorLabelFields]**](FlavorLabelFields.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **ram** | **float** |  | [optional] 
 

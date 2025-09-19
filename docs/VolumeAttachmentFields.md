@@ -7,8 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** |  | [optional] 
 **device** | **str** |  | [optional] 
+**id** | **int** |  | [optional] 
+**protected** | **bool** |  | [optional] 
 **status** | **str** |  | [optional] 
-**volume** | [**VolumeFieldsforInstance**](VolumeFieldsforInstance.md) |  | [optional] 
+**volume** | [**VolumeFieldsForInstance**](VolumeFieldsForInstance.md) |  | [optional] 
 
 ## Example
 

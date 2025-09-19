@@ -10,9 +10,11 @@ Name | Type | Description | Notes
 **currency** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **gateway_response** | **str** |  | [optional] 
+**invoice** | **str** |  | [optional] 
 **paid_from** | **str** |  | [optional] 
 **payment_id** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
+**tax_amount** | **float** |  | [optional] 
 **transaction_id** | **str** |  | [optional] 
 **updated_at** | **datetime** |  | [optional] 
 

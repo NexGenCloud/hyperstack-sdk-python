@@ -36,7 +36,7 @@ class TestCreateProfileResponse(unittest.TestCase):
         if include_optional:
             return CreateProfileResponse(
                 message = '',
-                profile = hyperstack.models.profile_fields.ProfileFields(
+                profile = hyperstack.models.profile_fields.Profile_Fields(
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     data = '', 
                     description = '', 

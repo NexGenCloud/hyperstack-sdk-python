@@ -36,7 +36,7 @@ class TestSecurityGroupRule(unittest.TestCase):
         if include_optional:
             return SecurityGroupRule(
                 message = '',
-                security_rule = hyperstack.models.security_group_rule_fields.SecurityGroupRuleFields(
+                security_rule = hyperstack.models.security_group_rule_fields.Security_Group_Rule_Fields(
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     direction = '', 
                     ethertype = '', 

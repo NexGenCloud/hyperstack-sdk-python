@@ -26,8 +26,8 @@ class TestCalculateApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_retrieve_billing_rate_for_resource(self) -> None:
-        """Test case for retrieve_billing_rate_for_resource
+    def test_get_calculate2(self) -> None:
+        """Test case for get_calculate2
 
         Retrieve Billing Rate for Resource
         """

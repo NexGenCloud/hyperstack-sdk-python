@@ -47,6 +47,7 @@ class TestUsersInfoFields(unittest.TestCase):
                 organization_id = 56,
                 phone = '',
                 state = '',
+                stripe_user_id = '',
                 vat_number = '',
                 zip_code = ''
             )

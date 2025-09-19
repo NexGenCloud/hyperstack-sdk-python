@@ -4,20 +4,19 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_virtual_machine_events**](VirtualMachineEventsApi.md#list_virtual_machine_events) | **GET** /core/virtual-machines/{virtual_machine_id}/events | List virtual machine events
+[**list_virtual_machine_events**](VirtualMachineEventsApi.md#list_virtual_machine_events) | **GET** /core/virtual-machines/{vm_id}/events | List virtual machine events
 
 
 # **list_virtual_machine_events**
-> InstanceEvents list_virtual_machine_events(virtual_machine_id)
+> InstanceEvents list_virtual_machine_events(vm_id)
 
 List virtual machine events
 
-Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://infrahub-doc.nexgencloud.com/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
+Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
 
 ### Example
 
 * Api Key Authentication (apiKey):
-* Api Key Authentication (accessToken):
 
 ```python
 import hyperstack
@@ -42,21 +41,15 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
-# Configure API key authorization: accessToken
-configuration.api_key['accessToken'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['accessToken'] = 'Bearer'
-
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.VirtualMachineEventsApi(api_client)
-    virtual_machine_id = 'virtual_machine_id_example' # str | 
+    vm_id = 56 # int | 
 
     try:
         # List virtual machine events
-        api_response = api_instance.list_virtual_machine_events(virtual_machine_id)
+        api_response = api_instance.list_virtual_machine_events(vm_id)
         print("The response of VirtualMachineEventsApi->list_virtual_machine_events:\n")
         pprint(api_response)
     except Exception as e:
@@ -70,7 +63,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **virtual_machine_id** | **str**|  | 
+ **vm_id** | **int**|  | 
 
 ### Return type
 
@@ -78,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../README.md#apiKey), [accessToken](../README.md#accessToken)
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

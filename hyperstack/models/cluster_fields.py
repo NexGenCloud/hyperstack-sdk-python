@@ -20,7 +20,9 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ..models.instance_flavor_fields import InstanceFlavorFields
+from ..models.cluster_flavor_fields import ClusterFlavorFields
+from ..models.cluster_node_fields import ClusterNodeFields
+from ..models.cluster_node_group_fields import ClusterNodeGroupFields
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,12 +37,13 @@ class ClusterFields(BaseModel):
     keypair_name: Optional[StrictStr] = None
     kube_config: Optional[StrictStr] = None
     kubernetes_version: Optional[StrictStr] = None
+    master_flavor: Optional[ClusterFlavorFields] = None
     name: Optional[StrictStr] = None
-    node_count: Optional[StrictInt] = None
-    node_flavor: Optional[InstanceFlavorFields] = None
+    node_groups: Optional[List[ClusterNodeGroupFields]] = None
+    nodes: Optional[List[ClusterNodeFields]] = None
     status: Optional[StrictStr] = None
     status_reason: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["api_address", "created_at", "environment_name", "id", "keypair_name", "kube_config", "kubernetes_version", "name", "node_count", "node_flavor", "status", "status_reason"]
+    __properties: ClassVar[List[str]] = ["api_address", "created_at", "environment_name", "id", "keypair_name", "kube_config", "kubernetes_version", "master_flavor", "name", "node_groups", "nodes", "status", "status_reason"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,9 +84,23 @@ class ClusterFields(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of node_flavor
-        if self.node_flavor:
-            _dict['node_flavor'] = self.node_flavor.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of master_flavor
+        if self.master_flavor:
+            _dict['master_flavor'] = self.master_flavor.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in node_groups (list)
+        _items = []
+        if self.node_groups:
+            for _item_node_groups in self.node_groups:
+                if _item_node_groups:
+                    _items.append(_item_node_groups.to_dict())
+            _dict['node_groups'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in nodes (list)
+        _items = []
+        if self.nodes:
+            for _item_nodes in self.nodes:
+                if _item_nodes:
+                    _items.append(_item_nodes.to_dict())
+            _dict['nodes'] = _items
         return _dict
 
     @classmethod
@@ -103,9 +120,10 @@ class ClusterFields(BaseModel):
             "keypair_name": obj.get("keypair_name"),
             "kube_config": obj.get("kube_config"),
             "kubernetes_version": obj.get("kubernetes_version"),
+            "master_flavor": ClusterFlavorFields.from_dict(obj["master_flavor"]) if obj.get("master_flavor") is not None else None,
             "name": obj.get("name"),
-            "node_count": obj.get("node_count"),
-            "node_flavor": InstanceFlavorFields.from_dict(obj["node_flavor"]) if obj.get("node_flavor") is not None else None,
+            "node_groups": [ClusterNodeGroupFields.from_dict(_item) for _item in obj["node_groups"]] if obj.get("node_groups") is not None else None,
+            "nodes": [ClusterNodeFields.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,
             "status": obj.get("status"),
             "status_reason": obj.get("status_reason")
         })

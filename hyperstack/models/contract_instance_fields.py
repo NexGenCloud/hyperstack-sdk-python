@@ -20,6 +20,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ..models.cluster_fields import ClusterFields
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,6 +28,7 @@ class ContractInstanceFields(BaseModel):
     """
     ContractInstanceFields
     """ # noqa: E501
+    cluster: Optional[ClusterFields] = None
     created_at: Optional[datetime] = None
     flavor_name: Optional[StrictStr] = None
     gpu_count: Optional[StrictInt] = None
@@ -35,7 +37,7 @@ class ContractInstanceFields(BaseModel):
     status: Optional[StrictStr] = None
     termination_time: Optional[datetime] = None
     total_usage_time: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["created_at", "flavor_name", "gpu_count", "id", "name", "status", "termination_time", "total_usage_time"]
+    __properties: ClassVar[List[str]] = ["cluster", "created_at", "flavor_name", "gpu_count", "id", "name", "status", "termination_time", "total_usage_time"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +78,9 @@ class ContractInstanceFields(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of cluster
+        if self.cluster:
+            _dict['cluster'] = self.cluster.to_dict()
         return _dict
 
     @classmethod
@@ -88,6 +93,7 @@ class ContractInstanceFields(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "cluster": ClusterFields.from_dict(obj["cluster"]) if obj.get("cluster") is not None else None,
             "created_at": obj.get("created_at"),
             "flavor_name": obj.get("flavor_name"),
             "gpu_count": obj.get("gpu_count"),
