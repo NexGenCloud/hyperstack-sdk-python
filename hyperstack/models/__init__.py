@@ -167,6 +167,7 @@ from .last_day_cost_response import LastDayCostResponse
 from .logos import Logos
 from .mfa_status_fields import MFAStatusFields
 from .mfa_status_response import MFAStatusResponse
+from .manual_reconciliation_model import ManualReconciliationModel
 from .master_flavors_response import MasterFlavorsResponse
 from .metric_item_fields import MetricItemFields
 from .metrics_fields import MetricsFields

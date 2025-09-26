@@ -26,6 +26,13 @@ class TestClustersApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_attempt_to_manually_reconcile_a_cluster(self) -> None:
+        """Test case for attempt_to_manually_reconcile_a_cluster
+
+        Reconcile a cluster
+        """
+        pass
+
     def test_create_cluster(self) -> None:
         """Test case for create_cluster
 

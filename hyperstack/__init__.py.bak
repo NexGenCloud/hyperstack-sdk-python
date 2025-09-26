@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.41.0-alpha"
+__version__ = "v1.41.2-alpha"
 
 # import apis into sdk package
 from hyperstack.api.calculate_api import CalculateApi
@@ -229,6 +229,7 @@ from hyperstack.models.last_day_cost_response import LastDayCostResponse
 from hyperstack.models.logos import Logos
 from hyperstack.models.mfa_status_fields import MFAStatusFields
 from hyperstack.models.mfa_status_response import MFAStatusResponse
+from hyperstack.models.manual_reconciliation_model import ManualReconciliationModel
 from hyperstack.models.master_flavors_response import MasterFlavorsResponse
 from hyperstack.models.metric_item_fields import MetricItemFields
 from hyperstack.models.metrics_fields import MetricsFields

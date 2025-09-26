@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.41.0-alpha"
+__version__ = "v1.41.2-alpha"
 
 # import apis into sdk package
 from .api.calculate_api import CalculateApi
@@ -229,6 +229,7 @@ from .models.last_day_cost_response import LastDayCostResponse
 from .models.logos import Logos
 from .models.mfa_status_fields import MFAStatusFields
 from .models.mfa_status_response import MFAStatusResponse
+from .models.manual_reconciliation_model import ManualReconciliationModel
 from .models.master_flavors_response import MasterFlavorsResponse
 from .models.metric_item_fields import MetricItemFields
 from .models.metrics_fields import MetricsFields
