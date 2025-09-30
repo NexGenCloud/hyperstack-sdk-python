@@ -26,45 +26,45 @@ class TestFirewallsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_delete_security_group_details(self) -> None:
-        """Test case for delete_security_group_details
+    def test_add_firewall_rule_to_an_existing_firewall(self) -> None:
+        """Test case for add_firewall_rule_to_an_existing_firewall
 
-        Delete firewall
+        Add firewall rule to firewall
         """
         pass
 
-    def test_delete_security_group_rule_delete(self) -> None:
-        """Test case for delete_security_group_rule_delete
-
-        Delete firewall rules from firewall
-        """
-        pass
-
-    def test_get_security_group(self) -> None:
-        """Test case for get_security_group
-
-        List firewalls
-        """
-        pass
-
-    def test_get_security_group_details(self) -> None:
-        """Test case for get_security_group_details
-
-        Retrieve firewall details
-        """
-        pass
-
-    def test_post_security_group(self) -> None:
-        """Test case for post_security_group
+    def test_create_a_new_firewall(self) -> None:
+        """Test case for create_a_new_firewall
 
         Create firewall
         """
         pass
 
-    def test_post_security_group_rules(self) -> None:
-        """Test case for post_security_group_rules
+    def test_delete_existing_firewall(self) -> None:
+        """Test case for delete_existing_firewall
 
-        Add firewall rule to firewall
+        Delete firewall
+        """
+        pass
+
+    def test_delete_firewall_rules_from_firewall(self) -> None:
+        """Test case for delete_firewall_rules_from_firewall
+
+        Delete firewall rules from firewall
+        """
+        pass
+
+    def test_list_existing_firewalls(self) -> None:
+        """Test case for list_existing_firewalls
+
+        List firewalls
+        """
+        pass
+
+    def test_retrieve_the_details_of_an_existing_firewall(self) -> None:
+        """Test case for retrieve_the_details_of_an_existing_firewall
+
+        Retrieve firewall details
         """
         pass
 

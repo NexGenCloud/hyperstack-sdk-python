@@ -33,8 +33,8 @@ class TestSnapshotsApi(unittest.TestCase):
         """
         pass
 
-    def test_delete_snapshot(self) -> None:
-        """Test case for delete_snapshot
+    def test_delete_an_existing_snapshot(self) -> None:
+        """Test case for delete_an_existing_snapshot
 
         Delete snapshot
         """
@@ -47,24 +47,24 @@ class TestSnapshotsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_snapshot(self) -> None:
-        """Test case for get_snapshot
+    def test_restore_a_snapshot(self) -> None:
+        """Test case for restore_a_snapshot
+
+        Restore a snapshot
+        """
+        pass
+
+    def test_retrieve_an_existing_snapshot(self) -> None:
+        """Test case for retrieve_an_existing_snapshot
 
         Retrieve a snapshot
         """
         pass
 
-    def test_get_snapshots(self) -> None:
-        """Test case for get_snapshots
+    def test_retrieves_a_list_of_snapshots(self) -> None:
+        """Test case for retrieves_a_list_of_snapshots
 
         Retrieve list of snapshots with pagination
-        """
-        pass
-
-    def test_post_snapshot_restore(self) -> None:
-        """Test case for post_snapshot_restore
-
-        Restore a snapshot
         """
         pass
 

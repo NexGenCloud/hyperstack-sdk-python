@@ -26,10 +26,17 @@ class TestVirtualMachineApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_delete_instance(self) -> None:
-        """Test case for delete_instance
+    def test_attach_firewalls_to_a_virtual_machine(self) -> None:
+        """Test case for attach_firewalls_to_a_virtual_machine
 
-        Delete virtual machine
+        Attach firewalls to a virtual machine
+        """
+        pass
+
+    def test_create_one_or_more_virtual_machines(self) -> None:
+        """Test case for create_one_or_more_virtual_machines
+
+        Create virtual machines
         """
         pass
 
@@ -40,6 +47,13 @@ class TestVirtualMachineApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_virtual_machine(self) -> None:
+        """Test case for delete_virtual_machine
+
+        Delete virtual machine
+        """
+        pass
+
     def test_fetch_virtual_machine_name_availability(self) -> None:
         """Test case for fetch_virtual_machine_name_availability
 
@@ -47,45 +61,10 @@ class TestVirtualMachineApi(unittest.TestCase):
         """
         pass
 
-    def test_get_contract_instances(self) -> None:
-        """Test case for get_contract_instances
-
-        Retrieve virtual machines associated with a contract
-        """
-        pass
-
-    def test_get_instance(self) -> None:
-        """Test case for get_instance
-
-        List virtual machines
-        """
-        pass
-
-    def test_get_instance2(self) -> None:
-        """Test case for get_instance2
-
-        Retrieve virtual machine details
-        """
-        pass
-
-    def test_get_instance3(self) -> None:
-        """Test case for get_instance3
+    def test_get_instance_hard_reboot(self) -> None:
+        """Test case for get_instance_hard_reboot
 
         Hard reboot virtual machine
-        """
-        pass
-
-    def test_get_instance4(self) -> None:
-        """Test case for get_instance4
-
-        Start virtual machine
-        """
-        pass
-
-    def test_get_instance5(self) -> None:
-        """Test case for get_instance5
-
-        Stop virtual machine
         """
         pass
 
@@ -117,17 +96,24 @@ class TestVirtualMachineApi(unittest.TestCase):
         """
         pass
 
-    def test_post_instance(self) -> None:
-        """Test case for post_instance
+    def test_get_instance_start(self) -> None:
+        """Test case for get_instance_start
 
-        Create virtual machines
+        Start virtual machine
         """
         pass
 
-    def test_post_instance_attach_firewalls(self) -> None:
-        """Test case for post_instance_attach_firewalls
+    def test_get_instance_stop(self) -> None:
+        """Test case for get_instance_stop
 
-        Attach firewalls to a virtual machine
+        Stop virtual machine
+        """
+        pass
+
+    def test_list_virtual_machines(self) -> None:
+        """Test case for list_virtual_machines
+
+        List virtual machines
         """
         pass
 
@@ -163,6 +149,20 @@ class TestVirtualMachineApi(unittest.TestCase):
         """Test case for put_labels
 
         Edit virtual machine labels
+        """
+        pass
+
+    def test_retrieve_virtual_machine_details(self) -> None:
+        """Test case for retrieve_virtual_machine_details
+
+        Retrieve virtual machine details
+        """
+        pass
+
+    def test_retrieve_virtual_machines_associated_with_a_contract(self) -> None:
+        """Test case for retrieve_virtual_machines_associated_with_a_contract
+
+        Retrieve virtual machines associated with a contract
         """
         pass
 

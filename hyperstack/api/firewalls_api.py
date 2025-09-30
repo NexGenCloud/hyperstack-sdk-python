@@ -46,7 +46,600 @@ class FirewallsApi:
 
 
     @validate_call
-    def delete_security_group_details(
+    def add_firewall_rule_to_an_existing_firewall(
+        self,
+        firewall_id: StrictInt,
+        payload: CreateFirewallRulePayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> FirewallRule:
+        """Add firewall rule to firewall
+
+        Creates a [**firewall rule**](https://docs...cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
+
+        :param firewall_id: (required)
+        :type firewall_id: int
+        :param payload: (required)
+        :type payload: CreateFirewallRulePayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_firewall_rule_to_an_existing_firewall_serialize(
+            firewall_id=firewall_id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "FirewallRule",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def add_firewall_rule_to_an_existing_firewall_with_http_info(
+        self,
+        firewall_id: StrictInt,
+        payload: CreateFirewallRulePayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[FirewallRule]:
+        """Add firewall rule to firewall
+
+        Creates a [**firewall rule**](https://docs...cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
+
+        :param firewall_id: (required)
+        :type firewall_id: int
+        :param payload: (required)
+        :type payload: CreateFirewallRulePayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_firewall_rule_to_an_existing_firewall_serialize(
+            firewall_id=firewall_id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "FirewallRule",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def add_firewall_rule_to_an_existing_firewall_without_preload_content(
+        self,
+        firewall_id: StrictInt,
+        payload: CreateFirewallRulePayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Add firewall rule to firewall
+
+        Creates a [**firewall rule**](https://docs...cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
+
+        :param firewall_id: (required)
+        :type firewall_id: int
+        :param payload: (required)
+        :type payload: CreateFirewallRulePayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._add_firewall_rule_to_an_existing_firewall_serialize(
+            firewall_id=firewall_id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "FirewallRule",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _add_firewall_rule_to_an_existing_firewall_serialize(
+        self,
+        firewall_id,
+        payload,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if firewall_id is not None:
+            _path_params['firewall_id'] = firewall_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if payload is not None:
+            _body_params = payload
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/core/firewalls/{firewall_id}/firewall-rules',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def create_a_new_firewall(
+        self,
+        payload: CreateFirewallPayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> FirewallResponse:
+        """Create firewall
+
+        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs...cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
+
+        :param payload: (required)
+        :type payload: CreateFirewallPayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_a_new_firewall_serialize(
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "FirewallResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '409': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def create_a_new_firewall_with_http_info(
+        self,
+        payload: CreateFirewallPayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[FirewallResponse]:
+        """Create firewall
+
+        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs...cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
+
+        :param payload: (required)
+        :type payload: CreateFirewallPayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_a_new_firewall_serialize(
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "FirewallResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '409': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def create_a_new_firewall_without_preload_content(
+        self,
+        payload: CreateFirewallPayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Create firewall
+
+        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs...cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
+
+        :param payload: (required)
+        :type payload: CreateFirewallPayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._create_a_new_firewall_serialize(
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "FirewallResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '409': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _create_a_new_firewall_serialize(
+        self,
+        payload,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if payload is not None:
+            _body_params = payload
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/core/firewalls',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_existing_firewall(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -90,7 +683,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_security_group_details_serialize(
+        _param = self._delete_existing_firewall_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -119,7 +712,7 @@ class FirewallsApi:
 
 
     @validate_call
-    def delete_security_group_details_with_http_info(
+    def delete_existing_firewall_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -163,7 +756,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_security_group_details_serialize(
+        _param = self._delete_existing_firewall_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -192,7 +785,7 @@ class FirewallsApi:
 
 
     @validate_call
-    def delete_security_group_details_without_preload_content(
+    def delete_existing_firewall_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -236,7 +829,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_security_group_details_serialize(
+        _param = self._delete_existing_firewall_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -260,7 +853,7 @@ class FirewallsApi:
         return response_data.response
 
 
-    def _delete_security_group_details_serialize(
+    def _delete_existing_firewall_serialize(
         self,
         id,
         _request_auth,
@@ -325,7 +918,7 @@ class FirewallsApi:
 
 
     @validate_call
-    def delete_security_group_rule_delete(
+    def delete_firewall_rules_from_firewall(
         self,
         firewall_id: StrictInt,
         firewall_rule_id: StrictInt,
@@ -372,7 +965,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_security_group_rule_delete_serialize(
+        _param = self._delete_firewall_rules_from_firewall_serialize(
             firewall_id=firewall_id,
             firewall_rule_id=firewall_rule_id,
             _request_auth=_request_auth,
@@ -402,7 +995,7 @@ class FirewallsApi:
 
 
     @validate_call
-    def delete_security_group_rule_delete_with_http_info(
+    def delete_firewall_rules_from_firewall_with_http_info(
         self,
         firewall_id: StrictInt,
         firewall_rule_id: StrictInt,
@@ -449,7 +1042,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_security_group_rule_delete_serialize(
+        _param = self._delete_firewall_rules_from_firewall_serialize(
             firewall_id=firewall_id,
             firewall_rule_id=firewall_rule_id,
             _request_auth=_request_auth,
@@ -479,7 +1072,7 @@ class FirewallsApi:
 
 
     @validate_call
-    def delete_security_group_rule_delete_without_preload_content(
+    def delete_firewall_rules_from_firewall_without_preload_content(
         self,
         firewall_id: StrictInt,
         firewall_rule_id: StrictInt,
@@ -526,7 +1119,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_security_group_rule_delete_serialize(
+        _param = self._delete_firewall_rules_from_firewall_serialize(
             firewall_id=firewall_id,
             firewall_rule_id=firewall_rule_id,
             _request_auth=_request_auth,
@@ -551,7 +1144,7 @@ class FirewallsApi:
         return response_data.response
 
 
-    def _delete_security_group_rule_delete_serialize(
+    def _delete_firewall_rules_from_firewall_serialize(
         self,
         firewall_id,
         firewall_rule_id,
@@ -619,7 +1212,7 @@ class FirewallsApi:
 
 
     @validate_call
-    def get_security_group(
+    def list_existing_firewalls(
         self,
         page: Optional[StrictInt] = None,
         page_size: Optional[StrictInt] = None,
@@ -672,7 +1265,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_security_group_serialize(
+        _param = self._list_existing_firewalls_serialize(
             page=page,
             page_size=page_size,
             search=search,
@@ -702,7 +1295,7 @@ class FirewallsApi:
 
 
     @validate_call
-    def get_security_group_with_http_info(
+    def list_existing_firewalls_with_http_info(
         self,
         page: Optional[StrictInt] = None,
         page_size: Optional[StrictInt] = None,
@@ -755,7 +1348,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_security_group_serialize(
+        _param = self._list_existing_firewalls_serialize(
             page=page,
             page_size=page_size,
             search=search,
@@ -785,7 +1378,7 @@ class FirewallsApi:
 
 
     @validate_call
-    def get_security_group_without_preload_content(
+    def list_existing_firewalls_without_preload_content(
         self,
         page: Optional[StrictInt] = None,
         page_size: Optional[StrictInt] = None,
@@ -838,7 +1431,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_security_group_serialize(
+        _param = self._list_existing_firewalls_serialize(
             page=page,
             page_size=page_size,
             search=search,
@@ -863,7 +1456,7 @@ class FirewallsApi:
         return response_data.response
 
 
-    def _get_security_group_serialize(
+    def _list_existing_firewalls_serialize(
         self,
         page,
         page_size,
@@ -945,7 +1538,7 @@ class FirewallsApi:
 
 
     @validate_call
-    def get_security_group_details(
+    def retrieve_the_details_of_an_existing_firewall(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -989,7 +1582,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_security_group_details_serialize(
+        _param = self._retrieve_the_details_of_an_existing_firewall_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1017,7 +1610,7 @@ class FirewallsApi:
 
 
     @validate_call
-    def get_security_group_details_with_http_info(
+    def retrieve_the_details_of_an_existing_firewall_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -1061,7 +1654,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_security_group_details_serialize(
+        _param = self._retrieve_the_details_of_an_existing_firewall_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1089,7 +1682,7 @@ class FirewallsApi:
 
 
     @validate_call
-    def get_security_group_details_without_preload_content(
+    def retrieve_the_details_of_an_existing_firewall_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -1133,7 +1726,7 @@ class FirewallsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_security_group_details_serialize(
+        _param = self._retrieve_the_details_of_an_existing_firewall_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1156,7 +1749,7 @@ class FirewallsApi:
         return response_data.response
 
 
-    def _get_security_group_details_serialize(
+    def _retrieve_the_details_of_an_existing_firewall_serialize(
         self,
         id,
         _request_auth,
@@ -1205,599 +1798,6 @@ class FirewallsApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/core/firewalls/{id}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def post_security_group(
-        self,
-        payload: CreateFirewallPayload,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> FirewallResponse:
-        """Create firewall
-
-        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs...cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
-
-        :param payload: (required)
-        :type payload: CreateFirewallPayload
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._post_security_group_serialize(
-            payload=payload,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FirewallResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '409': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def post_security_group_with_http_info(
-        self,
-        payload: CreateFirewallPayload,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[FirewallResponse]:
-        """Create firewall
-
-        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs...cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
-
-        :param payload: (required)
-        :type payload: CreateFirewallPayload
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._post_security_group_serialize(
-            payload=payload,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FirewallResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '409': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def post_security_group_without_preload_content(
-        self,
-        payload: CreateFirewallPayload,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Create firewall
-
-        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs...cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
-
-        :param payload: (required)
-        :type payload: CreateFirewallPayload
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._post_security_group_serialize(
-            payload=payload,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FirewallResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '409': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _post_security_group_serialize(
-        self,
-        payload,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if payload is not None:
-            _body_params = payload
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/core/firewalls',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def post_security_group_rules(
-        self,
-        firewall_id: StrictInt,
-        payload: CreateFirewallRulePayload,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> FirewallRule:
-        """Add firewall rule to firewall
-
-        Creates a [**firewall rule**](https://docs...cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
-
-        :param firewall_id: (required)
-        :type firewall_id: int
-        :param payload: (required)
-        :type payload: CreateFirewallRulePayload
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._post_security_group_rules_serialize(
-            firewall_id=firewall_id,
-            payload=payload,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FirewallRule",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def post_security_group_rules_with_http_info(
-        self,
-        firewall_id: StrictInt,
-        payload: CreateFirewallRulePayload,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[FirewallRule]:
-        """Add firewall rule to firewall
-
-        Creates a [**firewall rule**](https://docs...cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
-
-        :param firewall_id: (required)
-        :type firewall_id: int
-        :param payload: (required)
-        :type payload: CreateFirewallRulePayload
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._post_security_group_rules_serialize(
-            firewall_id=firewall_id,
-            payload=payload,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FirewallRule",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def post_security_group_rules_without_preload_content(
-        self,
-        firewall_id: StrictInt,
-        payload: CreateFirewallRulePayload,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Add firewall rule to firewall
-
-        Creates a [**firewall rule**](https://docs...cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
-
-        :param firewall_id: (required)
-        :type firewall_id: int
-        :param payload: (required)
-        :type payload: CreateFirewallRulePayload
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._post_security_group_rules_serialize(
-            firewall_id=firewall_id,
-            payload=payload,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FirewallRule",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _post_security_group_rules_serialize(
-        self,
-        firewall_id,
-        payload,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if firewall_id is not None:
-            _path_params['firewall_id'] = firewall_id
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if payload is not None:
-            _body_params = payload
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/core/firewalls/{firewall_id}/firewall-rules',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

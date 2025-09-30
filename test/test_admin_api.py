@@ -14,29 +14,22 @@
 
 import unittest
 
-from hyperstack.api.vnc_url_api import VncUrlApi
+from hyperstack.api.admin_api import AdminApi
 
 
-class TestVncUrlApi(unittest.TestCase):
-    """VncUrlApi unit test stubs"""
+class TestAdminApi(unittest.TestCase):
+    """AdminApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = VncUrlApi()
+        self.api = AdminApi()
 
     def tearDown(self) -> None:
         pass
 
-    def test_get_vnc_url(self) -> None:
-        """Test case for get_vnc_url
+    def test_send_password_change_notification_email(self) -> None:
+        """Test case for send_password_change_notification_email
 
-        Request Instance Console
-        """
-        pass
-
-    def test_get_vncurl(self) -> None:
-        """Test case for get_vncurl
-
-        Get VNC Console Link
+        Send Password Change Notification Email
         """
         pass
 

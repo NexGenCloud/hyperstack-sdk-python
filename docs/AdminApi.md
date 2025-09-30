@@ -1,18 +1,18 @@
-# hyperstack.FirewallAttachmentApi
+# hyperstack.AdminApi
 
 All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_firewall_to_virtual_machines**](FirewallAttachmentApi.md#attach_firewall_to_virtual_machines) | **POST** /core/firewalls/{firewall_id}/update-attachments | Attach Firewalls to VMs
+[**send_password_change_notification_email**](AdminApi.md#send_password_change_notification_email) | **POST** /auth/admin/password-change-mail | Send Password Change Notification Email
 
 
-# **attach_firewall_to_virtual_machines**
-> ResponseModel attach_firewall_to_virtual_machines(firewall_id, payload)
+# **send_password_change_notification_email**
+> CommonResponseModel send_password_change_notification_email()
 
-Attach Firewalls to VMs
+Send Password Change Notification Email
 
-Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
+Send a password change notification email to a user
 
 ### Example
 
@@ -20,8 +20,7 @@ Attach a firewall to one or more virtual machines by providing the virtual machi
 
 ```python
 import hyperstack
-from hyperstack.models.attach_firewall_with_vm import AttachFirewallWithVM
-from hyperstack.models.response_model import ResponseModel
+from hyperstack.models.common_response_model import CommonResponseModel
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -45,32 +44,26 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = hyperstack.FirewallAttachmentApi(api_client)
-    firewall_id = 56 # int | 
-    payload = hyperstack.AttachFirewallWithVM() # AttachFirewallWithVM | 
+    api_instance = hyperstack.AdminApi(api_client)
 
     try:
-        # Attach Firewalls to VMs
-        api_response = api_instance.attach_firewall_to_virtual_machines(firewall_id, payload)
-        print("The response of FirewallAttachmentApi->attach_firewall_to_virtual_machines:\n")
+        # Send Password Change Notification Email
+        api_response = api_instance.send_password_change_notification_email()
+        print("The response of AdminApi->send_password_change_notification_email:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FirewallAttachmentApi->attach_firewall_to_virtual_machines: %s\n" % e)
+        print("Exception when calling AdminApi->send_password_change_notification_email: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **firewall_id** | **int**|  | 
- **payload** | [**AttachFirewallWithVM**](AttachFirewallWithVM.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**ResponseModel**](ResponseModel.md)
+[**CommonResponseModel**](CommonResponseModel.md)
 
 ### Authorization
 
@@ -78,19 +71,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
+**200** | Email Sent Successfully. |  -  |
+**400** | Unable to send email |  -  |
 **401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**409** | Conflict |  -  |
+**404** | User Not Found |  -  |
+**405** | Method Not Allowed |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
