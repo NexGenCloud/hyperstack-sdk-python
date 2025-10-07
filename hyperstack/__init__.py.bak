@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.42.0-alpha"
+__version__ = "v1.42.1-alpha"
 
 # import apis into sdk package
 from hyperstack.api.calculate_api import CalculateApi
