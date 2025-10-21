@@ -17,30 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CreateClusterNodeGroupPayload(BaseModel):
+class UpdateClusterNodeGroupPayload(BaseModel):
     """
-    CreateClusterNodeGroupPayload
+    UpdateClusterNodeGroupPayload
     """ # noqa: E501
-    count: Optional[Annotated[int, Field(strict=True, ge=1)]] = None
-    flavor_name: StrictStr
     max_count: Optional[Annotated[int, Field(le=20, strict=True)]] = None
     min_count: Optional[Annotated[int, Field(strict=True, ge=1)]] = None
-    name: Annotated[str, Field(strict=True, max_length=20)]
-    role: StrictStr
-    __properties: ClassVar[List[str]] = ["count", "flavor_name", "max_count", "min_count", "name", "role"]
-
-    @field_validator('role')
-    def role_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['worker']):
-            raise ValueError("must be one of enum values ('worker')")
-        return value
+    __properties: ClassVar[List[str]] = ["max_count", "min_count"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -60,7 +49,7 @@ class CreateClusterNodeGroupPayload(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CreateClusterNodeGroupPayload from a JSON string"""
+        """Create an instance of UpdateClusterNodeGroupPayload from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -85,7 +74,7 @@ class CreateClusterNodeGroupPayload(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CreateClusterNodeGroupPayload from a dict"""
+        """Create an instance of UpdateClusterNodeGroupPayload from a dict"""
         if obj is None:
             return None
 
@@ -93,12 +82,8 @@ class CreateClusterNodeGroupPayload(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "count": obj.get("count"),
-            "flavor_name": obj.get("flavor_name"),
             "max_count": obj.get("max_count"),
-            "min_count": obj.get("min_count"),
-            "name": obj.get("name"),
-            "role": obj.get("role") if obj.get("role") is not None else 'worker'
+            "min_count": obj.get("min_count")
         })
         return _obj
 

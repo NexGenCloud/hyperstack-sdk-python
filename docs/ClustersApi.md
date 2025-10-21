@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**list_clusters**](ClustersApi.md#list_clusters) | **GET** /core/clusters | List Clusters
 [**list_node_groups**](ClustersApi.md#list_node_groups) | **GET** /core/clusters/{cluster_id}/node-groups | List node groups for a cluster
 [**retrieve_a_node_group**](ClustersApi.md#retrieve_a_node_group) | **GET** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Retrieve a node group in a cluster
+[**update_a_node_group**](ClustersApi.md#update_a_node_group) | **PATCH** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Update a node group in a cluster
 
 
 # **attempt_to_manually_reconcile_a_cluster**
@@ -1253,6 +1254,93 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_a_node_group**
+> ClusterNodeGroupsCreateResponse update_a_node_group(cluster_id, node_group_id, payload)
+
+Update a node group in a cluster
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.cluster_node_groups_create_response import ClusterNodeGroupsCreateResponse
+from hyperstack.models.update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.ClustersApi(api_client)
+    cluster_id = 56 # int | 
+    node_group_id = 56 # int | 
+    payload = hyperstack.UpdateClusterNodeGroupPayload() # UpdateClusterNodeGroupPayload | 
+
+    try:
+        # Update a node group in a cluster
+        api_response = api_instance.update_a_node_group(cluster_id, node_group_id, payload)
+        print("The response of ClustersApi->update_a_node_group:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ClustersApi->update_a_node_group: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster_id** | **int**|  | 
+ **node_group_id** | **int**|  | 
+ **payload** | [**UpdateClusterNodeGroupPayload**](UpdateClusterNodeGroupPayload.md)|  | 
+
+### Return type
+
+[**ClusterNodeGroupsCreateResponse**](ClusterNodeGroupsCreateResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**409** | Conflict |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

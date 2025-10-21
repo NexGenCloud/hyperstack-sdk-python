@@ -48,7 +48,10 @@ class TestCreateClusterPayload(unittest.TestCase):
                     hyperstack.models.create_cluster_node_group_payload.Create_ClusterNodeGroup_payload(
                         count = 1, 
                         flavor_name = '', 
-                        name = '', )
+                        max_count = 56, 
+                        min_count = 1, 
+                        name = '', 
+                        role = 'worker', )
                     ]
             )
         else:

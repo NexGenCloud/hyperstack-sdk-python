@@ -41,6 +41,7 @@ class TestClusterListResponse(unittest.TestCase):
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         environment_name = '', 
                         id = 56, 
+                        is_reconciling = True, 
                         keypair_name = '', 
                         kube_config = '', 
                         kubernetes_version = '', 
@@ -75,6 +76,8 @@ class TestClusterListResponse(unittest.TestCase):
                                     name = '', 
                                     ram = 1.337, ), 
                                 id = 56, 
+                                max_count = 56, 
+                                min_count = 56, 
                                 name = '', 
                                 role = '', 
                                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )

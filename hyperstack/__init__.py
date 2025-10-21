@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.42.1-alpha"
+__version__ = "v1.43.0-alpha"
 
 # import apis into sdk package
 from .api.calculate_api import CalculateApi
@@ -341,6 +341,7 @@ from .models.template_fields import TemplateFields
 from .models.templates import Templates
 from .models.token_based_billing_history_response import TokenBasedBillingHistoryResponse
 from .models.uris import URIs
+from .models.update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
 from .models.update_environment import UpdateEnvironment
 from .models.update_keypair_name import UpdateKeypairName
 from .models.update_keypair_name_response import UpdateKeypairNameResponse

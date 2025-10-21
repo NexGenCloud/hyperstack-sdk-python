@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ..models.cluster_flavor_fields import ClusterFlavorFields
 from ..models.cluster_node_fields import ClusterNodeFields
@@ -34,6 +34,7 @@ class ClusterFields(BaseModel):
     created_at: Optional[datetime] = None
     environment_name: Optional[StrictStr] = None
     id: Optional[StrictInt] = None
+    is_reconciling: Optional[StrictBool] = None
     keypair_name: Optional[StrictStr] = None
     kube_config: Optional[StrictStr] = None
     kubernetes_version: Optional[StrictStr] = None
@@ -43,7 +44,7 @@ class ClusterFields(BaseModel):
     nodes: Optional[List[ClusterNodeFields]] = None
     status: Optional[StrictStr] = None
     status_reason: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["api_address", "created_at", "environment_name", "id", "keypair_name", "kube_config", "kubernetes_version", "master_flavor", "name", "node_groups", "nodes", "status", "status_reason"]
+    __properties: ClassVar[List[str]] = ["api_address", "created_at", "environment_name", "id", "is_reconciling", "keypair_name", "kube_config", "kubernetes_version", "master_flavor", "name", "node_groups", "nodes", "status", "status_reason"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -117,6 +118,7 @@ class ClusterFields(BaseModel):
             "created_at": obj.get("created_at"),
             "environment_name": obj.get("environment_name"),
             "id": obj.get("id"),
+            "is_reconciling": obj.get("is_reconciling"),
             "keypair_name": obj.get("keypair_name"),
             "kube_config": obj.get("kube_config"),
             "kubernetes_version": obj.get("kubernetes_version"),

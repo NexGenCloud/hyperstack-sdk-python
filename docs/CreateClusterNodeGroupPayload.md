@@ -7,7 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | [optional] 
 **flavor_name** | **str** |  | 
+**max_count** | **int** |  | [optional] 
+**min_count** | **int** |  | [optional] 
 **name** | **str** |  | 
+**role** | **str** |  | [default to 'worker']
 
 ## Example
 

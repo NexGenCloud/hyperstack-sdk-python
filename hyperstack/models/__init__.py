@@ -278,6 +278,7 @@ from .template_fields import TemplateFields
 from .templates import Templates
 from .token_based_billing_history_response import TokenBasedBillingHistoryResponse
 from .uris import URIs
+from .update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
 from .update_environment import UpdateEnvironment
 from .update_keypair_name import UpdateKeypairName
 from .update_keypair_name_response import UpdateKeypairNameResponse

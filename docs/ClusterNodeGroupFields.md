@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | [optional] 
 **flavor** | [**ClusterFlavorFields**](ClusterFlavorFields.md) |  | [optional] 
 **id** | **int** |  | [optional] 
+**max_count** | **int** |  | [optional] 
+**min_count** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **role** | **str** |  | [optional] 
 **updated_at** | **datetime** |  | [optional] 

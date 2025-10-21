@@ -131,6 +131,13 @@ class TestClustersApi(unittest.TestCase):
         """
         pass
 
+    def test_update_a_node_group(self) -> None:
+        """Test case for update_a_node_group
+
+        Update a node group in a cluster
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

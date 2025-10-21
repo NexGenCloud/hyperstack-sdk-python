@@ -55,6 +55,8 @@ class TestClusterNodeGroupsGetResponse(unittest.TestCase):
                         name = '', 
                         ram = 1.337, ), 
                     id = 56, 
+                    max_count = 56, 
+                    min_count = 56, 
                     name = '', 
                     role = '', 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),

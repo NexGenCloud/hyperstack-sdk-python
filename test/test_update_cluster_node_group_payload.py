@@ -14,10 +14,10 @@
 
 import unittest
 
-from hyperstack.models.create_cluster_node_group_payload import CreateClusterNodeGroupPayload
+from hyperstack.models.update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
 
-class TestCreateClusterNodeGroupPayload(unittest.TestCase):
-    """CreateClusterNodeGroupPayload unit test stubs"""
+class TestUpdateClusterNodeGroupPayload(unittest.TestCase):
+    """UpdateClusterNodeGroupPayload unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,33 +25,26 @@ class TestCreateClusterNodeGroupPayload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> CreateClusterNodeGroupPayload:
-        """Test CreateClusterNodeGroupPayload
+    def make_instance(self, include_optional) -> UpdateClusterNodeGroupPayload:
+        """Test UpdateClusterNodeGroupPayload
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `CreateClusterNodeGroupPayload`
+        # uncomment below to create an instance of `UpdateClusterNodeGroupPayload`
         """
-        model = CreateClusterNodeGroupPayload()
+        model = UpdateClusterNodeGroupPayload()
         if include_optional:
-            return CreateClusterNodeGroupPayload(
-                count = 1,
-                flavor_name = '',
+            return UpdateClusterNodeGroupPayload(
                 max_count = 56,
-                min_count = 1,
-                name = '',
-                role = 'worker'
+                min_count = 1
             )
         else:
-            return CreateClusterNodeGroupPayload(
-                flavor_name = '',
-                name = '',
-                role = 'worker',
+            return UpdateClusterNodeGroupPayload(
         )
         """
 
-    def testCreateClusterNodeGroupPayload(self):
-        """Test CreateClusterNodeGroupPayload"""
+    def testUpdateClusterNodeGroupPayload(self):
+        """Test UpdateClusterNodeGroupPayload"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

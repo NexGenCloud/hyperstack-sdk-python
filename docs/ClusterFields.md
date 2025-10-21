@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | [optional] 
 **environment_name** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
+**is_reconciling** | **bool** |  | [optional] 
 **keypair_name** | **str** |  | [optional] 
 **kube_config** | **str** |  | [optional] 
 **kubernetes_version** | **str** |  | [optional] 

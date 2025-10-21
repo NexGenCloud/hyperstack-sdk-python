@@ -32,10 +32,12 @@ class ClusterNodeGroupFields(BaseModel):
     created_at: Optional[datetime] = None
     flavor: Optional[ClusterFlavorFields] = None
     id: Optional[StrictInt] = None
+    max_count: Optional[StrictInt] = None
+    min_count: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
     role: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
-    __properties: ClassVar[List[str]] = ["count", "created_at", "flavor", "id", "name", "role", "updated_at"]
+    __properties: ClassVar[List[str]] = ["count", "created_at", "flavor", "id", "max_count", "min_count", "name", "role", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +97,8 @@ class ClusterNodeGroupFields(BaseModel):
             "created_at": obj.get("created_at"),
             "flavor": ClusterFlavorFields.from_dict(obj["flavor"]) if obj.get("flavor") is not None else None,
             "id": obj.get("id"),
+            "max_count": obj.get("max_count"),
+            "min_count": obj.get("min_count"),
             "name": obj.get("name"),
             "role": obj.get("role"),
             "updated_at": obj.get("updated_at")
