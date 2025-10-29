@@ -14,14 +14,13 @@
 """  # noqa: E501
 
 
-__version__ = "v1.43.0-alpha"
+__version__ = "v1.45.2-alpha"
 
 # import apis into sdk package
 from hyperstack.api.calculate_api import CalculateApi
 from hyperstack.api.customer_contract_api import CustomerContractApi
 from hyperstack.api.pricebook_api import PricebookApi
 from hyperstack.api.snapshots_api import SnapshotsApi
-from hyperstack.api.admin_api import AdminApi
 from hyperstack.api.alive_api import AliveApi
 from hyperstack.api.api_key_api import ApiKeyApi
 from hyperstack.api.assigning_member_role_api import AssigningMemberRoleApi
@@ -64,6 +63,7 @@ from hyperstack.api.virtual_machine_events_api import VirtualMachineEventsApi
 from hyperstack.api.vnc_url_api import VncUrlApi
 from hyperstack.api.volume_api import VolumeApi
 from hyperstack.api.volume_attachment_api import VolumeAttachmentApi
+from hyperstack.api.vouchers_api import VouchersApi
 
 # import ApiClient
 from hyperstack.api_response import ApiResponse
@@ -156,6 +156,7 @@ from hyperstack.models.customer_contract_detail_response_model import CustomerCo
 from hyperstack.models.customer_contract_fields import CustomerContractFields
 from hyperstack.models.dashboard_info_response import DashboardInfoResponse
 from hyperstack.models.data_synthesis_billing_history_details_response_schema import DataSynthesisBillingHistoryDetailsResponseSchema
+from hyperstack.models.delete_cluster_nodes_fields import DeleteClusterNodesFields
 from hyperstack.models.deployment_fields import DeploymentFields
 from hyperstack.models.deployment_fields_for_start_deployments import DeploymentFieldsForStartDeployments
 from hyperstack.models.deployments import Deployments
@@ -272,6 +273,7 @@ from hyperstack.models.rbac_role_detail_response_model import RbacRoleDetailResp
 from hyperstack.models.rbac_role_detail_response_model_fixed import RbacRoleDetailResponseModelFixed
 from hyperstack.models.rbac_role_field import RbacRoleField
 from hyperstack.models.rbac_role_fields import RbacRoleFields
+from hyperstack.models.redeem_voucher_payload import RedeemVoucherPayload
 from hyperstack.models.region_fields import RegionFields
 from hyperstack.models.regions import Regions
 from hyperstack.models.remove_member_from_organization_response_model import RemoveMemberFromOrganizationResponseModel
@@ -368,4 +370,6 @@ from hyperstack.models.volume_overview_fields import VolumeOverviewFields
 from hyperstack.models.volume_types import VolumeTypes
 from hyperstack.models.volumes import Volumes
 from hyperstack.models.volumes_fields import VolumesFields
+from hyperstack.models.voucher import Voucher
+from hyperstack.models.voucher_redeem_response_schema import VoucherRedeemResponseSchema
 from hyperstack.models.workload_billing_history_response import WorkloadBillingHistoryResponse

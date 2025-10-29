@@ -75,6 +75,13 @@ class TestClustersApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_cluster_nodes(self) -> None:
+        """Test case for delete_cluster_nodes
+
+        Delete Multiple Cluster Nodes
+        """
+        pass
+
     def test_fetch_cluster_name_availability(self) -> None:
         """Test case for fetch_cluster_name_availability
 

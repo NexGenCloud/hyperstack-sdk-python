@@ -1,18 +1,18 @@
-# hyperstack.AdminApi
+# hyperstack.VouchersApi
 
 All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**send_password_change_notification_email**](AdminApi.md#send_password_change_notification_email) | **POST** /auth/admin/password-change-mail | Send Password Change Notification Email
+[**redeem_a_voucher**](VouchersApi.md#redeem_a_voucher) | **POST** /billing/billing/vouchers/redeem | Redeem a voucher with a voucher_code
 
 
-# **send_password_change_notification_email**
-> CommonResponseModel send_password_change_notification_email()
+# **redeem_a_voucher**
+> VoucherRedeemResponseSchema redeem_a_voucher(payload)
 
-Send Password Change Notification Email
+Redeem a voucher with a voucher_code
 
-Send a password change notification email to a user
+Request to redeem a voucher with a voucher code.
 
 ### Example
 
@@ -20,7 +20,8 @@ Send a password change notification email to a user
 
 ```python
 import hyperstack
-from hyperstack.models.common_response_model import CommonResponseModel
+from hyperstack.models.redeem_voucher_payload import RedeemVoucherPayload
+from hyperstack.models.voucher_redeem_response_schema import VoucherRedeemResponseSchema
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -44,26 +45,30 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = hyperstack.AdminApi(api_client)
+    api_instance = hyperstack.VouchersApi(api_client)
+    payload = hyperstack.RedeemVoucherPayload() # RedeemVoucherPayload | 
 
     try:
-        # Send Password Change Notification Email
-        api_response = api_instance.send_password_change_notification_email()
-        print("The response of AdminApi->send_password_change_notification_email:\n")
+        # Redeem a voucher with a voucher_code
+        api_response = api_instance.redeem_a_voucher(payload)
+        print("The response of VouchersApi->redeem_a_voucher:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdminApi->send_password_change_notification_email: %s\n" % e)
+        print("Exception when calling VouchersApi->redeem_a_voucher: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payload** | [**RedeemVoucherPayload**](RedeemVoucherPayload.md)|  | 
 
 ### Return type
 
-[**CommonResponseModel**](CommonResponseModel.md)
+[**VoucherRedeemResponseSchema**](VoucherRedeemResponseSchema.md)
 
 ### Authorization
 
@@ -71,18 +76,18 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Email Sent Successfully. |  -  |
-**400** | Unable to send email |  -  |
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
-**404** | User Not Found |  -  |
-**405** | Method Not Allowed |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

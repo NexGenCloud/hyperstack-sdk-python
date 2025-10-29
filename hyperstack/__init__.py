@@ -14,14 +14,13 @@
 """  # noqa: E501
 
 
-__version__ = "v1.43.0-alpha"
+__version__ = "v1.45.2-alpha"
 
 # import apis into sdk package
 from .api.calculate_api import CalculateApi
 from .api.customer_contract_api import CustomerContractApi
 from .api.pricebook_api import PricebookApi
 from .api.snapshots_api import SnapshotsApi
-from .api.admin_api import AdminApi
 from .api.alive_api import AliveApi
 from .api.api_key_api import ApiKeyApi
 from .api.assigning_member_role_api import AssigningMemberRoleApi
@@ -64,6 +63,7 @@ from .api.virtual_machine_events_api import VirtualMachineEventsApi
 from .api.vnc_url_api import VncUrlApi
 from .api.volume_api import VolumeApi
 from .api.volume_attachment_api import VolumeAttachmentApi
+from .api.vouchers_api import VouchersApi
 
 # import ApiClient
 from .api_response import ApiResponse
@@ -156,6 +156,7 @@ from .models.customer_contract_detail_response_model import CustomerContractDeta
 from .models.customer_contract_fields import CustomerContractFields
 from .models.dashboard_info_response import DashboardInfoResponse
 from .models.data_synthesis_billing_history_details_response_schema import DataSynthesisBillingHistoryDetailsResponseSchema
+from .models.delete_cluster_nodes_fields import DeleteClusterNodesFields
 from .models.deployment_fields import DeploymentFields
 from .models.deployment_fields_for_start_deployments import DeploymentFieldsForStartDeployments
 from .models.deployments import Deployments
@@ -272,6 +273,7 @@ from .models.rbac_role_detail_response_model import RbacRoleDetailResponseModel
 from .models.rbac_role_detail_response_model_fixed import RbacRoleDetailResponseModelFixed
 from .models.rbac_role_field import RbacRoleField
 from .models.rbac_role_fields import RbacRoleFields
+from .models.redeem_voucher_payload import RedeemVoucherPayload
 from .models.region_fields import RegionFields
 from .models.regions import Regions
 from .models.remove_member_from_organization_response_model import RemoveMemberFromOrganizationResponseModel
@@ -368,4 +370,6 @@ from .models.volume_overview_fields import VolumeOverviewFields
 from .models.volume_types import VolumeTypes
 from .models.volumes import Volumes
 from .models.volumes_fields import VolumesFields
+from .models.voucher import Voucher
+from .models.voucher_redeem_response_schema import VoucherRedeemResponseSchema
 from .models.workload_billing_history_response import WorkloadBillingHistoryResponse

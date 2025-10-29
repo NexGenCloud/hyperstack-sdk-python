@@ -14,22 +14,22 @@
 
 import unittest
 
-from hyperstack.api.admin_api import AdminApi
+from hyperstack.api.vouchers_api import VouchersApi
 
 
-class TestAdminApi(unittest.TestCase):
-    """AdminApi unit test stubs"""
+class TestVouchersApi(unittest.TestCase):
+    """VouchersApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = AdminApi()
+        self.api = VouchersApi()
 
     def tearDown(self) -> None:
         pass
 
-    def test_send_password_change_notification_email(self) -> None:
-        """Test case for send_password_change_notification_email
+    def test_redeem_a_voucher(self) -> None:
+        """Test case for redeem_a_voucher
 
-        Send Password Change Notification Email
+        Redeem a voucher with a voucher_code
         """
         pass
 

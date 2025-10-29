@@ -5,7 +5,6 @@ from .calculate_api import CalculateApi
 from .customer_contract_api import CustomerContractApi
 from .pricebook_api import PricebookApi
 from .snapshots_api import SnapshotsApi
-from .admin_api import AdminApi
 from .alive_api import AliveApi
 from .api_key_api import ApiKeyApi
 from .assigning_member_role_api import AssigningMemberRoleApi
@@ -48,4 +47,5 @@ from .virtual_machine_events_api import VirtualMachineEventsApi
 from .vnc_url_api import VncUrlApi
 from .volume_api import VolumeApi
 from .volume_attachment_api import VolumeAttachmentApi
+from .vouchers_api import VouchersApi
 

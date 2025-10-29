@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**delete_a_cluster**](ClustersApi.md#delete_a_cluster) | **DELETE** /core/clusters/{id} | Delete a cluster
 [**delete_a_node_group**](ClustersApi.md#delete_a_node_group) | **DELETE** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Delete a node group
 [**delete_cluster_node**](ClustersApi.md#delete_cluster_node) | **DELETE** /core/clusters/{cluster_id}/nodes/{node_id} | Delete Cluster Node
+[**delete_cluster_nodes**](ClustersApi.md#delete_cluster_nodes) | **POST** /core/clusters/{cluster_id}/nodes/delete | Delete Multiple Cluster Nodes
 [**fetch_cluster_name_availability**](ClustersApi.md#fetch_cluster_name_availability) | **GET** /core/clusters/name-availability/{name} | Fetch cluster name availability
 [**get_cluster_master_flavors**](ClustersApi.md#get_cluster_master_flavors) | **GET** /core/clusters/master-flavors | Get Cluster Master Flavors
 [**get_cluster_nodes**](ClustersApi.md#get_cluster_nodes) | **GET** /core/clusters/{cluster_id}/nodes | Get Cluster Nodes
@@ -591,6 +592,90 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_cluster_nodes**
+> ResponseModel delete_cluster_nodes(cluster_id, payload)
+
+Delete Multiple Cluster Nodes
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.delete_cluster_nodes_fields import DeleteClusterNodesFields
+from hyperstack.models.response_model import ResponseModel
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.ClustersApi(api_client)
+    cluster_id = 56 # int | 
+    payload = hyperstack.DeleteClusterNodesFields() # DeleteClusterNodesFields | 
+
+    try:
+        # Delete Multiple Cluster Nodes
+        api_response = api_instance.delete_cluster_nodes(cluster_id, payload)
+        print("The response of ClustersApi->delete_cluster_nodes:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ClustersApi->delete_cluster_nodes: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster_id** | **int**|  | 
+ **payload** | [**DeleteClusterNodesFields**](DeleteClusterNodesFields.md)|  | 
+
+### Return type
+
+[**ResponseModel**](ResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
