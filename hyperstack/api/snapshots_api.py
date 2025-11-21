@@ -47,7 +47,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def create_a_new_custom_image(
+    def create_custom_image(
         self,
         snapshot_id: StrictInt,
         payload: CreateImagePayload,
@@ -94,7 +94,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_a_new_custom_image_serialize(
+        _param = self._create_custom_image_serialize(
             snapshot_id=snapshot_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -123,7 +123,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def create_a_new_custom_image_with_http_info(
+    def create_custom_image_with_http_info(
         self,
         snapshot_id: StrictInt,
         payload: CreateImagePayload,
@@ -170,7 +170,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_a_new_custom_image_serialize(
+        _param = self._create_custom_image_serialize(
             snapshot_id=snapshot_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -199,7 +199,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def create_a_new_custom_image_without_preload_content(
+    def create_custom_image_without_preload_content(
         self,
         snapshot_id: StrictInt,
         payload: CreateImagePayload,
@@ -246,7 +246,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_a_new_custom_image_serialize(
+        _param = self._create_custom_image_serialize(
             snapshot_id=snapshot_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -270,7 +270,7 @@ class SnapshotsApi:
         return response_data.response
 
 
-    def _create_a_new_custom_image_serialize(
+    def _create_custom_image_serialize(
         self,
         snapshot_id,
         payload,
@@ -351,7 +351,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def delete_an_existing_snapshot(
+    def delete_snapshot(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -395,7 +395,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_an_existing_snapshot_serialize(
+        _param = self._delete_snapshot_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -423,7 +423,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def delete_an_existing_snapshot_with_http_info(
+    def delete_snapshot_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -467,7 +467,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_an_existing_snapshot_serialize(
+        _param = self._delete_snapshot_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -495,7 +495,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def delete_an_existing_snapshot_without_preload_content(
+    def delete_snapshot_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -539,7 +539,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_an_existing_snapshot_serialize(
+        _param = self._delete_snapshot_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -562,7 +562,7 @@ class SnapshotsApi:
         return response_data.response
 
 
-    def _delete_an_existing_snapshot_serialize(
+    def _delete_snapshot_serialize(
         self,
         id,
         _request_auth,
@@ -900,305 +900,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def restore_a_snapshot(
-        self,
-        id: StrictInt,
-        payload: SnapshotRestoreRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Instance:
-        """Restore a snapshot
-
-        Restore a snapshot.
-
-        :param id: (required)
-        :type id: int
-        :param payload: (required)
-        :type payload: SnapshotRestoreRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._restore_a_snapshot_serialize(
-            id=id,
-            payload=payload,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Instance",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def restore_a_snapshot_with_http_info(
-        self,
-        id: StrictInt,
-        payload: SnapshotRestoreRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Instance]:
-        """Restore a snapshot
-
-        Restore a snapshot.
-
-        :param id: (required)
-        :type id: int
-        :param payload: (required)
-        :type payload: SnapshotRestoreRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._restore_a_snapshot_serialize(
-            id=id,
-            payload=payload,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Instance",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def restore_a_snapshot_without_preload_content(
-        self,
-        id: StrictInt,
-        payload: SnapshotRestoreRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Restore a snapshot
-
-        Restore a snapshot.
-
-        :param id: (required)
-        :type id: int
-        :param payload: (required)
-        :type payload: SnapshotRestoreRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._restore_a_snapshot_serialize(
-            id=id,
-            payload=payload,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Instance",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _restore_a_snapshot_serialize(
-        self,
-        id,
-        payload,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if id is not None:
-            _path_params['id'] = id
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if payload is not None:
-            _body_params = payload
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/core/snapshots/{id}/restore',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def retrieve_an_existing_snapshot(
+    def get_snapshot(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -1242,7 +944,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_an_existing_snapshot_serialize(
+        _param = self._get_snapshot_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1268,7 +970,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def retrieve_an_existing_snapshot_with_http_info(
+    def get_snapshot_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -1312,7 +1014,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_an_existing_snapshot_serialize(
+        _param = self._get_snapshot_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1338,7 +1040,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def retrieve_an_existing_snapshot_without_preload_content(
+    def get_snapshot_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -1382,7 +1084,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_an_existing_snapshot_serialize(
+        _param = self._get_snapshot_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1403,7 +1105,7 @@ class SnapshotsApi:
         return response_data.response
 
 
-    def _retrieve_an_existing_snapshot_serialize(
+    def _get_snapshot_serialize(
         self,
         id,
         _request_auth,
@@ -1468,7 +1170,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def retrieves_a_list_of_snapshots(
+    def list_snapshots(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Page Number")] = None,
         page_size: Annotated[Optional[StrictStr], Field(description="Data Per Page")] = None,
@@ -1518,7 +1220,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieves_a_list_of_snapshots_serialize(
+        _param = self._list_snapshots_serialize(
             page=page,
             page_size=page_size,
             search=search,
@@ -1546,7 +1248,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def retrieves_a_list_of_snapshots_with_http_info(
+    def list_snapshots_with_http_info(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Page Number")] = None,
         page_size: Annotated[Optional[StrictStr], Field(description="Data Per Page")] = None,
@@ -1596,7 +1298,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieves_a_list_of_snapshots_serialize(
+        _param = self._list_snapshots_serialize(
             page=page,
             page_size=page_size,
             search=search,
@@ -1624,7 +1326,7 @@ class SnapshotsApi:
 
 
     @validate_call
-    def retrieves_a_list_of_snapshots_without_preload_content(
+    def list_snapshots_without_preload_content(
         self,
         page: Annotated[Optional[StrictStr], Field(description="Page Number")] = None,
         page_size: Annotated[Optional[StrictStr], Field(description="Data Per Page")] = None,
@@ -1674,7 +1376,7 @@ class SnapshotsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieves_a_list_of_snapshots_serialize(
+        _param = self._list_snapshots_serialize(
             page=page,
             page_size=page_size,
             search=search,
@@ -1697,7 +1399,7 @@ class SnapshotsApi:
         return response_data.response
 
 
-    def _retrieves_a_list_of_snapshots_serialize(
+    def _list_snapshots_serialize(
         self,
         page,
         page_size,
@@ -1758,6 +1460,304 @@ class SnapshotsApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/core/snapshots',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def restore_snapshot(
+        self,
+        id: StrictInt,
+        payload: SnapshotRestoreRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> Instance:
+        """Restore a snapshot
+
+        Restore a snapshot.
+
+        :param id: (required)
+        :type id: int
+        :param payload: (required)
+        :type payload: SnapshotRestoreRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._restore_snapshot_serialize(
+            id=id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Instance",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def restore_snapshot_with_http_info(
+        self,
+        id: StrictInt,
+        payload: SnapshotRestoreRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[Instance]:
+        """Restore a snapshot
+
+        Restore a snapshot.
+
+        :param id: (required)
+        :type id: int
+        :param payload: (required)
+        :type payload: SnapshotRestoreRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._restore_snapshot_serialize(
+            id=id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Instance",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def restore_snapshot_without_preload_content(
+        self,
+        id: StrictInt,
+        payload: SnapshotRestoreRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Restore a snapshot
+
+        Restore a snapshot.
+
+        :param id: (required)
+        :type id: int
+        :param payload: (required)
+        :type payload: SnapshotRestoreRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._restore_snapshot_serialize(
+            id=id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Instance",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _restore_snapshot_serialize(
+        self,
+        id,
+        payload,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if payload is not None:
+            _body_params = payload
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/core/snapshots/{id}/restore',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

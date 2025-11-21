@@ -14,11 +14,12 @@
 """  # noqa: E501
 
 
-__version__ = "v1.45.2-alpha"
+__version__ = "v1.46.1-alpha"
 
 # import apis into sdk package
 from .api.calculate_api import CalculateApi
 from .api.customer_contract_api import CustomerContractApi
+from .api.fip_exclusions_api import FIPExclusionsApi
 from .api.pricebook_api import PricebookApi
 from .api.snapshots_api import SnapshotsApi
 from .api.alive_api import AliveApi

@@ -40,17 +40,17 @@ class TestTemplateApi(unittest.TestCase):
         """
         pass
 
+    def test_get_template(self) -> None:
+        """Test case for get_template
+
+        Retrieve template details
+        """
+        pass
+
     def test_list_templates(self) -> None:
         """Test case for list_templates
 
         List templates
-        """
-        pass
-
-    def test_retrieve_template_details(self) -> None:
-        """Test case for retrieve_template_details
-
-        Retrieve template details
         """
         pass
 

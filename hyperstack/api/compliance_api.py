@@ -332,7 +332,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def delete_a_compliance(
+    def delete_compliance(
         self,
         gpu_model: StrictStr,
         _request_timeout: Union[
@@ -375,7 +375,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_a_compliance_serialize(
+        _param = self._delete_compliance_serialize(
             gpu_model=gpu_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -402,7 +402,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def delete_a_compliance_with_http_info(
+    def delete_compliance_with_http_info(
         self,
         gpu_model: StrictStr,
         _request_timeout: Union[
@@ -445,7 +445,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_a_compliance_serialize(
+        _param = self._delete_compliance_serialize(
             gpu_model=gpu_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -472,7 +472,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def delete_a_compliance_without_preload_content(
+    def delete_compliance_without_preload_content(
         self,
         gpu_model: StrictStr,
         _request_timeout: Union[
@@ -515,7 +515,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_a_compliance_serialize(
+        _param = self._delete_compliance_serialize(
             gpu_model=gpu_model,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -537,7 +537,7 @@ class ComplianceApi:
         return response_data.response
 
 
-    def _delete_a_compliance_serialize(
+    def _delete_compliance_serialize(
         self,
         gpu_model,
         _request_auth,
@@ -602,7 +602,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def retrieve_compliance(
+    def get_compliance(
         self,
         gpu: Annotated[Optional[StrictStr], Field(description="This is for gpu model")] = None,
         _request_timeout: Union[
@@ -646,7 +646,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_compliance_serialize(
+        _param = self._get_compliance_serialize(
             gpu=gpu,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -674,7 +674,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def retrieve_compliance_with_http_info(
+    def get_compliance_with_http_info(
         self,
         gpu: Annotated[Optional[StrictStr], Field(description="This is for gpu model")] = None,
         _request_timeout: Union[
@@ -718,7 +718,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_compliance_serialize(
+        _param = self._get_compliance_serialize(
             gpu=gpu,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -746,7 +746,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def retrieve_compliance_without_preload_content(
+    def get_compliance_without_preload_content(
         self,
         gpu: Annotated[Optional[StrictStr], Field(description="This is for gpu model")] = None,
         _request_timeout: Union[
@@ -790,7 +790,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_compliance_serialize(
+        _param = self._get_compliance_serialize(
             gpu=gpu,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -813,7 +813,7 @@ class ComplianceApi:
         return response_data.response
 
 
-    def _retrieve_compliance_serialize(
+    def _get_compliance_serialize(
         self,
         gpu,
         _request_auth,
@@ -880,7 +880,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def update_a_compliance(
+    def update_compliance(
         self,
         payload: CompliancePayload,
         _request_timeout: Union[
@@ -923,7 +923,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_a_compliance_serialize(
+        _param = self._update_compliance_serialize(
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -951,7 +951,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def update_a_compliance_with_http_info(
+    def update_compliance_with_http_info(
         self,
         payload: CompliancePayload,
         _request_timeout: Union[
@@ -994,7 +994,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_a_compliance_serialize(
+        _param = self._update_compliance_serialize(
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1022,7 +1022,7 @@ class ComplianceApi:
 
 
     @validate_call
-    def update_a_compliance_without_preload_content(
+    def update_compliance_without_preload_content(
         self,
         payload: CompliancePayload,
         _request_timeout: Union[
@@ -1065,7 +1065,7 @@ class ComplianceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_a_compliance_serialize(
+        _param = self._update_compliance_serialize(
             payload=payload,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1088,7 +1088,7 @@ class ComplianceApi:
         return response_data.response
 
 
-    def _update_a_compliance_serialize(
+    def _update_compliance_serialize(
         self,
         payload,
         _request_auth,

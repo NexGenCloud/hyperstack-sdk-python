@@ -26,8 +26,8 @@ class TestDashboardApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_retrieve_dashboard(self) -> None:
-        """Test case for retrieve_dashboard
+    def test_get_dashboard(self) -> None:
+        """Test case for get_dashboard
 
         Retrieve Dashboard
         """

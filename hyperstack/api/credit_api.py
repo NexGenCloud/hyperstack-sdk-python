@@ -37,7 +37,7 @@ class CreditApi:
 
 
     @validate_call
-    def get_credit2(
+    def get_user_credit(
         self,
         _request_timeout: Union[
             None,
@@ -78,7 +78,7 @@ class CreditApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_credit2_serialize(
+        _param = self._get_user_credit_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -105,7 +105,7 @@ class CreditApi:
 
 
     @validate_call
-    def get_credit2_with_http_info(
+    def get_user_credit_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -146,7 +146,7 @@ class CreditApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_credit2_serialize(
+        _param = self._get_user_credit_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -173,7 +173,7 @@ class CreditApi:
 
 
     @validate_call
-    def get_credit2_without_preload_content(
+    def get_user_credit_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -214,7 +214,7 @@ class CreditApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_credit2_serialize(
+        _param = self._get_user_credit_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -236,7 +236,7 @@ class CreditApi:
         return response_data.response
 
 
-    def _get_credit2_serialize(
+    def _get_user_credit_serialize(
         self,
         _request_auth,
         _content_type,

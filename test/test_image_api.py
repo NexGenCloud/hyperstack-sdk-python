@@ -40,15 +40,15 @@ class TestImageApi(unittest.TestCase):
         """
         pass
 
-    def test_get_image_details(self) -> None:
-        """Test case for get_image_details
+    def test_get_image(self) -> None:
+        """Test case for get_image
 
         Get Private Image Details
         """
         pass
 
-    def test_list_images2(self) -> None:
-        """Test case for list_images2
+    def test_list_images(self) -> None:
+        """Test case for list_images
 
         List Images
         """

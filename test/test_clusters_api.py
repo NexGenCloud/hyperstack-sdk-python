@@ -26,13 +26,6 @@ class TestClustersApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_attempt_to_manually_reconcile_a_cluster(self) -> None:
-        """Test case for attempt_to_manually_reconcile_a_cluster
-
-        Reconcile a cluster
-        """
-        pass
-
     def test_create_cluster(self) -> None:
         """Test case for create_cluster
 
@@ -54,17 +47,10 @@ class TestClustersApi(unittest.TestCase):
         """
         pass
 
-    def test_delete_a_cluster(self) -> None:
-        """Test case for delete_a_cluster
+    def test_delete_cluster(self) -> None:
+        """Test case for delete_cluster
 
         Delete a cluster
-        """
-        pass
-
-    def test_delete_a_node_group(self) -> None:
-        """Test case for delete_a_node_group
-
-        Delete a node group
         """
         pass
 
@@ -79,6 +65,13 @@ class TestClustersApi(unittest.TestCase):
         """Test case for delete_cluster_nodes
 
         Delete Multiple Cluster Nodes
+        """
+        pass
+
+    def test_delete_node_group(self) -> None:
+        """Test case for delete_node_group
+
+        Delete a node group
         """
         pass
 
@@ -110,6 +103,13 @@ class TestClustersApi(unittest.TestCase):
         """
         pass
 
+    def test_get_node_group(self) -> None:
+        """Test case for get_node_group
+
+        Retrieve a node group in a cluster
+        """
+        pass
+
     def test_getting_cluster_detail(self) -> None:
         """Test case for getting_cluster_detail
 
@@ -131,15 +131,15 @@ class TestClustersApi(unittest.TestCase):
         """
         pass
 
-    def test_retrieve_a_node_group(self) -> None:
-        """Test case for retrieve_a_node_group
+    def test_reconcile_cluster(self) -> None:
+        """Test case for reconcile_cluster
 
-        Retrieve a node group in a cluster
+        Reconcile a cluster
         """
         pass
 
-    def test_update_a_node_group(self) -> None:
-        """Test case for update_a_node_group
+    def test_update_node_group(self) -> None:
+        """Test case for update_node_group
 
         Update a node group in a cluster
         """

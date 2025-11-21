@@ -4,11 +4,11 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_dashboard**](DashboardApi.md#retrieve_dashboard) | **GET** /core/dashboard | Retrieve Dashboard
+[**get_dashboard**](DashboardApi.md#get_dashboard) | **GET** /core/dashboard | Retrieve Dashboard
 
 
-# **retrieve_dashboard**
-> DashboardInfoResponse retrieve_dashboard()
+# **get_dashboard**
+> DashboardInfoResponse get_dashboard()
 
 Retrieve Dashboard
 
@@ -48,11 +48,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Dashboard
-        api_response = api_instance.retrieve_dashboard()
-        print("The response of DashboardApi->retrieve_dashboard:\n")
+        api_response = api_instance.get_dashboard()
+        print("The response of DashboardApi->get_dashboard:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DashboardApi->retrieve_dashboard: %s\n" % e)
+        print("Exception when calling DashboardApi->get_dashboard: %s\n" % e)
 ```
 
 

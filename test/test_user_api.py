@@ -26,22 +26,22 @@ class TestUserApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_get_user(self) -> None:
-        """Test case for get_user
-
-        GET: Retrieve billing info
-        """
-        pass
-
-    def test_post_user(self) -> None:
-        """Test case for post_user
+    def test_add_user_billing_info(self) -> None:
+        """Test case for add_user_billing_info
 
         POST: Insert billing info
         """
         pass
 
-    def test_put_user(self) -> None:
-        """Test case for put_user
+    def test_get_user_billing_info(self) -> None:
+        """Test case for get_user_billing_info
+
+        GET: Retrieve billing info
+        """
+        pass
+
+    def test_update_user_billing_info(self) -> None:
+        """Test case for update_user_billing_info
 
         PUT: Update billing info
         """

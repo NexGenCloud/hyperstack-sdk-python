@@ -26,10 +26,17 @@ class TestBetaAccessApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_create_a_beta_access_request(self) -> None:
-        """Test case for create_a_beta_access_request
+    def test_create_beta_access_request(self) -> None:
+        """Test case for create_beta_access_request
 
         Create a new beta access request
+        """
+        pass
+
+    def test_get_beta_access_requests(self) -> None:
+        """Test case for get_beta_access_requests
+
+        Check the status of beta access requests
         """
         pass
 
@@ -37,13 +44,6 @@ class TestBetaAccessApi(unittest.TestCase):
         """Test case for get_beta_access_status
 
         Check the status of all beta access requests
-        """
-        pass
-
-    def test_get_beta_access_status2(self) -> None:
-        """Test case for get_beta_access_status2
-
-        Check the status of beta access requests
         """
         pass
 

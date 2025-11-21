@@ -26,8 +26,8 @@ class TestFirewallAttachmentApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_attach_firewall_to_virtual_machines(self) -> None:
-        """Test case for attach_firewall_to_virtual_machines
+    def test_attach_firewall_to_vms(self) -> None:
+        """Test case for attach_firewall_to_vms
 
         Attach Firewalls to VMs
         """

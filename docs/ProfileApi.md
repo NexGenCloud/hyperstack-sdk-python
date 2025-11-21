@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_profile**](ProfileApi.md#create_profile) | **POST** /core/profiles | Create profile
 [**delete_profile**](ProfileApi.md#delete_profile) | **DELETE** /core/profiles/{id} | Delete profile
+[**get_profile**](ProfileApi.md#get_profile) | **GET** /core/profiles/{id} | Retrieve profile details
 [**list_profiles**](ProfileApi.md#list_profiles) | **GET** /core/profiles | List profiles
-[**retrieve_profile_details**](ProfileApi.md#retrieve_profile_details) | **GET** /core/profiles/{id} | Retrieve profile details
 
 
 # **create_profile**
@@ -177,6 +177,89 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_profile**
+> CreateProfileResponse get_profile(id)
+
+Retrieve profile details
+
+Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.create_profile_response import CreateProfileResponse
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.ProfileApi(api_client)
+    id = 56 # int | 
+
+    try:
+        # Retrieve profile details
+        api_response = api_instance.get_profile(id)
+        print("The response of ProfileApi->get_profile:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProfileApi->get_profile: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  | 
+
+### Return type
+
+[**CreateProfileResponse**](CreateProfileResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Profile details retrieved successfully. |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_profiles**
 > ProfileListResponse list_profiles()
 
@@ -251,89 +334,6 @@ This endpoint does not need any parameter.
 **200** | Getting profiles success. |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **retrieve_profile_details**
-> CreateProfileResponse retrieve_profile_details(id)
-
-Retrieve profile details
-
-Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import hyperstack
-from hyperstack.models.create_profile_response import CreateProfileResponse
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.ProfileApi(api_client)
-    id = 56 # int | 
-
-    try:
-        # Retrieve profile details
-        api_response = api_instance.retrieve_profile_details(id)
-        print("The response of ProfileApi->retrieve_profile_details:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProfileApi->retrieve_profile_details: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**|  | 
-
-### Return type
-
-[**CreateProfileResponse**](CreateProfileResponse.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Profile details retrieved successfully. |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -42,7 +42,7 @@ class VolumeAttachmentApi:
 
 
     @validate_call
-    def attach_volumes_to_virtual_machine(
+    def attach_volumes_to_vm(
         self,
         vm_id: StrictInt,
         payload: AttachVolumesPayload,
@@ -89,7 +89,7 @@ class VolumeAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_volumes_to_virtual_machine_serialize(
+        _param = self._attach_volumes_to_vm_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -118,7 +118,7 @@ class VolumeAttachmentApi:
 
 
     @validate_call
-    def attach_volumes_to_virtual_machine_with_http_info(
+    def attach_volumes_to_vm_with_http_info(
         self,
         vm_id: StrictInt,
         payload: AttachVolumesPayload,
@@ -165,7 +165,7 @@ class VolumeAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_volumes_to_virtual_machine_serialize(
+        _param = self._attach_volumes_to_vm_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -194,7 +194,7 @@ class VolumeAttachmentApi:
 
 
     @validate_call
-    def attach_volumes_to_virtual_machine_without_preload_content(
+    def attach_volumes_to_vm_without_preload_content(
         self,
         vm_id: StrictInt,
         payload: AttachVolumesPayload,
@@ -241,7 +241,7 @@ class VolumeAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_volumes_to_virtual_machine_serialize(
+        _param = self._attach_volumes_to_vm_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -265,7 +265,7 @@ class VolumeAttachmentApi:
         return response_data.response
 
 
-    def _attach_volumes_to_virtual_machine_serialize(
+    def _attach_volumes_to_vm_serialize(
         self,
         vm_id,
         payload,
@@ -346,7 +346,7 @@ class VolumeAttachmentApi:
 
 
     @validate_call
-    def detach_volumes_from_virtual_machine(
+    def detach_volumes_from_vm(
         self,
         vm_id: StrictInt,
         payload: DetachVolumesPayload,
@@ -393,7 +393,7 @@ class VolumeAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._detach_volumes_from_virtual_machine_serialize(
+        _param = self._detach_volumes_from_vm_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -422,7 +422,7 @@ class VolumeAttachmentApi:
 
 
     @validate_call
-    def detach_volumes_from_virtual_machine_with_http_info(
+    def detach_volumes_from_vm_with_http_info(
         self,
         vm_id: StrictInt,
         payload: DetachVolumesPayload,
@@ -469,7 +469,7 @@ class VolumeAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._detach_volumes_from_virtual_machine_serialize(
+        _param = self._detach_volumes_from_vm_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -498,7 +498,7 @@ class VolumeAttachmentApi:
 
 
     @validate_call
-    def detach_volumes_from_virtual_machine_without_preload_content(
+    def detach_volumes_from_vm_without_preload_content(
         self,
         vm_id: StrictInt,
         payload: DetachVolumesPayload,
@@ -545,7 +545,7 @@ class VolumeAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._detach_volumes_from_virtual_machine_serialize(
+        _param = self._detach_volumes_from_vm_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -569,7 +569,7 @@ class VolumeAttachmentApi:
         return response_data.response
 
 
-    def _detach_volumes_from_virtual_machine_serialize(
+    def _detach_volumes_from_vm_serialize(
         self,
         vm_id,
         payload,
@@ -650,7 +650,7 @@ class VolumeAttachmentApi:
 
 
     @validate_call
-    def update_a_volume_attachment(
+    def update_volume_attachment(
         self,
         volume_attachment_id: StrictInt,
         payload: UpdateVolumeAttachmentPayload,
@@ -696,7 +696,7 @@ class VolumeAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_a_volume_attachment_serialize(
+        _param = self._update_volume_attachment_serialize(
             volume_attachment_id=volume_attachment_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -725,7 +725,7 @@ class VolumeAttachmentApi:
 
 
     @validate_call
-    def update_a_volume_attachment_with_http_info(
+    def update_volume_attachment_with_http_info(
         self,
         volume_attachment_id: StrictInt,
         payload: UpdateVolumeAttachmentPayload,
@@ -771,7 +771,7 @@ class VolumeAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_a_volume_attachment_serialize(
+        _param = self._update_volume_attachment_serialize(
             volume_attachment_id=volume_attachment_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -800,7 +800,7 @@ class VolumeAttachmentApi:
 
 
     @validate_call
-    def update_a_volume_attachment_without_preload_content(
+    def update_volume_attachment_without_preload_content(
         self,
         volume_attachment_id: StrictInt,
         payload: UpdateVolumeAttachmentPayload,
@@ -846,7 +846,7 @@ class VolumeAttachmentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_a_volume_attachment_serialize(
+        _param = self._update_volume_attachment_serialize(
             volume_attachment_id=volume_attachment_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -870,7 +870,7 @@ class VolumeAttachmentApi:
         return response_data.response
 
 
-    def _update_a_volume_attachment_serialize(
+    def _update_volume_attachment_serialize(
         self,
         volume_attachment_id,
         payload,

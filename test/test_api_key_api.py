@@ -40,8 +40,8 @@ class TestApiKeyApi(unittest.TestCase):
         """
         pass
 
-    def test_retrieve_api_key(self) -> None:
-        """Test case for retrieve_api_key
+    def test_get_api_key(self) -> None:
+        """Test case for get_api_key
 
         Retrieve API Keys
         """

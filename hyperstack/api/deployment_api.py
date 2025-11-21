@@ -311,7 +311,7 @@ class DeploymentApi:
 
 
     @validate_call
-    def details_of_deployment_by_id(
+    def get_deployment(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -354,7 +354,7 @@ class DeploymentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._details_of_deployment_by_id_serialize(
+        _param = self._get_deployment_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -381,7 +381,7 @@ class DeploymentApi:
 
 
     @validate_call
-    def details_of_deployment_by_id_with_http_info(
+    def get_deployment_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -424,7 +424,7 @@ class DeploymentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._details_of_deployment_by_id_serialize(
+        _param = self._get_deployment_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -451,7 +451,7 @@ class DeploymentApi:
 
 
     @validate_call
-    def details_of_deployment_by_id_without_preload_content(
+    def get_deployment_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -494,7 +494,7 @@ class DeploymentApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._details_of_deployment_by_id_serialize(
+        _param = self._get_deployment_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -516,7 +516,7 @@ class DeploymentApi:
         return response_data.response
 
 
-    def _details_of_deployment_by_id_serialize(
+    def _get_deployment_serialize(
         self,
         id,
         _request_auth,

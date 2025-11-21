@@ -26,22 +26,22 @@ class TestVolumeAttachmentApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_attach_volumes_to_virtual_machine(self) -> None:
-        """Test case for attach_volumes_to_virtual_machine
+    def test_attach_volumes_to_vm(self) -> None:
+        """Test case for attach_volumes_to_vm
 
         Attach volumes to virtual machine
         """
         pass
 
-    def test_detach_volumes_from_virtual_machine(self) -> None:
-        """Test case for detach_volumes_from_virtual_machine
+    def test_detach_volumes_from_vm(self) -> None:
+        """Test case for detach_volumes_from_vm
 
         Detach volumes from virtual machine
         """
         pass
 
-    def test_update_a_volume_attachment(self) -> None:
-        """Test case for update_a_volume_attachment
+    def test_update_volume_attachment(self) -> None:
+        """Test case for update_volume_attachment
 
         Update a volume attachment
         """

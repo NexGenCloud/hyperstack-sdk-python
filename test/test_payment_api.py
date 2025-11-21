@@ -26,24 +26,24 @@ class TestPaymentApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_get_details(self) -> None:
-        """Test case for get_details
-
-        GET: View payment details
-        """
-        pass
-
-    def test_get_payment_receipt2(self) -> None:
-        """Test case for get_payment_receipt2
+    def test_get_payment_receipt(self) -> None:
+        """Test case for get_payment_receipt
 
         Retrieve Payment Receipt
         """
         pass
 
-    def test_post_payment(self) -> None:
-        """Test case for post_payment
+    def test_initiate_payment(self) -> None:
+        """Test case for initiate_payment
 
         POST: Initiate payment
+        """
+        pass
+
+    def test_list_payment_details(self) -> None:
+        """Test case for list_payment_details
+
+        GET: View payment details
         """
         pass
 

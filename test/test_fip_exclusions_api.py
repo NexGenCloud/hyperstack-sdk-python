@@ -14,22 +14,21 @@
 
 import unittest
 
-from hyperstack.api.user_detail_choice_api import UserDetailChoiceApi
+from hyperstack.api.fip_exclusions_api import FIPExclusionsApi
 
 
-class TestUserDetailChoiceApi(unittest.TestCase):
-    """UserDetailChoiceApi unit test stubs"""
+class TestFIPExclusionsApi(unittest.TestCase):
+    """FIPExclusionsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = UserDetailChoiceApi()
+        self.api = FIPExclusionsApi()
 
     def tearDown(self) -> None:
         pass
 
-    def test_list_default_flavors_and_images(self) -> None:
-        """Test case for list_default_flavors_and_images
+    def test_check_if_org_is_excluded_from_floating_ip_detachment(self) -> None:
+        """Test case for check_if_org_is_excluded_from_floating_ip_detachment
 
-        Retrieve Default Flavors and Images
         """
         pass
 

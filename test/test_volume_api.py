@@ -40,17 +40,17 @@ class TestVolumeApi(unittest.TestCase):
         """
         pass
 
-    def test_fetch_volume_details(self) -> None:
-        """Test case for fetch_volume_details
-
-        Fetch Volume Details
-        """
-        pass
-
     def test_fetch_volume_name_availability(self) -> None:
         """Test case for fetch_volume_name_availability
 
         Fetch volume name availability
+        """
+        pass
+
+    def test_get_volume(self) -> None:
+        """Test case for get_volume
+
+        Fetch Volume Details
         """
         pass
 

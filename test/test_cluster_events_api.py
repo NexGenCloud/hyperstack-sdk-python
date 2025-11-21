@@ -26,8 +26,8 @@ class TestClusterEventsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_fetch_all_of_a_cluster_events(self) -> None:
-        """Test case for fetch_all_of_a_cluster_events
+    def test_list_cluster_events(self) -> None:
+        """Test case for list_cluster_events
 
         Fetch all of a cluster events
         """

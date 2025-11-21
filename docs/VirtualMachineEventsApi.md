@@ -4,11 +4,11 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_virtual_machine_events**](VirtualMachineEventsApi.md#list_virtual_machine_events) | **GET** /core/virtual-machines/{vm_id}/events | List virtual machine events
+[**list_vm_events**](VirtualMachineEventsApi.md#list_vm_events) | **GET** /core/virtual-machines/{vm_id}/events | List virtual machine events
 
 
-# **list_virtual_machine_events**
-> InstanceEvents list_virtual_machine_events(vm_id)
+# **list_vm_events**
+> InstanceEvents list_vm_events(vm_id)
 
 List virtual machine events
 
@@ -49,11 +49,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # List virtual machine events
-        api_response = api_instance.list_virtual_machine_events(vm_id)
-        print("The response of VirtualMachineEventsApi->list_virtual_machine_events:\n")
+        api_response = api_instance.list_vm_events(vm_id)
+        print("The response of VirtualMachineEventsApi->list_vm_events:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineEventsApi->list_virtual_machine_events: %s\n" % e)
+        print("Exception when calling VirtualMachineEventsApi->list_vm_events: %s\n" % e)
 ```
 
 

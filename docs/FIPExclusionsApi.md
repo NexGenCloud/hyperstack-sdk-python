@@ -1,18 +1,18 @@
-# hyperstack.SnapshotEventsApi
+# hyperstack.FIPExclusionsApi
 
 All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_snapshot_events**](SnapshotEventsApi.md#list_snapshot_events) | **GET** /core/snapshots/{snapshot_id}/events | Fetch all events for a snapshot
+[**check_if_org_is_excluded_from_floating_ip_detachment**](FIPExclusionsApi.md#check_if_org_is_excluded_from_floating_ip_detachment) | **GET** /core/fip-detachment-exclusions/org/{org_id} | 
 
 
-# **list_snapshot_events**
-> list_snapshot_events(snapshot_id)
+# **check_if_org_is_excluded_from_floating_ip_detachment**
+> ResponseModel check_if_org_is_excluded_from_floating_ip_detachment(org_id)
 
-Fetch all events for a snapshot
 
-Retrieves a list of all events for a Snapshot's history, which records actions performed on the specific snapshot. Requires the snapshot ID in the path.
+
+is org excluded from floating ip detachment
 
 ### Example
 
@@ -20,6 +20,7 @@ Retrieves a list of all events for a Snapshot's history, which records actions p
 
 ```python
 import hyperstack
+from hyperstack.models.response_model import ResponseModel
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -43,14 +44,15 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = hyperstack.SnapshotEventsApi(api_client)
-    snapshot_id = 56 # int | 
+    api_instance = hyperstack.FIPExclusionsApi(api_client)
+    org_id = 56 # int | 
 
     try:
-        # Fetch all events for a snapshot
-        api_instance.list_snapshot_events(snapshot_id)
+        api_response = api_instance.check_if_org_is_excluded_from_floating_ip_detachment(org_id)
+        print("The response of FIPExclusionsApi->check_if_org_is_excluded_from_floating_ip_detachment:\n")
+        pprint(api_response)
     except Exception as e:
-        print("Exception when calling SnapshotEventsApi->list_snapshot_events: %s\n" % e)
+        print("Exception when calling FIPExclusionsApi->check_if_org_is_excluded_from_floating_ip_detachment: %s\n" % e)
 ```
 
 
@@ -60,11 +62,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **snapshot_id** | **int**|  | 
+ **org_id** | **int**|  | 
 
 ### Return type
 
-void (empty response body)
+[**ResponseModel**](ResponseModel.md)
 
 ### Authorization
 
@@ -73,13 +75,18 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

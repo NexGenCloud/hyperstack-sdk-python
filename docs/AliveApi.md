@@ -5,7 +5,7 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_alive**](AliveApi.md#get_alive) | **GET** /billing/alive | GET: Alive
-[**get_doc**](AliveApi.md#get_doc) | **GET** /billing/alive/doc | 
+[**get_alive_doc**](AliveApi.md#get_alive_doc) | **GET** /billing/alive/doc | 
 
 
 # **get_alive**
@@ -80,8 +80,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_doc**
-> get_doc()
+# **get_alive_doc**
+> get_alive_doc()
 
 
 
@@ -117,9 +117,9 @@ with hyperstack.ApiClient(configuration) as api_client:
     api_instance = hyperstack.AliveApi(api_client)
 
     try:
-        api_instance.get_doc()
+        api_instance.get_alive_doc()
     except Exception as e:
-        print("Exception when calling AliveApi->get_doc: %s\n" % e)
+        print("Exception when calling AliveApi->get_alive_doc: %s\n" % e)
 ```
 
 

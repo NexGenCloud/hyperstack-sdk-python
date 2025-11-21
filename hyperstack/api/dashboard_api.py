@@ -37,7 +37,7 @@ class DashboardApi:
 
 
     @validate_call
-    def retrieve_dashboard(
+    def get_dashboard(
         self,
         _request_timeout: Union[
             None,
@@ -78,7 +78,7 @@ class DashboardApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_dashboard_serialize(
+        _param = self._get_dashboard_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -103,7 +103,7 @@ class DashboardApi:
 
 
     @validate_call
-    def retrieve_dashboard_with_http_info(
+    def get_dashboard_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -144,7 +144,7 @@ class DashboardApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_dashboard_serialize(
+        _param = self._get_dashboard_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -169,7 +169,7 @@ class DashboardApi:
 
 
     @validate_call
-    def retrieve_dashboard_without_preload_content(
+    def get_dashboard_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -210,7 +210,7 @@ class DashboardApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_dashboard_serialize(
+        _param = self._get_dashboard_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -230,7 +230,7 @@ class DashboardApi:
         return response_data.response
 
 
-    def _retrieve_dashboard_serialize(
+    def _get_dashboard_serialize(
         self,
         _request_auth,
         _content_type,

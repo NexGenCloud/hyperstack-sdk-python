@@ -4,105 +4,24 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attempt_to_manually_reconcile_a_cluster**](ClustersApi.md#attempt_to_manually_reconcile_a_cluster) | **POST** /core/clusters/{cluster_id}/reconcile | Reconcile a cluster
 [**create_cluster**](ClustersApi.md#create_cluster) | **POST** /core/clusters | Create Cluster
 [**create_node**](ClustersApi.md#create_node) | **POST** /core/clusters/{cluster_id}/nodes | Create Node
 [**create_node_group**](ClustersApi.md#create_node_group) | **POST** /core/clusters/{cluster_id}/node-groups | Create a node group in a cluster
-[**delete_a_cluster**](ClustersApi.md#delete_a_cluster) | **DELETE** /core/clusters/{id} | Delete a cluster
-[**delete_a_node_group**](ClustersApi.md#delete_a_node_group) | **DELETE** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Delete a node group
+[**delete_cluster**](ClustersApi.md#delete_cluster) | **DELETE** /core/clusters/{id} | Delete a cluster
 [**delete_cluster_node**](ClustersApi.md#delete_cluster_node) | **DELETE** /core/clusters/{cluster_id}/nodes/{node_id} | Delete Cluster Node
 [**delete_cluster_nodes**](ClustersApi.md#delete_cluster_nodes) | **POST** /core/clusters/{cluster_id}/nodes/delete | Delete Multiple Cluster Nodes
+[**delete_node_group**](ClustersApi.md#delete_node_group) | **DELETE** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Delete a node group
 [**fetch_cluster_name_availability**](ClustersApi.md#fetch_cluster_name_availability) | **GET** /core/clusters/name-availability/{name} | Fetch cluster name availability
 [**get_cluster_master_flavors**](ClustersApi.md#get_cluster_master_flavors) | **GET** /core/clusters/master-flavors | Get Cluster Master Flavors
 [**get_cluster_nodes**](ClustersApi.md#get_cluster_nodes) | **GET** /core/clusters/{cluster_id}/nodes | Get Cluster Nodes
 [**get_cluster_versions**](ClustersApi.md#get_cluster_versions) | **GET** /core/clusters/versions | List Cluster Versions
+[**get_node_group**](ClustersApi.md#get_node_group) | **GET** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Retrieve a node group in a cluster
 [**getting_cluster_detail**](ClustersApi.md#getting_cluster_detail) | **GET** /core/clusters/{id} | Getting Cluster Detail
 [**list_clusters**](ClustersApi.md#list_clusters) | **GET** /core/clusters | List Clusters
 [**list_node_groups**](ClustersApi.md#list_node_groups) | **GET** /core/clusters/{cluster_id}/node-groups | List node groups for a cluster
-[**retrieve_a_node_group**](ClustersApi.md#retrieve_a_node_group) | **GET** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Retrieve a node group in a cluster
-[**update_a_node_group**](ClustersApi.md#update_a_node_group) | **PATCH** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Update a node group in a cluster
+[**reconcile_cluster**](ClustersApi.md#reconcile_cluster) | **POST** /core/clusters/{cluster_id}/reconcile | Reconcile a cluster
+[**update_node_group**](ClustersApi.md#update_node_group) | **PATCH** /core/clusters/{cluster_id}/node-groups/{node_group_id} | Update a node group in a cluster
 
-
-# **attempt_to_manually_reconcile_a_cluster**
-> ManualReconciliationModel attempt_to_manually_reconcile_a_cluster(cluster_id)
-
-Reconcile a cluster
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import hyperstack
-from hyperstack.models.manual_reconciliation_model import ManualReconciliationModel
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.ClustersApi(api_client)
-    cluster_id = 56 # int | 
-
-    try:
-        # Reconcile a cluster
-        api_response = api_instance.attempt_to_manually_reconcile_a_cluster(cluster_id)
-        print("The response of ClustersApi->attempt_to_manually_reconcile_a_cluster:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ClustersApi->attempt_to_manually_reconcile_a_cluster: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cluster_id** | **int**|  | 
-
-### Return type
-
-[**ManualReconciliationModel**](ManualReconciliationModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_cluster**
 > ClusterResponse create_cluster(payload)
@@ -358,8 +277,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_a_cluster**
-> ResponseModel delete_a_cluster(id)
+# **delete_cluster**
+> ResponseModel delete_cluster(id)
 
 Delete a cluster
 
@@ -398,11 +317,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Delete a cluster
-        api_response = api_instance.delete_a_cluster(id)
-        print("The response of ClustersApi->delete_a_cluster:\n")
+        api_response = api_instance.delete_cluster(id)
+        print("The response of ClustersApi->delete_cluster:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClustersApi->delete_a_cluster: %s\n" % e)
+        print("Exception when calling ClustersApi->delete_cluster: %s\n" % e)
 ```
 
 
@@ -435,90 +354,6 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_a_node_group**
-> ResponseModel delete_a_node_group(cluster_id, node_group_id)
-
-Delete a node group
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import hyperstack
-from hyperstack.models.response_model import ResponseModel
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.ClustersApi(api_client)
-    cluster_id = 56 # int | 
-    node_group_id = 56 # int | 
-
-    try:
-        # Delete a node group
-        api_response = api_instance.delete_a_node_group(cluster_id, node_group_id)
-        print("The response of ClustersApi->delete_a_node_group:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ClustersApi->delete_a_node_group: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cluster_id** | **int**|  | 
- **node_group_id** | **int**|  | 
-
-### Return type
-
-[**ResponseModel**](ResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
-**409** | Conflict |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -686,6 +521,90 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_node_group**
+> ResponseModel delete_node_group(cluster_id, node_group_id)
+
+Delete a node group
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.response_model import ResponseModel
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.ClustersApi(api_client)
+    cluster_id = 56 # int | 
+    node_group_id = 56 # int | 
+
+    try:
+        # Delete a node group
+        api_response = api_instance.delete_node_group(cluster_id, node_group_id)
+        print("The response of ClustersApi->delete_node_group:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ClustersApi->delete_node_group: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster_id** | **int**|  | 
+ **node_group_id** | **int**|  | 
+
+### Return type
+
+[**ResponseModel**](ResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**409** | Conflict |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1012,6 +931,89 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_node_group**
+> ClusterNodeGroupsGetResponse get_node_group(cluster_id, node_group_id)
+
+Retrieve a node group in a cluster
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.cluster_node_groups_get_response import ClusterNodeGroupsGetResponse
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.ClustersApi(api_client)
+    cluster_id = 56 # int | 
+    node_group_id = 56 # int | 
+
+    try:
+        # Retrieve a node group in a cluster
+        api_response = api_instance.get_node_group(cluster_id, node_group_id)
+        print("The response of ClustersApi->get_node_group:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ClustersApi->get_node_group: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster_id** | **int**|  | 
+ **node_group_id** | **int**|  | 
+
+### Return type
+
+[**ClusterNodeGroupsGetResponse**](ClusterNodeGroupsGetResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getting_cluster_detail**
 > ClusterResponse getting_cluster_detail(id)
 
@@ -1260,10 +1262,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_a_node_group**
-> ClusterNodeGroupsGetResponse retrieve_a_node_group(cluster_id, node_group_id)
+# **reconcile_cluster**
+> ManualReconciliationModel reconcile_cluster(cluster_id)
 
-Retrieve a node group in a cluster
+Reconcile a cluster
 
 ### Example
 
@@ -1271,7 +1273,7 @@ Retrieve a node group in a cluster
 
 ```python
 import hyperstack
-from hyperstack.models.cluster_node_groups_get_response import ClusterNodeGroupsGetResponse
+from hyperstack.models.manual_reconciliation_model import ManualReconciliationModel
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -1297,15 +1299,14 @@ with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.ClustersApi(api_client)
     cluster_id = 56 # int | 
-    node_group_id = 56 # int | 
 
     try:
-        # Retrieve a node group in a cluster
-        api_response = api_instance.retrieve_a_node_group(cluster_id, node_group_id)
-        print("The response of ClustersApi->retrieve_a_node_group:\n")
+        # Reconcile a cluster
+        api_response = api_instance.reconcile_cluster(cluster_id)
+        print("The response of ClustersApi->reconcile_cluster:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClustersApi->retrieve_a_node_group: %s\n" % e)
+        print("Exception when calling ClustersApi->reconcile_cluster: %s\n" % e)
 ```
 
 
@@ -1316,11 +1317,10 @@ with hyperstack.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cluster_id** | **int**|  | 
- **node_group_id** | **int**|  | 
 
 ### Return type
 
-[**ClusterNodeGroupsGetResponse**](ClusterNodeGroupsGetResponse.md)
+[**ManualReconciliationModel**](ManualReconciliationModel.md)
 
 ### Authorization
 
@@ -1343,8 +1343,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_a_node_group**
-> ClusterNodeGroupsCreateResponse update_a_node_group(cluster_id, node_group_id, payload)
+# **update_node_group**
+> ClusterNodeGroupsCreateResponse update_node_group(cluster_id, node_group_id, payload)
 
 Update a node group in a cluster
 
@@ -1386,11 +1386,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Update a node group in a cluster
-        api_response = api_instance.update_a_node_group(cluster_id, node_group_id, payload)
-        print("The response of ClustersApi->update_a_node_group:\n")
+        api_response = api_instance.update_node_group(cluster_id, node_group_id, payload)
+        print("The response of ClustersApi->update_node_group:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClustersApi->update_a_node_group: %s\n" % e)
+        print("Exception when calling ClustersApi->update_node_group: %s\n" % e)
 ```
 
 

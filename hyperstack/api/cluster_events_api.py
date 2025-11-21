@@ -38,7 +38,7 @@ class ClusterEventsApi:
 
 
     @validate_call
-    def fetch_all_of_a_cluster_events(
+    def list_cluster_events(
         self,
         cluster_id: StrictStr,
         _request_timeout: Union[
@@ -81,7 +81,7 @@ class ClusterEventsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._fetch_all_of_a_cluster_events_serialize(
+        _param = self._list_cluster_events_serialize(
             cluster_id=cluster_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -108,7 +108,7 @@ class ClusterEventsApi:
 
 
     @validate_call
-    def fetch_all_of_a_cluster_events_with_http_info(
+    def list_cluster_events_with_http_info(
         self,
         cluster_id: StrictStr,
         _request_timeout: Union[
@@ -151,7 +151,7 @@ class ClusterEventsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._fetch_all_of_a_cluster_events_serialize(
+        _param = self._list_cluster_events_serialize(
             cluster_id=cluster_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -178,7 +178,7 @@ class ClusterEventsApi:
 
 
     @validate_call
-    def fetch_all_of_a_cluster_events_without_preload_content(
+    def list_cluster_events_without_preload_content(
         self,
         cluster_id: StrictStr,
         _request_timeout: Union[
@@ -221,7 +221,7 @@ class ClusterEventsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._fetch_all_of_a_cluster_events_serialize(
+        _param = self._list_cluster_events_serialize(
             cluster_id=cluster_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -243,7 +243,7 @@ class ClusterEventsApi:
         return response_data.response
 
 
-    def _fetch_all_of_a_cluster_events_serialize(
+    def _list_cluster_events_serialize(
         self,
         cluster_id,
         _request_auth,

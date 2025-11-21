@@ -4,30 +4,117 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_firewalls_to_a_virtual_machine**](VirtualMachineApi.md#attach_firewalls_to_a_virtual_machine) | **POST** /core/virtual-machines/{vm_id}/attach-firewalls | Attach firewalls to a virtual machine
-[**create_one_or_more_virtual_machines**](VirtualMachineApi.md#create_one_or_more_virtual_machines) | **POST** /core/virtual-machines | Create virtual machines
-[**delete_security_rule**](VirtualMachineApi.md#delete_security_rule) | **DELETE** /core/virtual-machines/{vm_id}/sg-rules/{sg_rule_id} | Delete firewall rule from virtual machine
-[**delete_virtual_machine**](VirtualMachineApi.md#delete_virtual_machine) | **DELETE** /core/virtual-machines/{vm_id} | Delete virtual machine
-[**fetch_virtual_machine_name_availability**](VirtualMachineApi.md#fetch_virtual_machine_name_availability) | **GET** /core/virtual-machines/name-availability/{name} | Fetch virtual machine name availability
-[**get_instance_hard_reboot**](VirtualMachineApi.md#get_instance_hard_reboot) | **GET** /core/virtual-machines/{vm_id}/hard-reboot | Hard reboot virtual machine
-[**get_instance_hibernate**](VirtualMachineApi.md#get_instance_hibernate) | **GET** /core/virtual-machines/{vm_id}/hibernate | Hibernate virtual machine
-[**get_instance_hibernate_restore**](VirtualMachineApi.md#get_instance_hibernate_restore) | **GET** /core/virtual-machines/{vm_id}/hibernate-restore | Restore virtual machine from hibernation
-[**get_instance_logs**](VirtualMachineApi.md#get_instance_logs) | **GET** /core/virtual-machines/{vm_id}/logs | Get virtual machine logs
-[**get_instance_metrics**](VirtualMachineApi.md#get_instance_metrics) | **GET** /core/virtual-machines/{vm_id}/metrics | Retrieve virtual machine performance metrics
-[**get_instance_start**](VirtualMachineApi.md#get_instance_start) | **GET** /core/virtual-machines/{vm_id}/start | Start virtual machine
-[**get_instance_stop**](VirtualMachineApi.md#get_instance_stop) | **GET** /core/virtual-machines/{vm_id}/stop | Stop virtual machine
-[**list_virtual_machines**](VirtualMachineApi.md#list_virtual_machines) | **GET** /core/virtual-machines | List virtual machines
-[**post_instance_logs**](VirtualMachineApi.md#post_instance_logs) | **POST** /core/virtual-machines/{vm_id}/logs | Request virtual machine logs
-[**post_instance_resize**](VirtualMachineApi.md#post_instance_resize) | **POST** /core/virtual-machines/{vm_id}/resize | Resize virtual machine
-[**post_security_rule**](VirtualMachineApi.md#post_security_rule) | **POST** /core/virtual-machines/{vm_id}/sg-rules | Add firewall rule to virtual machine
-[**post_snapshots**](VirtualMachineApi.md#post_snapshots) | **POST** /core/virtual-machines/{vm_id}/snapshots | Create snapshot from a virtual machine
-[**put_labels**](VirtualMachineApi.md#put_labels) | **PUT** /core/virtual-machines/{vm_id}/label | Edit virtual machine labels
-[**retrieve_virtual_machine_details**](VirtualMachineApi.md#retrieve_virtual_machine_details) | **GET** /core/virtual-machines/{vm_id} | Retrieve virtual machine details
-[**retrieve_virtual_machines_associated_with_a_contract**](VirtualMachineApi.md#retrieve_virtual_machines_associated_with_a_contract) | **GET** /core/virtual-machines/contract/{contract_id}/virtual-machines | Retrieve virtual machines associated with a contract
+[**add_vm_label**](VirtualMachineApi.md#add_vm_label) | **PUT** /core/virtual-machines/{vm_id}/label | Edit virtual machine labels
+[**attach_firewalls_to_vm**](VirtualMachineApi.md#attach_firewalls_to_vm) | **POST** /core/virtual-machines/{vm_id}/attach-firewalls | Attach firewalls to a virtual machine
+[**check_vm_name_availability**](VirtualMachineApi.md#check_vm_name_availability) | **GET** /core/virtual-machines/name-availability/{name} | Fetch virtual machine name availability
+[**create_firewall_rule_for_vm**](VirtualMachineApi.md#create_firewall_rule_for_vm) | **POST** /core/virtual-machines/{vm_id}/sg-rules | Add firewall rule to virtual machine
+[**create_snapshot_for_vm**](VirtualMachineApi.md#create_snapshot_for_vm) | **POST** /core/virtual-machines/{vm_id}/snapshots | Create snapshot from a virtual machine
+[**create_vms**](VirtualMachineApi.md#create_vms) | **POST** /core/virtual-machines | Create virtual machines
+[**delete_firewall_rule_for_vm**](VirtualMachineApi.md#delete_firewall_rule_for_vm) | **DELETE** /core/virtual-machines/{vm_id}/sg-rules/{sg_rule_id} | Delete firewall rule from virtual machine
+[**delete_vm**](VirtualMachineApi.md#delete_vm) | **DELETE** /core/virtual-machines/{vm_id} | Delete virtual machine
+[**get_contract_vms**](VirtualMachineApi.md#get_contract_vms) | **GET** /core/virtual-machines/contract/{contract_id}/virtual-machines | Retrieve virtual machines associated with a contract
+[**get_vm**](VirtualMachineApi.md#get_vm) | **GET** /core/virtual-machines/{vm_id} | Retrieve virtual machine details
+[**get_vm_logs**](VirtualMachineApi.md#get_vm_logs) | **GET** /core/virtual-machines/{vm_id}/logs | Get virtual machine logs
+[**get_vm_metrics**](VirtualMachineApi.md#get_vm_metrics) | **GET** /core/virtual-machines/{vm_id}/metrics | Retrieve virtual machine performance metrics
+[**hard_reboot_vm**](VirtualMachineApi.md#hard_reboot_vm) | **GET** /core/virtual-machines/{vm_id}/hard-reboot | Hard reboot virtual machine
+[**hibernate_vm**](VirtualMachineApi.md#hibernate_vm) | **GET** /core/virtual-machines/{vm_id}/hibernate | Hibernate virtual machine
+[**list_vms**](VirtualMachineApi.md#list_vms) | **GET** /core/virtual-machines | List virtual machines
+[**request_vm_logs**](VirtualMachineApi.md#request_vm_logs) | **POST** /core/virtual-machines/{vm_id}/logs | Request virtual machine logs
+[**resize_vm**](VirtualMachineApi.md#resize_vm) | **POST** /core/virtual-machines/{vm_id}/resize | Resize virtual machine
+[**restore_vm_from_hibernation**](VirtualMachineApi.md#restore_vm_from_hibernation) | **GET** /core/virtual-machines/{vm_id}/hibernate-restore | Restore virtual machine from hibernation
+[**start_vm**](VirtualMachineApi.md#start_vm) | **GET** /core/virtual-machines/{vm_id}/start | Start virtual machine
+[**stop_vm**](VirtualMachineApi.md#stop_vm) | **GET** /core/virtual-machines/{vm_id}/stop | Stop virtual machine
 
 
-# **attach_firewalls_to_a_virtual_machine**
-> ResponseModel attach_firewalls_to_a_virtual_machine(vm_id, payload)
+# **add_vm_label**
+> ResponseModel add_vm_label(vm_id, payload)
+
+Edit virtual machine labels
+
+Adds one or more labels to an existing virtual machine. Provide the virtual machine ID in the path to add labels to the specified VM. For multiple labels, add a space between each label in the request body.
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.edit_label_of_an_existing_vm_payload import EditLabelOfAnExistingVMPayload
+from hyperstack.models.response_model import ResponseModel
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.VirtualMachineApi(api_client)
+    vm_id = 56 # int | 
+    payload = hyperstack.EditLabelOfAnExistingVMPayload() # EditLabelOfAnExistingVMPayload | 
+
+    try:
+        # Edit virtual machine labels
+        api_response = api_instance.add_vm_label(vm_id, payload)
+        print("The response of VirtualMachineApi->add_vm_label:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VirtualMachineApi->add_vm_label: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vm_id** | **int**|  | 
+ **payload** | [**EditLabelOfAnExistingVMPayload**](EditLabelOfAnExistingVMPayload.md)|  | 
+
+### Return type
+
+[**ResponseModel**](ResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Labels edited successfully |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**409** | Conflict |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **attach_firewalls_to_vm**
+> ResponseModel attach_firewalls_to_vm(vm_id, payload)
 
 Attach firewalls to a virtual machine
 
@@ -70,11 +157,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Attach firewalls to a virtual machine
-        api_response = api_instance.attach_firewalls_to_a_virtual_machine(vm_id, payload)
-        print("The response of VirtualMachineApi->attach_firewalls_to_a_virtual_machine:\n")
+        api_response = api_instance.attach_firewalls_to_vm(vm_id, payload)
+        print("The response of VirtualMachineApi->attach_firewalls_to_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->attach_firewalls_to_a_virtual_machine: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->attach_firewalls_to_vm: %s\n" % e)
 ```
 
 
@@ -112,8 +199,264 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_one_or_more_virtual_machines**
-> CreateInstancesResponse create_one_or_more_virtual_machines(payload)
+# **check_vm_name_availability**
+> NameAvailableModel check_vm_name_availability(name)
+
+Fetch virtual machine name availability
+
+Check if a Virtual Machine name is available
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.name_available_model import NameAvailableModel
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.VirtualMachineApi(api_client)
+    name = 'name_example' # str | 
+
+    try:
+        # Fetch virtual machine name availability
+        api_response = api_instance.check_vm_name_availability(name)
+        print("The response of VirtualMachineApi->check_vm_name_availability:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VirtualMachineApi->check_vm_name_availability: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**|  | 
+
+### Return type
+
+[**NameAvailableModel**](NameAvailableModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_firewall_rule_for_vm**
+> SecurityGroupRule create_firewall_rule_for_vm(vm_id, payload)
+
+Add firewall rule to virtual machine
+
+Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.create_security_rule_payload import CreateSecurityRulePayload
+from hyperstack.models.security_group_rule import SecurityGroupRule
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.VirtualMachineApi(api_client)
+    vm_id = 56 # int | 
+    payload = hyperstack.CreateSecurityRulePayload() # CreateSecurityRulePayload | 
+
+    try:
+        # Add firewall rule to virtual machine
+        api_response = api_instance.create_firewall_rule_for_vm(vm_id, payload)
+        print("The response of VirtualMachineApi->create_firewall_rule_for_vm:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VirtualMachineApi->create_firewall_rule_for_vm: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vm_id** | **int**|  | 
+ **payload** | [**CreateSecurityRulePayload**](CreateSecurityRulePayload.md)|  | 
+
+### Return type
+
+[**SecurityGroupRule**](SecurityGroupRule.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The firewall rule has been successfully added to the virtual machine. |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**409** | Conflict |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_snapshot_for_vm**
+> CreateSnapshotResponse create_snapshot_for_vm(vm_id, payload)
+
+Create snapshot from a virtual machine
+
+Create snapshots of a virtual machine by providing the virtual machine ID in the path
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.create_snapshot_payload import CreateSnapshotPayload
+from hyperstack.models.create_snapshot_response import CreateSnapshotResponse
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.VirtualMachineApi(api_client)
+    vm_id = 56 # int | 
+    payload = hyperstack.CreateSnapshotPayload() # CreateSnapshotPayload | 
+
+    try:
+        # Create snapshot from a virtual machine
+        api_response = api_instance.create_snapshot_for_vm(vm_id, payload)
+        print("The response of VirtualMachineApi->create_snapshot_for_vm:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VirtualMachineApi->create_snapshot_for_vm: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vm_id** | **int**|  | 
+ **payload** | [**CreateSnapshotPayload**](CreateSnapshotPayload.md)|  | 
+
+### Return type
+
+[**CreateSnapshotResponse**](CreateSnapshotResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_vms**
+> CreateInstancesResponse create_vms(payload)
 
 Create virtual machines
 
@@ -155,11 +498,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Create virtual machines
-        api_response = api_instance.create_one_or_more_virtual_machines(payload)
-        print("The response of VirtualMachineApi->create_one_or_more_virtual_machines:\n")
+        api_response = api_instance.create_vms(payload)
+        print("The response of VirtualMachineApi->create_vms:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->create_one_or_more_virtual_machines: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->create_vms: %s\n" % e)
 ```
 
 
@@ -198,8 +541,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_security_rule**
-> ResponseModel delete_security_rule(vm_id, sg_rule_id)
+# **delete_firewall_rule_for_vm**
+> ResponseModel delete_firewall_rule_for_vm(vm_id, sg_rule_id)
 
 Delete firewall rule from virtual machine
 
@@ -241,11 +584,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Delete firewall rule from virtual machine
-        api_response = api_instance.delete_security_rule(vm_id, sg_rule_id)
-        print("The response of VirtualMachineApi->delete_security_rule:\n")
+        api_response = api_instance.delete_firewall_rule_for_vm(vm_id, sg_rule_id)
+        print("The response of VirtualMachineApi->delete_firewall_rule_for_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->delete_security_rule: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->delete_firewall_rule_for_vm: %s\n" % e)
 ```
 
 
@@ -283,8 +626,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_virtual_machine**
-> ResponseModel delete_virtual_machine(vm_id)
+# **delete_vm**
+> ResponseModel delete_vm(vm_id)
 
 Delete virtual machine
 
@@ -325,11 +668,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Delete virtual machine
-        api_response = api_instance.delete_virtual_machine(vm_id)
-        print("The response of VirtualMachineApi->delete_virtual_machine:\n")
+        api_response = api_instance.delete_vm(vm_id)
+        print("The response of VirtualMachineApi->delete_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->delete_virtual_machine: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->delete_vm: %s\n" % e)
 ```
 
 
@@ -367,12 +710,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fetch_virtual_machine_name_availability**
-> NameAvailableModel fetch_virtual_machine_name_availability(name)
+# **get_contract_vms**
+> ContractInstancesResponse get_contract_vms(contract_id, page=page, page_size=page_size, search=search)
 
-Fetch virtual machine name availability
+Retrieve virtual machines associated with a contract
 
-Check if a Virtual Machine name is available
+Retrieves a list of virtual machines associated with a contract, providing details such as virtual machine name, timestamp, flavor name, and other relevant information. Please provide the ID of the relevant contract in the path.
 
 ### Example
 
@@ -380,7 +723,7 @@ Check if a Virtual Machine name is available
 
 ```python
 import hyperstack
-from hyperstack.models.name_available_model import NameAvailableModel
+from hyperstack.models.contract_instances_response import ContractInstancesResponse
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -405,15 +748,18 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.VirtualMachineApi(api_client)
-    name = 'name_example' # str | 
+    contract_id = 56 # int | 
+    page = 'page_example' # str | Page Number (optional)
+    page_size = 'page_size_example' # str | Data Per Page (optional)
+    search = 'search_example' # str | Search By Instance ID or Name (optional)
 
     try:
-        # Fetch virtual machine name availability
-        api_response = api_instance.fetch_virtual_machine_name_availability(name)
-        print("The response of VirtualMachineApi->fetch_virtual_machine_name_availability:\n")
+        # Retrieve virtual machines associated with a contract
+        api_response = api_instance.get_contract_vms(contract_id, page=page, page_size=page_size, search=search)
+        print("The response of VirtualMachineApi->get_contract_vms:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->fetch_virtual_machine_name_availability: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->get_contract_vms: %s\n" % e)
 ```
 
 
@@ -423,11 +769,14 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**|  | 
+ **contract_id** | **int**|  | 
+ **page** | **str**| Page Number | [optional] 
+ **page_size** | **str**| Data Per Page | [optional] 
+ **search** | **str**| Search By Instance ID or Name | [optional] 
 
 ### Return type
 
-[**NameAvailableModel**](NameAvailableModel.md)
+[**ContractInstancesResponse**](ContractInstancesResponse.md)
 
 ### Authorization
 
@@ -445,17 +794,16 @@ Name | Type | Description  | Notes
 **200** | Success |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_instance_hard_reboot**
-> ResponseModel get_instance_hard_reboot(vm_id)
+# **get_vm**
+> Instance get_vm(vm_id)
 
-Hard reboot virtual machine
+Retrieve virtual machine details
 
-Initiates a hard reboot for a virtual machine, simulating the process of unplugging and rebooting a physical machine. Provide the virtual machine ID in the path to execute a hard reboot for the specified virtual machine.
+Retrieves the details of an existing virtual machine. Provide the virtual machine ID in the path, and Infrahub will return information about the corresponding VM.
 
 ### Example
 
@@ -463,7 +811,7 @@ Initiates a hard reboot for a virtual machine, simulating the process of unplugg
 
 ```python
 import hyperstack
-from hyperstack.models.response_model import ResponseModel
+from hyperstack.models.instance import Instance
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -491,12 +839,12 @@ with hyperstack.ApiClient(configuration) as api_client:
     vm_id = 56 # int | 
 
     try:
-        # Hard reboot virtual machine
-        api_response = api_instance.get_instance_hard_reboot(vm_id)
-        print("The response of VirtualMachineApi->get_instance_hard_reboot:\n")
+        # Retrieve virtual machine details
+        api_response = api_instance.get_vm(vm_id)
+        print("The response of VirtualMachineApi->get_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->get_instance_hard_reboot: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->get_vm: %s\n" % e)
 ```
 
 
@@ -510,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseModel**](ResponseModel.md)
+[**Instance**](Instance.md)
 
 ### Authorization
 
@@ -525,7 +873,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Hard reboot process has been successfully initiated. |  -  |
+**200** | Virtual machine details retrieved successfully. |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
@@ -533,174 +881,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_instance_hibernate**
-> ResponseModel get_instance_hibernate(vm_id)
-
-Hibernate virtual machine
-
-Initiates the hibernation of a virtual machine, saving its current state to disk before powering off. Provide the virtual machine ID in the path to specify the virtual machine to be hibernated.
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import hyperstack
-from hyperstack.models.response_model import ResponseModel
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.VirtualMachineApi(api_client)
-    vm_id = 56 # int | 
-
-    try:
-        # Hibernate virtual machine
-        api_response = api_instance.get_instance_hibernate(vm_id)
-        print("The response of VirtualMachineApi->get_instance_hibernate:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling VirtualMachineApi->get_instance_hibernate: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vm_id** | **int**|  | 
-
-### Return type
-
-[**ResponseModel**](ResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Hibernation request for the virtual machine was successful. |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_instance_hibernate_restore**
-> ResponseModel get_instance_hibernate_restore(vm_id)
-
-Restore virtual machine from hibernation
-
-Resumes a virtual machine from hibernation, bringing it back to an active state. Provide the virtual machine ID that you want to restore from hibernation.
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import hyperstack
-from hyperstack.models.response_model import ResponseModel
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.VirtualMachineApi(api_client)
-    vm_id = 56 # int | 
-
-    try:
-        # Restore virtual machine from hibernation
-        api_response = api_instance.get_instance_hibernate_restore(vm_id)
-        print("The response of VirtualMachineApi->get_instance_hibernate_restore:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling VirtualMachineApi->get_instance_hibernate_restore: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vm_id** | **int**|  | 
-
-### Return type
-
-[**ResponseModel**](ResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The request to restore the virtual machine from hibernation was successful. |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_instance_logs**
-> GetInstanceLogsResponse get_instance_logs(vm_id, request_id)
+# **get_vm_logs**
+> GetInstanceLogsResponse get_vm_logs(vm_id, request_id)
 
 Get virtual machine logs
 
@@ -742,11 +924,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Get virtual machine logs
-        api_response = api_instance.get_instance_logs(vm_id, request_id)
-        print("The response of VirtualMachineApi->get_instance_logs:\n")
+        api_response = api_instance.get_vm_logs(vm_id, request_id)
+        print("The response of VirtualMachineApi->get_vm_logs:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->get_instance_logs: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->get_vm_logs: %s\n" % e)
 ```
 
 
@@ -785,8 +967,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_instance_metrics**
-> MetricsFields get_instance_metrics(vm_id, duration=duration)
+# **get_vm_metrics**
+> MetricsFields get_vm_metrics(vm_id, duration=duration)
 
 Retrieve virtual machine performance metrics
 
@@ -828,11 +1010,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve virtual machine performance metrics
-        api_response = api_instance.get_instance_metrics(vm_id, duration=duration)
-        print("The response of VirtualMachineApi->get_instance_metrics:\n")
+        api_response = api_instance.get_vm_metrics(vm_id, duration=duration)
+        print("The response of VirtualMachineApi->get_vm_metrics:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->get_instance_metrics: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->get_vm_metrics: %s\n" % e)
 ```
 
 
@@ -871,95 +1053,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_instance_start**
-> ResponseModel get_instance_start(vm_id)
+# **hard_reboot_vm**
+> ResponseModel hard_reboot_vm(vm_id)
 
-Start virtual machine
+Hard reboot virtual machine
 
-Initiates the startup of a virtual machine. Provide the virtual machine ID in the path to initiate the starting of the specified virtual machine.
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import hyperstack
-from hyperstack.models.response_model import ResponseModel
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.VirtualMachineApi(api_client)
-    vm_id = 56 # int | 
-
-    try:
-        # Start virtual machine
-        api_response = api_instance.get_instance_start(vm_id)
-        print("The response of VirtualMachineApi->get_instance_start:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling VirtualMachineApi->get_instance_start: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vm_id** | **int**|  | 
-
-### Return type
-
-[**ResponseModel**](ResponseModel.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Virtual machine started successfully. |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_instance_stop**
-> ResponseModel get_instance_stop(vm_id)
-
-Stop virtual machine
-
-Shuts down a virtual machine. Provide the virtual machine ID in the path to initiate the shutdown process for the specified virtual machine.
+Initiates a hard reboot for a virtual machine, simulating the process of unplugging and rebooting a physical machine. Provide the virtual machine ID in the path to execute a hard reboot for the specified virtual machine.
 
 ### Example
 
@@ -995,12 +1094,12 @@ with hyperstack.ApiClient(configuration) as api_client:
     vm_id = 56 # int | 
 
     try:
-        # Stop virtual machine
-        api_response = api_instance.get_instance_stop(vm_id)
-        print("The response of VirtualMachineApi->get_instance_stop:\n")
+        # Hard reboot virtual machine
+        api_response = api_instance.hard_reboot_vm(vm_id)
+        print("The response of VirtualMachineApi->hard_reboot_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->get_instance_stop: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->hard_reboot_vm: %s\n" % e)
 ```
 
 
@@ -1029,7 +1128,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Virtual machine shut down successfully. |  -  |
+**200** | Hard reboot process has been successfully initiated. |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
@@ -1037,8 +1136,93 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_virtual_machines**
-> Instances list_virtual_machines(page=page, page_size=page_size, search=search, environment=environment, exclude_firewalls=exclude_firewalls)
+# **hibernate_vm**
+> ResponseModel hibernate_vm(vm_id, retain_ip=retain_ip)
+
+Hibernate virtual machine
+
+Initiates the hibernation of a virtual machine, saving its current state to disk before powering off. Provide the virtual machine ID in the path to specify the virtual machine to be hibernated.
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.response_model import ResponseModel
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.VirtualMachineApi(api_client)
+    vm_id = 56 # int | 
+    retain_ip = 'retain_ip_example' # str | false (optional)
+
+    try:
+        # Hibernate virtual machine
+        api_response = api_instance.hibernate_vm(vm_id, retain_ip=retain_ip)
+        print("The response of VirtualMachineApi->hibernate_vm:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VirtualMachineApi->hibernate_vm: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vm_id** | **int**|  | 
+ **retain_ip** | **str**| false | [optional] 
+
+### Return type
+
+[**ResponseModel**](ResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Hibernation request for the virtual machine was successful. |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_vms**
+> Instances list_vms(page=page, page_size=page_size, search=search, environment=environment, exclude_firewalls=exclude_firewalls)
 
 List virtual machines
 
@@ -1083,11 +1267,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # List virtual machines
-        api_response = api_instance.list_virtual_machines(page=page, page_size=page_size, search=search, environment=environment, exclude_firewalls=exclude_firewalls)
-        print("The response of VirtualMachineApi->list_virtual_machines:\n")
+        api_response = api_instance.list_vms(page=page, page_size=page_size, search=search, environment=environment, exclude_firewalls=exclude_firewalls)
+        print("The response of VirtualMachineApi->list_vms:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->list_virtual_machines: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->list_vms: %s\n" % e)
 ```
 
 
@@ -1127,8 +1311,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post_instance_logs**
-> RequestInstanceLogsResponse post_instance_logs(vm_id, payload)
+# **request_vm_logs**
+> RequestInstanceLogsResponse request_vm_logs(vm_id, payload)
 
 Request virtual machine logs
 
@@ -1171,11 +1355,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Request virtual machine logs
-        api_response = api_instance.post_instance_logs(vm_id, payload)
-        print("The response of VirtualMachineApi->post_instance_logs:\n")
+        api_response = api_instance.request_vm_logs(vm_id, payload)
+        print("The response of VirtualMachineApi->request_vm_logs:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->post_instance_logs: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->request_vm_logs: %s\n" % e)
 ```
 
 
@@ -1214,8 +1398,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post_instance_resize**
-> ResponseModel post_instance_resize(vm_id, payload)
+# **resize_vm**
+> ResponseModel resize_vm(vm_id, payload)
 
 Resize virtual machine
 
@@ -1258,11 +1442,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Resize virtual machine
-        api_response = api_instance.post_instance_resize(vm_id, payload)
-        print("The response of VirtualMachineApi->post_instance_resize:\n")
+        api_response = api_instance.resize_vm(vm_id, payload)
+        print("The response of VirtualMachineApi->resize_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->post_instance_resize: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->resize_vm: %s\n" % e)
 ```
 
 
@@ -1301,99 +1485,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post_security_rule**
-> SecurityGroupRule post_security_rule(vm_id, payload)
+# **restore_vm_from_hibernation**
+> ResponseModel restore_vm_from_hibernation(vm_id)
 
-Add firewall rule to virtual machine
+Restore virtual machine from hibernation
 
-Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import hyperstack
-from hyperstack.models.create_security_rule_payload import CreateSecurityRulePayload
-from hyperstack.models.security_group_rule import SecurityGroupRule
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.VirtualMachineApi(api_client)
-    vm_id = 56 # int | 
-    payload = hyperstack.CreateSecurityRulePayload() # CreateSecurityRulePayload | 
-
-    try:
-        # Add firewall rule to virtual machine
-        api_response = api_instance.post_security_rule(vm_id, payload)
-        print("The response of VirtualMachineApi->post_security_rule:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling VirtualMachineApi->post_security_rule: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vm_id** | **int**|  | 
- **payload** | [**CreateSecurityRulePayload**](CreateSecurityRulePayload.md)|  | 
-
-### Return type
-
-[**SecurityGroupRule**](SecurityGroupRule.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The firewall rule has been successfully added to the virtual machine. |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
-**409** | Conflict |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **post_snapshots**
-> CreateSnapshotResponse post_snapshots(vm_id, payload)
-
-Create snapshot from a virtual machine
-
-Create snapshots of a virtual machine by providing the virtual machine ID in the path
+Resumes a virtual machine from hibernation, bringing it back to an active state. Provide the virtual machine ID that you want to restore from hibernation.
 
 ### Example
 
@@ -1401,93 +1498,6 @@ Create snapshots of a virtual machine by providing the virtual machine ID in the
 
 ```python
 import hyperstack
-from hyperstack.models.create_snapshot_payload import CreateSnapshotPayload
-from hyperstack.models.create_snapshot_response import CreateSnapshotResponse
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.VirtualMachineApi(api_client)
-    vm_id = 56 # int | 
-    payload = hyperstack.CreateSnapshotPayload() # CreateSnapshotPayload | 
-
-    try:
-        # Create snapshot from a virtual machine
-        api_response = api_instance.post_snapshots(vm_id, payload)
-        print("The response of VirtualMachineApi->post_snapshots:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling VirtualMachineApi->post_snapshots: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vm_id** | **int**|  | 
- **payload** | [**CreateSnapshotPayload**](CreateSnapshotPayload.md)|  | 
-
-### Return type
-
-[**CreateSnapshotResponse**](CreateSnapshotResponse.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Success |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **put_labels**
-> ResponseModel put_labels(vm_id, payload)
-
-Edit virtual machine labels
-
-Adds one or more labels to an existing virtual machine. Provide the virtual machine ID in the path to add labels to the specified VM. For multiple labels, add a space between each label in the request body.
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import hyperstack
-from hyperstack.models.edit_label_of_an_existing_vm_payload import EditLabelOfAnExistingVMPayload
 from hyperstack.models.response_model import ResponseModel
 from hyperstack.rest import ApiException
 from pprint import pprint
@@ -1514,15 +1524,14 @@ with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.VirtualMachineApi(api_client)
     vm_id = 56 # int | 
-    payload = hyperstack.EditLabelOfAnExistingVMPayload() # EditLabelOfAnExistingVMPayload | 
 
     try:
-        # Edit virtual machine labels
-        api_response = api_instance.put_labels(vm_id, payload)
-        print("The response of VirtualMachineApi->put_labels:\n")
+        # Restore virtual machine from hibernation
+        api_response = api_instance.restore_vm_from_hibernation(vm_id)
+        print("The response of VirtualMachineApi->restore_vm_from_hibernation:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->put_labels: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->restore_vm_from_hibernation: %s\n" % e)
 ```
 
 
@@ -1533,7 +1542,6 @@ with hyperstack.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vm_id** | **int**|  | 
- **payload** | [**EditLabelOfAnExistingVMPayload**](EditLabelOfAnExistingVMPayload.md)|  | 
 
 ### Return type
 
@@ -1545,28 +1553,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Labels edited successfully |  -  |
+**200** | The request to restore the virtual machine from hibernation was successful. |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
-**409** | Conflict |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_virtual_machine_details**
-> Instance retrieve_virtual_machine_details(vm_id)
+# **start_vm**
+> ResponseModel start_vm(vm_id)
 
-Retrieve virtual machine details
+Start virtual machine
 
-Retrieves the details of an existing virtual machine. Provide the virtual machine ID in the path, and Infrahub will return information about the corresponding VM.
+Initiates the startup of a virtual machine. Provide the virtual machine ID in the path to initiate the starting of the specified virtual machine.
 
 ### Example
 
@@ -1574,7 +1581,7 @@ Retrieves the details of an existing virtual machine. Provide the virtual machin
 
 ```python
 import hyperstack
-from hyperstack.models.instance import Instance
+from hyperstack.models.response_model import ResponseModel
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -1602,12 +1609,12 @@ with hyperstack.ApiClient(configuration) as api_client:
     vm_id = 56 # int | 
 
     try:
-        # Retrieve virtual machine details
-        api_response = api_instance.retrieve_virtual_machine_details(vm_id)
-        print("The response of VirtualMachineApi->retrieve_virtual_machine_details:\n")
+        # Start virtual machine
+        api_response = api_instance.start_vm(vm_id)
+        print("The response of VirtualMachineApi->start_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->retrieve_virtual_machine_details: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->start_vm: %s\n" % e)
 ```
 
 
@@ -1621,7 +1628,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Instance**](Instance.md)
+[**ResponseModel**](ResponseModel.md)
 
 ### Authorization
 
@@ -1636,7 +1643,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Virtual machine details retrieved successfully. |  -  |
+**200** | Virtual machine started successfully. |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
@@ -1644,12 +1651,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_virtual_machines_associated_with_a_contract**
-> ContractInstancesResponse retrieve_virtual_machines_associated_with_a_contract(contract_id, page=page, page_size=page_size, search=search)
+# **stop_vm**
+> ResponseModel stop_vm(vm_id)
 
-Retrieve virtual machines associated with a contract
+Stop virtual machine
 
-Retrieves a list of virtual machines associated with a contract, providing details such as virtual machine name, timestamp, flavor name, and other relevant information. Please provide the ID of the relevant contract in the path.
+Shuts down a virtual machine. Provide the virtual machine ID in the path to initiate the shutdown process for the specified virtual machine.
 
 ### Example
 
@@ -1657,7 +1664,7 @@ Retrieves a list of virtual machines associated with a contract, providing detai
 
 ```python
 import hyperstack
-from hyperstack.models.contract_instances_response import ContractInstancesResponse
+from hyperstack.models.response_model import ResponseModel
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -1682,18 +1689,15 @@ configuration.api_key['apiKey'] = os.environ["API_KEY"]
 with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.VirtualMachineApi(api_client)
-    contract_id = 56 # int | 
-    page = 'page_example' # str | Page Number (optional)
-    page_size = 'page_size_example' # str | Data Per Page (optional)
-    search = 'search_example' # str | Search By Instance ID or Name (optional)
+    vm_id = 56 # int | 
 
     try:
-        # Retrieve virtual machines associated with a contract
-        api_response = api_instance.retrieve_virtual_machines_associated_with_a_contract(contract_id, page=page, page_size=page_size, search=search)
-        print("The response of VirtualMachineApi->retrieve_virtual_machines_associated_with_a_contract:\n")
+        # Stop virtual machine
+        api_response = api_instance.stop_vm(vm_id)
+        print("The response of VirtualMachineApi->stop_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VirtualMachineApi->retrieve_virtual_machines_associated_with_a_contract: %s\n" % e)
+        print("Exception when calling VirtualMachineApi->stop_vm: %s\n" % e)
 ```
 
 
@@ -1703,14 +1707,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract_id** | **int**|  | 
- **page** | **str**| Page Number | [optional] 
- **page_size** | **str**| Data Per Page | [optional] 
- **search** | **str**| Search By Instance ID or Name | [optional] 
+ **vm_id** | **int**|  | 
 
 ### Return type
 
-[**ContractInstancesResponse**](ContractInstancesResponse.md)
+[**ResponseModel**](ResponseModel.md)
 
 ### Authorization
 
@@ -1725,9 +1726,10 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Virtual machine shut down successfully. |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -42,7 +42,317 @@ class CustomerContractApi:
 
 
     @validate_call
-    def get_customer_contract(
+    def get_contract_gpu_allocation_graph(
+        self,
+        contract_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ContractGPUAllocationGraphResponse:
+        """Retrieve GPU Allocation Graph for Contract
+
+        Retrieve GPU allocation count graph for a specific contract by providing the contract ID in the path. The endpoint returns the GPU allocation count graph for the contract within the specified date range.
+
+        :param contract_id: (required)
+        :type contract_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_contract_gpu_allocation_graph_serialize(
+            contract_id=contract_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ContractGPUAllocationGraphResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '405': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_contract_gpu_allocation_graph_with_http_info(
+        self,
+        contract_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ContractGPUAllocationGraphResponse]:
+        """Retrieve GPU Allocation Graph for Contract
+
+        Retrieve GPU allocation count graph for a specific contract by providing the contract ID in the path. The endpoint returns the GPU allocation count graph for the contract within the specified date range.
+
+        :param contract_id: (required)
+        :type contract_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_contract_gpu_allocation_graph_serialize(
+            contract_id=contract_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ContractGPUAllocationGraphResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '405': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_contract_gpu_allocation_graph_without_preload_content(
+        self,
+        contract_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve GPU Allocation Graph for Contract
+
+        Retrieve GPU allocation count graph for a specific contract by providing the contract ID in the path. The endpoint returns the GPU allocation count graph for the contract within the specified date range.
+
+        :param contract_id: (required)
+        :type contract_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_contract_gpu_allocation_graph_serialize(
+            contract_id=contract_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ContractGPUAllocationGraphResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '405': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_contract_gpu_allocation_graph_serialize(
+        self,
+        contract_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if contract_id is not None:
+            _path_params['contract_id'] = contract_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/pricebook/contracts/{contract_id}/gpu_allocation_graph',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def list_customer_contracts(
         self,
         page: Optional[StrictInt] = None,
         per_page: Optional[StrictInt] = None,
@@ -89,7 +399,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_customer_contract_serialize(
+        _param = self._list_customer_contracts_serialize(
             page=page,
             per_page=per_page,
             _request_auth=_request_auth,
@@ -117,7 +427,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def get_customer_contract_with_http_info(
+    def list_customer_contracts_with_http_info(
         self,
         page: Optional[StrictInt] = None,
         per_page: Optional[StrictInt] = None,
@@ -164,7 +474,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_customer_contract_serialize(
+        _param = self._list_customer_contracts_serialize(
             page=page,
             per_page=per_page,
             _request_auth=_request_auth,
@@ -192,7 +502,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def get_customer_contract_without_preload_content(
+    def list_customer_contracts_without_preload_content(
         self,
         page: Optional[StrictInt] = None,
         per_page: Optional[StrictInt] = None,
@@ -239,7 +549,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_customer_contract_serialize(
+        _param = self._list_customer_contracts_serialize(
             page=page,
             per_page=per_page,
             _request_auth=_request_auth,
@@ -262,7 +572,7 @@ class CustomerContractApi:
         return response_data.response
 
 
-    def _get_customer_contract_serialize(
+    def _list_customer_contracts_serialize(
         self,
         page,
         per_page,
@@ -334,7 +644,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def get_customer_contract_details(
+    def retrieve_contract(
         self,
         contract_id: StrictInt,
         _request_timeout: Union[
@@ -378,7 +688,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_customer_contract_details_serialize(
+        _param = self._retrieve_contract_serialize(
             contract_id=contract_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -406,7 +716,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def get_customer_contract_details_with_http_info(
+    def retrieve_contract_with_http_info(
         self,
         contract_id: StrictInt,
         _request_timeout: Union[
@@ -450,7 +760,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_customer_contract_details_serialize(
+        _param = self._retrieve_contract_serialize(
             contract_id=contract_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -478,7 +788,7 @@ class CustomerContractApi:
 
 
     @validate_call
-    def get_customer_contract_details_without_preload_content(
+    def retrieve_contract_without_preload_content(
         self,
         contract_id: StrictInt,
         _request_timeout: Union[
@@ -522,7 +832,7 @@ class CustomerContractApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_customer_contract_details_serialize(
+        _param = self._retrieve_contract_serialize(
             contract_id=contract_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -545,7 +855,7 @@ class CustomerContractApi:
         return response_data.response
 
 
-    def _get_customer_contract_details_serialize(
+    def _retrieve_contract_serialize(
         self,
         contract_id,
         _request_auth,
@@ -594,316 +904,6 @@ class CustomerContractApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/pricebook/contracts/{contract_id}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_customer_contract_gpu_allocation_graph(
-        self,
-        contract_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ContractGPUAllocationGraphResponse:
-        """Retrieve GPU Allocation Graph for Contract
-
-        Retrieve GPU allocation count graph for a specific contract by providing the contract ID in the path. The endpoint returns the GPU allocation count graph for the contract within the specified date range.
-
-        :param contract_id: (required)
-        :type contract_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_customer_contract_gpu_allocation_graph_serialize(
-            contract_id=contract_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ContractGPUAllocationGraphResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '405': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_customer_contract_gpu_allocation_graph_with_http_info(
-        self,
-        contract_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ContractGPUAllocationGraphResponse]:
-        """Retrieve GPU Allocation Graph for Contract
-
-        Retrieve GPU allocation count graph for a specific contract by providing the contract ID in the path. The endpoint returns the GPU allocation count graph for the contract within the specified date range.
-
-        :param contract_id: (required)
-        :type contract_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_customer_contract_gpu_allocation_graph_serialize(
-            contract_id=contract_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ContractGPUAllocationGraphResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '405': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_customer_contract_gpu_allocation_graph_without_preload_content(
-        self,
-        contract_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve GPU Allocation Graph for Contract
-
-        Retrieve GPU allocation count graph for a specific contract by providing the contract ID in the path. The endpoint returns the GPU allocation count graph for the contract within the specified date range.
-
-        :param contract_id: (required)
-        :type contract_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_customer_contract_gpu_allocation_graph_serialize(
-            contract_id=contract_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ContractGPUAllocationGraphResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '405': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_customer_contract_gpu_allocation_graph_serialize(
-        self,
-        contract_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if contract_id is not None:
-            _path_params['contract_id'] = contract_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/pricebook/contracts/{contract_id}/gpu_allocation_graph',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -589,7 +589,7 @@ class ImageApi:
 
 
     @validate_call
-    def get_image_details(
+    def get_image(
         self,
         id: StrictInt,
         include_related_vms: Optional[StrictBool] = None,
@@ -636,7 +636,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_image_details_serialize(
+        _param = self._get_image_serialize(
             id=id,
             include_related_vms=include_related_vms,
             _request_auth=_request_auth,
@@ -664,7 +664,7 @@ class ImageApi:
 
 
     @validate_call
-    def get_image_details_with_http_info(
+    def get_image_with_http_info(
         self,
         id: StrictInt,
         include_related_vms: Optional[StrictBool] = None,
@@ -711,7 +711,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_image_details_serialize(
+        _param = self._get_image_serialize(
             id=id,
             include_related_vms=include_related_vms,
             _request_auth=_request_auth,
@@ -739,7 +739,7 @@ class ImageApi:
 
 
     @validate_call
-    def get_image_details_without_preload_content(
+    def get_image_without_preload_content(
         self,
         id: StrictInt,
         include_related_vms: Optional[StrictBool] = None,
@@ -786,7 +786,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_image_details_serialize(
+        _param = self._get_image_serialize(
             id=id,
             include_related_vms=include_related_vms,
             _request_auth=_request_auth,
@@ -809,7 +809,7 @@ class ImageApi:
         return response_data.response
 
 
-    def _get_image_details_serialize(
+    def _get_image_serialize(
         self,
         id,
         include_related_vms,
@@ -879,7 +879,7 @@ class ImageApi:
 
 
     @validate_call
-    def list_images2(
+    def list_images(
         self,
         region: Annotated[Optional[StrictStr], Field(description="Region Name")] = None,
         include_public: Annotated[Optional[StrictBool], Field(description="Flag to include public images in the response (true/false). Default is true.")] = None,
@@ -935,7 +935,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_images2_serialize(
+        _param = self._list_images_serialize(
             region=region,
             include_public=include_public,
             search=search,
@@ -967,7 +967,7 @@ class ImageApi:
 
 
     @validate_call
-    def list_images2_with_http_info(
+    def list_images_with_http_info(
         self,
         region: Annotated[Optional[StrictStr], Field(description="Region Name")] = None,
         include_public: Annotated[Optional[StrictBool], Field(description="Flag to include public images in the response (true/false). Default is true.")] = None,
@@ -1023,7 +1023,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_images2_serialize(
+        _param = self._list_images_serialize(
             region=region,
             include_public=include_public,
             search=search,
@@ -1055,7 +1055,7 @@ class ImageApi:
 
 
     @validate_call
-    def list_images2_without_preload_content(
+    def list_images_without_preload_content(
         self,
         region: Annotated[Optional[StrictStr], Field(description="Region Name")] = None,
         include_public: Annotated[Optional[StrictBool], Field(description="Flag to include public images in the response (true/false). Default is true.")] = None,
@@ -1111,7 +1111,7 @@ class ImageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_images2_serialize(
+        _param = self._list_images_serialize(
             region=region,
             include_public=include_public,
             search=search,
@@ -1138,7 +1138,7 @@ class ImageApi:
         return response_data.response
 
 
-    def _list_images2_serialize(
+    def _list_images_serialize(
         self,
         region,
         include_public,

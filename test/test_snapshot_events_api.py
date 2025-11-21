@@ -26,8 +26,8 @@ class TestSnapshotEventsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_fetch_all_events_for_a_snapshot(self) -> None:
-        """Test case for fetch_all_events_for_a_snapshot
+    def test_list_snapshot_events(self) -> None:
+        """Test case for list_snapshot_events
 
         Fetch all events for a snapshot
         """

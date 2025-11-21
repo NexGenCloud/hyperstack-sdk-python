@@ -26,6 +26,68 @@ class TestBillingApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_buckets_billing_history_hourly_chart(self) -> None:
+        """Test case for buckets_billing_history_hourly_chart
+
+        Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
+        """
+        pass
+
+    def test_get_bucket_billing_history(self) -> None:
+        """Test case for get_bucket_billing_history
+
+        Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+        """
+        pass
+
+    def test_get_cluster_billing_history(self) -> None:
+        """Test case for get_cluster_billing_history
+
+        Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
+        """
+        pass
+
+    def test_get_cluster_billing_history_graph(self) -> None:
+        """Test case for get_cluster_billing_history_graph
+
+        Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
+        """
+        pass
+
+    def test_get_data_synthesis_billing_history(self) -> None:
+        """Test case for get_data_synthesis_billing_history
+
+        Retrieve Billing History of data synthesis for a specific Billing Cycle
+        """
+        pass
+
+    def test_get_data_synthesis_billing_history_graph(self) -> None:
+        """Test case for get_data_synthesis_billing_history_graph
+
+        Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
+        """
+        pass
+
+    def test_get_data_synthesis_history_for_resource(self) -> None:
+        """Test case for get_data_synthesis_history_for_resource
+
+        """
+        pass
+
+    def test_get_fine_tuning_billing_history(self) -> None:
+        """Test case for get_fine_tuning_billing_history
+
+        Retrieve Billing History of model evaluation for a specific Billing Cycle
+        """
+        pass
+
+    def test_get_fine_tuning_billing_history_graph(self) -> None:
+        """Test case for get_fine_tuning_billing_history_graph
+
+        Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
+        """
+        pass
+
     def test_get_last_day_cost(self) -> None:
         """Test case for get_last_day_cost
 
@@ -33,252 +95,190 @@ class TestBillingApi(unittest.TestCase):
         """
         pass
 
-    def test_get_organization_threshold(self) -> None:
-        """Test case for get_organization_threshold
-
-        GET: All Thresholds for Organization
-        """
-        pass
-
-    def test_get_usage2(self) -> None:
-        """Test case for get_usage2
-
-        GET: Billing usage
-        """
-        pass
-
-    def test_get_user_billing_bucket_details_graph(self) -> None:
-        """Test case for get_user_billing_bucket_details_graph
-
-        Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
-        """
-        pass
-
-    def test_get_user_billing_cluster_details_graph(self) -> None:
-        """Test case for get_user_billing_cluster_details_graph
-
-        Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
-        """
-        pass
-
-    def test_get_user_billing_data_synthesis_details_graph(self) -> None:
-        """Test case for get_user_billing_data_synthesis_details_graph
-
-        Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
-        """
-        pass
-
-    def test_get_user_billing_fine_tuning_details_graph(self) -> None:
-        """Test case for get_user_billing_fine_tuning_details_graph
-
-        Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
-        """
-        pass
-
-    def test_get_user_billing_history2(self) -> None:
-        """Test case for get_user_billing_history2
-
-        Retrieve Billing History for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_bucket2(self) -> None:
-        """Test case for get_user_billing_history_bucket2
-
-        Retrieve Billing History of Volume for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_bucket_details(self) -> None:
-        """Test case for get_user_billing_history_bucket_details
-
-        Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_cluster(self) -> None:
-        """Test case for get_user_billing_history_cluster
-
-        Retrieve Billing History of Clusters for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_cluster_details(self) -> None:
-        """Test case for get_user_billing_history_cluster_details
-
-        Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_contract(self) -> None:
-        """Test case for get_user_billing_history_contract
-
-        Retrieve Billing History of Contract for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_data_synthesis(self) -> None:
-        """Test case for get_user_billing_history_data_synthesis
-
-        Retrieve Billing History of data synthesis for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_data_synthesis_details(self) -> None:
-        """Test case for get_user_billing_history_data_synthesis_details
-
-        """
-        pass
-
-    def test_get_user_billing_history_fine_tuning(self) -> None:
-        """Test case for get_user_billing_history_fine_tuning
+    def test_get_model_evaluation_billing_history(self) -> None:
+        """Test case for get_model_evaluation_billing_history
 
         Retrieve Billing History of model evaluation for a specific Billing Cycle
         """
         pass
 
-    def test_get_user_billing_history_fine_tuning_details(self) -> None:
-        """Test case for get_user_billing_history_fine_tuning_details
-
-        Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_model_evaluation(self) -> None:
-        """Test case for get_user_billing_history_model_evaluation
-
-        Retrieve Billing History of model evaluation for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_model_evaluation_details(self) -> None:
-        """Test case for get_user_billing_history_model_evaluation_details
-
-        """
-        pass
-
-    def test_get_user_billing_history_serverless_inference(self) -> None:
-        """Test case for get_user_billing_history_serverless_inference
-
-        Retrieve Billing History of serverless inference for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_serverless_inference_details(self) -> None:
-        """Test case for get_user_billing_history_serverless_inference_details
-
-        """
-        pass
-
-    def test_get_user_billing_history_snapshot(self) -> None:
-        """Test case for get_user_billing_history_snapshot
-
-        Retrieve Billing History of Snapshot for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_snapshot_details(self) -> None:
-        """Test case for get_user_billing_history_snapshot_details
-
-        Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_vm2(self) -> None:
-        """Test case for get_user_billing_history_vm2
-
-        Retrieve Billing History of Virtual Machine for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_vm_details2(self) -> None:
-        """Test case for get_user_billing_history_vm_details2
-
-        Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_vm_sub_resource_graph2(self) -> None:
-        """Test case for get_user_billing_history_vm_sub_resource_graph2
-
-        Retrieve Sub-Resources Historical Cost datapoints of a Virtual
-        """
-        pass
-
-    def test_get_user_billing_history_vm_total_costs(self) -> None:
-        """Test case for get_user_billing_history_vm_total_costs
-
-        Retrieve Total Costs and Non Discount Costs for Sub Resources
-        """
-        pass
-
-    def test_get_user_billing_history_volume2(self) -> None:
-        """Test case for get_user_billing_history_volume2
-
-        Retrieve Billing History of Volume for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_history_volume_details2(self) -> None:
-        """Test case for get_user_billing_history_volume_details2
-
-        Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-        """
-        pass
-
-    def test_get_user_billing_model_evaluation_details_graph(self) -> None:
-        """Test case for get_user_billing_model_evaluation_details_graph
+    def test_get_model_evaluation_billing_history_graph(self) -> None:
+        """Test case for get_model_evaluation_billing_history_graph
 
         Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
         """
         pass
 
-    def test_get_user_billing_serverless_inference_details_graph(self) -> None:
-        """Test case for get_user_billing_serverless_inference_details_graph
+    def test_get_notification_threshold(self) -> None:
+        """Test case for get_notification_threshold
+
+        Update: Subscribe or Unsubscribe Notification Threshold
+        """
+        pass
+
+    def test_get_resource_fine_tuning_billing_history(self) -> None:
+        """Test case for get_resource_fine_tuning_billing_history
+
+        Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
+        """
+        pass
+
+    def test_get_resource_model_evaluation_billing_history(self) -> None:
+        """Test case for get_resource_model_evaluation_billing_history
+
+        """
+        pass
+
+    def test_get_serverless_inference_billing_history_graph(self) -> None:
+        """Test case for get_serverless_inference_billing_history_graph
 
         Retrieve hourly cost datapoints of a Specific Serverless Inference for a specific
         """
         pass
 
-    def test_get_user_billing_snapshot_details_graph(self) -> None:
-        """Test case for get_user_billing_snapshot_details_graph
+    def test_get_serverless_inferences_billing_history(self) -> None:
+        """Test case for get_serverless_inferences_billing_history
+
+        """
+        pass
+
+    def test_get_snapshot_billing_history(self) -> None:
+        """Test case for get_snapshot_billing_history
+
+        Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+        """
+        pass
+
+    def test_get_snapshot_billing_history_graph(self) -> None:
+        """Test case for get_snapshot_billing_history_graph
 
         Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
         """
         pass
 
-    def test_get_user_billing_vm_details_graph2(self) -> None:
-        """Test case for get_user_billing_vm_details_graph2
+    def test_get_usage(self) -> None:
+        """Test case for get_usage
 
-        Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
+        GET: Billing usage
         """
         pass
 
-    def test_get_user_billing_volume_details_graph(self) -> None:
-        """Test case for get_user_billing_volume_details_graph
+    def test_get_user_billing_history(self) -> None:
+        """Test case for get_user_billing_history
 
-        Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
+        Retrieve Billing History for a specific Billing Cycle
         """
         pass
 
-    def test_get_user_vm_billing_events(self) -> None:
-        """Test case for get_user_vm_billing_events
+    def test_get_vm_billing_details(self) -> None:
+        """Test case for get_vm_billing_details
+
+        Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
+        """
+        pass
+
+    def test_get_vm_billing_events(self) -> None:
+        """Test case for get_vm_billing_events
 
         Retrieve VM billing events history
         """
         pass
 
-    def test_get_user_volume_billing_events(self) -> None:
-        """Test case for get_user_volume_billing_events
+    def test_get_vm_billing_graph(self) -> None:
+        """Test case for get_vm_billing_graph
+
+        Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
+        """
+        pass
+
+    def test_get_vm_billing_history(self) -> None:
+        """Test case for get_vm_billing_history
+
+        Retrieve Billing History of Virtual Machine for a specific Billing Cycle
+        """
+        pass
+
+    def test_get_vm_sub_resource_costs(self) -> None:
+        """Test case for get_vm_sub_resource_costs
+
+        Retrieve Total Costs and Non Discount Costs for Sub Resources
+        """
+        pass
+
+    def test_get_vm_sub_resource_graph(self) -> None:
+        """Test case for get_vm_sub_resource_graph
+
+        Retrieve Sub-Resources Historical Cost datapoints of a Virtual
+        """
+        pass
+
+    def test_get_volume_billing_details(self) -> None:
+        """Test case for get_volume_billing_details
+
+        Retrieve Billing History of a Specific Volume for a specific Billing Cycle
+        """
+        pass
+
+    def test_get_volume_billing_events(self) -> None:
+        """Test case for get_volume_billing_events
 
         Retrieve Volume billing events history
         """
         pass
 
-    def test_put_organization_threshold(self) -> None:
-        """Test case for put_organization_threshold
+    def test_get_volume_billing_history(self) -> None:
+        """Test case for get_volume_billing_history
 
-        Update: Subscribe or Unsubscribe Notification Threshold
+        Retrieve Billing History of Volume for a specific Billing Cycle
+        """
+        pass
+
+    def test_get_volume_billing_history_graph(self) -> None:
+        """Test case for get_volume_billing_history_graph
+
+        Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
+        """
+        pass
+
+    def test_list_billing_contract_history(self) -> None:
+        """Test case for list_billing_contract_history
+
+        Retrieve Billing History of Contract for a specific Billing Cycle
+        """
+        pass
+
+    def test_list_bucket_billing_history(self) -> None:
+        """Test case for list_bucket_billing_history
+
+        Retrieve Billing History of a Bucket for a specific Billing Cycle
+        """
+        pass
+
+    def test_list_clusters_billing_history(self) -> None:
+        """Test case for list_clusters_billing_history
+
+        Retrieve Billing History of Clusters for a specific Billing Cycle
+        """
+        pass
+
+    def test_list_org_notification_thresholds(self) -> None:
+        """Test case for list_org_notification_thresholds
+
+        GET: All Thresholds for Organization
+        """
+        pass
+
+    def test_list_serverless_inference_billing_history(self) -> None:
+        """Test case for list_serverless_inference_billing_history
+
+        Retrieve Billing History of serverless inference for a specific Billing Cycle
+        """
+        pass
+
+    def test_list_snapshot_billing_history(self) -> None:
+        """Test case for list_snapshot_billing_history
+
+        Retrieve Billing History of Snapshot for a specific Billing Cycle
         """
         pass
 

@@ -602,7 +602,7 @@ class ApiKeyApi:
 
 
     @validate_call
-    def retrieve_api_key(
+    def get_api_key(
         self,
         _request_timeout: Union[
             None,
@@ -643,7 +643,7 @@ class ApiKeyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_api_key_serialize(
+        _param = self._get_api_key_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -668,7 +668,7 @@ class ApiKeyApi:
 
 
     @validate_call
-    def retrieve_api_key_with_http_info(
+    def get_api_key_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -709,7 +709,7 @@ class ApiKeyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_api_key_serialize(
+        _param = self._get_api_key_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -734,7 +734,7 @@ class ApiKeyApi:
 
 
     @validate_call
-    def retrieve_api_key_without_preload_content(
+    def get_api_key_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -775,7 +775,7 @@ class ApiKeyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_api_key_serialize(
+        _param = self._get_api_key_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -795,7 +795,7 @@ class ApiKeyApi:
         return response_data.response
 
 
-    def _retrieve_api_key_serialize(
+    def _get_api_key_serialize(
         self,
         _request_auth,
         _content_type,

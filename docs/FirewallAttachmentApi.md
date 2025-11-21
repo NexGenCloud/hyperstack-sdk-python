@@ -4,11 +4,11 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_firewall_to_virtual_machines**](FirewallAttachmentApi.md#attach_firewall_to_virtual_machines) | **POST** /core/firewalls/{firewall_id}/update-attachments | Attach Firewalls to VMs
+[**attach_firewall_to_vms**](FirewallAttachmentApi.md#attach_firewall_to_vms) | **POST** /core/firewalls/{firewall_id}/update-attachments | Attach Firewalls to VMs
 
 
-# **attach_firewall_to_virtual_machines**
-> ResponseModel attach_firewall_to_virtual_machines(firewall_id, payload)
+# **attach_firewall_to_vms**
+> ResponseModel attach_firewall_to_vms(firewall_id, payload)
 
 Attach Firewalls to VMs
 
@@ -51,11 +51,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Attach Firewalls to VMs
-        api_response = api_instance.attach_firewall_to_virtual_machines(firewall_id, payload)
-        print("The response of FirewallAttachmentApi->attach_firewall_to_virtual_machines:\n")
+        api_response = api_instance.attach_firewall_to_vms(firewall_id, payload)
+        print("The response of FirewallAttachmentApi->attach_firewall_to_vms:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FirewallAttachmentApi->attach_firewall_to_virtual_machines: %s\n" % e)
+        print("Exception when calling FirewallAttachmentApi->attach_firewall_to_vms: %s\n" % e)
 ```
 
 

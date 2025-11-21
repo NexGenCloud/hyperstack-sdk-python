@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_image**](ImageApi.md#delete_image) | **DELETE** /core/images/{id} | Delete an image
 [**fetch_image_name_availability**](ImageApi.md#fetch_image_name_availability) | **GET** /core/image/name-availability/{name} | Fetch name availability for Images
-[**get_image_details**](ImageApi.md#get_image_details) | **GET** /core/images/{id} | Get Private Image Details
-[**list_images2**](ImageApi.md#list_images2) | **GET** /core/images | List Images
+[**get_image**](ImageApi.md#get_image) | **GET** /core/images/{id} | Get Private Image Details
+[**list_images**](ImageApi.md#list_images) | **GET** /core/images | List Images
 
 
 # **delete_image**
@@ -176,8 +176,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_image_details**
-> Image get_image_details(id, include_related_vms=include_related_vms)
+# **get_image**
+> Image get_image(id, include_related_vms=include_related_vms)
 
 Get Private Image Details
 
@@ -219,11 +219,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Get Private Image Details
-        api_response = api_instance.get_image_details(id, include_related_vms=include_related_vms)
-        print("The response of ImageApi->get_image_details:\n")
+        api_response = api_instance.get_image(id, include_related_vms=include_related_vms)
+        print("The response of ImageApi->get_image:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ImageApi->get_image_details: %s\n" % e)
+        print("Exception when calling ImageApi->get_image: %s\n" % e)
 ```
 
 
@@ -261,8 +261,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_images2**
-> Images list_images2(region=region, include_public=include_public, search=search, page=page, per_page=per_page)
+# **list_images**
+> Images list_images(region=region, include_public=include_public, search=search, page=page, per_page=per_page)
 
 List Images
 
@@ -307,11 +307,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # List Images
-        api_response = api_instance.list_images2(region=region, include_public=include_public, search=search, page=page, per_page=per_page)
-        print("The response of ImageApi->list_images2:\n")
+        api_response = api_instance.list_images(region=region, include_public=include_public, search=search, page=page, per_page=per_page)
+        print("The response of ImageApi->list_images:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ImageApi->list_images2: %s\n" % e)
+        print("Exception when calling ImageApi->list_images: %s\n" % e)
 ```
 
 

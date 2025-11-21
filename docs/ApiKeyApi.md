@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_api_key**](ApiKeyApi.md#delete_api_key) | **DELETE** /api-key/{api_key_id} | Delete API Key
 [**generate_api_key**](ApiKeyApi.md#generate_api_key) | **POST** /api-key/generate | Generate API Key
-[**retrieve_api_key**](ApiKeyApi.md#retrieve_api_key) | **GET** /api-key | Retrieve API Keys
+[**get_api_key**](ApiKeyApi.md#get_api_key) | **GET** /api-key | Retrieve API Keys
 [**update_api_key**](ApiKeyApi.md#update_api_key) | **PUT** /api-key/{api_key_id} | Update API Key
 
 
@@ -167,8 +167,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_api_key**
-> GetApiKeysResponseModel retrieve_api_key()
+# **get_api_key**
+> GetApiKeysResponseModel get_api_key()
 
 Retrieve API Keys
 
@@ -208,11 +208,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve API Keys
-        api_response = api_instance.retrieve_api_key()
-        print("The response of ApiKeyApi->retrieve_api_key:\n")
+        api_response = api_instance.get_api_key()
+        print("The response of ApiKeyApi->get_api_key:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApiKeyApi->retrieve_api_key: %s\n" % e)
+        print("Exception when calling ApiKeyApi->get_api_key: %s\n" % e)
 ```
 
 

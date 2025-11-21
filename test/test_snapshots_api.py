@@ -26,15 +26,15 @@ class TestSnapshotsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_create_a_new_custom_image(self) -> None:
-        """Test case for create_a_new_custom_image
+    def test_create_custom_image(self) -> None:
+        """Test case for create_custom_image
 
         Create an image from a snapshot
         """
         pass
 
-    def test_delete_an_existing_snapshot(self) -> None:
-        """Test case for delete_an_existing_snapshot
+    def test_delete_snapshot(self) -> None:
+        """Test case for delete_snapshot
 
         Delete snapshot
         """
@@ -47,24 +47,24 @@ class TestSnapshotsApi(unittest.TestCase):
         """
         pass
 
-    def test_restore_a_snapshot(self) -> None:
-        """Test case for restore_a_snapshot
-
-        Restore a snapshot
-        """
-        pass
-
-    def test_retrieve_an_existing_snapshot(self) -> None:
-        """Test case for retrieve_an_existing_snapshot
+    def test_get_snapshot(self) -> None:
+        """Test case for get_snapshot
 
         Retrieve a snapshot
         """
         pass
 
-    def test_retrieves_a_list_of_snapshots(self) -> None:
-        """Test case for retrieves_a_list_of_snapshots
+    def test_list_snapshots(self) -> None:
+        """Test case for list_snapshots
 
         Retrieve list of snapshots with pagination
+        """
+        pass
+
+    def test_restore_snapshot(self) -> None:
+        """Test case for restore_snapshot
+
+        Restore a snapshot
         """
         pass
 

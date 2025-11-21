@@ -4,15 +4,15 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_default_flavors_and_images**](UserDetailChoiceApi.md#retrieve_default_flavors_and_images) | **GET** /core/user/resources/defaults | Retrieve Default Flavors and Images
+[**list_default_flavors_and_images**](UserDetailChoiceApi.md#list_default_flavors_and_images) | **GET** /core/user/resources/defaults | Retrieve Default Flavors and Images
 
 
-# **retrieve_default_flavors_and_images**
-> UserDefaultChoicesForUserResponse retrieve_default_flavors_and_images()
+# **list_default_flavors_and_images**
+> UserDefaultChoicesForUserResponse list_default_flavors_and_images()
 
 Retrieve Default Flavors and Images
 
-Retrieve the default choices for virtual machine deployment, including the default region, flavor, and image.
+Retrieves the default options for virtual machine deployment, including the default region, flavor, and image.
 
 ### Example
 
@@ -48,11 +48,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Default Flavors and Images
-        api_response = api_instance.retrieve_default_flavors_and_images()
-        print("The response of UserDetailChoiceApi->retrieve_default_flavors_and_images:\n")
+        api_response = api_instance.list_default_flavors_and_images()
+        print("The response of UserDetailChoiceApi->list_default_flavors_and_images:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UserDetailChoiceApi->retrieve_default_flavors_and_images: %s\n" % e)
+        print("Exception when calling UserDetailChoiceApi->list_default_flavors_and_images: %s\n" % e)
 ```
 
 

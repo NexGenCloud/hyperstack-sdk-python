@@ -14,11 +14,12 @@
 """  # noqa: E501
 
 
-__version__ = "v1.45.2-alpha"
+__version__ = "v1.46.1-alpha"
 
 # import apis into sdk package
 from hyperstack.api.calculate_api import CalculateApi
 from hyperstack.api.customer_contract_api import CustomerContractApi
+from hyperstack.api.fip_exclusions_api import FIPExclusionsApi
 from hyperstack.api.pricebook_api import PricebookApi
 from hyperstack.api.snapshots_api import SnapshotsApi
 from hyperstack.api.alive_api import AliveApi

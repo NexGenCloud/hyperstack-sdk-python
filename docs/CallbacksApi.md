@@ -4,16 +4,16 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_callback_to_virtual_machine**](CallbacksApi.md#attach_callback_to_virtual_machine) | **POST** /core/virtual-machines/{vm_id}/attach-callback | Attach callback to virtual machine
+[**attach_callback_to_vm**](CallbacksApi.md#attach_callback_to_vm) | **POST** /core/virtual-machines/{vm_id}/attach-callback | Attach callback to virtual machine
 [**attach_callback_to_volume**](CallbacksApi.md#attach_callback_to_volume) | **POST** /core/volumes/{volume_id}/attach-callback | Attach callback to volume
-[**delete_virtual_machine_callback**](CallbacksApi.md#delete_virtual_machine_callback) | **DELETE** /core/virtual-machines/{vm_id}/delete-callback | Delete virtual machine callback
+[**delete_vm_callback**](CallbacksApi.md#delete_vm_callback) | **DELETE** /core/virtual-machines/{vm_id}/delete-callback | Delete virtual machine callback
 [**delete_volume_callback**](CallbacksApi.md#delete_volume_callback) | **DELETE** /core/volumes/{volume_id}/delete-callback | Delete volume callback
-[**update_virtual_machine_callback**](CallbacksApi.md#update_virtual_machine_callback) | **PUT** /core/virtual-machines/{vm_id}/update-callback | Update virtual machine callback
+[**update_vm_callback**](CallbacksApi.md#update_vm_callback) | **PUT** /core/virtual-machines/{vm_id}/update-callback | Update virtual machine callback
 [**update_volume_callback**](CallbacksApi.md#update_volume_callback) | **PUT** /core/volumes/{volume_id}/update-callback | Update volume callback
 
 
-# **attach_callback_to_virtual_machine**
-> AttachCallbackResponse attach_callback_to_virtual_machine(vm_id, payload)
+# **attach_callback_to_vm**
+> AttachCallbackResponse attach_callback_to_vm(vm_id, payload)
 
 Attach callback to virtual machine
 
@@ -56,11 +56,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Attach callback to virtual machine
-        api_response = api_instance.attach_callback_to_virtual_machine(vm_id, payload)
-        print("The response of CallbacksApi->attach_callback_to_virtual_machine:\n")
+        api_response = api_instance.attach_callback_to_vm(vm_id, payload)
+        print("The response of CallbacksApi->attach_callback_to_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CallbacksApi->attach_callback_to_virtual_machine: %s\n" % e)
+        print("Exception when calling CallbacksApi->attach_callback_to_vm: %s\n" % e)
 ```
 
 
@@ -184,8 +184,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_virtual_machine_callback**
-> ResponseModel delete_virtual_machine_callback(vm_id)
+# **delete_vm_callback**
+> ResponseModel delete_vm_callback(vm_id)
 
 Delete virtual machine callback
 
@@ -226,11 +226,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Delete virtual machine callback
-        api_response = api_instance.delete_virtual_machine_callback(vm_id)
-        print("The response of CallbacksApi->delete_virtual_machine_callback:\n")
+        api_response = api_instance.delete_vm_callback(vm_id)
+        print("The response of CallbacksApi->delete_vm_callback:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CallbacksApi->delete_virtual_machine_callback: %s\n" % e)
+        print("Exception when calling CallbacksApi->delete_vm_callback: %s\n" % e)
 ```
 
 
@@ -350,8 +350,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_virtual_machine_callback**
-> AttachCallbackResponse update_virtual_machine_callback(vm_id, payload)
+# **update_vm_callback**
+> AttachCallbackResponse update_vm_callback(vm_id, payload)
 
 Update virtual machine callback
 
@@ -394,11 +394,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Update virtual machine callback
-        api_response = api_instance.update_virtual_machine_callback(vm_id, payload)
-        print("The response of CallbacksApi->update_virtual_machine_callback:\n")
+        api_response = api_instance.update_vm_callback(vm_id, payload)
+        print("The response of CallbacksApi->update_vm_callback:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CallbacksApi->update_virtual_machine_callback: %s\n" % e)
+        print("Exception when calling CallbacksApi->update_vm_callback: %s\n" % e)
 ```
 
 

@@ -40,17 +40,17 @@ class TestProfileApi(unittest.TestCase):
         """
         pass
 
+    def test_get_profile(self) -> None:
+        """Test case for get_profile
+
+        Retrieve profile details
+        """
+        pass
+
     def test_list_profiles(self) -> None:
         """Test case for list_profiles
 
         List profiles
-        """
-        pass
-
-    def test_retrieve_profile_details(self) -> None:
-        """Test case for retrieve_profile_details
-
-        Retrieve profile details
         """
         pass
 

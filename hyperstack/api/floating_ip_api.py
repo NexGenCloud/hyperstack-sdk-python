@@ -38,7 +38,7 @@ class FloatingIpApi:
 
 
     @validate_call
-    def attach_public_ipto_virtual_machine(
+    def attach_public_ipto_vm(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -82,7 +82,7 @@ class FloatingIpApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_public_ipto_virtual_machine_serialize(
+        _param = self._attach_public_ipto_vm_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -110,7 +110,7 @@ class FloatingIpApi:
 
 
     @validate_call
-    def attach_public_ipto_virtual_machine_with_http_info(
+    def attach_public_ipto_vm_with_http_info(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -154,7 +154,7 @@ class FloatingIpApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_public_ipto_virtual_machine_serialize(
+        _param = self._attach_public_ipto_vm_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -182,7 +182,7 @@ class FloatingIpApi:
 
 
     @validate_call
-    def attach_public_ipto_virtual_machine_without_preload_content(
+    def attach_public_ipto_vm_without_preload_content(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -226,7 +226,7 @@ class FloatingIpApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_public_ipto_virtual_machine_serialize(
+        _param = self._attach_public_ipto_vm_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -249,7 +249,7 @@ class FloatingIpApi:
         return response_data.response
 
 
-    def _attach_public_ipto_virtual_machine_serialize(
+    def _attach_public_ipto_vm_serialize(
         self,
         vm_id,
         _request_auth,
@@ -314,7 +314,7 @@ class FloatingIpApi:
 
 
     @validate_call
-    def detach_public_ip_from_virtual_machine(
+    def detach_public_ip_from_vm(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -358,7 +358,7 @@ class FloatingIpApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._detach_public_ip_from_virtual_machine_serialize(
+        _param = self._detach_public_ip_from_vm_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -385,7 +385,7 @@ class FloatingIpApi:
 
 
     @validate_call
-    def detach_public_ip_from_virtual_machine_with_http_info(
+    def detach_public_ip_from_vm_with_http_info(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -429,7 +429,7 @@ class FloatingIpApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._detach_public_ip_from_virtual_machine_serialize(
+        _param = self._detach_public_ip_from_vm_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -456,7 +456,7 @@ class FloatingIpApi:
 
 
     @validate_call
-    def detach_public_ip_from_virtual_machine_without_preload_content(
+    def detach_public_ip_from_vm_without_preload_content(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -500,7 +500,7 @@ class FloatingIpApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._detach_public_ip_from_virtual_machine_serialize(
+        _param = self._detach_public_ip_from_vm_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -522,7 +522,7 @@ class FloatingIpApi:
         return response_data.response
 
 
-    def _detach_public_ip_from_virtual_machine_serialize(
+    def _detach_public_ip_from_vm_serialize(
         self,
         vm_id,
         _request_auth,

@@ -38,7 +38,7 @@ class CalculateApi:
 
 
     @validate_call
-    def get_calculate2(
+    def calculate_resource_billing_rate(
         self,
         resource_type: StrictStr,
         id: StrictInt,
@@ -85,7 +85,7 @@ class CalculateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_calculate2_serialize(
+        _param = self._calculate_resource_billing_rate_serialize(
             resource_type=resource_type,
             id=id,
             _request_auth=_request_auth,
@@ -113,7 +113,7 @@ class CalculateApi:
 
 
     @validate_call
-    def get_calculate2_with_http_info(
+    def calculate_resource_billing_rate_with_http_info(
         self,
         resource_type: StrictStr,
         id: StrictInt,
@@ -160,7 +160,7 @@ class CalculateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_calculate2_serialize(
+        _param = self._calculate_resource_billing_rate_serialize(
             resource_type=resource_type,
             id=id,
             _request_auth=_request_auth,
@@ -188,7 +188,7 @@ class CalculateApi:
 
 
     @validate_call
-    def get_calculate2_without_preload_content(
+    def calculate_resource_billing_rate_without_preload_content(
         self,
         resource_type: StrictStr,
         id: StrictInt,
@@ -235,7 +235,7 @@ class CalculateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_calculate2_serialize(
+        _param = self._calculate_resource_billing_rate_serialize(
             resource_type=resource_type,
             id=id,
             _request_auth=_request_auth,
@@ -258,7 +258,7 @@ class CalculateApi:
         return response_data.response
 
 
-    def _get_calculate2_serialize(
+    def _calculate_resource_billing_rate_serialize(
         self,
         resource_type,
         id,

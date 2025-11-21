@@ -26,143 +26,143 @@ class TestVirtualMachineApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_attach_firewalls_to_a_virtual_machine(self) -> None:
-        """Test case for attach_firewalls_to_a_virtual_machine
-
-        Attach firewalls to a virtual machine
-        """
-        pass
-
-    def test_create_one_or_more_virtual_machines(self) -> None:
-        """Test case for create_one_or_more_virtual_machines
-
-        Create virtual machines
-        """
-        pass
-
-    def test_delete_security_rule(self) -> None:
-        """Test case for delete_security_rule
-
-        Delete firewall rule from virtual machine
-        """
-        pass
-
-    def test_delete_virtual_machine(self) -> None:
-        """Test case for delete_virtual_machine
-
-        Delete virtual machine
-        """
-        pass
-
-    def test_fetch_virtual_machine_name_availability(self) -> None:
-        """Test case for fetch_virtual_machine_name_availability
-
-        Fetch virtual machine name availability
-        """
-        pass
-
-    def test_get_instance_hard_reboot(self) -> None:
-        """Test case for get_instance_hard_reboot
-
-        Hard reboot virtual machine
-        """
-        pass
-
-    def test_get_instance_hibernate(self) -> None:
-        """Test case for get_instance_hibernate
-
-        Hibernate virtual machine
-        """
-        pass
-
-    def test_get_instance_hibernate_restore(self) -> None:
-        """Test case for get_instance_hibernate_restore
-
-        Restore virtual machine from hibernation
-        """
-        pass
-
-    def test_get_instance_logs(self) -> None:
-        """Test case for get_instance_logs
-
-        Get virtual machine logs
-        """
-        pass
-
-    def test_get_instance_metrics(self) -> None:
-        """Test case for get_instance_metrics
-
-        Retrieve virtual machine performance metrics
-        """
-        pass
-
-    def test_get_instance_start(self) -> None:
-        """Test case for get_instance_start
-
-        Start virtual machine
-        """
-        pass
-
-    def test_get_instance_stop(self) -> None:
-        """Test case for get_instance_stop
-
-        Stop virtual machine
-        """
-        pass
-
-    def test_list_virtual_machines(self) -> None:
-        """Test case for list_virtual_machines
-
-        List virtual machines
-        """
-        pass
-
-    def test_post_instance_logs(self) -> None:
-        """Test case for post_instance_logs
-
-        Request virtual machine logs
-        """
-        pass
-
-    def test_post_instance_resize(self) -> None:
-        """Test case for post_instance_resize
-
-        Resize virtual machine
-        """
-        pass
-
-    def test_post_security_rule(self) -> None:
-        """Test case for post_security_rule
-
-        Add firewall rule to virtual machine
-        """
-        pass
-
-    def test_post_snapshots(self) -> None:
-        """Test case for post_snapshots
-
-        Create snapshot from a virtual machine
-        """
-        pass
-
-    def test_put_labels(self) -> None:
-        """Test case for put_labels
+    def test_add_vm_label(self) -> None:
+        """Test case for add_vm_label
 
         Edit virtual machine labels
         """
         pass
 
-    def test_retrieve_virtual_machine_details(self) -> None:
-        """Test case for retrieve_virtual_machine_details
+    def test_attach_firewalls_to_vm(self) -> None:
+        """Test case for attach_firewalls_to_vm
+
+        Attach firewalls to a virtual machine
+        """
+        pass
+
+    def test_check_vm_name_availability(self) -> None:
+        """Test case for check_vm_name_availability
+
+        Fetch virtual machine name availability
+        """
+        pass
+
+    def test_create_firewall_rule_for_vm(self) -> None:
+        """Test case for create_firewall_rule_for_vm
+
+        Add firewall rule to virtual machine
+        """
+        pass
+
+    def test_create_snapshot_for_vm(self) -> None:
+        """Test case for create_snapshot_for_vm
+
+        Create snapshot from a virtual machine
+        """
+        pass
+
+    def test_create_vms(self) -> None:
+        """Test case for create_vms
+
+        Create virtual machines
+        """
+        pass
+
+    def test_delete_firewall_rule_for_vm(self) -> None:
+        """Test case for delete_firewall_rule_for_vm
+
+        Delete firewall rule from virtual machine
+        """
+        pass
+
+    def test_delete_vm(self) -> None:
+        """Test case for delete_vm
+
+        Delete virtual machine
+        """
+        pass
+
+    def test_get_contract_vms(self) -> None:
+        """Test case for get_contract_vms
+
+        Retrieve virtual machines associated with a contract
+        """
+        pass
+
+    def test_get_vm(self) -> None:
+        """Test case for get_vm
 
         Retrieve virtual machine details
         """
         pass
 
-    def test_retrieve_virtual_machines_associated_with_a_contract(self) -> None:
-        """Test case for retrieve_virtual_machines_associated_with_a_contract
+    def test_get_vm_logs(self) -> None:
+        """Test case for get_vm_logs
 
-        Retrieve virtual machines associated with a contract
+        Get virtual machine logs
+        """
+        pass
+
+    def test_get_vm_metrics(self) -> None:
+        """Test case for get_vm_metrics
+
+        Retrieve virtual machine performance metrics
+        """
+        pass
+
+    def test_hard_reboot_vm(self) -> None:
+        """Test case for hard_reboot_vm
+
+        Hard reboot virtual machine
+        """
+        pass
+
+    def test_hibernate_vm(self) -> None:
+        """Test case for hibernate_vm
+
+        Hibernate virtual machine
+        """
+        pass
+
+    def test_list_vms(self) -> None:
+        """Test case for list_vms
+
+        List virtual machines
+        """
+        pass
+
+    def test_request_vm_logs(self) -> None:
+        """Test case for request_vm_logs
+
+        Request virtual machine logs
+        """
+        pass
+
+    def test_resize_vm(self) -> None:
+        """Test case for resize_vm
+
+        Resize virtual machine
+        """
+        pass
+
+    def test_restore_vm_from_hibernation(self) -> None:
+        """Test case for restore_vm_from_hibernation
+
+        Restore virtual machine from hibernation
+        """
+        pass
+
+    def test_start_vm(self) -> None:
+        """Test case for start_vm
+
+        Start virtual machine
+        """
+        pass
+
+    def test_stop_vm(self) -> None:
+        """Test case for stop_vm
+
+        Stop virtual machine
         """
         pass
 

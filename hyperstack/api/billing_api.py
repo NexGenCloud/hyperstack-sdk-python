@@ -65,6 +65,2868 @@ class BillingApi:
 
 
     @validate_call
+    def buckets_billing_history_hourly_chart(
+        self,
+        bucket_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceLevelGraphBillingDetailsBucket:
+        """Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Bucket for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param bucket_id: (required)
+        :type bucket_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._buckets_billing_history_hourly_chart_serialize(
+            bucket_id=bucket_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelGraphBillingDetailsBucket",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def buckets_billing_history_hourly_chart_with_http_info(
+        self,
+        bucket_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceLevelGraphBillingDetailsBucket]:
+        """Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Bucket for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param bucket_id: (required)
+        :type bucket_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._buckets_billing_history_hourly_chart_serialize(
+            bucket_id=bucket_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelGraphBillingDetailsBucket",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def buckets_billing_history_hourly_chart_without_preload_content(
+        self,
+        bucket_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Bucket for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param bucket_id: (required)
+        :type bucket_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._buckets_billing_history_hourly_chart_serialize(
+            bucket_id=bucket_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelGraphBillingDetailsBucket",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _buckets_billing_history_hourly_chart_serialize(
+        self,
+        bucket_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bucket_id is not None:
+            _path_params['bucket_id'] = bucket_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/bucket/{bucket_id}/graph',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_bucket_billing_history(
+        self,
+        bucket_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceLevelBucketBillingDetailsResponseModel:
+        """Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+
+        Retrieve billing history of a specific Bucket for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+
+        :param bucket_id: (required)
+        :type bucket_id: int
+        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_bucket_billing_history_serialize(
+            bucket_id=bucket_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelBucketBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_bucket_billing_history_with_http_info(
+        self,
+        bucket_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceLevelBucketBillingDetailsResponseModel]:
+        """Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+
+        Retrieve billing history of a specific Bucket for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+
+        :param bucket_id: (required)
+        :type bucket_id: int
+        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_bucket_billing_history_serialize(
+            bucket_id=bucket_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelBucketBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_bucket_billing_history_without_preload_content(
+        self,
+        bucket_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
+
+        Retrieve billing history of a specific Bucket for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+
+        :param bucket_id: (required)
+        :type bucket_id: int
+        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_bucket_billing_history_serialize(
+            bucket_id=bucket_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelBucketBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_bucket_billing_history_serialize(
+        self,
+        bucket_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bucket_id is not None:
+            _path_params['bucket_id'] = bucket_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/bucket/{bucket_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_cluster_billing_history(
+        self,
+        cluster_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceLevelClusterBillingDetailsResponseModel:
+        """Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
+
+        User will receive billing history of a specific Cluster for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'.
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_cluster_billing_history_serialize(
+            cluster_id=cluster_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelClusterBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_cluster_billing_history_with_http_info(
+        self,
+        cluster_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceLevelClusterBillingDetailsResponseModel]:
+        """Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
+
+        User will receive billing history of a specific Cluster for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'.
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_cluster_billing_history_serialize(
+            cluster_id=cluster_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelClusterBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_cluster_billing_history_without_preload_content(
+        self,
+        cluster_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
+
+        User will receive billing history of a specific Cluster for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'.
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_cluster_billing_history_serialize(
+            cluster_id=cluster_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelClusterBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_cluster_billing_history_serialize(
+        self,
+        cluster_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if cluster_id is not None:
+            _path_params['cluster_id'] = cluster_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/cluster/{cluster_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_cluster_billing_history_graph(
+        self,
+        cluster_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceLevelClusterGraphBillingDetailsResponseModel:
+        """Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Cluster for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_cluster_billing_history_graph_serialize(
+            cluster_id=cluster_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelClusterGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_cluster_billing_history_graph_with_http_info(
+        self,
+        cluster_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceLevelClusterGraphBillingDetailsResponseModel]:
+        """Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Cluster for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_cluster_billing_history_graph_serialize(
+            cluster_id=cluster_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelClusterGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_cluster_billing_history_graph_without_preload_content(
+        self,
+        cluster_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Cluster for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_cluster_billing_history_graph_serialize(
+            cluster_id=cluster_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelClusterGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_cluster_billing_history_graph_serialize(
+        self,
+        cluster_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if cluster_id is not None:
+            _path_params['cluster_id'] = cluster_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/cluster/{cluster_id}/graph',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_data_synthesis_billing_history(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> TokenBasedBillingHistoryResponse:
+        """Retrieve Billing History of data synthesis for a specific Billing Cycle
+
+        User will receive billing history of data_synthesis for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_data_synthesis_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TokenBasedBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_data_synthesis_billing_history_with_http_info(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[TokenBasedBillingHistoryResponse]:
+        """Retrieve Billing History of data synthesis for a specific Billing Cycle
+
+        User will receive billing history of data_synthesis for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_data_synthesis_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TokenBasedBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_data_synthesis_billing_history_without_preload_content(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Billing History of data synthesis for a specific Billing Cycle
+
+        User will receive billing history of data_synthesis for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_data_synthesis_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TokenBasedBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_data_synthesis_billing_history_serialize(
+        self,
+        start_date,
+        end_date,
+        search,
+        per_page,
+        page,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if per_page is not None:
+            
+            _query_params.append(('per_page', per_page))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/data_synthesis',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_data_synthesis_billing_history_graph(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> DataSynthesisBillingHistoryDetailsResponseSchema:
+        """Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
+
+        User will receive hourly cost datapoints for a data synthesis job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_data_synthesis_billing_history_graph_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_data_synthesis_billing_history_graph_with_http_info(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[DataSynthesisBillingHistoryDetailsResponseSchema]:
+        """Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
+
+        User will receive hourly cost datapoints for a data synthesis job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_data_synthesis_billing_history_graph_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_data_synthesis_billing_history_graph_without_preload_content(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
+
+        User will receive hourly cost datapoints for a data synthesis job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_data_synthesis_billing_history_graph_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_data_synthesis_billing_history_graph_serialize(
+        self,
+        resource_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if resource_id is not None:
+            _path_params['resource_id'] = resource_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/data_synthesis/{resource_id}/graph',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_data_synthesis_history_for_resource(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> DataSynthesisBillingHistoryDetailsResponseSchema:
+        """get_data_synthesis_history_for_resource
+
+        Retrieve billing history for a specific Data Synthesis resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_data_synthesis_history_for_resource_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_data_synthesis_history_for_resource_with_http_info(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[DataSynthesisBillingHistoryDetailsResponseSchema]:
+        """get_data_synthesis_history_for_resource
+
+        Retrieve billing history for a specific Data Synthesis resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_data_synthesis_history_for_resource_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_data_synthesis_history_for_resource_without_preload_content(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """get_data_synthesis_history_for_resource
+
+        Retrieve billing history for a specific Data Synthesis resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_data_synthesis_history_for_resource_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_data_synthesis_history_for_resource_serialize(
+        self,
+        resource_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if resource_id is not None:
+            _path_params['resource_id'] = resource_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/data_synthesis/{resource_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_fine_tuning_billing_history(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> WorkloadBillingHistoryResponse:
+        """Retrieve Billing History of model evaluation for a specific Billing Cycle
+
+        User will receive billing history of fine_tuning for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_fine_tuning_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "WorkloadBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_fine_tuning_billing_history_with_http_info(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[WorkloadBillingHistoryResponse]:
+        """Retrieve Billing History of model evaluation for a specific Billing Cycle
+
+        User will receive billing history of fine_tuning for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_fine_tuning_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "WorkloadBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_fine_tuning_billing_history_without_preload_content(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Billing History of model evaluation for a specific Billing Cycle
+
+        User will receive billing history of fine_tuning for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_fine_tuning_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "WorkloadBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_fine_tuning_billing_history_serialize(
+        self,
+        start_date,
+        end_date,
+        search,
+        per_page,
+        page,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if per_page is not None:
+            
+            _query_params.append(('per_page', per_page))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/fine_tuning',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_fine_tuning_billing_history_graph(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceLevelVolumeGraphBillingDetailsResponseModel:
+        """Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Fine Tunings for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_fine_tuning_billing_history_graph_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_fine_tuning_billing_history_graph_with_http_info(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceLevelVolumeGraphBillingDetailsResponseModel]:
+        """Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Fine Tunings for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_fine_tuning_billing_history_graph_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_fine_tuning_billing_history_graph_without_preload_content(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Fine Tunings for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_fine_tuning_billing_history_graph_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_fine_tuning_billing_history_graph_serialize(
+        self,
+        resource_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if resource_id is not None:
+            _path_params['resource_id'] = resource_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/fine_tuning/{resource_id}/graph',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def get_last_day_cost(
         self,
         _request_timeout: Union[
@@ -326,3736 +3188,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_organization_threshold(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OrganizationThresholdsResponse:
-        """GET: All Thresholds for Organization
-
-        Retrieve all the notification thresholds for an organization.
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_organization_threshold_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationThresholdsResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_organization_threshold_with_http_info(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OrganizationThresholdsResponse]:
-        """GET: All Thresholds for Organization
-
-        Retrieve all the notification thresholds for an organization.
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_organization_threshold_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationThresholdsResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_organization_threshold_without_preload_content(
-        self,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """GET: All Thresholds for Organization
-
-        Retrieve all the notification thresholds for an organization.
-
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_organization_threshold_serialize(
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationThresholdsResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_organization_threshold_serialize(
-        self,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/threshold',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_usage2(
-        self,
-        deleted: Annotated[Optional[StrictStr], Field(description="`true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)")] = None,
-        environment: Annotated[Optional[StrictStr], Field(description="Filter resources by environment ID or Name")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> BillingMetricesResponse:
-        """GET: Billing usage
-
-        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
-
-        :param deleted: `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
-        :type deleted: str
-        :param environment: Filter resources by environment ID or Name
-        :type environment: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_usage2_serialize(
-            deleted=deleted,
-            environment=environment,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BillingMetricesResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_usage2_with_http_info(
-        self,
-        deleted: Annotated[Optional[StrictStr], Field(description="`true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)")] = None,
-        environment: Annotated[Optional[StrictStr], Field(description="Filter resources by environment ID or Name")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BillingMetricesResponse]:
-        """GET: Billing usage
-
-        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
-
-        :param deleted: `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
-        :type deleted: str
-        :param environment: Filter resources by environment ID or Name
-        :type environment: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_usage2_serialize(
-            deleted=deleted,
-            environment=environment,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BillingMetricesResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_usage2_without_preload_content(
-        self,
-        deleted: Annotated[Optional[StrictStr], Field(description="`true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)")] = None,
-        environment: Annotated[Optional[StrictStr], Field(description="Filter resources by environment ID or Name")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """GET: Billing usage
-
-        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
-
-        :param deleted: `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
-        :type deleted: str
-        :param environment: Filter resources by environment ID or Name
-        :type environment: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_usage2_serialize(
-            deleted=deleted,
-            environment=environment,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BillingMetricesResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_usage2_serialize(
-        self,
-        deleted,
-        environment,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        if deleted is not None:
-            
-            _query_params.append(('deleted', deleted))
-            
-        if environment is not None:
-            
-            _query_params.append(('environment', environment))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/usage',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_bucket_details_graph(
-        self,
-        bucket_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelGraphBillingDetailsBucket:
-        """Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a Bucket for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param bucket_id: (required)
-        :type bucket_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_bucket_details_graph_serialize(
-            bucket_id=bucket_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelGraphBillingDetailsBucket",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_bucket_details_graph_with_http_info(
-        self,
-        bucket_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelGraphBillingDetailsBucket]:
-        """Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a Bucket for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param bucket_id: (required)
-        :type bucket_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_bucket_details_graph_serialize(
-            bucket_id=bucket_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelGraphBillingDetailsBucket",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_bucket_details_graph_without_preload_content(
-        self,
-        bucket_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve hourly cost datapoints of a Specific Bucket for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a Bucket for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param bucket_id: (required)
-        :type bucket_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_bucket_details_graph_serialize(
-            bucket_id=bucket_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelGraphBillingDetailsBucket",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_bucket_details_graph_serialize(
-        self,
-        bucket_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bucket_id is not None:
-            _path_params['bucket_id'] = bucket_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/bucket/{bucket_id}/graph',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_cluster_details_graph(
-        self,
-        cluster_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelClusterGraphBillingDetailsResponseModel:
-        """Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
-
-        User will receive hourly cost datapoints for a Cluster for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_cluster_details_graph_serialize(
-            cluster_id=cluster_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelClusterGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_cluster_details_graph_with_http_info(
-        self,
-        cluster_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelClusterGraphBillingDetailsResponseModel]:
-        """Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
-
-        User will receive hourly cost datapoints for a Cluster for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_cluster_details_graph_serialize(
-            cluster_id=cluster_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelClusterGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_cluster_details_graph_without_preload_content(
-        self,
-        cluster_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve hourly cost datapoints of a specific Cluster for a specific billing cycle
-
-        User will receive hourly cost datapoints for a Cluster for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_cluster_details_graph_serialize(
-            cluster_id=cluster_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelClusterGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_cluster_details_graph_serialize(
-        self,
-        cluster_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if cluster_id is not None:
-            _path_params['cluster_id'] = cluster_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/cluster/{cluster_id}/graph',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_data_synthesis_details_graph(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DataSynthesisBillingHistoryDetailsResponseSchema:
-        """Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
-
-        User will receive hourly cost datapoints for a data synthesis job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_data_synthesis_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_data_synthesis_details_graph_with_http_info(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DataSynthesisBillingHistoryDetailsResponseSchema]:
-        """Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
-
-        User will receive hourly cost datapoints for a data synthesis job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_data_synthesis_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_data_synthesis_details_graph_without_preload_content(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve hourly cost datapoints of a Specific Data Synthesis for a specific
-
-        User will receive hourly cost datapoints for a data synthesis job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_data_synthesis_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_data_synthesis_details_graph_serialize(
-        self,
-        resource_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if resource_id is not None:
-            _path_params['resource_id'] = resource_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/data_synthesis/{resource_id}/graph',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_fine_tuning_details_graph(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelVolumeGraphBillingDetailsResponseModel:
-        """Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a Fine Tunings for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_fine_tuning_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_fine_tuning_details_graph_with_http_info(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelVolumeGraphBillingDetailsResponseModel]:
-        """Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a Fine Tunings for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_fine_tuning_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_fine_tuning_details_graph_without_preload_content(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a Fine Tunings for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_fine_tuning_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_fine_tuning_details_graph_serialize(
-        self,
-        resource_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if resource_id is not None:
-            _path_params['resource_id'] = resource_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/fine_tuning/{resource_id}/graph',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history2(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        graph: Annotated[Optional[StrictStr], Field(description="Set this value to \"true\" for getting graph value")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OrganizationLevelBillingHistoryResponseModel:
-        """Retrieve Billing History for a specific Billing Cycle
-
-        User will recieve billing history for the specified billing cycle. This data will include 'incurred_bill', 'non_discounted_bill', 'vm_cost', 'volume_cost'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param graph: Set this value to \"true\" for getting graph value
-        :type graph: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history2_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            graph=graph,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationLevelBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history2_with_http_info(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        graph: Annotated[Optional[StrictStr], Field(description="Set this value to \"true\" for getting graph value")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OrganizationLevelBillingHistoryResponseModel]:
-        """Retrieve Billing History for a specific Billing Cycle
-
-        User will recieve billing history for the specified billing cycle. This data will include 'incurred_bill', 'non_discounted_bill', 'vm_cost', 'volume_cost'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param graph: Set this value to \"true\" for getting graph value
-        :type graph: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history2_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            graph=graph,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationLevelBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history2_without_preload_content(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        graph: Annotated[Optional[StrictStr], Field(description="Set this value to \"true\" for getting graph value")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History for a specific Billing Cycle
-
-        User will recieve billing history for the specified billing cycle. This data will include 'incurred_bill', 'non_discounted_bill', 'vm_cost', 'volume_cost'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param graph: Set this value to \"true\" for getting graph value
-        :type graph: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history2_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            graph=graph,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationLevelBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history2_serialize(
-        self,
-        start_date,
-        end_date,
-        graph,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        if graph is not None:
-            
-            _query_params.append(('graph', graph))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_bucket2(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelBucketBillingHistoryResponseModel:
-        """Retrieve Billing History of Volume for a specific Billing Cycle
-
-        User will recieve billing history of buckets for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_bucket2_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelBucketBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_bucket2_with_http_info(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelBucketBillingHistoryResponseModel]:
-        """Retrieve Billing History of Volume for a specific Billing Cycle
-
-        User will recieve billing history of buckets for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_bucket2_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelBucketBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_bucket2_without_preload_content(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History of Volume for a specific Billing Cycle
-
-        User will recieve billing history of buckets for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_bucket2_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelBucketBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_bucket2_serialize(
-        self,
-        start_date,
-        end_date,
-        search,
-        per_page,
-        page,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        if search is not None:
-            
-            _query_params.append(('search', search))
-            
-        if per_page is not None:
-            
-            _query_params.append(('per_page', per_page))
-            
-        if page is not None:
-            
-            _query_params.append(('page', page))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/bucket',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_bucket_details(
-        self,
-        bucket_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelBucketBillingDetailsResponseModel:
-        """Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
-
-        Retrieve billing history of a specific Bucket for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-
-        :param bucket_id: (required)
-        :type bucket_id: int
-        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_bucket_details_serialize(
-            bucket_id=bucket_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelBucketBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_bucket_details_with_http_info(
-        self,
-        bucket_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelBucketBillingDetailsResponseModel]:
-        """Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
-
-        Retrieve billing history of a specific Bucket for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-
-        :param bucket_id: (required)
-        :type bucket_id: int
-        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_bucket_details_serialize(
-            bucket_id=bucket_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelBucketBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_bucket_details_without_preload_content(
-        self,
-        bucket_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History of a Specific Snapshot for a specific Billing Cycle
-
-        Retrieve billing history of a specific Bucket for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-
-        :param bucket_id: (required)
-        :type bucket_id: int
-        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_bucket_details_serialize(
-            bucket_id=bucket_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelBucketBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_bucket_details_serialize(
-        self,
-        bucket_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bucket_id is not None:
-            _path_params['bucket_id'] = bucket_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/bucket/{bucket_id}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_cluster(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelClusterBillingHistoryResponseModel:
-        """Retrieve Billing History of Clusters for a specific Billing Cycle
-
-        User will receive billing history of clusters for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_cluster_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelClusterBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_cluster_with_http_info(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelClusterBillingHistoryResponseModel]:
-        """Retrieve Billing History of Clusters for a specific Billing Cycle
-
-        User will receive billing history of clusters for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_cluster_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelClusterBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_cluster_without_preload_content(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History of Clusters for a specific Billing Cycle
-
-        User will receive billing history of clusters for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_cluster_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelClusterBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_cluster_serialize(
-        self,
-        start_date,
-        end_date,
-        search,
-        per_page,
-        page,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        if search is not None:
-            
-            _query_params.append(('search', search))
-            
-        if per_page is not None:
-            
-            _query_params.append(('per_page', per_page))
-            
-        if page is not None:
-            
-            _query_params.append(('page', page))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/cluster',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_cluster_details(
-        self,
-        cluster_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelClusterBillingDetailsResponseModel:
-        """Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
-
-        User will receive billing history of a specific Cluster for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'.
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_cluster_details_serialize(
-            cluster_id=cluster_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelClusterBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_cluster_details_with_http_info(
-        self,
-        cluster_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelClusterBillingDetailsResponseModel]:
-        """Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
-
-        User will receive billing history of a specific Cluster for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'.
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_cluster_details_serialize(
-            cluster_id=cluster_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelClusterBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_cluster_details_without_preload_content(
-        self,
-        cluster_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History of a Specific Cluster for a specific Billing Cycle
-
-        User will receive billing history of a specific Cluster for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'.
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_cluster_details_serialize(
-            cluster_id=cluster_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelClusterBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_cluster_details_serialize(
-        self,
-        cluster_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if cluster_id is not None:
-            _path_params['cluster_id'] = cluster_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/cluster/{cluster_id}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_contract(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by Contract \"Description\" or \"ID\"")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Retrieve Billing History of Contract for a specific Billing Cycle
-
-        User will recieve billing history of contracts for the specified billing cycle. This data will include 'description', gpu_type','infrahub_id', 'status', 'incurred_bill', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by Contract \"Description\" or \"ID\"
-        :type search: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_contract_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_contract_with_http_info(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by Contract \"Description\" or \"ID\"")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Retrieve Billing History of Contract for a specific Billing Cycle
-
-        User will recieve billing history of contracts for the specified billing cycle. This data will include 'description', gpu_type','infrahub_id', 'status', 'incurred_bill', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by Contract \"Description\" or \"ID\"
-        :type search: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_contract_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_contract_without_preload_content(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by Contract \"Description\" or \"ID\"")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History of Contract for a specific Billing Cycle
-
-        User will recieve billing history of contracts for the specified billing cycle. This data will include 'description', gpu_type','infrahub_id', 'status', 'incurred_bill', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by Contract \"Description\" or \"ID\"
-        :type search: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_contract_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_contract_serialize(
-        self,
-        start_date,
-        end_date,
-        search,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        if search is not None:
-            
-            _query_params.append(('search', search))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/contract',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_data_synthesis(
+    def get_model_evaluation_billing_history(
         self,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -4075,9 +3208,9 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> TokenBasedBillingHistoryResponse:
-        """Retrieve Billing History of data synthesis for a specific Billing Cycle
+        """Retrieve Billing History of model evaluation for a specific Billing Cycle
 
-        User will recieve billing history of data_synthesis for the specified billing cycle.
+        User will receive billing history of model_evaluation for the specified billing cycle.
 
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
@@ -4111,7 +3244,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_data_synthesis_serialize(
+        _param = self._get_model_evaluation_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
             search=search,
@@ -4143,1319 +3276,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_data_synthesis_with_http_info(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[TokenBasedBillingHistoryResponse]:
-        """Retrieve Billing History of data synthesis for a specific Billing Cycle
-
-        User will recieve billing history of data_synthesis for the specified billing cycle.
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_data_synthesis_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TokenBasedBillingHistoryResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_data_synthesis_without_preload_content(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History of data synthesis for a specific Billing Cycle
-
-        User will recieve billing history of data_synthesis for the specified billing cycle.
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_data_synthesis_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TokenBasedBillingHistoryResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_data_synthesis_serialize(
-        self,
-        start_date,
-        end_date,
-        search,
-        per_page,
-        page,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        if search is not None:
-            
-            _query_params.append(('search', search))
-            
-        if per_page is not None:
-            
-            _query_params.append(('per_page', per_page))
-            
-        if page is not None:
-            
-            _query_params.append(('page', page))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/data_synthesis',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_data_synthesis_details(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> DataSynthesisBillingHistoryDetailsResponseSchema:
-        """get_user_billing_history_data_synthesis_details
-
-        Retrieve billing history for a specific Data Synthesis resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_data_synthesis_details_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_data_synthesis_details_with_http_info(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[DataSynthesisBillingHistoryDetailsResponseSchema]:
-        """get_user_billing_history_data_synthesis_details
-
-        Retrieve billing history for a specific Data Synthesis resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_data_synthesis_details_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_data_synthesis_details_without_preload_content(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """get_user_billing_history_data_synthesis_details
-
-        Retrieve billing history for a specific Data Synthesis resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_data_synthesis_details_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "DataSynthesisBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_data_synthesis_details_serialize(
-        self,
-        resource_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if resource_id is not None:
-            _path_params['resource_id'] = resource_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/data_synthesis/{resource_id}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_fine_tuning(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> WorkloadBillingHistoryResponse:
-        """Retrieve Billing History of model evaluation for a specific Billing Cycle
-
-        User will recieve billing history of fine_tuning for the specified billing cycle.
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_fine_tuning_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "WorkloadBillingHistoryResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_fine_tuning_with_http_info(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[WorkloadBillingHistoryResponse]:
-        """Retrieve Billing History of model evaluation for a specific Billing Cycle
-
-        User will recieve billing history of fine_tuning for the specified billing cycle.
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_fine_tuning_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "WorkloadBillingHistoryResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_fine_tuning_without_preload_content(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History of model evaluation for a specific Billing Cycle
-
-        User will recieve billing history of fine_tuning for the specified billing cycle.
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_fine_tuning_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "WorkloadBillingHistoryResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_fine_tuning_serialize(
-        self,
-        start_date,
-        end_date,
-        search,
-        per_page,
-        page,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        if search is not None:
-            
-            _query_params.append(('search', search))
-            
-        if per_page is not None:
-            
-            _query_params.append(('per_page', per_page))
-            
-        if page is not None:
-            
-            _query_params.append(('page', page))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/fine_tuning',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_fine_tuning_details(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelVolumeBillingDetailsResponseModel:
-        """Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
-
-        Retrieve billing history of a specific Fine tunning for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_fine_tuning_details_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_fine_tuning_details_with_http_info(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelVolumeBillingDetailsResponseModel]:
-        """Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
-
-        Retrieve billing history of a specific Fine tunning for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_fine_tuning_details_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_fine_tuning_details_without_preload_content(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
-
-        Retrieve billing history of a specific Fine tunning for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_fine_tuning_details_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_fine_tuning_details_serialize(
-        self,
-        resource_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if resource_id is not None:
-            _path_params['resource_id'] = resource_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/fine_tuning/{resource_id}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_model_evaluation(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> TokenBasedBillingHistoryResponse:
-        """Retrieve Billing History of model evaluation for a specific Billing Cycle
-
-        User will recieve billing history of model_evaluation for the specified billing cycle.
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_model_evaluation_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TokenBasedBillingHistoryResponse",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_model_evaluation_with_http_info(
+    def get_model_evaluation_billing_history_with_http_info(
         self,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -5477,7 +3298,7 @@ class BillingApi:
     ) -> ApiResponse[TokenBasedBillingHistoryResponse]:
         """Retrieve Billing History of model evaluation for a specific Billing Cycle
 
-        User will recieve billing history of model_evaluation for the specified billing cycle.
+        User will receive billing history of model_evaluation for the specified billing cycle.
 
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
@@ -5511,7 +3332,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_model_evaluation_serialize(
+        _param = self._get_model_evaluation_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
             search=search,
@@ -5543,7 +3364,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_model_evaluation_without_preload_content(
+    def get_model_evaluation_billing_history_without_preload_content(
         self,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -5565,7 +3386,7 @@ class BillingApi:
     ) -> RESTResponseType:
         """Retrieve Billing History of model evaluation for a specific Billing Cycle
 
-        User will recieve billing history of model_evaluation for the specified billing cycle.
+        User will receive billing history of model_evaluation for the specified billing cycle.
 
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
@@ -5599,7 +3420,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_model_evaluation_serialize(
+        _param = self._get_model_evaluation_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
             search=search,
@@ -5626,7 +3447,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_user_billing_history_model_evaluation_serialize(
+    def _get_model_evaluation_billing_history_serialize(
         self,
         start_date,
         end_date,
@@ -5713,11 +3534,11 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_model_evaluation_details(
+    def get_model_evaluation_billing_history_graph(
         self,
         resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5731,15 +3552,15 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ModelEvaluationBillingHistoryDetailsResponseSchema:
-        """get_user_billing_history_model_evaluation_details
+        """Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
 
-        Retrieve billing history for a specific Model Evaluation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+        User will receive hourly cost datapoints for a model evaluation for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
 
         :param resource_id: (required)
         :type resource_id: int
-        :param start_date: YYYY-MM-DDTHH:MM:SS
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
-        :param end_date: YYYY-MM-DDTHH:MM:SS
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type end_date: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5763,7 +3584,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_model_evaluation_details_serialize(
+        _param = self._get_model_evaluation_billing_history_graph_serialize(
             resource_id=resource_id,
             start_date=start_date,
             end_date=end_date,
@@ -5793,11 +3614,11 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_model_evaluation_details_with_http_info(
+    def get_model_evaluation_billing_history_graph_with_http_info(
         self,
         resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5811,15 +3632,15 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ModelEvaluationBillingHistoryDetailsResponseSchema]:
-        """get_user_billing_history_model_evaluation_details
+        """Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
 
-        Retrieve billing history for a specific Model Evaluation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+        User will receive hourly cost datapoints for a model evaluation for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
 
         :param resource_id: (required)
         :type resource_id: int
-        :param start_date: YYYY-MM-DDTHH:MM:SS
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
-        :param end_date: YYYY-MM-DDTHH:MM:SS
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type end_date: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5843,7 +3664,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_model_evaluation_details_serialize(
+        _param = self._get_model_evaluation_billing_history_graph_serialize(
             resource_id=resource_id,
             start_date=start_date,
             end_date=end_date,
@@ -5873,7 +3694,771 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_model_evaluation_details_without_preload_content(
+    def get_model_evaluation_billing_history_graph_without_preload_content(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
+
+        User will receive hourly cost datapoints for a model evaluation for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_model_evaluation_billing_history_graph_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelEvaluationBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_model_evaluation_billing_history_graph_serialize(
+        self,
+        resource_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if resource_id is not None:
+            _path_params['resource_id'] = resource_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/model_evaluation/{resource_id}/graph',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_notification_threshold(
+        self,
+        threshold_id: StrictInt,
+        payload: SubscribeOrUnsubscribeUpdatePayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> OrganizationThresholdUpdateResponse:
+        """Update: Subscribe or Unsubscribe Notification Threshold
+
+        By default, you are subscribed to all the threshold values and you will be receiving the email notification for these default thresholds values. `false` indicates that the user will no longer receive notifications for this specific threshold, whereas `true` signifies that the user will receive notification emails.
+
+        :param threshold_id: (required)
+        :type threshold_id: int
+        :param payload: (required)
+        :type payload: SubscribeOrUnsubscribeUpdatePayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_notification_threshold_serialize(
+            threshold_id=threshold_id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "OrganizationThresholdUpdateResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_notification_threshold_with_http_info(
+        self,
+        threshold_id: StrictInt,
+        payload: SubscribeOrUnsubscribeUpdatePayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[OrganizationThresholdUpdateResponse]:
+        """Update: Subscribe or Unsubscribe Notification Threshold
+
+        By default, you are subscribed to all the threshold values and you will be receiving the email notification for these default thresholds values. `false` indicates that the user will no longer receive notifications for this specific threshold, whereas `true` signifies that the user will receive notification emails.
+
+        :param threshold_id: (required)
+        :type threshold_id: int
+        :param payload: (required)
+        :type payload: SubscribeOrUnsubscribeUpdatePayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_notification_threshold_serialize(
+            threshold_id=threshold_id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "OrganizationThresholdUpdateResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_notification_threshold_without_preload_content(
+        self,
+        threshold_id: StrictInt,
+        payload: SubscribeOrUnsubscribeUpdatePayload,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update: Subscribe or Unsubscribe Notification Threshold
+
+        By default, you are subscribed to all the threshold values and you will be receiving the email notification for these default thresholds values. `false` indicates that the user will no longer receive notifications for this specific threshold, whereas `true` signifies that the user will receive notification emails.
+
+        :param threshold_id: (required)
+        :type threshold_id: int
+        :param payload: (required)
+        :type payload: SubscribeOrUnsubscribeUpdatePayload
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_notification_threshold_serialize(
+            threshold_id=threshold_id,
+            payload=payload,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "OrganizationThresholdUpdateResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_notification_threshold_serialize(
+        self,
+        threshold_id,
+        payload,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if threshold_id is not None:
+            _path_params['threshold_id'] = threshold_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if payload is not None:
+            _body_params = payload
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/billing/billing/threshold/{threshold_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_resource_fine_tuning_billing_history(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceLevelVolumeBillingDetailsResponseModel:
+        """Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
+
+        Retrieve billing history of a specific Fine tuning for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_resource_fine_tuning_billing_history_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_resource_fine_tuning_billing_history_with_http_info(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceLevelVolumeBillingDetailsResponseModel]:
+        """Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
+
+        Retrieve billing history of a specific Fine tuning for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_resource_fine_tuning_billing_history_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_resource_fine_tuning_billing_history_without_preload_content(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Billing History of a Specific Fine Tuning for a specific Billing Cycle
+
+        Retrieve billing history of a specific Fine tuning for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Datetime should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_resource_fine_tuning_billing_history_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_resource_fine_tuning_billing_history_serialize(
+        self,
+        resource_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if resource_id is not None:
+            _path_params['resource_id'] = resource_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/fine_tuning/{resource_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_resource_model_evaluation_billing_history(
         self,
         resource_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
@@ -5890,8 +4475,8 @@ class BillingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """get_user_billing_history_model_evaluation_details
+    ) -> ModelEvaluationBillingHistoryDetailsResponseSchema:
+        """get_resource_model_evaluation_billing_history
 
         Retrieve billing history for a specific Model Evaluation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
 
@@ -5923,7 +4508,167 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_model_evaluation_details_serialize(
+        _param = self._get_resource_model_evaluation_billing_history_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelEvaluationBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_resource_model_evaluation_billing_history_with_http_info(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ModelEvaluationBillingHistoryDetailsResponseSchema]:
+        """get_resource_model_evaluation_billing_history
+
+        Retrieve billing history for a specific Model Evaluation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_resource_model_evaluation_billing_history_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ModelEvaluationBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_resource_model_evaluation_billing_history_without_preload_content(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """get_resource_model_evaluation_billing_history
+
+        Retrieve billing history for a specific Model Evaluation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_resource_model_evaluation_billing_history_serialize(
             resource_id=resource_id,
             start_date=start_date,
             end_date=end_date,
@@ -5948,7 +4693,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_user_billing_history_model_evaluation_details_serialize(
+    def _get_resource_model_evaluation_billing_history_serialize(
         self,
         resource_id,
         start_date,
@@ -6023,13 +4768,11 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_serverless_inference(
+    def get_serverless_inference_billing_history_graph(
         self,
+        resource_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6042,21 +4785,17 @@ class BillingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> TokenBasedBillingHistoryResponse:
-        """Retrieve Billing History of serverless inference for a specific Billing Cycle
+    ) -> ServerlessInferencedBillingHistoryDetailsResponseSchema:
+        """Retrieve hourly cost datapoints of a Specific Serverless Inference for a specific
 
-        User will recieve billing history of serverless_inference for the specified billing cycle.
+        User will receive hourly cost datapoints for a serverless inference for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
 
+        :param resource_id: (required)
+        :type resource_id: int
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
         :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6079,12 +4818,10 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_serverless_inference_serialize(
+        _param = self._get_serverless_inference_billing_history_graph_serialize(
+            resource_id=resource_id,
             start_date=start_date,
             end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6092,7 +4829,7 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TokenBasedBillingHistoryResponse",
+            '200': "ServerlessInferencedBillingHistoryDetailsResponseSchema",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -6111,13 +4848,11 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_serverless_inference_with_http_info(
+    def get_serverless_inference_billing_history_graph_with_http_info(
         self,
+        resource_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6130,21 +4865,17 @@ class BillingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[TokenBasedBillingHistoryResponse]:
-        """Retrieve Billing History of serverless inference for a specific Billing Cycle
+    ) -> ApiResponse[ServerlessInferencedBillingHistoryDetailsResponseSchema]:
+        """Retrieve hourly cost datapoints of a Specific Serverless Inference for a specific
 
-        User will recieve billing history of serverless_inference for the specified billing cycle.
+        User will receive hourly cost datapoints for a serverless inference for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
 
+        :param resource_id: (required)
+        :type resource_id: int
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
         :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6167,12 +4898,10 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_serverless_inference_serialize(
+        _param = self._get_serverless_inference_billing_history_graph_serialize(
+            resource_id=resource_id,
             start_date=start_date,
             end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6180,7 +4909,7 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TokenBasedBillingHistoryResponse",
+            '200': "ServerlessInferencedBillingHistoryDetailsResponseSchema",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -6199,13 +4928,11 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_serverless_inference_without_preload_content(
+    def get_serverless_inference_billing_history_graph_without_preload_content(
         self,
+        resource_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6219,20 +4946,16 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve Billing History of serverless inference for a specific Billing Cycle
+        """Retrieve hourly cost datapoints of a Specific Serverless Inference for a specific
 
-        User will recieve billing history of serverless_inference for the specified billing cycle.
+        User will receive hourly cost datapoints for a serverless inference for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
 
+        :param resource_id: (required)
+        :type resource_id: int
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
         :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6255,12 +4978,10 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_serverless_inference_serialize(
+        _param = self._get_serverless_inference_billing_history_graph_serialize(
+            resource_id=resource_id,
             start_date=start_date,
             end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6268,7 +4989,7 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TokenBasedBillingHistoryResponse",
+            '200': "ServerlessInferencedBillingHistoryDetailsResponseSchema",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -6282,13 +5003,11 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_user_billing_history_serverless_inference_serialize(
+    def _get_serverless_inference_billing_history_graph_serialize(
         self,
+        resource_id,
         start_date,
         end_date,
-        search,
-        per_page,
-        page,
         _request_auth,
         _content_type,
         _headers,
@@ -6310,6 +5029,8 @@ class BillingApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if resource_id is not None:
+            _path_params['resource_id'] = resource_id
         # process the query parameters
         if start_date is not None:
             
@@ -6318,18 +5039,6 @@ class BillingApi:
         if end_date is not None:
             
             _query_params.append(('end_date', end_date))
-            
-        if search is not None:
-            
-            _query_params.append(('search', search))
-            
-        if per_page is not None:
-            
-            _query_params.append(('per_page', per_page))
-            
-        if page is not None:
-            
-            _query_params.append(('page', page))
             
         # process the header parameters
         # process the form parameters
@@ -6352,7 +5061,7 @@ class BillingApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/billing/billing/history/serverless_inference',
+            resource_path='/billing/billing/history/serverless_inference/{resource_id}/graph',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -6369,7 +5078,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_serverless_inference_details(
+    def get_serverless_inferences_billing_history(
         self,
         resource_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
@@ -6387,7 +5096,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServerlessInferencedBillingHistoryDetailsResponseSchema:
-        """get_user_billing_history_serverless_inference_details
+        """get_serverless_inferences_billing_history
 
         Retrieve billing history for a specific Serverless Inference resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
 
@@ -6419,7 +5128,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_serverless_inference_details_serialize(
+        _param = self._get_serverless_inferences_billing_history_serialize(
             resource_id=resource_id,
             start_date=start_date,
             end_date=end_date,
@@ -6449,7 +5158,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_serverless_inference_details_with_http_info(
+    def get_serverless_inferences_billing_history_with_http_info(
         self,
         resource_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
@@ -6467,7 +5176,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServerlessInferencedBillingHistoryDetailsResponseSchema]:
-        """get_user_billing_history_serverless_inference_details
+        """get_serverless_inferences_billing_history
 
         Retrieve billing history for a specific Serverless Inference resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
 
@@ -6499,7 +5208,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_serverless_inference_details_serialize(
+        _param = self._get_serverless_inferences_billing_history_serialize(
             resource_id=resource_id,
             start_date=start_date,
             end_date=end_date,
@@ -6529,7 +5238,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_serverless_inference_details_without_preload_content(
+    def get_serverless_inferences_billing_history_without_preload_content(
         self,
         resource_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
@@ -6547,7 +5256,7 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """get_user_billing_history_serverless_inference_details
+        """get_serverless_inferences_billing_history
 
         Retrieve billing history for a specific Serverless Inference resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
 
@@ -6579,7 +5288,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_serverless_inference_details_serialize(
+        _param = self._get_serverless_inferences_billing_history_serialize(
             resource_id=resource_id,
             start_date=start_date,
             end_date=end_date,
@@ -6604,7 +5313,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_user_billing_history_serverless_inference_details_serialize(
+    def _get_serverless_inferences_billing_history_serialize(
         self,
         resource_id,
         start_date,
@@ -6679,353 +5388,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_snapshot(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelVolumeBillingHistoryResponseModel:
-        """Retrieve Billing History of Snapshot for a specific Billing Cycle
-
-        User will recieve billing history of snapshots for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_snapshot_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_snapshot_with_http_info(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelVolumeBillingHistoryResponseModel]:
-        """Retrieve Billing History of Snapshot for a specific Billing Cycle
-
-        User will recieve billing history of snapshots for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_snapshot_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_snapshot_without_preload_content(
-        self,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
-        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History of Snapshot for a specific Billing Cycle
-
-        User will recieve billing history of snapshots for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
-
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param search: Search by resource \"Name\" or \"ID\"
-        :type search: str
-        :param per_page: Number of items to return per page
-        :type per_page: int
-        :param page: Page number
-        :type page: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_snapshot_serialize(
-            start_date=start_date,
-            end_date=end_date,
-            search=search,
-            per_page=per_page,
-            page=page,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeBillingHistoryResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_snapshot_serialize(
-        self,
-        start_date,
-        end_date,
-        search,
-        per_page,
-        page,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        if search is not None:
-            
-            _query_params.append(('search', search))
-            
-        if per_page is not None:
-            
-            _query_params.append(('per_page', per_page))
-            
-        if page is not None:
-            
-            _query_params.append(('page', page))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/snapshot',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_snapshot_details(
+    def get_snapshot_billing_history(
         self,
         snapshot_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -7075,7 +5438,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_snapshot_details_serialize(
+        _param = self._get_snapshot_billing_history_serialize(
             snapshot_id=snapshot_id,
             start_date=start_date,
             end_date=end_date,
@@ -7105,7 +5468,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_snapshot_details_with_http_info(
+    def get_snapshot_billing_history_with_http_info(
         self,
         snapshot_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -7155,7 +5518,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_snapshot_details_serialize(
+        _param = self._get_snapshot_billing_history_serialize(
             snapshot_id=snapshot_id,
             start_date=start_date,
             end_date=end_date,
@@ -7185,7 +5548,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_snapshot_details_without_preload_content(
+    def get_snapshot_billing_history_without_preload_content(
         self,
         snapshot_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Datetime should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -7235,7 +5598,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_snapshot_details_serialize(
+        _param = self._get_snapshot_billing_history_serialize(
             snapshot_id=snapshot_id,
             start_date=start_date,
             end_date=end_date,
@@ -7260,7 +5623,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_user_billing_history_snapshot_details_serialize(
+    def _get_snapshot_billing_history_serialize(
         self,
         snapshot_id,
         start_date,
@@ -7335,7 +5698,1851 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_vm2(
+    def get_snapshot_billing_history_graph(
+        self,
+        snapshot_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceLevelVolumeGraphBillingDetailsResponseModel:
+        """Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param snapshot_id: (required)
+        :type snapshot_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_snapshot_billing_history_graph_serialize(
+            snapshot_id=snapshot_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_snapshot_billing_history_graph_with_http_info(
+        self,
+        snapshot_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceLevelVolumeGraphBillingDetailsResponseModel]:
+        """Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param snapshot_id: (required)
+        :type snapshot_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_snapshot_billing_history_graph_serialize(
+            snapshot_id=snapshot_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_snapshot_billing_history_graph_without_preload_content(
+        self,
+        snapshot_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
+
+        User will receive hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param snapshot_id: (required)
+        :type snapshot_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_snapshot_billing_history_graph_serialize(
+            snapshot_id=snapshot_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_snapshot_billing_history_graph_serialize(
+        self,
+        snapshot_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if snapshot_id is not None:
+            _path_params['snapshot_id'] = snapshot_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/snapshot/{snapshot_id}/graph',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_usage(
+        self,
+        deleted: Annotated[Optional[StrictStr], Field(description="`true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)")] = None,
+        environment: Annotated[Optional[StrictStr], Field(description="Filter resources by environment ID or Name")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> BillingMetricesResponse:
+        """GET: Billing usage
+
+        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
+
+        :param deleted: `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
+        :type deleted: str
+        :param environment: Filter resources by environment ID or Name
+        :type environment: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_usage_serialize(
+            deleted=deleted,
+            environment=environment,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "BillingMetricesResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_usage_with_http_info(
+        self,
+        deleted: Annotated[Optional[StrictStr], Field(description="`true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)")] = None,
+        environment: Annotated[Optional[StrictStr], Field(description="Filter resources by environment ID or Name")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[BillingMetricesResponse]:
+        """GET: Billing usage
+
+        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
+
+        :param deleted: `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
+        :type deleted: str
+        :param environment: Filter resources by environment ID or Name
+        :type environment: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_usage_serialize(
+            deleted=deleted,
+            environment=environment,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "BillingMetricesResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_usage_without_preload_content(
+        self,
+        deleted: Annotated[Optional[StrictStr], Field(description="`true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)")] = None,
+        environment: Annotated[Optional[StrictStr], Field(description="Filter resources by environment ID or Name")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """GET: Billing usage
+
+        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
+
+        :param deleted: `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
+        :type deleted: str
+        :param environment: Filter resources by environment ID or Name
+        :type environment: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_usage_serialize(
+            deleted=deleted,
+            environment=environment,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "BillingMetricesResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_usage_serialize(
+        self,
+        deleted,
+        environment,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if deleted is not None:
+            
+            _query_params.append(('deleted', deleted))
+            
+        if environment is not None:
+            
+            _query_params.append(('environment', environment))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/usage',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_user_billing_history(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        graph: Annotated[Optional[StrictStr], Field(description="Set this value to \"true\" for getting graph value")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> OrganizationLevelBillingHistoryResponseModel:
+        """Retrieve Billing History for a specific Billing Cycle
+
+        User will receive billing history for the specified billing cycle. This data will include 'incurred_bill', 'non_discounted_bill', 'vm_cost', 'volume_cost'
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param graph: Set this value to \"true\" for getting graph value
+        :type graph: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_user_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            graph=graph,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "OrganizationLevelBillingHistoryResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_user_billing_history_with_http_info(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        graph: Annotated[Optional[StrictStr], Field(description="Set this value to \"true\" for getting graph value")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[OrganizationLevelBillingHistoryResponseModel]:
+        """Retrieve Billing History for a specific Billing Cycle
+
+        User will receive billing history for the specified billing cycle. This data will include 'incurred_bill', 'non_discounted_bill', 'vm_cost', 'volume_cost'
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param graph: Set this value to \"true\" for getting graph value
+        :type graph: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_user_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            graph=graph,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "OrganizationLevelBillingHistoryResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_user_billing_history_without_preload_content(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        graph: Annotated[Optional[StrictStr], Field(description="Set this value to \"true\" for getting graph value")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Billing History for a specific Billing Cycle
+
+        User will receive billing history for the specified billing cycle. This data will include 'incurred_bill', 'non_discounted_bill', 'vm_cost', 'volume_cost'
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param graph: Set this value to \"true\" for getting graph value
+        :type graph: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_user_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            graph=graph,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "OrganizationLevelBillingHistoryResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_user_billing_history_serialize(
+        self,
+        start_date,
+        end_date,
+        graph,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        if graph is not None:
+            
+            _query_params.append(('graph', graph))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_vm_billing_details(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceLevelVMBillingDetailsResponseModel:
+        """Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
+
+        User will receive billing history of a specific Virtual Machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_billing_details_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVMBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_vm_billing_details_with_http_info(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceLevelVMBillingDetailsResponseModel]:
+        """Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
+
+        User will receive billing history of a specific Virtual Machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_billing_details_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVMBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_vm_billing_details_without_preload_content(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
+
+        User will receive billing history of a specific Virtual Machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_billing_details_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVMBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_vm_billing_details_serialize(
+        self,
+        vm_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if vm_id is not None:
+            _path_params['vm_id'] = vm_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/virtual-machine/{vm_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_vm_billing_events(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceBillingEventsHistoryResponse:
+        """Retrieve VM billing events history
+
+        User will receive vm billing events history
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_billing_events_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceBillingEventsHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_vm_billing_events_with_http_info(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceBillingEventsHistoryResponse]:
+        """Retrieve VM billing events history
+
+        User will receive vm billing events history
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_billing_events_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceBillingEventsHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_vm_billing_events_without_preload_content(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve VM billing events history
+
+        User will receive vm billing events history
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_billing_events_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceBillingEventsHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_vm_billing_events_serialize(
+        self,
+        vm_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if vm_id is not None:
+            _path_params['vm_id'] = vm_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/virtual-machine/{vm_id}/billing-events',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_vm_billing_graph(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceLevelVmGraphBillingDetailsResponseModel:
+        """Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
+
+        User will receive hourly cost datapoints for a VM for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_billing_graph_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVmGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_vm_billing_graph_with_http_info(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceLevelVmGraphBillingDetailsResponseModel]:
+        """Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
+
+        User will receive hourly cost datapoints for a VM for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_billing_graph_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVmGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_vm_billing_graph_without_preload_content(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
+
+        User will receive hourly cost datapoints for a VM for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_billing_graph_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVmGraphBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_vm_billing_graph_serialize(
+        self,
+        vm_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if vm_id is not None:
+            _path_params['vm_id'] = vm_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/virtual-machine/{vm_id}/graph',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_vm_billing_history(
         self,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -7357,7 +7564,7 @@ class BillingApi:
     ) -> ResourceLevelVmBillingHistoryResponseModel:
         """Retrieve Billing History of Virtual Machine for a specific Billing Cycle
 
-        User will recieve billing history of virtual machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+        User will receive billing history of virtual machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
@@ -7391,7 +7598,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_vm2_serialize(
+        _param = self._get_vm_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
             search=search,
@@ -7423,7 +7630,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_vm2_with_http_info(
+    def get_vm_billing_history_with_http_info(
         self,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -7445,7 +7652,7 @@ class BillingApi:
     ) -> ApiResponse[ResourceLevelVmBillingHistoryResponseModel]:
         """Retrieve Billing History of Virtual Machine for a specific Billing Cycle
 
-        User will recieve billing history of virtual machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+        User will receive billing history of virtual machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
@@ -7479,7 +7686,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_vm2_serialize(
+        _param = self._get_vm_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
             search=search,
@@ -7511,7 +7718,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_vm2_without_preload_content(
+    def get_vm_billing_history_without_preload_content(
         self,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -7533,7 +7740,7 @@ class BillingApi:
     ) -> RESTResponseType:
         """Retrieve Billing History of Virtual Machine for a specific Billing Cycle
 
-        User will recieve billing history of virtual machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+        User will receive billing history of virtual machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
@@ -7567,7 +7774,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_vm2_serialize(
+        _param = self._get_vm_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
             search=search,
@@ -7594,7 +7801,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_user_billing_history_vm2_serialize(
+    def _get_vm_billing_history_serialize(
         self,
         start_date,
         end_date,
@@ -7681,627 +7888,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_vm_details2(
-        self,
-        vm_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelVMBillingDetailsResponseModel:
-        """Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
-
-        User will recieve billing history of a specific Virtual Machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'
-
-        :param vm_id: (required)
-        :type vm_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_vm_details2_serialize(
-            vm_id=vm_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVMBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_vm_details2_with_http_info(
-        self,
-        vm_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelVMBillingDetailsResponseModel]:
-        """Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
-
-        User will recieve billing history of a specific Virtual Machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'
-
-        :param vm_id: (required)
-        :type vm_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_vm_details2_serialize(
-            vm_id=vm_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVMBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_vm_details2_without_preload_content(
-        self,
-        vm_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History of a Specific Virtual Machine for a specific Billing Cycle
-
-        User will recieve billing history of a specific Virtual Machine for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'non_discounted_price_per_hour', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'usage_time_ACTIVE', 'usage_time_SHUTOFF', 'usage_time_HIBERNATED'
-
-        :param vm_id: (required)
-        :type vm_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_vm_details2_serialize(
-            vm_id=vm_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVMBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_vm_details2_serialize(
-        self,
-        vm_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if vm_id is not None:
-            _path_params['vm_id'] = vm_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/virtual-machine/{vm_id}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_vm_sub_resource_graph2(
-        self,
-        vm_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> SubResourcesGraphResponseModel:
-        """Retrieve Sub-Resources Historical Cost datapoints of a Virtual
-
-        User will recieve sub-resources historical cost datapoints for a VM sub resources for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. Machine sub resources for a specific billing cycle
-
-        :param vm_id: (required)
-        :type vm_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_vm_sub_resource_graph2_serialize(
-            vm_id=vm_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SubResourcesGraphResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_vm_sub_resource_graph2_with_http_info(
-        self,
-        vm_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[SubResourcesGraphResponseModel]:
-        """Retrieve Sub-Resources Historical Cost datapoints of a Virtual
-
-        User will recieve sub-resources historical cost datapoints for a VM sub resources for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. Machine sub resources for a specific billing cycle
-
-        :param vm_id: (required)
-        :type vm_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_vm_sub_resource_graph2_serialize(
-            vm_id=vm_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SubResourcesGraphResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_vm_sub_resource_graph2_without_preload_content(
-        self,
-        vm_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Sub-Resources Historical Cost datapoints of a Virtual
-
-        User will recieve sub-resources historical cost datapoints for a VM sub resources for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. Machine sub resources for a specific billing cycle
-
-        :param vm_id: (required)
-        :type vm_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_vm_sub_resource_graph2_serialize(
-            vm_id=vm_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SubResourcesGraphResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_vm_sub_resource_graph2_serialize(
-        self,
-        vm_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if vm_id is not None:
-            _path_params['vm_id'] = vm_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/virtual-machine/{vm_id}/sub-resource/graph',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_history_vm_total_costs(
+    def get_vm_sub_resource_costs(
         self,
         vm_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -8351,7 +7938,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_vm_total_costs_serialize(
+        _param = self._get_vm_sub_resource_costs_serialize(
             vm_id=vm_id,
             start_date=start_date,
             end_date=end_date,
@@ -8381,7 +7968,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_vm_total_costs_with_http_info(
+    def get_vm_sub_resource_costs_with_http_info(
         self,
         vm_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -8431,7 +8018,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_vm_total_costs_serialize(
+        _param = self._get_vm_sub_resource_costs_serialize(
             vm_id=vm_id,
             start_date=start_date,
             end_date=end_date,
@@ -8461,7 +8048,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_vm_total_costs_without_preload_content(
+    def get_vm_sub_resource_costs_without_preload_content(
         self,
         vm_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -8511,7 +8098,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_vm_total_costs_serialize(
+        _param = self._get_vm_sub_resource_costs_serialize(
             vm_id=vm_id,
             start_date=start_date,
             end_date=end_date,
@@ -8536,7 +8123,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_user_billing_history_vm_total_costs_serialize(
+    def _get_vm_sub_resource_costs_serialize(
         self,
         vm_id,
         start_date,
@@ -8611,7 +8198,934 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_volume2(
+    def get_vm_sub_resource_graph(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> SubResourcesGraphResponseModel:
+        """Retrieve Sub-Resources Historical Cost datapoints of a Virtual
+
+        User will receive sub-resources historical cost datapoints for a VM sub resources for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. Machine sub resources for a specific billing cycle
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_sub_resource_graph_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SubResourcesGraphResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_vm_sub_resource_graph_with_http_info(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[SubResourcesGraphResponseModel]:
+        """Retrieve Sub-Resources Historical Cost datapoints of a Virtual
+
+        User will receive sub-resources historical cost datapoints for a VM sub resources for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. Machine sub resources for a specific billing cycle
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_sub_resource_graph_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SubResourcesGraphResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_vm_sub_resource_graph_without_preload_content(
+        self,
+        vm_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Sub-Resources Historical Cost datapoints of a Virtual
+
+        User will receive sub-resources historical cost datapoints for a VM sub resources for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. Machine sub resources for a specific billing cycle
+
+        :param vm_id: (required)
+        :type vm_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_vm_sub_resource_graph_serialize(
+            vm_id=vm_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "SubResourcesGraphResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_vm_sub_resource_graph_serialize(
+        self,
+        vm_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if vm_id is not None:
+            _path_params['vm_id'] = vm_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/virtual-machine/{vm_id}/sub-resource/graph',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_volume_billing_details(
+        self,
+        volume_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceLevelVolumeBillingDetailsResponseModel:
+        """Retrieve Billing History of a Specific Volume for a specific Billing Cycle
+
+        Retrieve billing history of a specific Volume for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+
+        :param volume_id: (required)
+        :type volume_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_volume_billing_details_serialize(
+            volume_id=volume_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_volume_billing_details_with_http_info(
+        self,
+        volume_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceLevelVolumeBillingDetailsResponseModel]:
+        """Retrieve Billing History of a Specific Volume for a specific Billing Cycle
+
+        Retrieve billing history of a specific Volume for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+
+        :param volume_id: (required)
+        :type volume_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_volume_billing_details_serialize(
+            volume_id=volume_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_volume_billing_details_without_preload_content(
+        self,
+        volume_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Billing History of a Specific Volume for a specific Billing Cycle
+
+        Retrieve billing history of a specific Volume for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
+
+        :param volume_id: (required)
+        :type volume_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_volume_billing_details_serialize(
+            volume_id=volume_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_volume_billing_details_serialize(
+        self,
+        volume_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if volume_id is not None:
+            _path_params['volume_id'] = volume_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/volume/{volume_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_volume_billing_events(
+        self,
+        volume_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceBillingEventsHistoryResponse:
+        """Retrieve Volume billing events history
+
+        User will receive volume billing events history
+
+        :param volume_id: (required)
+        :type volume_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_volume_billing_events_serialize(
+            volume_id=volume_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceBillingEventsHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_volume_billing_events_with_http_info(
+        self,
+        volume_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceBillingEventsHistoryResponse]:
+        """Retrieve Volume billing events history
+
+        User will receive volume billing events history
+
+        :param volume_id: (required)
+        :type volume_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_volume_billing_events_serialize(
+            volume_id=volume_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceBillingEventsHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_volume_billing_events_without_preload_content(
+        self,
+        volume_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Volume billing events history
+
+        User will receive volume billing events history
+
+        :param volume_id: (required)
+        :type volume_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_volume_billing_events_serialize(
+            volume_id=volume_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceBillingEventsHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_volume_billing_events_serialize(
+        self,
+        volume_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if volume_id is not None:
+            _path_params['volume_id'] = volume_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/volume/{volume_id}/billing-events',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_volume_billing_history(
         self,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -8633,7 +9147,7 @@ class BillingApi:
     ) -> ResourceLevelVolumeBillingHistoryResponseModel:
         """Retrieve Billing History of Volume for a specific Billing Cycle
 
-        User will recieve billing history of volumes for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+        User will receive billing history of volumes for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
@@ -8667,7 +9181,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_volume2_serialize(
+        _param = self._get_volume_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
             search=search,
@@ -8699,7 +9213,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_volume2_with_http_info(
+    def get_volume_billing_history_with_http_info(
         self,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -8721,7 +9235,7 @@ class BillingApi:
     ) -> ApiResponse[ResourceLevelVolumeBillingHistoryResponseModel]:
         """Retrieve Billing History of Volume for a specific Billing Cycle
 
-        User will recieve billing history of volumes for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+        User will receive billing history of volumes for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
@@ -8755,7 +9269,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_volume2_serialize(
+        _param = self._get_volume_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
             search=search,
@@ -8787,7 +9301,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_volume2_without_preload_content(
+    def get_volume_billing_history_without_preload_content(
         self,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -8809,7 +9323,7 @@ class BillingApi:
     ) -> RESTResponseType:
         """Retrieve Billing History of Volume for a specific Billing Cycle
 
-        User will recieve billing history of volumes for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+        User will receive billing history of volumes for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
@@ -8843,7 +9357,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_history_volume2_serialize(
+        _param = self._get_volume_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
             search=search,
@@ -8870,7 +9384,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_user_billing_history_volume2_serialize(
+    def _get_volume_billing_history_serialize(
         self,
         start_date,
         end_date,
@@ -8957,1557 +9471,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_history_volume_details2(
-        self,
-        volume_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelVolumeBillingDetailsResponseModel:
-        """Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-
-        Retrieve billing history of a specific Volume for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-
-        :param volume_id: (required)
-        :type volume_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_volume_details2_serialize(
-            volume_id=volume_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_history_volume_details2_with_http_info(
-        self,
-        volume_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelVolumeBillingDetailsResponseModel]:
-        """Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-
-        Retrieve billing history of a specific Volume for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-
-        :param volume_id: (required)
-        :type volume_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_volume_details2_serialize(
-            volume_id=volume_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_history_volume_details2_without_preload_content(
-        self,
-        volume_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve Billing History of a Specific Volume for a specific Billing Cycle
-
-        Retrieve billing history of a specific Volume for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'price_per_hour', 'incurred_bill', 'usage_time', 'non_discounted_price_per_hour', 'non_discounted_bill'.
-
-        :param volume_id: (required)
-        :type volume_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_history_volume_details2_serialize(
-            volume_id=volume_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_history_volume_details2_serialize(
-        self,
-        volume_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if volume_id is not None:
-            _path_params['volume_id'] = volume_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/volume/{volume_id}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_model_evaluation_details_graph(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelEvaluationBillingHistoryDetailsResponseSchema:
-        """Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
-
-        User will receive hourly cost datapoints for a model evaluation for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_model_evaluation_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelEvaluationBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_model_evaluation_details_graph_with_http_info(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelEvaluationBillingHistoryDetailsResponseSchema]:
-        """Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
-
-        User will receive hourly cost datapoints for a model evaluation for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_model_evaluation_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelEvaluationBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_model_evaluation_details_graph_without_preload_content(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
-
-        User will receive hourly cost datapoints for a model evaluation for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_model_evaluation_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelEvaluationBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_model_evaluation_details_graph_serialize(
-        self,
-        resource_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if resource_id is not None:
-            _path_params['resource_id'] = resource_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/model_evaluation/{resource_id}/graph',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_serverless_inference_details_graph(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ServerlessInferencedBillingHistoryDetailsResponseSchema:
-        """Retrieve hourly cost datapoints of a Specific Serverless Inference for a specific
-
-        User will recieve hourly cost datapoints for a serverles inference for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_serverless_inference_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServerlessInferencedBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_serverless_inference_details_graph_with_http_info(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ServerlessInferencedBillingHistoryDetailsResponseSchema]:
-        """Retrieve hourly cost datapoints of a Specific Serverless Inference for a specific
-
-        User will recieve hourly cost datapoints for a serverles inference for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_serverless_inference_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServerlessInferencedBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_serverless_inference_details_graph_without_preload_content(
-        self,
-        resource_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve hourly cost datapoints of a Specific Serverless Inference for a specific
-
-        User will recieve hourly cost datapoints for a serverles inference for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
-
-        :param resource_id: (required)
-        :type resource_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_serverless_inference_details_graph_serialize(
-            resource_id=resource_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ServerlessInferencedBillingHistoryDetailsResponseSchema",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_serverless_inference_details_graph_serialize(
-        self,
-        resource_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if resource_id is not None:
-            _path_params['resource_id'] = resource_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/serverless_inference/{resource_id}/graph',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_snapshot_details_graph(
-        self,
-        snapshot_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelVolumeGraphBillingDetailsResponseModel:
-        """Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param snapshot_id: (required)
-        :type snapshot_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_snapshot_details_graph_serialize(
-            snapshot_id=snapshot_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_snapshot_details_graph_with_http_info(
-        self,
-        snapshot_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelVolumeGraphBillingDetailsResponseModel]:
-        """Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param snapshot_id: (required)
-        :type snapshot_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_snapshot_details_graph_serialize(
-            snapshot_id=snapshot_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_snapshot_details_graph_without_preload_content(
-        self,
-        snapshot_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve hourly cost datapoints of a Specific Snapshot for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a Snapshot for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param snapshot_id: (required)
-        :type snapshot_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_snapshot_details_graph_serialize(
-            snapshot_id=snapshot_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVolumeGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_snapshot_details_graph_serialize(
-        self,
-        snapshot_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if snapshot_id is not None:
-            _path_params['snapshot_id'] = snapshot_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/snapshot/{snapshot_id}/graph',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_vm_details_graph2(
-        self,
-        vm_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceLevelVmGraphBillingDetailsResponseModel:
-        """Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a VM for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param vm_id: (required)
-        :type vm_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_vm_details_graph2_serialize(
-            vm_id=vm_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVmGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_user_billing_vm_details_graph2_with_http_info(
-        self,
-        vm_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceLevelVmGraphBillingDetailsResponseModel]:
-        """Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a VM for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param vm_id: (required)
-        :type vm_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_vm_details_graph2_serialize(
-            vm_id=vm_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVmGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_user_billing_vm_details_graph2_without_preload_content(
-        self,
-        vm_id: StrictInt,
-        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Retrieve hourly cost datapoints of a Specific Virtual Machine for a specific billing cycle
-
-        User will recieve hourly cost datapoints for a VM for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
-
-        :param vm_id: (required)
-        :type vm_id: int
-        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type start_date: str
-        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
-        :type end_date: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_user_billing_vm_details_graph2_serialize(
-            vm_id=vm_id,
-            start_date=start_date,
-            end_date=end_date,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceLevelVmGraphBillingDetailsResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '403': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_user_billing_vm_details_graph2_serialize(
-        self,
-        vm_id,
-        start_date,
-        end_date,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if vm_id is not None:
-            _path_params['vm_id'] = vm_id
-        # process the query parameters
-        if start_date is not None:
-            
-            _query_params.append(('start_date', start_date))
-            
-        if end_date is not None:
-            
-            _query_params.append(('end_date', end_date))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/billing/billing/history/virtual-machine/{vm_id}/graph',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_user_billing_volume_details_graph(
+    def get_volume_billing_history_graph(
         self,
         volume_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -10527,7 +9491,7 @@ class BillingApi:
     ) -> ResourceLevelVolumeGraphBillingDetailsResponseModel:
         """Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
 
-        User will recieve hourly cost datapoints for a Volume for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+        User will receive hourly cost datapoints for a Volume for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
 
         :param volume_id: (required)
         :type volume_id: int
@@ -10557,7 +9521,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_volume_details_graph_serialize(
+        _param = self._get_volume_billing_history_graph_serialize(
             volume_id=volume_id,
             start_date=start_date,
             end_date=end_date,
@@ -10587,7 +9551,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_volume_details_graph_with_http_info(
+    def get_volume_billing_history_graph_with_http_info(
         self,
         volume_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -10607,7 +9571,7 @@ class BillingApi:
     ) -> ApiResponse[ResourceLevelVolumeGraphBillingDetailsResponseModel]:
         """Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
 
-        User will recieve hourly cost datapoints for a Volume for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+        User will receive hourly cost datapoints for a Volume for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
 
         :param volume_id: (required)
         :type volume_id: int
@@ -10637,7 +9601,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_volume_details_graph_serialize(
+        _param = self._get_volume_billing_history_graph_serialize(
             volume_id=volume_id,
             start_date=start_date,
             end_date=end_date,
@@ -10667,7 +9631,7 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_billing_volume_details_graph_without_preload_content(
+    def get_volume_billing_history_graph_without_preload_content(
         self,
         volume_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
@@ -10687,7 +9651,7 @@ class BillingApi:
     ) -> RESTResponseType:
         """Retrieve hourly cost datapoints of a Specific Volume for a specific billing cycle
 
-        User will recieve hourly cost datapoints for a Volume for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
+        User will receive hourly cost datapoints for a Volume for a specified billing cycle. This data will include 'incurred_bill' graph datapoints.
 
         :param volume_id: (required)
         :type volume_id: int
@@ -10717,7 +9681,7 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_billing_volume_details_graph_serialize(
+        _param = self._get_volume_billing_history_graph_serialize(
             volume_id=volume_id,
             start_date=start_date,
             end_date=end_date,
@@ -10742,7 +9706,7 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_user_billing_volume_details_graph_serialize(
+    def _get_volume_billing_history_graph_serialize(
         self,
         volume_id,
         start_date,
@@ -10817,11 +9781,11 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_vm_billing_events(
+    def list_billing_contract_history(
         self,
-        vm_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by Contract \"Description\" or \"ID\"")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10834,17 +9798,17 @@ class BillingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceBillingEventsHistoryResponse:
-        """Retrieve VM billing events history
+    ) -> None:
+        """Retrieve Billing History of Contract for a specific Billing Cycle
 
-        User will receive vm billing events history
+        User will receive billing history of contracts for the specified billing cycle. This data will include 'description', gpu_type','infrahub_id', 'status', 'incurred_bill', 'price_per_hour'
 
-        :param vm_id: (required)
-        :type vm_id: int
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
         :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type end_date: str
+        :param search: Search by Contract \"Description\" or \"ID\"
+        :type search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10867,10 +9831,10 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_vm_billing_events_serialize(
-            vm_id=vm_id,
+        _param = self._list_billing_contract_history_serialize(
             start_date=start_date,
             end_date=end_date,
+            search=search,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10878,10 +9842,10 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceBillingEventsHistoryResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -10896,11 +9860,11 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_vm_billing_events_with_http_info(
+    def list_billing_contract_history_with_http_info(
         self,
-        vm_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by Contract \"Description\" or \"ID\"")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10913,17 +9877,17 @@ class BillingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceBillingEventsHistoryResponse]:
-        """Retrieve VM billing events history
+    ) -> ApiResponse[None]:
+        """Retrieve Billing History of Contract for a specific Billing Cycle
 
-        User will receive vm billing events history
+        User will receive billing history of contracts for the specified billing cycle. This data will include 'description', gpu_type','infrahub_id', 'status', 'incurred_bill', 'price_per_hour'
 
-        :param vm_id: (required)
-        :type vm_id: int
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
         :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type end_date: str
+        :param search: Search by Contract \"Description\" or \"ID\"
+        :type search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10946,10 +9910,10 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_vm_billing_events_serialize(
-            vm_id=vm_id,
+        _param = self._list_billing_contract_history_serialize(
             start_date=start_date,
             end_date=end_date,
+            search=search,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10957,10 +9921,10 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceBillingEventsHistoryResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -10975,11 +9939,11 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_vm_billing_events_without_preload_content(
+    def list_billing_contract_history_without_preload_content(
         self,
-        vm_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by Contract \"Description\" or \"ID\"")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10993,16 +9957,16 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve VM billing events history
+        """Retrieve Billing History of Contract for a specific Billing Cycle
 
-        User will receive vm billing events history
+        User will receive billing history of contracts for the specified billing cycle. This data will include 'description', gpu_type','infrahub_id', 'status', 'incurred_bill', 'price_per_hour'
 
-        :param vm_id: (required)
-        :type vm_id: int
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
         :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type end_date: str
+        :param search: Search by Contract \"Description\" or \"ID\"
+        :type search: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11025,10 +9989,10 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_vm_billing_events_serialize(
-            vm_id=vm_id,
+        _param = self._list_billing_contract_history_serialize(
             start_date=start_date,
             end_date=end_date,
+            search=search,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11036,10 +10000,10 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceBillingEventsHistoryResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -11049,11 +10013,11 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_user_vm_billing_events_serialize(
+    def _list_billing_contract_history_serialize(
         self,
-        vm_id,
         start_date,
         end_date,
+        search,
         _request_auth,
         _content_type,
         _headers,
@@ -11075,8 +10039,6 @@ class BillingApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if vm_id is not None:
-            _path_params['vm_id'] = vm_id
         # process the query parameters
         if start_date is not None:
             
@@ -11085,6 +10047,10 @@ class BillingApi:
         if end_date is not None:
             
             _query_params.append(('end_date', end_date))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
             
         # process the header parameters
         # process the form parameters
@@ -11107,7 +10073,7 @@ class BillingApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/billing/billing/virtual-machine/{vm_id}/billing-events',
+            resource_path='/billing/billing/history/contract',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -11124,11 +10090,13 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_volume_billing_events(
+    def list_bucket_billing_history(
         self,
-        volume_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11141,17 +10109,21 @@ class BillingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResourceBillingEventsHistoryResponse:
-        """Retrieve Volume billing events history
+    ) -> ResourceLevelBucketBillingHistoryResponseModel:
+        """Retrieve Billing History of a Bucket for a specific Billing Cycle
 
-        User will receive volume billing events history
+        User will receive billing history of buckets for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
-        :param volume_id: (required)
-        :type volume_id: int
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
         :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11174,10 +10146,12 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_volume_billing_events_serialize(
-            volume_id=volume_id,
+        _param = self._list_bucket_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11185,10 +10159,11 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceBillingEventsHistoryResponse",
+            '200': "ResourceLevelBucketBillingHistoryResponseModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -11203,11 +10178,13 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_volume_billing_events_with_http_info(
+    def list_bucket_billing_history_with_http_info(
         self,
-        volume_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11220,17 +10197,21 @@ class BillingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResourceBillingEventsHistoryResponse]:
-        """Retrieve Volume billing events history
+    ) -> ApiResponse[ResourceLevelBucketBillingHistoryResponseModel]:
+        """Retrieve Billing History of a Bucket for a specific Billing Cycle
 
-        User will receive volume billing events history
+        User will receive billing history of buckets for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
-        :param volume_id: (required)
-        :type volume_id: int
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
         :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11253,10 +10234,12 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_volume_billing_events_serialize(
-            volume_id=volume_id,
+        _param = self._list_bucket_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11264,10 +10247,11 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceBillingEventsHistoryResponse",
+            '200': "ResourceLevelBucketBillingHistoryResponseModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -11282,11 +10266,13 @@ class BillingApi:
 
 
     @validate_call
-    def get_user_volume_billing_events_without_preload_content(
+    def list_bucket_billing_history_without_preload_content(
         self,
-        volume_id: StrictInt,
         start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
         end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11300,16 +10286,20 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve Volume billing events history
+        """Retrieve Billing History of a Bucket for a specific Billing Cycle
 
-        User will receive volume billing events history
+        User will receive billing history of buckets for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
-        :param volume_id: (required)
-        :type volume_id: int
         :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type start_date: str
         :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
         :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11332,10 +10322,12 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_user_volume_billing_events_serialize(
-            volume_id=volume_id,
+        _param = self._list_bucket_billing_history_serialize(
             start_date=start_date,
             end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11343,10 +10335,11 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResourceBillingEventsHistoryResponse",
+            '200': "ResourceLevelBucketBillingHistoryResponseModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -11356,11 +10349,13 @@ class BillingApi:
         return response_data.response
 
 
-    def _get_user_volume_billing_events_serialize(
+    def _list_bucket_billing_history_serialize(
         self,
-        volume_id,
         start_date,
         end_date,
+        search,
+        per_page,
+        page,
         _request_auth,
         _content_type,
         _headers,
@@ -11382,8 +10377,6 @@ class BillingApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if volume_id is not None:
-            _path_params['volume_id'] = volume_id
         # process the query parameters
         if start_date is not None:
             
@@ -11392,6 +10385,18 @@ class BillingApi:
         if end_date is not None:
             
             _query_params.append(('end_date', end_date))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if per_page is not None:
+            
+            _query_params.append(('per_page', per_page))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
             
         # process the header parameters
         # process the form parameters
@@ -11414,7 +10419,7 @@ class BillingApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/billing/billing/volume/{volume_id}/billing-events',
+            resource_path='/billing/billing/history/bucket',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -11431,10 +10436,13 @@ class BillingApi:
 
 
     @validate_call
-    def put_organization_threshold(
+    def list_clusters_billing_history(
         self,
-        threshold_id: StrictInt,
-        payload: SubscribeOrUnsubscribeUpdatePayload,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11447,15 +10455,21 @@ class BillingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OrganizationThresholdUpdateResponse:
-        """Update: Subscribe or Unsubscribe Notification Threshold
+    ) -> ResourceLevelClusterBillingHistoryResponseModel:
+        """Retrieve Billing History of Clusters for a specific Billing Cycle
 
-        By default, you are subscribed to all the threshold values and you will be receiving the email notification for these default thresholds values. `false` indicates that the user will no longer receive notifications for this specific threshold, whereas `true` signifies that the user will receive notification emails.
+        User will receive billing history of clusters for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
-        :param threshold_id: (required)
-        :type threshold_id: int
-        :param payload: (required)
-        :type payload: SubscribeOrUnsubscribeUpdatePayload
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11478,9 +10492,12 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_organization_threshold_serialize(
-            threshold_id=threshold_id,
-            payload=payload,
+        _param = self._list_clusters_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11488,7 +10505,7 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationThresholdUpdateResponse",
+            '200': "ResourceLevelClusterBillingHistoryResponseModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -11507,10 +10524,13 @@ class BillingApi:
 
 
     @validate_call
-    def put_organization_threshold_with_http_info(
+    def list_clusters_billing_history_with_http_info(
         self,
-        threshold_id: StrictInt,
-        payload: SubscribeOrUnsubscribeUpdatePayload,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11523,15 +10543,21 @@ class BillingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OrganizationThresholdUpdateResponse]:
-        """Update: Subscribe or Unsubscribe Notification Threshold
+    ) -> ApiResponse[ResourceLevelClusterBillingHistoryResponseModel]:
+        """Retrieve Billing History of Clusters for a specific Billing Cycle
 
-        By default, you are subscribed to all the threshold values and you will be receiving the email notification for these default thresholds values. `false` indicates that the user will no longer receive notifications for this specific threshold, whereas `true` signifies that the user will receive notification emails.
+        User will receive billing history of clusters for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
-        :param threshold_id: (required)
-        :type threshold_id: int
-        :param payload: (required)
-        :type payload: SubscribeOrUnsubscribeUpdatePayload
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11554,9 +10580,12 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_organization_threshold_serialize(
-            threshold_id=threshold_id,
-            payload=payload,
+        _param = self._list_clusters_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11564,7 +10593,7 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationThresholdUpdateResponse",
+            '200': "ResourceLevelClusterBillingHistoryResponseModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -11583,10 +10612,13 @@ class BillingApi:
 
 
     @validate_call
-    def put_organization_threshold_without_preload_content(
+    def list_clusters_billing_history_without_preload_content(
         self,
-        threshold_id: StrictInt,
-        payload: SubscribeOrUnsubscribeUpdatePayload,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11600,14 +10632,20 @@ class BillingApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update: Subscribe or Unsubscribe Notification Threshold
+        """Retrieve Billing History of Clusters for a specific Billing Cycle
 
-        By default, you are subscribed to all the threshold values and you will be receiving the email notification for these default thresholds values. `false` indicates that the user will no longer receive notifications for this specific threshold, whereas `true` signifies that the user will receive notification emails.
+        User will receive billing history of clusters for the specified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
 
-        :param threshold_id: (required)
-        :type threshold_id: int
-        :param payload: (required)
-        :type payload: SubscribeOrUnsubscribeUpdatePayload
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11630,9 +10668,12 @@ class BillingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._put_organization_threshold_serialize(
-            threshold_id=threshold_id,
-            payload=payload,
+        _param = self._list_clusters_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11640,7 +10681,7 @@ class BillingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationThresholdUpdateResponse",
+            '200': "ResourceLevelClusterBillingHistoryResponseModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -11654,10 +10695,13 @@ class BillingApi:
         return response_data.response
 
 
-    def _put_organization_threshold_serialize(
+    def _list_clusters_billing_history_serialize(
         self,
-        threshold_id,
-        payload,
+        start_date,
+        end_date,
+        search,
+        per_page,
+        page,
         _request_auth,
         _content_type,
         _headers,
@@ -11679,14 +10723,30 @@ class BillingApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
-        if threshold_id is not None:
-            _path_params['threshold_id'] = threshold_id
         # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if per_page is not None:
+            
+            _query_params.append(('per_page', per_page))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if payload is not None:
-            _body_params = payload
 
 
         # set the HTTP header `Accept`
@@ -11697,19 +10757,6 @@ class BillingApi:
                 ]
             )
 
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
         _auth_settings: List[str] = [
@@ -11717,8 +10764,961 @@ class BillingApi:
         ]
 
         return self.api_client.param_serialize(
-            method='PUT',
-            resource_path='/billing/billing/threshold/{threshold_id}',
+            method='GET',
+            resource_path='/billing/billing/history/cluster',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def list_org_notification_thresholds(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> OrganizationThresholdsResponse:
+        """GET: All Thresholds for Organization
+
+        Retrieve all the notification thresholds for an organization.
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_org_notification_thresholds_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "OrganizationThresholdsResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def list_org_notification_thresholds_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[OrganizationThresholdsResponse]:
+        """GET: All Thresholds for Organization
+
+        Retrieve all the notification thresholds for an organization.
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_org_notification_thresholds_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "OrganizationThresholdsResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def list_org_notification_thresholds_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """GET: All Thresholds for Organization
+
+        Retrieve all the notification thresholds for an organization.
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_org_notification_thresholds_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "OrganizationThresholdsResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _list_org_notification_thresholds_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/threshold',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def list_serverless_inference_billing_history(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> TokenBasedBillingHistoryResponse:
+        """Retrieve Billing History of serverless inference for a specific Billing Cycle
+
+        User will receive billing history of serverless_inference for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_serverless_inference_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TokenBasedBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def list_serverless_inference_billing_history_with_http_info(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[TokenBasedBillingHistoryResponse]:
+        """Retrieve Billing History of serverless inference for a specific Billing Cycle
+
+        User will receive billing history of serverless_inference for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_serverless_inference_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TokenBasedBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def list_serverless_inference_billing_history_without_preload_content(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Billing History of serverless inference for a specific Billing Cycle
+
+        User will receive billing history of serverless_inference for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_serverless_inference_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TokenBasedBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _list_serverless_inference_billing_history_serialize(
+        self,
+        start_date,
+        end_date,
+        search,
+        per_page,
+        page,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if per_page is not None:
+            
+            _query_params.append(('per_page', per_page))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/serverless_inference',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def list_snapshot_billing_history(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResourceLevelVolumeBillingHistoryResponseModel:
+        """Retrieve Billing History of Snapshot for a specific Billing Cycle
+
+        User will receive billing history of snapshots for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_snapshot_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeBillingHistoryResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def list_snapshot_billing_history_with_http_info(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResourceLevelVolumeBillingHistoryResponseModel]:
+        """Retrieve Billing History of Snapshot for a specific Billing Cycle
+
+        User will receive billing history of snapshots for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_snapshot_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeBillingHistoryResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def list_snapshot_billing_history_without_preload_content(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Billing History of Snapshot for a specific Billing Cycle
+
+        User will receive billing history of snapshots for thespecified billing cycle. This data will include 'resource_name', 'infrahub_id', 'status', 'incurred_bill', 'usage_time', 'price_per_hour'
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_snapshot_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResourceLevelVolumeBillingHistoryResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _list_snapshot_billing_history_serialize(
+        self,
+        start_date,
+        end_date,
+        search,
+        per_page,
+        page,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if per_page is not None:
+            
+            _query_params.append(('per_page', per_page))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/snapshot',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

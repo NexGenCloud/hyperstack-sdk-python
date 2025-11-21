@@ -275,7 +275,7 @@ class AliveApi:
 
 
     @validate_call
-    def get_doc(
+    def get_alive_doc(
         self,
         _request_timeout: Union[
             None,
@@ -290,7 +290,7 @@ class AliveApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """get_doc
+        """get_alive_doc
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -315,7 +315,7 @@ class AliveApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_doc_serialize(
+        _param = self._get_alive_doc_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -337,7 +337,7 @@ class AliveApi:
 
 
     @validate_call
-    def get_doc_with_http_info(
+    def get_alive_doc_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -352,7 +352,7 @@ class AliveApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """get_doc
+        """get_alive_doc
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -377,7 +377,7 @@ class AliveApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_doc_serialize(
+        _param = self._get_alive_doc_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -399,7 +399,7 @@ class AliveApi:
 
 
     @validate_call
-    def get_doc_without_preload_content(
+    def get_alive_doc_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -414,7 +414,7 @@ class AliveApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """get_doc
+        """get_alive_doc
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -439,7 +439,7 @@ class AliveApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_doc_serialize(
+        _param = self._get_alive_doc_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -456,7 +456,7 @@ class AliveApi:
         return response_data.response
 
 
-    def _get_doc_serialize(
+    def _get_alive_doc_serialize(
         self,
         _request_auth,
         _content_type,

@@ -33,8 +33,8 @@ class TestAliveApi(unittest.TestCase):
         """
         pass
 
-    def test_get_doc(self) -> None:
-        """Test case for get_doc
+    def test_get_alive_doc(self) -> None:
+        """Test case for get_alive_doc
 
         """
         pass

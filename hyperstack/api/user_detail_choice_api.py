@@ -37,7 +37,7 @@ class UserDetailChoiceApi:
 
 
     @validate_call
-    def retrieve_default_flavors_and_images(
+    def list_default_flavors_and_images(
         self,
         _request_timeout: Union[
             None,
@@ -54,7 +54,7 @@ class UserDetailChoiceApi:
     ) -> UserDefaultChoicesForUserResponse:
         """Retrieve Default Flavors and Images
 
-        Retrieve the default choices for virtual machine deployment, including the default region, flavor, and image.
+        Retrieves the default options for virtual machine deployment, including the default region, flavor, and image.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -78,7 +78,7 @@ class UserDetailChoiceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_default_flavors_and_images_serialize(
+        _param = self._list_default_flavors_and_images_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -104,7 +104,7 @@ class UserDetailChoiceApi:
 
 
     @validate_call
-    def retrieve_default_flavors_and_images_with_http_info(
+    def list_default_flavors_and_images_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -121,7 +121,7 @@ class UserDetailChoiceApi:
     ) -> ApiResponse[UserDefaultChoicesForUserResponse]:
         """Retrieve Default Flavors and Images
 
-        Retrieve the default choices for virtual machine deployment, including the default region, flavor, and image.
+        Retrieves the default options for virtual machine deployment, including the default region, flavor, and image.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -145,7 +145,7 @@ class UserDetailChoiceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_default_flavors_and_images_serialize(
+        _param = self._list_default_flavors_and_images_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -171,7 +171,7 @@ class UserDetailChoiceApi:
 
 
     @validate_call
-    def retrieve_default_flavors_and_images_without_preload_content(
+    def list_default_flavors_and_images_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -188,7 +188,7 @@ class UserDetailChoiceApi:
     ) -> RESTResponseType:
         """Retrieve Default Flavors and Images
 
-        Retrieve the default choices for virtual machine deployment, including the default region, flavor, and image.
+        Retrieves the default options for virtual machine deployment, including the default region, flavor, and image.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -212,7 +212,7 @@ class UserDetailChoiceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_default_flavors_and_images_serialize(
+        _param = self._list_default_flavors_and_images_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -233,7 +233,7 @@ class UserDetailChoiceApi:
         return response_data.response
 
 
-    def _retrieve_default_flavors_and_images_serialize(
+    def _list_default_flavors_and_images_serialize(
         self,
         _request_auth,
         _content_type,

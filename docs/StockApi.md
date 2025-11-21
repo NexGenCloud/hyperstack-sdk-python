@@ -4,11 +4,11 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_gpu_stocks**](StockApi.md#retrieve_gpu_stocks) | **GET** /core/stocks | Retrieve GPU stocks
+[**get_gpu_stock**](StockApi.md#get_gpu_stock) | **GET** /core/stocks | Retrieve GPU stocks
 
 
-# **retrieve_gpu_stocks**
-> NewStockRetriveResponse retrieve_gpu_stocks()
+# **get_gpu_stock**
+> NewStockRetriveResponse get_gpu_stock()
 
 Retrieve GPU stocks
 
@@ -48,11 +48,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve GPU stocks
-        api_response = api_instance.retrieve_gpu_stocks()
-        print("The response of StockApi->retrieve_gpu_stocks:\n")
+        api_response = api_instance.get_gpu_stock()
+        print("The response of StockApi->get_gpu_stock:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StockApi->retrieve_gpu_stocks: %s\n" % e)
+        print("Exception when calling StockApi->get_gpu_stock: %s\n" % e)
 ```
 
 

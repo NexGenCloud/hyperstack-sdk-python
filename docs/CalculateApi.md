@@ -4,11 +4,11 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_calculate2**](CalculateApi.md#get_calculate2) | **GET** /pricebook/calculate/resource/{resource_type}/{id} | Retrieve Billing Rate for Resource
+[**calculate_resource_billing_rate**](CalculateApi.md#calculate_resource_billing_rate) | **GET** /pricebook/calculate/resource/{resource_type}/{id} | Retrieve Billing Rate for Resource
 
 
-# **get_calculate2**
-> ResourceBillingResponseForCustomer get_calculate2(resource_type, id)
+# **calculate_resource_billing_rate**
+> ResourceBillingResponseForCustomer calculate_resource_billing_rate(resource_type, id)
 
 Retrieve Billing Rate for Resource
 
@@ -50,11 +50,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Billing Rate for Resource
-        api_response = api_instance.get_calculate2(resource_type, id)
-        print("The response of CalculateApi->get_calculate2:\n")
+        api_response = api_instance.calculate_resource_billing_rate(resource_type, id)
+        print("The response of CalculateApi->calculate_resource_billing_rate:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CalculateApi->get_calculate2: %s\n" % e)
+        print("Exception when calling CalculateApi->calculate_resource_billing_rate: %s\n" % e)
 ```
 
 

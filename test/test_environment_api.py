@@ -47,17 +47,17 @@ class TestEnvironmentApi(unittest.TestCase):
         """
         pass
 
+    def test_get_environment(self) -> None:
+        """Test case for get_environment
+
+        Retrieve environment
+        """
+        pass
+
     def test_list_environments(self) -> None:
         """Test case for list_environments
 
         List environments
-        """
-        pass
-
-    def test_retrieve_environment(self) -> None:
-        """Test case for retrieve_environment
-
-        Retrieve environment
         """
         pass
 

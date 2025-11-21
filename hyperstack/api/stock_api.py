@@ -37,7 +37,7 @@ class StockApi:
 
 
     @validate_call
-    def retrieve_gpu_stocks(
+    def get_gpu_stock(
         self,
         _request_timeout: Union[
             None,
@@ -78,7 +78,7 @@ class StockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_gpu_stocks_serialize(
+        _param = self._get_gpu_stock_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -103,7 +103,7 @@ class StockApi:
 
 
     @validate_call
-    def retrieve_gpu_stocks_with_http_info(
+    def get_gpu_stock_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -144,7 +144,7 @@ class StockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_gpu_stocks_serialize(
+        _param = self._get_gpu_stock_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -169,7 +169,7 @@ class StockApi:
 
 
     @validate_call
-    def retrieve_gpu_stocks_without_preload_content(
+    def get_gpu_stock_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -210,7 +210,7 @@ class StockApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_gpu_stocks_serialize(
+        _param = self._get_gpu_stock_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -230,7 +230,7 @@ class StockApi:
         return response_data.response
 
 
-    def _retrieve_gpu_stocks_serialize(
+    def _get_gpu_stock_serialize(
         self,
         _request_auth,
         _content_type,

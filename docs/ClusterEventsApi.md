@@ -4,11 +4,11 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fetch_all_of_a_cluster_events**](ClusterEventsApi.md#fetch_all_of_a_cluster_events) | **GET** /core/clusters/{cluster_id}/events | Fetch all of a cluster events
+[**list_cluster_events**](ClusterEventsApi.md#list_cluster_events) | **GET** /core/clusters/{cluster_id}/events | Fetch all of a cluster events
 
 
-# **fetch_all_of_a_cluster_events**
-> ClusterEvents fetch_all_of_a_cluster_events(cluster_id)
+# **list_cluster_events**
+> ClusterEvents list_cluster_events(cluster_id)
 
 Fetch all of a cluster events
 
@@ -47,11 +47,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Fetch all of a cluster events
-        api_response = api_instance.fetch_all_of_a_cluster_events(cluster_id)
-        print("The response of ClusterEventsApi->fetch_all_of_a_cluster_events:\n")
+        api_response = api_instance.list_cluster_events(cluster_id)
+        print("The response of ClusterEventsApi->list_cluster_events:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ClusterEventsApi->fetch_all_of_a_cluster_events: %s\n" % e)
+        print("Exception when calling ClusterEventsApi->list_cluster_events: %s\n" % e)
 ```
 
 

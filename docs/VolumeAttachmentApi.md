@@ -4,13 +4,13 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_volumes_to_virtual_machine**](VolumeAttachmentApi.md#attach_volumes_to_virtual_machine) | **POST** /core/virtual-machines/{vm_id}/attach-volumes | Attach volumes to virtual machine
-[**detach_volumes_from_virtual_machine**](VolumeAttachmentApi.md#detach_volumes_from_virtual_machine) | **POST** /core/virtual-machines/{vm_id}/detach-volumes | Detach volumes from virtual machine
-[**update_a_volume_attachment**](VolumeAttachmentApi.md#update_a_volume_attachment) | **PATCH** /core/volume-attachments/{volume_attachment_id} | Update a volume attachment
+[**attach_volumes_to_vm**](VolumeAttachmentApi.md#attach_volumes_to_vm) | **POST** /core/virtual-machines/{vm_id}/attach-volumes | Attach volumes to virtual machine
+[**detach_volumes_from_vm**](VolumeAttachmentApi.md#detach_volumes_from_vm) | **POST** /core/virtual-machines/{vm_id}/detach-volumes | Detach volumes from virtual machine
+[**update_volume_attachment**](VolumeAttachmentApi.md#update_volume_attachment) | **PATCH** /core/volume-attachments/{volume_attachment_id} | Update a volume attachment
 
 
-# **attach_volumes_to_virtual_machine**
-> AttachVolumes attach_volumes_to_virtual_machine(vm_id, payload)
+# **attach_volumes_to_vm**
+> AttachVolumes attach_volumes_to_vm(vm_id, payload)
 
 Attach volumes to virtual machine
 
@@ -53,11 +53,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Attach volumes to virtual machine
-        api_response = api_instance.attach_volumes_to_virtual_machine(vm_id, payload)
-        print("The response of VolumeAttachmentApi->attach_volumes_to_virtual_machine:\n")
+        api_response = api_instance.attach_volumes_to_vm(vm_id, payload)
+        print("The response of VolumeAttachmentApi->attach_volumes_to_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VolumeAttachmentApi->attach_volumes_to_virtual_machine: %s\n" % e)
+        print("Exception when calling VolumeAttachmentApi->attach_volumes_to_vm: %s\n" % e)
 ```
 
 
@@ -96,8 +96,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **detach_volumes_from_virtual_machine**
-> DetachVolumes detach_volumes_from_virtual_machine(vm_id, payload)
+# **detach_volumes_from_vm**
+> DetachVolumes detach_volumes_from_vm(vm_id, payload)
 
 Detach volumes from virtual machine
 
@@ -140,11 +140,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Detach volumes from virtual machine
-        api_response = api_instance.detach_volumes_from_virtual_machine(vm_id, payload)
-        print("The response of VolumeAttachmentApi->detach_volumes_from_virtual_machine:\n")
+        api_response = api_instance.detach_volumes_from_vm(vm_id, payload)
+        print("The response of VolumeAttachmentApi->detach_volumes_from_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VolumeAttachmentApi->detach_volumes_from_virtual_machine: %s\n" % e)
+        print("Exception when calling VolumeAttachmentApi->detach_volumes_from_vm: %s\n" % e)
 ```
 
 
@@ -183,8 +183,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_a_volume_attachment**
-> AttachVolumes update_a_volume_attachment(volume_attachment_id, payload)
+# **update_volume_attachment**
+> AttachVolumes update_volume_attachment(volume_attachment_id, payload)
 
 Update a volume attachment
 
@@ -225,11 +225,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Update a volume attachment
-        api_response = api_instance.update_a_volume_attachment(volume_attachment_id, payload)
-        print("The response of VolumeAttachmentApi->update_a_volume_attachment:\n")
+        api_response = api_instance.update_volume_attachment(volume_attachment_id, payload)
+        print("The response of VolumeAttachmentApi->update_volume_attachment:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VolumeAttachmentApi->update_a_volume_attachment: %s\n" % e)
+        print("Exception when calling VolumeAttachmentApi->update_volume_attachment: %s\n" % e)
 ```
 
 

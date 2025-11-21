@@ -37,7 +37,7 @@ class SnapshotEventsApi:
 
 
     @validate_call
-    def fetch_all_events_for_a_snapshot(
+    def list_snapshot_events(
         self,
         snapshot_id: StrictInt,
         _request_timeout: Union[
@@ -81,7 +81,7 @@ class SnapshotEventsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._fetch_all_events_for_a_snapshot_serialize(
+        _param = self._list_snapshot_events_serialize(
             snapshot_id=snapshot_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -104,7 +104,7 @@ class SnapshotEventsApi:
 
 
     @validate_call
-    def fetch_all_events_for_a_snapshot_with_http_info(
+    def list_snapshot_events_with_http_info(
         self,
         snapshot_id: StrictInt,
         _request_timeout: Union[
@@ -148,7 +148,7 @@ class SnapshotEventsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._fetch_all_events_for_a_snapshot_serialize(
+        _param = self._list_snapshot_events_serialize(
             snapshot_id=snapshot_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -171,7 +171,7 @@ class SnapshotEventsApi:
 
 
     @validate_call
-    def fetch_all_events_for_a_snapshot_without_preload_content(
+    def list_snapshot_events_without_preload_content(
         self,
         snapshot_id: StrictInt,
         _request_timeout: Union[
@@ -215,7 +215,7 @@ class SnapshotEventsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._fetch_all_events_for_a_snapshot_serialize(
+        _param = self._list_snapshot_events_serialize(
             snapshot_id=snapshot_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -233,7 +233,7 @@ class SnapshotEventsApi:
         return response_data.response
 
 
-    def _fetch_all_events_for_a_snapshot_serialize(
+    def _list_snapshot_events_serialize(
         self,
         snapshot_id,
         _request_auth,

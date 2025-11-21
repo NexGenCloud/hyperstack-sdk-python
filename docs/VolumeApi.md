@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_volume**](VolumeApi.md#create_volume) | **POST** /core/volumes | Create volume
 [**delete_volume**](VolumeApi.md#delete_volume) | **DELETE** /core/volumes/{volume_id} | Delete volume
-[**fetch_volume_details**](VolumeApi.md#fetch_volume_details) | **GET** /core/volumes/{volume_id} | Fetch Volume Details
 [**fetch_volume_name_availability**](VolumeApi.md#fetch_volume_name_availability) | **GET** /core/volume/name-availability/{name} | Fetch volume name availability
+[**get_volume**](VolumeApi.md#get_volume) | **GET** /core/volumes/{volume_id} | Fetch Volume Details
 [**list_volume_types**](VolumeApi.md#list_volume_types) | **GET** /core/volume-types | List volume types
 [**list_volumes**](VolumeApi.md#list_volumes) | **GET** /core/volumes | List volumes
 [**update_volume**](VolumeApi.md#update_volume) | **PATCH** /core/volumes/{volume_id} | Update volume fields
@@ -182,90 +182,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fetch_volume_details**
-> Volume fetch_volume_details(volume_id)
-
-Fetch Volume Details
-
-Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import hyperstack
-from hyperstack.models.volume import Volume
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.VolumeApi(api_client)
-    volume_id = 56 # int | 
-
-    try:
-        # Fetch Volume Details
-        api_response = api_instance.fetch_volume_details(volume_id)
-        print("The response of VolumeApi->fetch_volume_details:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling VolumeApi->fetch_volume_details: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **volume_id** | **int**|  | 
-
-### Return type
-
-[**Volume**](Volume.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**405** | Not Allowed |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **fetch_volume_name_availability**
 > NameAvailableModel fetch_volume_name_availability(name)
 
@@ -345,6 +261,90 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_volume**
+> Volume get_volume(volume_id)
+
+Fetch Volume Details
+
+Fetch volume details for specific volume. This endpoint returns id, name, volume size, volume type, status, description, image_id, os_image, created_at, updated_at etc.
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.volume import Volume
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.VolumeApi(api_client)
+    volume_id = 56 # int | 
+
+    try:
+        # Fetch Volume Details
+        api_response = api_instance.get_volume(volume_id)
+        print("The response of VolumeApi->get_volume:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VolumeApi->get_volume: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **volume_id** | **int**|  | 
+
+### Return type
+
+[**Volume**](Volume.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**405** | Not Allowed |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

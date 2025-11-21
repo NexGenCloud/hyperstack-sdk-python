@@ -26,8 +26,8 @@ class TestCallbacksApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_attach_callback_to_virtual_machine(self) -> None:
-        """Test case for attach_callback_to_virtual_machine
+    def test_attach_callback_to_vm(self) -> None:
+        """Test case for attach_callback_to_vm
 
         Attach callback to virtual machine
         """
@@ -40,8 +40,8 @@ class TestCallbacksApi(unittest.TestCase):
         """
         pass
 
-    def test_delete_virtual_machine_callback(self) -> None:
-        """Test case for delete_virtual_machine_callback
+    def test_delete_vm_callback(self) -> None:
+        """Test case for delete_vm_callback
 
         Delete virtual machine callback
         """
@@ -54,8 +54,8 @@ class TestCallbacksApi(unittest.TestCase):
         """
         pass
 
-    def test_update_virtual_machine_callback(self) -> None:
-        """Test case for update_virtual_machine_callback
+    def test_update_vm_callback(self) -> None:
+        """Test case for update_vm_callback
 
         Update virtual machine callback
         """

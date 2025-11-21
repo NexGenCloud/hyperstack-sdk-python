@@ -40,7 +40,7 @@ class CallbacksApi:
 
 
     @validate_call
-    def attach_callback_to_virtual_machine(
+    def attach_callback_to_vm(
         self,
         vm_id: StrictInt,
         payload: AttachCallbackPayload,
@@ -87,7 +87,7 @@ class CallbacksApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_callback_to_virtual_machine_serialize(
+        _param = self._attach_callback_to_vm_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -115,7 +115,7 @@ class CallbacksApi:
 
 
     @validate_call
-    def attach_callback_to_virtual_machine_with_http_info(
+    def attach_callback_to_vm_with_http_info(
         self,
         vm_id: StrictInt,
         payload: AttachCallbackPayload,
@@ -162,7 +162,7 @@ class CallbacksApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_callback_to_virtual_machine_serialize(
+        _param = self._attach_callback_to_vm_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -190,7 +190,7 @@ class CallbacksApi:
 
 
     @validate_call
-    def attach_callback_to_virtual_machine_without_preload_content(
+    def attach_callback_to_vm_without_preload_content(
         self,
         vm_id: StrictInt,
         payload: AttachCallbackPayload,
@@ -237,7 +237,7 @@ class CallbacksApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._attach_callback_to_virtual_machine_serialize(
+        _param = self._attach_callback_to_vm_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -260,7 +260,7 @@ class CallbacksApi:
         return response_data.response
 
 
-    def _attach_callback_to_virtual_machine_serialize(
+    def _attach_callback_to_vm_serialize(
         self,
         vm_id,
         payload,
@@ -642,7 +642,7 @@ class CallbacksApi:
 
 
     @validate_call
-    def delete_virtual_machine_callback(
+    def delete_vm_callback(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -686,7 +686,7 @@ class CallbacksApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_virtual_machine_callback_serialize(
+        _param = self._delete_vm_callback_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -713,7 +713,7 @@ class CallbacksApi:
 
 
     @validate_call
-    def delete_virtual_machine_callback_with_http_info(
+    def delete_vm_callback_with_http_info(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -757,7 +757,7 @@ class CallbacksApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_virtual_machine_callback_serialize(
+        _param = self._delete_vm_callback_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -784,7 +784,7 @@ class CallbacksApi:
 
 
     @validate_call
-    def delete_virtual_machine_callback_without_preload_content(
+    def delete_vm_callback_without_preload_content(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -828,7 +828,7 @@ class CallbacksApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_virtual_machine_callback_serialize(
+        _param = self._delete_vm_callback_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -850,7 +850,7 @@ class CallbacksApi:
         return response_data.response
 
 
-    def _delete_virtual_machine_callback_serialize(
+    def _delete_vm_callback_serialize(
         self,
         vm_id,
         _request_auth,
@@ -1188,7 +1188,7 @@ class CallbacksApi:
 
 
     @validate_call
-    def update_virtual_machine_callback(
+    def update_vm_callback(
         self,
         vm_id: StrictInt,
         payload: AttachCallbackPayload,
@@ -1235,7 +1235,7 @@ class CallbacksApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_virtual_machine_callback_serialize(
+        _param = self._update_vm_callback_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -1263,7 +1263,7 @@ class CallbacksApi:
 
 
     @validate_call
-    def update_virtual_machine_callback_with_http_info(
+    def update_vm_callback_with_http_info(
         self,
         vm_id: StrictInt,
         payload: AttachCallbackPayload,
@@ -1310,7 +1310,7 @@ class CallbacksApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_virtual_machine_callback_serialize(
+        _param = self._update_vm_callback_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -1338,7 +1338,7 @@ class CallbacksApi:
 
 
     @validate_call
-    def update_virtual_machine_callback_without_preload_content(
+    def update_vm_callback_without_preload_content(
         self,
         vm_id: StrictInt,
         payload: AttachCallbackPayload,
@@ -1385,7 +1385,7 @@ class CallbacksApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_virtual_machine_callback_serialize(
+        _param = self._update_vm_callback_serialize(
             vm_id=vm_id,
             payload=payload,
             _request_auth=_request_auth,
@@ -1408,7 +1408,7 @@ class CallbacksApi:
         return response_data.response
 
 
-    def _update_virtual_machine_callback_serialize(
+    def _update_vm_callback_serialize(
         self,
         vm_id,
         payload,

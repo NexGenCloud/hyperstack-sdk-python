@@ -26,8 +26,8 @@ class TestStockApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_retrieve_gpu_stocks(self) -> None:
-        """Test case for retrieve_gpu_stocks
+    def test_get_gpu_stock(self) -> None:
+        """Test case for get_gpu_stock
 
         Retrieve GPU stocks
         """

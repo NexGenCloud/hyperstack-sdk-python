@@ -55,276 +55,6 @@ class ClustersApi:
 
 
     @validate_call
-    def attempt_to_manually_reconcile_a_cluster(
-        self,
-        cluster_id: StrictInt,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ManualReconciliationModel:
-        """Reconcile a cluster
-
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._attempt_to_manually_reconcile_a_cluster_serialize(
-            cluster_id=cluster_id,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ManualReconciliationModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def attempt_to_manually_reconcile_a_cluster_with_http_info(
-        self,
-        cluster_id: StrictInt,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ManualReconciliationModel]:
-        """Reconcile a cluster
-
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._attempt_to_manually_reconcile_a_cluster_serialize(
-            cluster_id=cluster_id,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ManualReconciliationModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def attempt_to_manually_reconcile_a_cluster_without_preload_content(
-        self,
-        cluster_id: StrictInt,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Reconcile a cluster
-
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._attempt_to_manually_reconcile_a_cluster_serialize(
-            cluster_id=cluster_id,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ManualReconciliationModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _attempt_to_manually_reconcile_a_cluster_serialize(
-        self,
-        cluster_id,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if cluster_id is not None:
-            _path_params['cluster_id'] = cluster_id
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/core/clusters/{cluster_id}/reconcile',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
     def create_cluster(
         self,
         payload: CreateClusterPayload,
@@ -1216,7 +946,7 @@ class ClustersApi:
 
 
     @validate_call
-    def delete_a_cluster(
+    def delete_cluster(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -1259,7 +989,7 @@ class ClustersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_a_cluster_serialize(
+        _param = self._delete_cluster_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1286,7 +1016,7 @@ class ClustersApi:
 
 
     @validate_call
-    def delete_a_cluster_with_http_info(
+    def delete_cluster_with_http_info(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -1329,7 +1059,7 @@ class ClustersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_a_cluster_serialize(
+        _param = self._delete_cluster_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1356,7 +1086,7 @@ class ClustersApi:
 
 
     @validate_call
-    def delete_a_cluster_without_preload_content(
+    def delete_cluster_without_preload_content(
         self,
         id: StrictInt,
         _request_timeout: Union[
@@ -1399,7 +1129,7 @@ class ClustersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._delete_a_cluster_serialize(
+        _param = self._delete_cluster_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1421,7 +1151,7 @@ class ClustersApi:
         return response_data.response
 
 
-    def _delete_a_cluster_serialize(
+    def _delete_cluster_serialize(
         self,
         id,
         _request_auth,
@@ -1470,294 +1200,6 @@ class ClustersApi:
         return self.api_client.param_serialize(
             method='DELETE',
             resource_path='/core/clusters/{id}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def delete_a_node_group(
-        self,
-        cluster_id: StrictInt,
-        node_group_id: StrictInt,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ResponseModel:
-        """Delete a node group
-
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param node_group_id: (required)
-        :type node_group_id: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._delete_a_node_group_serialize(
-            cluster_id=cluster_id,
-            node_group_id=node_group_id,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '409': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def delete_a_node_group_with_http_info(
-        self,
-        cluster_id: StrictInt,
-        node_group_id: StrictInt,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ResponseModel]:
-        """Delete a node group
-
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param node_group_id: (required)
-        :type node_group_id: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._delete_a_node_group_serialize(
-            cluster_id=cluster_id,
-            node_group_id=node_group_id,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '409': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def delete_a_node_group_without_preload_content(
-        self,
-        cluster_id: StrictInt,
-        node_group_id: StrictInt,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete a node group
-
-
-        :param cluster_id: (required)
-        :type cluster_id: int
-        :param node_group_id: (required)
-        :type node_group_id: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._delete_a_node_group_serialize(
-            cluster_id=cluster_id,
-            node_group_id=node_group_id,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ResponseModel",
-            '400': "ErrorResponseModel",
-            '401': "ErrorResponseModel",
-            '404': "ErrorResponseModel",
-            '409': "ErrorResponseModel",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _delete_a_node_group_serialize(
-        self,
-        cluster_id,
-        node_group_id,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if cluster_id is not None:
-            _path_params['cluster_id'] = cluster_id
-        if node_group_id is not None:
-            _path_params['node_group_id'] = node_group_id
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'apiKey'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/core/clusters/{cluster_id}/node-groups/{node_group_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2341,6 +1783,294 @@ class ClustersApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/core/clusters/{cluster_id}/nodes/delete',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_node_group(
+        self,
+        cluster_id: StrictInt,
+        node_group_id: StrictInt,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ResponseModel:
+        """Delete a node group
+
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param node_group_id: (required)
+        :type node_group_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_node_group_serialize(
+            cluster_id=cluster_id,
+            node_group_id=node_group_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '409': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_node_group_with_http_info(
+        self,
+        cluster_id: StrictInt,
+        node_group_id: StrictInt,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ResponseModel]:
+        """Delete a node group
+
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param node_group_id: (required)
+        :type node_group_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_node_group_serialize(
+            cluster_id=cluster_id,
+            node_group_id=node_group_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '409': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_node_group_without_preload_content(
+        self,
+        cluster_id: StrictInt,
+        node_group_id: StrictInt,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete a node group
+
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param node_group_id: (required)
+        :type node_group_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_node_group_serialize(
+            cluster_id=cluster_id,
+            node_group_id=node_group_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ResponseModel",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '409': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_node_group_serialize(
+        self,
+        cluster_id,
+        node_group_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if cluster_id is not None:
+            _path_params['cluster_id'] = cluster_id
+        if node_group_id is not None:
+            _path_params['node_group_id'] = node_group_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/core/clusters/{cluster_id}/node-groups/{node_group_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -3424,6 +3154,291 @@ class ClustersApi:
 
 
     @validate_call
+    def get_node_group(
+        self,
+        cluster_id: StrictInt,
+        node_group_id: StrictInt,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ClusterNodeGroupsGetResponse:
+        """Retrieve a node group in a cluster
+
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param node_group_id: (required)
+        :type node_group_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_node_group_serialize(
+            cluster_id=cluster_id,
+            node_group_id=node_group_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ClusterNodeGroupsGetResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_node_group_with_http_info(
+        self,
+        cluster_id: StrictInt,
+        node_group_id: StrictInt,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ClusterNodeGroupsGetResponse]:
+        """Retrieve a node group in a cluster
+
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param node_group_id: (required)
+        :type node_group_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_node_group_serialize(
+            cluster_id=cluster_id,
+            node_group_id=node_group_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ClusterNodeGroupsGetResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_node_group_without_preload_content(
+        self,
+        cluster_id: StrictInt,
+        node_group_id: StrictInt,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve a node group in a cluster
+
+
+        :param cluster_id: (required)
+        :type cluster_id: int
+        :param node_group_id: (required)
+        :type node_group_id: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_node_group_serialize(
+            cluster_id=cluster_id,
+            node_group_id=node_group_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ClusterNodeGroupsGetResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_node_group_serialize(
+        self,
+        cluster_id,
+        node_group_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if cluster_id is not None:
+            _path_params['cluster_id'] = cluster_id
+        if node_group_id is not None:
+            _path_params['node_group_id'] = node_group_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/core/clusters/{cluster_id}/node-groups/{node_group_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def getting_cluster_detail(
         self,
         id: StrictInt,
@@ -4284,10 +4299,9 @@ class ClustersApi:
 
 
     @validate_call
-    def retrieve_a_node_group(
+    def reconcile_cluster(
         self,
         cluster_id: StrictInt,
-        node_group_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4300,14 +4314,12 @@ class ClustersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ClusterNodeGroupsGetResponse:
-        """Retrieve a node group in a cluster
+    ) -> ManualReconciliationModel:
+        """Reconcile a cluster
 
 
         :param cluster_id: (required)
         :type cluster_id: int
-        :param node_group_id: (required)
-        :type node_group_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4330,9 +4342,8 @@ class ClustersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_a_node_group_serialize(
+        _param = self._reconcile_cluster_serialize(
             cluster_id=cluster_id,
-            node_group_id=node_group_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4340,7 +4351,7 @@ class ClustersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClusterNodeGroupsGetResponse",
+            '200': "ManualReconciliationModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '404': "ErrorResponseModel",
@@ -4358,10 +4369,9 @@ class ClustersApi:
 
 
     @validate_call
-    def retrieve_a_node_group_with_http_info(
+    def reconcile_cluster_with_http_info(
         self,
         cluster_id: StrictInt,
-        node_group_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4374,14 +4384,12 @@ class ClustersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ClusterNodeGroupsGetResponse]:
-        """Retrieve a node group in a cluster
+    ) -> ApiResponse[ManualReconciliationModel]:
+        """Reconcile a cluster
 
 
         :param cluster_id: (required)
         :type cluster_id: int
-        :param node_group_id: (required)
-        :type node_group_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4404,9 +4412,8 @@ class ClustersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_a_node_group_serialize(
+        _param = self._reconcile_cluster_serialize(
             cluster_id=cluster_id,
-            node_group_id=node_group_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4414,7 +4421,7 @@ class ClustersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClusterNodeGroupsGetResponse",
+            '200': "ManualReconciliationModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '404': "ErrorResponseModel",
@@ -4432,10 +4439,9 @@ class ClustersApi:
 
 
     @validate_call
-    def retrieve_a_node_group_without_preload_content(
+    def reconcile_cluster_without_preload_content(
         self,
         cluster_id: StrictInt,
-        node_group_id: StrictInt,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4449,13 +4455,11 @@ class ClustersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve a node group in a cluster
+        """Reconcile a cluster
 
 
         :param cluster_id: (required)
         :type cluster_id: int
-        :param node_group_id: (required)
-        :type node_group_id: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4478,9 +4482,8 @@ class ClustersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._retrieve_a_node_group_serialize(
+        _param = self._reconcile_cluster_serialize(
             cluster_id=cluster_id,
-            node_group_id=node_group_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4488,7 +4491,7 @@ class ClustersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ClusterNodeGroupsGetResponse",
+            '200': "ManualReconciliationModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '404': "ErrorResponseModel",
@@ -4501,10 +4504,9 @@ class ClustersApi:
         return response_data.response
 
 
-    def _retrieve_a_node_group_serialize(
+    def _reconcile_cluster_serialize(
         self,
         cluster_id,
-        node_group_id,
         _request_auth,
         _content_type,
         _headers,
@@ -4528,8 +4530,6 @@ class ClustersApi:
         # process the path parameters
         if cluster_id is not None:
             _path_params['cluster_id'] = cluster_id
-        if node_group_id is not None:
-            _path_params['node_group_id'] = node_group_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -4551,8 +4551,8 @@ class ClustersApi:
         ]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/core/clusters/{cluster_id}/node-groups/{node_group_id}',
+            method='POST',
+            resource_path='/core/clusters/{cluster_id}/reconcile',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -4569,7 +4569,7 @@ class ClustersApi:
 
 
     @validate_call
-    def update_a_node_group(
+    def update_node_group(
         self,
         cluster_id: StrictInt,
         node_group_id: StrictInt,
@@ -4618,7 +4618,7 @@ class ClustersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_a_node_group_serialize(
+        _param = self._update_node_group_serialize(
             cluster_id=cluster_id,
             node_group_id=node_group_id,
             payload=payload,
@@ -4648,7 +4648,7 @@ class ClustersApi:
 
 
     @validate_call
-    def update_a_node_group_with_http_info(
+    def update_node_group_with_http_info(
         self,
         cluster_id: StrictInt,
         node_group_id: StrictInt,
@@ -4697,7 +4697,7 @@ class ClustersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_a_node_group_serialize(
+        _param = self._update_node_group_serialize(
             cluster_id=cluster_id,
             node_group_id=node_group_id,
             payload=payload,
@@ -4727,7 +4727,7 @@ class ClustersApi:
 
 
     @validate_call
-    def update_a_node_group_without_preload_content(
+    def update_node_group_without_preload_content(
         self,
         cluster_id: StrictInt,
         node_group_id: StrictInt,
@@ -4776,7 +4776,7 @@ class ClustersApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._update_a_node_group_serialize(
+        _param = self._update_node_group_serialize(
             cluster_id=cluster_id,
             node_group_id=node_group_id,
             payload=payload,
@@ -4801,7 +4801,7 @@ class ClustersApi:
         return response_data.response
 
 
-    def _update_a_node_group_serialize(
+    def _update_node_group_serialize(
         self,
         cluster_id,
         node_group_id,

@@ -5,9 +5,9 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_compliance**](ComplianceApi.md#create_compliance) | **POST** /core/compliance | Create compliance
-[**delete_a_compliance**](ComplianceApi.md#delete_a_compliance) | **DELETE** /core/compliance/{gpu_model} | Delete a compliance
-[**retrieve_compliance**](ComplianceApi.md#retrieve_compliance) | **GET** /core/compliance | Retrieve GPU compliance
-[**update_a_compliance**](ComplianceApi.md#update_a_compliance) | **PUT** /core/compliance | Update a compliance
+[**delete_compliance**](ComplianceApi.md#delete_compliance) | **DELETE** /core/compliance/{gpu_model} | Delete a compliance
+[**get_compliance**](ComplianceApi.md#get_compliance) | **GET** /core/compliance | Retrieve GPU compliance
+[**update_compliance**](ComplianceApi.md#update_compliance) | **PUT** /core/compliance | Update a compliance
 
 
 # **create_compliance**
@@ -94,8 +94,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_a_compliance**
-> ResponseModel delete_a_compliance(gpu_model)
+# **delete_compliance**
+> ResponseModel delete_compliance(gpu_model)
 
 Delete a compliance
 
@@ -134,11 +134,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Delete a compliance
-        api_response = api_instance.delete_a_compliance(gpu_model)
-        print("The response of ComplianceApi->delete_a_compliance:\n")
+        api_response = api_instance.delete_compliance(gpu_model)
+        print("The response of ComplianceApi->delete_compliance:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComplianceApi->delete_a_compliance: %s\n" % e)
+        print("Exception when calling ComplianceApi->delete_compliance: %s\n" % e)
 ```
 
 
@@ -175,8 +175,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_compliance**
-> ComplianceResponse retrieve_compliance(gpu=gpu)
+# **get_compliance**
+> ComplianceResponse get_compliance(gpu=gpu)
 
 Retrieve GPU compliance
 
@@ -217,11 +217,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve GPU compliance
-        api_response = api_instance.retrieve_compliance(gpu=gpu)
-        print("The response of ComplianceApi->retrieve_compliance:\n")
+        api_response = api_instance.get_compliance(gpu=gpu)
+        print("The response of ComplianceApi->get_compliance:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComplianceApi->retrieve_compliance: %s\n" % e)
+        print("Exception when calling ComplianceApi->get_compliance: %s\n" % e)
 ```
 
 
@@ -259,8 +259,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_a_compliance**
-> CreateUpdateComplianceResponse update_a_compliance(payload)
+# **update_compliance**
+> CreateUpdateComplianceResponse update_compliance(payload)
 
 Update a compliance
 
@@ -300,11 +300,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Update a compliance
-        api_response = api_instance.update_a_compliance(payload)
-        print("The response of ComplianceApi->update_a_compliance:\n")
+        api_response = api_instance.update_compliance(payload)
+        print("The response of ComplianceApi->update_compliance:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComplianceApi->update_a_compliance: %s\n" % e)
+        print("Exception when calling ComplianceApi->update_compliance: %s\n" % e)
 ```
 
 

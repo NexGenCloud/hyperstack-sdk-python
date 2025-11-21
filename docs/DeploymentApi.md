@@ -5,7 +5,7 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_deployment**](DeploymentApi.md#delete_deployment) | **DELETE** /core/marketplace/deployments/{id} | Delete Deployment
-[**details_of_deployment_by_id**](DeploymentApi.md#details_of_deployment_by_id) | **GET** /core/marketplace/deployments/{id} | Details of Deployment by ID
+[**get_deployment**](DeploymentApi.md#get_deployment) | **GET** /core/marketplace/deployments/{id} | Details of Deployment by ID
 [**list_deployments**](DeploymentApi.md#list_deployments) | **GET** /core/marketplace/deployments | List Deployments
 [**start_deployment**](DeploymentApi.md#start_deployment) | **POST** /core/marketplace/deployments | Start Deployment
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **details_of_deployment_by_id**
-> StartDeployment details_of_deployment_by_id(id)
+# **get_deployment**
+> StartDeployment get_deployment(id)
 
 Details of Deployment by ID
 
@@ -131,11 +131,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Details of Deployment by ID
-        api_response = api_instance.details_of_deployment_by_id(id)
-        print("The response of DeploymentApi->details_of_deployment_by_id:\n")
+        api_response = api_instance.get_deployment(id)
+        print("The response of DeploymentApi->get_deployment:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DeploymentApi->details_of_deployment_by_id: %s\n" % e)
+        print("Exception when calling DeploymentApi->get_deployment: %s\n" % e)
 ```
 
 

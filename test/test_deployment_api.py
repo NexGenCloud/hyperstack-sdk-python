@@ -33,8 +33,8 @@ class TestDeploymentApi(unittest.TestCase):
         """
         pass
 
-    def test_details_of_deployment_by_id(self) -> None:
-        """Test case for details_of_deployment_by_id
+    def test_get_deployment(self) -> None:
+        """Test case for get_deployment
 
         Details of Deployment by ID
         """

@@ -33,22 +33,22 @@ class TestComplianceApi(unittest.TestCase):
         """
         pass
 
-    def test_delete_a_compliance(self) -> None:
-        """Test case for delete_a_compliance
+    def test_delete_compliance(self) -> None:
+        """Test case for delete_compliance
 
         Delete a compliance
         """
         pass
 
-    def test_retrieve_compliance(self) -> None:
-        """Test case for retrieve_compliance
+    def test_get_compliance(self) -> None:
+        """Test case for get_compliance
 
         Retrieve GPU compliance
         """
         pass
 
-    def test_update_a_compliance(self) -> None:
-        """Test case for update_a_compliance
+    def test_update_compliance(self) -> None:
+        """Test case for update_compliance
 
         Update a compliance
         """

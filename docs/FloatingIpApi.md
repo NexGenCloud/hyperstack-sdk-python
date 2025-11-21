@@ -4,12 +4,12 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_public_ipto_virtual_machine**](FloatingIpApi.md#attach_public_ipto_virtual_machine) | **POST** /core/virtual-machines/{vm_id}/attach-floatingip | Attach public IP to virtual machine
-[**detach_public_ip_from_virtual_machine**](FloatingIpApi.md#detach_public_ip_from_virtual_machine) | **POST** /core/virtual-machines/{vm_id}/detach-floatingip | Detach public IP from virtual machine
+[**attach_public_ipto_vm**](FloatingIpApi.md#attach_public_ipto_vm) | **POST** /core/virtual-machines/{vm_id}/attach-floatingip | Attach public IP to virtual machine
+[**detach_public_ip_from_vm**](FloatingIpApi.md#detach_public_ip_from_vm) | **POST** /core/virtual-machines/{vm_id}/detach-floatingip | Detach public IP from virtual machine
 
 
-# **attach_public_ipto_virtual_machine**
-> ResponseModel attach_public_ipto_virtual_machine(vm_id)
+# **attach_public_ipto_vm**
+> ResponseModel attach_public_ipto_vm(vm_id)
 
 Attach public IP to virtual machine
 
@@ -50,11 +50,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Attach public IP to virtual machine
-        api_response = api_instance.attach_public_ipto_virtual_machine(vm_id)
-        print("The response of FloatingIpApi->attach_public_ipto_virtual_machine:\n")
+        api_response = api_instance.attach_public_ipto_vm(vm_id)
+        print("The response of FloatingIpApi->attach_public_ipto_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FloatingIpApi->attach_public_ipto_virtual_machine: %s\n" % e)
+        print("Exception when calling FloatingIpApi->attach_public_ipto_vm: %s\n" % e)
 ```
 
 
@@ -92,8 +92,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **detach_public_ip_from_virtual_machine**
-> ResponseModel detach_public_ip_from_virtual_machine(vm_id)
+# **detach_public_ip_from_vm**
+> ResponseModel detach_public_ip_from_vm(vm_id)
 
 Detach public IP from virtual machine
 
@@ -134,11 +134,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Detach public IP from virtual machine
-        api_response = api_instance.detach_public_ip_from_virtual_machine(vm_id)
-        print("The response of FloatingIpApi->detach_public_ip_from_virtual_machine:\n")
+        api_response = api_instance.detach_public_ip_from_vm(vm_id)
+        print("The response of FloatingIpApi->detach_public_ip_from_vm:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FloatingIpApi->detach_public_ip_from_virtual_machine: %s\n" % e)
+        print("Exception when calling FloatingIpApi->detach_public_ip_from_vm: %s\n" % e)
 ```
 
 

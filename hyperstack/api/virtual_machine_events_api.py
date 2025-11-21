@@ -38,7 +38,7 @@ class VirtualMachineEventsApi:
 
 
     @validate_call
-    def list_virtual_machine_events(
+    def list_vm_events(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -82,7 +82,7 @@ class VirtualMachineEventsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_virtual_machine_events_serialize(
+        _param = self._list_vm_events_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -109,7 +109,7 @@ class VirtualMachineEventsApi:
 
 
     @validate_call
-    def list_virtual_machine_events_with_http_info(
+    def list_vm_events_with_http_info(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -153,7 +153,7 @@ class VirtualMachineEventsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_virtual_machine_events_serialize(
+        _param = self._list_vm_events_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -180,7 +180,7 @@ class VirtualMachineEventsApi:
 
 
     @validate_call
-    def list_virtual_machine_events_without_preload_content(
+    def list_vm_events_without_preload_content(
         self,
         vm_id: StrictInt,
         _request_timeout: Union[
@@ -224,7 +224,7 @@ class VirtualMachineEventsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._list_virtual_machine_events_serialize(
+        _param = self._list_vm_events_serialize(
             vm_id=vm_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -246,7 +246,7 @@ class VirtualMachineEventsApi:
         return response_data.response
 
 
-    def _list_virtual_machine_events_serialize(
+    def _list_vm_events_serialize(
         self,
         vm_id,
         _request_auth,

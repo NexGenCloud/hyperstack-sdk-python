@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_template**](TemplateApi.md#create_template) | **POST** /core/marketplace/templates | Create template
 [**delete_template**](TemplateApi.md#delete_template) | **DELETE** /core/marketplace/templates/{id} | Delete template
+[**get_template**](TemplateApi.md#get_template) | **GET** /core/marketplace/templates/{id} | Retrieve template details
 [**list_templates**](TemplateApi.md#list_templates) | **GET** /core/marketplace/templates | List templates
-[**retrieve_template_details**](TemplateApi.md#retrieve_template_details) | **GET** /core/marketplace/templates/{id} | Retrieve template details
 [**update_template**](TemplateApi.md#update_template) | **PUT** /core/marketplace/templates/{id} | Update template
 
 
@@ -182,6 +182,89 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_template**
+> Template get_template(id)
+
+Retrieve template details
+
+Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs.hyperstack.cloud/docs/api-references/).
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.template import Template
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.TemplateApi(api_client)
+    id = 56 # int | 
+
+    try:
+        # Retrieve template details
+        api_response = api_instance.get_template(id)
+        print("The response of TemplateApi->get_template:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TemplateApi->get_template: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  | 
+
+### Return type
+
+[**Template**](Template.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Template details retrieved successfully. |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_templates**
 > Templates list_templates(visibility=visibility)
 
@@ -261,89 +344,6 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **406** | Not Acceptable |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **retrieve_template_details**
-> Template retrieve_template_details(id)
-
-Retrieve template details
-
-Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs.hyperstack.cloud/docs/api-references/).
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import hyperstack
-from hyperstack.models.template import Template
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.TemplateApi(api_client)
-    id = 56 # int | 
-
-    try:
-        # Retrieve template details
-        api_response = api_instance.retrieve_template_details(id)
-        print("The response of TemplateApi->retrieve_template_details:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TemplateApi->retrieve_template_details: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**|  | 
-
-### Return type
-
-[**Template**](Template.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Template details retrieved successfully. |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

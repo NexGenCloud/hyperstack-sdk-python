@@ -4,11 +4,11 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_credit2**](CreditApi.md#get_credit2) | **GET** /billing/user-credit/credit | GET: View credit and threshold
+[**get_user_credit**](CreditApi.md#get_user_credit) | **GET** /billing/user-credit/credit | GET: View credit and threshold
 
 
-# **get_credit2**
-> GetCreditAndThresholdInfoInResponse get_credit2()
+# **get_user_credit**
+> GetCreditAndThresholdInfoInResponse get_user_credit()
 
 GET: View credit and threshold
 
@@ -48,11 +48,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # GET: View credit and threshold
-        api_response = api_instance.get_credit2()
-        print("The response of CreditApi->get_credit2:\n")
+        api_response = api_instance.get_user_credit()
+        print("The response of CreditApi->get_user_credit:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CreditApi->get_credit2: %s\n" % e)
+        print("Exception when calling CreditApi->get_user_credit: %s\n" % e)
 ```
 
 

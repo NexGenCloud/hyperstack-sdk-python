@@ -4,16 +4,16 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_firewall_rule_to_an_existing_firewall**](FirewallsApi.md#add_firewall_rule_to_an_existing_firewall) | **POST** /core/firewalls/{firewall_id}/firewall-rules | Add firewall rule to firewall
-[**create_a_new_firewall**](FirewallsApi.md#create_a_new_firewall) | **POST** /core/firewalls | Create firewall
+[**add_rule_to_firewall**](FirewallsApi.md#add_rule_to_firewall) | **POST** /core/firewalls/{firewall_id}/firewall-rules | Add firewall rule to firewall
+[**create_firewall**](FirewallsApi.md#create_firewall) | **POST** /core/firewalls | Create firewall
 [**delete_existing_firewall**](FirewallsApi.md#delete_existing_firewall) | **DELETE** /core/firewalls/{id} | Delete firewall
-[**delete_firewall_rules_from_firewall**](FirewallsApi.md#delete_firewall_rules_from_firewall) | **DELETE** /core/firewalls/{firewall_id}/firewall-rules/{firewall_rule_id} | Delete firewall rules from firewall
+[**delete_rule_from_firewall**](FirewallsApi.md#delete_rule_from_firewall) | **DELETE** /core/firewalls/{firewall_id}/firewall-rules/{firewall_rule_id} | Delete firewall rules from firewall
+[**get_firewall**](FirewallsApi.md#get_firewall) | **GET** /core/firewalls/{id} | Retrieve firewall details
 [**list_existing_firewalls**](FirewallsApi.md#list_existing_firewalls) | **GET** /core/firewalls | List firewalls
-[**retrieve_the_details_of_an_existing_firewall**](FirewallsApi.md#retrieve_the_details_of_an_existing_firewall) | **GET** /core/firewalls/{id} | Retrieve firewall details
 
 
-# **add_firewall_rule_to_an_existing_firewall**
-> FirewallRule add_firewall_rule_to_an_existing_firewall(firewall_id, payload)
+# **add_rule_to_firewall**
+> FirewallRule add_rule_to_firewall(firewall_id, payload)
 
 Add firewall rule to firewall
 
@@ -56,11 +56,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Add firewall rule to firewall
-        api_response = api_instance.add_firewall_rule_to_an_existing_firewall(firewall_id, payload)
-        print("The response of FirewallsApi->add_firewall_rule_to_an_existing_firewall:\n")
+        api_response = api_instance.add_rule_to_firewall(firewall_id, payload)
+        print("The response of FirewallsApi->add_rule_to_firewall:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FirewallsApi->add_firewall_rule_to_an_existing_firewall: %s\n" % e)
+        print("Exception when calling FirewallsApi->add_rule_to_firewall: %s\n" % e)
 ```
 
 
@@ -98,8 +98,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_a_new_firewall**
-> FirewallResponse create_a_new_firewall(payload)
+# **create_firewall**
+> FirewallResponse create_firewall(payload)
 
 Create firewall
 
@@ -141,11 +141,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Create firewall
-        api_response = api_instance.create_a_new_firewall(payload)
-        print("The response of FirewallsApi->create_a_new_firewall:\n")
+        api_response = api_instance.create_firewall(payload)
+        print("The response of FirewallsApi->create_firewall:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FirewallsApi->create_a_new_firewall: %s\n" % e)
+        print("Exception when calling FirewallsApi->create_firewall: %s\n" % e)
 ```
 
 
@@ -269,8 +269,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_firewall_rules_from_firewall**
-> ResponseModel delete_firewall_rules_from_firewall(firewall_id, firewall_rule_id)
+# **delete_rule_from_firewall**
+> ResponseModel delete_rule_from_firewall(firewall_id, firewall_rule_id)
 
 Delete firewall rules from firewall
 
@@ -312,11 +312,11 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Delete firewall rules from firewall
-        api_response = api_instance.delete_firewall_rules_from_firewall(firewall_id, firewall_rule_id)
-        print("The response of FirewallsApi->delete_firewall_rules_from_firewall:\n")
+        api_response = api_instance.delete_rule_from_firewall(firewall_id, firewall_rule_id)
+        print("The response of FirewallsApi->delete_rule_from_firewall:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FirewallsApi->delete_firewall_rules_from_firewall: %s\n" % e)
+        print("Exception when calling FirewallsApi->delete_rule_from_firewall: %s\n" % e)
 ```
 
 
@@ -352,6 +352,90 @@ Name | Type | Description  | Notes
 **403** | Forbidden |  -  |
 **404** | Not Exists |  -  |
 **409** | Conflict |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_firewall**
+> FirewallDetailResponse get_firewall(id)
+
+Retrieve firewall details
+
+Retrieves the details of an existing firewall, including the security rules it contains and information about the virtual machines to which it is attached.
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.firewall_detail_response import FirewallDetailResponse
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.FirewallsApi(api_client)
+    id = 56 # int | 
+
+    try:
+        # Retrieve firewall details
+        api_response = api_instance.get_firewall(id)
+        print("The response of FirewallsApi->get_firewall:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FirewallsApi->get_firewall: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  | 
+
+### Return type
+
+[**FirewallDetailResponse**](FirewallDetailResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -441,90 +525,6 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **retrieve_the_details_of_an_existing_firewall**
-> FirewallDetailResponse retrieve_the_details_of_an_existing_firewall(id)
-
-Retrieve firewall details
-
-Retrieves the details of an existing firewall, including the security rules it contains and information about the virtual machines to which it is attached.
-
-### Example
-
-* Api Key Authentication (apiKey):
-
-```python
-import hyperstack
-from hyperstack.models.firewall_detail_response import FirewallDetailResponse
-from hyperstack.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = hyperstack.Configuration(
-    host = "https://infrahub-api.nexgencloud.com/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with hyperstack.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = hyperstack.FirewallsApi(api_client)
-    id = 56 # int | 
-
-    try:
-        # Retrieve firewall details
-        api_response = api_instance.retrieve_the_details_of_an_existing_firewall(id)
-        print("The response of FirewallsApi->retrieve_the_details_of_an_existing_firewall:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling FirewallsApi->retrieve_the_details_of_an_existing_firewall: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**|  | 
-
-### Return type
-
-[**FirewallDetailResponse**](FirewallDetailResponse.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

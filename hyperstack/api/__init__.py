@@ -3,6 +3,7 @@
 # import apis into api package
 from .calculate_api import CalculateApi
 from .customer_contract_api import CustomerContractApi
+from .fip_exclusions_api import FIPExclusionsApi
 from .pricebook_api import PricebookApi
 from .snapshots_api import SnapshotsApi
 from .alive_api import AliveApi

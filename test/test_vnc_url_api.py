@@ -26,17 +26,17 @@ class TestVncUrlApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_get_vnc_url(self) -> None:
-        """Test case for get_vnc_url
-
-        Request Instance Console
-        """
-        pass
-
     def test_get_vncurl(self) -> None:
         """Test case for get_vncurl
 
         Get VNC Console Link
+        """
+        pass
+
+    def test_request_vm_console(self) -> None:
+        """Test case for request_vm_console
+
+        Request Instance Console
         """
         pass
 
