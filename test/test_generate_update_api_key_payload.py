@@ -36,11 +36,11 @@ class TestGenerateUpdateApiKeyPayload(unittest.TestCase):
         if include_optional:
             return GenerateUpdateApiKeyPayload(
                 description = '',
-                name = ''
+                name = '0'
             )
         else:
             return GenerateUpdateApiKeyPayload(
-                name = '',
+                name = '0',
         )
         """
 

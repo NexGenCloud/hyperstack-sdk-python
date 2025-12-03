@@ -38,13 +38,6 @@ class TestAuthApi(unittest.TestCase):
         """
         pass
 
-    def test_get_authenticated_user(self) -> None:
-        """Test case for get_authenticated_user
-
-        Retrieve Authenticated User Details
-        """
-        pass
-
     def test_get_user_mfa_status(self) -> None:
         """Test case for get_user_mfa_status
 
@@ -56,6 +49,13 @@ class TestAuthApi(unittest.TestCase):
         """Test case for get_user_organizations
 
         Get User Organizations
+        """
+        pass
+
+    def test_retrieve_authenticated_user_details(self) -> None:
+        """Test case for retrieve_authenticated_user_details
+
+        Retrieve Authenticated User Details
         """
         pass
 
