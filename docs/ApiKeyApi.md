@@ -102,6 +102,7 @@ Generates your API key, providing access to the Infrahub APIs. For further detai
 
 ### Example
 
+* Api Key Authentication (apiKey):
 
 ```python
 import hyperstack
@@ -116,6 +117,16 @@ configuration = hyperstack.Configuration(
     host = "https://infrahub-api.nexgencloud.com/v1"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with hyperstack.ApiClient(configuration) as api_client:
@@ -147,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKey](../README.md#apiKey)
 
 ### HTTP request headers
 

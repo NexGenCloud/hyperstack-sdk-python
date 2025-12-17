@@ -14,13 +14,17 @@
 """  # noqa: E501
 
 
-__version__ = "v1.46.2-alpha"
+__version__ = "v1.46.4-alpha"
 
 # import apis into sdk package
+from .api.access_keys_api import AccessKeysApi
+from .api.buckets_api import BucketsApi
 from .api.calculate_api import CalculateApi
 from .api.customer_contract_api import CustomerContractApi
 from .api.fip_exclusions_api import FIPExclusionsApi
+from .api.health_api import HealthApi
 from .api.pricebook_api import PricebookApi
+from .api.regions_api import RegionsApi
 from .api.snapshots_api import SnapshotsApi
 from .api.alive_api import AliveApi
 from .api.api_key_api import ApiKeyApi
@@ -242,6 +246,19 @@ from .models.new_configurations_response import NewConfigurationsResponse
 from .models.new_model_response import NewModelResponse
 from .models.new_stock_response import NewStockResponse
 from .models.new_stock_retrive_response import NewStockRetriveResponse
+from .models.object_storage_access_key_create_request import ObjectStorageAccessKeyCreateRequest
+from .models.object_storage_access_key_create_response import ObjectStorageAccessKeyCreateResponse
+from .models.object_storage_access_key_list_response import ObjectStorageAccessKeyListResponse
+from .models.object_storage_access_key_response import ObjectStorageAccessKeyResponse
+from .models.object_storage_bucket_list_response import ObjectStorageBucketListResponse
+from .models.object_storage_bucket_response import ObjectStorageBucketResponse
+from .models.object_storage_delete_response import ObjectStorageDeleteResponse
+from .models.object_storage_error_response import ObjectStorageErrorResponse
+from .models.object_storage_health_response import ObjectStorageHealthResponse
+from .models.object_storage_pagination_meta import ObjectStoragePaginationMeta
+from .models.object_storage_region_list_response import ObjectStorageRegionListResponse
+from .models.object_storage_region_response import ObjectStorageRegionResponse
+from .models.object_storage_regions_enum import ObjectStorageRegionsEnum
 from .models.organization_fields import OrganizationFields
 from .models.organization_level_billing_history import OrganizationLevelBillingHistory
 from .models.organization_level_billing_history_resources import OrganizationLevelBillingHistoryResources

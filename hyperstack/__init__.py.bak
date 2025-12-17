@@ -14,13 +14,17 @@
 """  # noqa: E501
 
 
-__version__ = "v1.46.2-alpha"
+__version__ = "v1.46.4-alpha"
 
 # import apis into sdk package
+from hyperstack.api.access_keys_api import AccessKeysApi
+from hyperstack.api.buckets_api import BucketsApi
 from hyperstack.api.calculate_api import CalculateApi
 from hyperstack.api.customer_contract_api import CustomerContractApi
 from hyperstack.api.fip_exclusions_api import FIPExclusionsApi
+from hyperstack.api.health_api import HealthApi
 from hyperstack.api.pricebook_api import PricebookApi
+from hyperstack.api.regions_api import RegionsApi
 from hyperstack.api.snapshots_api import SnapshotsApi
 from hyperstack.api.alive_api import AliveApi
 from hyperstack.api.api_key_api import ApiKeyApi
@@ -242,6 +246,19 @@ from hyperstack.models.new_configurations_response import NewConfigurationsRespo
 from hyperstack.models.new_model_response import NewModelResponse
 from hyperstack.models.new_stock_response import NewStockResponse
 from hyperstack.models.new_stock_retrive_response import NewStockRetriveResponse
+from hyperstack.models.object_storage_access_key_create_request import ObjectStorageAccessKeyCreateRequest
+from hyperstack.models.object_storage_access_key_create_response import ObjectStorageAccessKeyCreateResponse
+from hyperstack.models.object_storage_access_key_list_response import ObjectStorageAccessKeyListResponse
+from hyperstack.models.object_storage_access_key_response import ObjectStorageAccessKeyResponse
+from hyperstack.models.object_storage_bucket_list_response import ObjectStorageBucketListResponse
+from hyperstack.models.object_storage_bucket_response import ObjectStorageBucketResponse
+from hyperstack.models.object_storage_delete_response import ObjectStorageDeleteResponse
+from hyperstack.models.object_storage_error_response import ObjectStorageErrorResponse
+from hyperstack.models.object_storage_health_response import ObjectStorageHealthResponse
+from hyperstack.models.object_storage_pagination_meta import ObjectStoragePaginationMeta
+from hyperstack.models.object_storage_region_list_response import ObjectStorageRegionListResponse
+from hyperstack.models.object_storage_region_response import ObjectStorageRegionResponse
+from hyperstack.models.object_storage_regions_enum import ObjectStorageRegionsEnum
 from hyperstack.models.organization_fields import OrganizationFields
 from hyperstack.models.organization_level_billing_history import OrganizationLevelBillingHistory
 from hyperstack.models.organization_level_billing_history_resources import OrganizationLevelBillingHistoryResources

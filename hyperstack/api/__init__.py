@@ -1,10 +1,14 @@
 # flake8: noqa
 
 # import apis into api package
+from .access_keys_api import AccessKeysApi
+from .buckets_api import BucketsApi
 from .calculate_api import CalculateApi
 from .customer_contract_api import CustomerContractApi
 from .fip_exclusions_api import FIPExclusionsApi
+from .health_api import HealthApi
 from .pricebook_api import PricebookApi
+from .regions_api import RegionsApi
 from .snapshots_api import SnapshotsApi
 from .alive_api import AliveApi
 from .api_key_api import ApiKeyApi
