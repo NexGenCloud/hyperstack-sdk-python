@@ -44,6 +44,9 @@ class TestObjectStorageBucketListResponse(unittest.TestCase):
                         region = 'CANADA-1', 
                         size_bytes = 56, 
                         size_bytes_actual = 56, )
+                    ],
+                failed_regions = [
+                    ''
                     ]
             )
         else:

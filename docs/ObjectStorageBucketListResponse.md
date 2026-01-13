@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **buckets** | [**List[ObjectStorageBucketResponse]**](ObjectStorageBucketResponse.md) |  | 
+**failed_regions** | **List[str]** |  | [optional] 
 
 ## Example
 

@@ -17,8 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from ..models.object_storage_bucket_response import ObjectStorageBucketResponse
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,8 @@ class ObjectStorageBucketListResponse(BaseModel):
     ObjectStorageBucketListResponse
     """ # noqa: E501
     buckets: List[ObjectStorageBucketResponse]
-    __properties: ClassVar[List[str]] = ["buckets"]
+    failed_regions: Optional[List[StrictStr]] = None
+    __properties: ClassVar[List[str]] = ["buckets", "failed_regions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,7 +89,8 @@ class ObjectStorageBucketListResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "buckets": [ObjectStorageBucketResponse.from_dict(_item) for _item in obj["buckets"]] if obj.get("buckets") is not None else None
+            "buckets": [ObjectStorageBucketResponse.from_dict(_item) for _item in obj["buckets"]] if obj.get("buckets") is not None else None,
+            "failed_regions": obj.get("failed_regions")
         })
         return _obj
 
