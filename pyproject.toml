@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hyperstack"
-version = "v1.47.0-alpha"
+version = "v1.48.0-alpha"
 description = "Infrahub-API"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"
