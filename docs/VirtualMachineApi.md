@@ -1222,7 +1222,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_vms**
-> Instances list_vms(page=page, page_size=page_size, search=search, environment=environment, exclude_firewalls=exclude_firewalls)
+> Instances list_vms(page=page, page_size=page_size, search=search, environment=environment, exclude_firewalls=exclude_firewalls, exact_environment_match=exact_environment_match)
 
 List virtual machines
 
@@ -1264,10 +1264,11 @@ with hyperstack.ApiClient(configuration) as api_client:
     search = 'search_example' # str |  (optional)
     environment = 'environment_example' # str |  (optional)
     exclude_firewalls = [56] # List[int] | Comma-separated list of Security Group IDs to ignore instances attached (optional)
+    exact_environment_match = False # bool | Flag to filter environment by exact match instead of partial match (optional) (default to False)
 
     try:
         # List virtual machines
-        api_response = api_instance.list_vms(page=page, page_size=page_size, search=search, environment=environment, exclude_firewalls=exclude_firewalls)
+        api_response = api_instance.list_vms(page=page, page_size=page_size, search=search, environment=environment, exclude_firewalls=exclude_firewalls, exact_environment_match=exact_environment_match)
         print("The response of VirtualMachineApi->list_vms:\n")
         pprint(api_response)
     except Exception as e:
@@ -1286,6 +1287,7 @@ Name | Type | Description  | Notes
  **search** | **str**|  | [optional] 
  **environment** | **str**|  | [optional] 
  **exclude_firewalls** | [**List[int]**](int.md)| Comma-separated list of Security Group IDs to ignore instances attached | [optional] 
+ **exact_environment_match** | **bool**| Flag to filter environment by exact match instead of partial match | [optional] [default to False]
 
 ### Return type
 

@@ -17,29 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ..models.flavor_restrictions import FlavorRestrictions
-from ..models.lable_resonse import LableResonse
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ImageFields(BaseModel):
+class CompatibleFlavor(BaseModel):
     """
-    ImageFields
+    CompatibleFlavor
     """ # noqa: E501
-    description: Optional[StrictStr] = None
-    display_size: Optional[StrictStr] = None
-    flavor_restrictions: Optional[FlavorRestrictions] = Field(default=None, description="Flavor compatibility restrictions for this image")
-    id: Optional[StrictInt] = None
-    is_public: Optional[StrictBool] = None
-    labels: Optional[List[LableResonse]] = None
-    name: Optional[StrictStr] = None
-    region_name: Optional[StrictStr] = None
-    size: Optional[StrictInt] = None
-    type: Optional[StrictStr] = None
-    version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["description", "display_size", "flavor_restrictions", "id", "is_public", "labels", "name", "region_name", "size", "type", "version"]
+    constraints: Optional[Dict[str, Any]] = Field(default=None, description="JSON constraints object")
+    flavor_id: Optional[StrictInt] = None
+    flavor_name: Optional[StrictStr] = None
+    link_type: Optional[StrictStr] = Field(default=None, description="Either 'hard' or 'soft'")
+    reason: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["constraints", "flavor_id", "flavor_name", "link_type", "reason"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -59,7 +51,7 @@ class ImageFields(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ImageFields from a JSON string"""
+        """Create an instance of CompatibleFlavor from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,21 +72,11 @@ class ImageFields(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of flavor_restrictions
-        if self.flavor_restrictions:
-            _dict['flavor_restrictions'] = self.flavor_restrictions.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in labels (list)
-        _items = []
-        if self.labels:
-            for _item_labels in self.labels:
-                if _item_labels:
-                    _items.append(_item_labels.to_dict())
-            _dict['labels'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ImageFields from a dict"""
+        """Create an instance of CompatibleFlavor from a dict"""
         if obj is None:
             return None
 
@@ -102,17 +84,11 @@ class ImageFields(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "description": obj.get("description"),
-            "display_size": obj.get("display_size"),
-            "flavor_restrictions": FlavorRestrictions.from_dict(obj["flavor_restrictions"]) if obj.get("flavor_restrictions") is not None else None,
-            "id": obj.get("id"),
-            "is_public": obj.get("is_public"),
-            "labels": [LableResonse.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
-            "name": obj.get("name"),
-            "region_name": obj.get("region_name"),
-            "size": obj.get("size"),
-            "type": obj.get("type"),
-            "version": obj.get("version")
+            "constraints": obj.get("constraints"),
+            "flavor_id": obj.get("flavor_id"),
+            "flavor_name": obj.get("flavor_name"),
+            "link_type": obj.get("link_type"),
+            "reason": obj.get("reason")
         })
         return _obj
 

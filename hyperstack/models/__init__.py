@@ -61,6 +61,7 @@ from .cluster_version import ClusterVersion
 from .cluster_versions import ClusterVersions
 from .colors import Colors
 from .common_response_model import CommonResponseModel
+from .compatible_flavor import CompatibleFlavor
 from .compliance_fields import ComplianceFields
 from .compliance_model_fields import ComplianceModelFields
 from .compliance_payload import CompliancePayload
@@ -120,6 +121,7 @@ from .flavor_item_get_response import FlavorItemGetResponse
 from .flavor_label_fields import FlavorLabelFields
 from .flavor_list_response import FlavorListResponse
 from .flavor_object_fields import FlavorObjectFields
+from .flavor_restrictions import FlavorRestrictions
 from .gpu_fields import GPUFields
 from .gpu_list import GPUList
 from .gpu_region_fields import GPURegionFields

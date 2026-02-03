@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.48.0-alpha"
+__version__ = "v1.49.0-alpha"
 
 # import apis into sdk package
 from .api.access_keys_api import AccessKeysApi
@@ -129,6 +129,7 @@ from .models.cluster_version import ClusterVersion
 from .models.cluster_versions import ClusterVersions
 from .models.colors import Colors
 from .models.common_response_model import CommonResponseModel
+from .models.compatible_flavor import CompatibleFlavor
 from .models.compliance_fields import ComplianceFields
 from .models.compliance_model_fields import ComplianceModelFields
 from .models.compliance_payload import CompliancePayload
@@ -188,6 +189,7 @@ from .models.flavor_item_get_response import FlavorItemGetResponse
 from .models.flavor_label_fields import FlavorLabelFields
 from .models.flavor_list_response import FlavorListResponse
 from .models.flavor_object_fields import FlavorObjectFields
+from .models.flavor_restrictions import FlavorRestrictions
 from .models.gpu_fields import GPUFields
 from .models.gpu_list import GPUList
 from .models.gpu_region_fields import GPURegionFields

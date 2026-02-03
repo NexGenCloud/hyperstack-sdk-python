@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr, field_validator
+from pydantic import Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
 from ..models.attach_firewalls_to_vm_payload import AttachFirewallsToVMPayload
@@ -4146,6 +4146,7 @@ class VirtualMachineApi:
         search: Optional[StrictStr] = None,
         environment: Optional[StrictStr] = None,
         exclude_firewalls: Annotated[Optional[List[StrictInt]], Field(description="Comma-separated list of Security Group IDs to ignore instances attached")] = None,
+        exact_environment_match: Annotated[Optional[StrictBool], Field(description="Flag to filter environment by exact match instead of partial match")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4173,6 +4174,8 @@ class VirtualMachineApi:
         :type environment: str
         :param exclude_firewalls: Comma-separated list of Security Group IDs to ignore instances attached
         :type exclude_firewalls: List[int]
+        :param exact_environment_match: Flag to filter environment by exact match instead of partial match
+        :type exact_environment_match: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4201,6 +4204,7 @@ class VirtualMachineApi:
             search=search,
             environment=environment,
             exclude_firewalls=exclude_firewalls,
+            exact_environment_match=exact_environment_match,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4232,6 +4236,7 @@ class VirtualMachineApi:
         search: Optional[StrictStr] = None,
         environment: Optional[StrictStr] = None,
         exclude_firewalls: Annotated[Optional[List[StrictInt]], Field(description="Comma-separated list of Security Group IDs to ignore instances attached")] = None,
+        exact_environment_match: Annotated[Optional[StrictBool], Field(description="Flag to filter environment by exact match instead of partial match")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4259,6 +4264,8 @@ class VirtualMachineApi:
         :type environment: str
         :param exclude_firewalls: Comma-separated list of Security Group IDs to ignore instances attached
         :type exclude_firewalls: List[int]
+        :param exact_environment_match: Flag to filter environment by exact match instead of partial match
+        :type exact_environment_match: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4287,6 +4294,7 @@ class VirtualMachineApi:
             search=search,
             environment=environment,
             exclude_firewalls=exclude_firewalls,
+            exact_environment_match=exact_environment_match,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4318,6 +4326,7 @@ class VirtualMachineApi:
         search: Optional[StrictStr] = None,
         environment: Optional[StrictStr] = None,
         exclude_firewalls: Annotated[Optional[List[StrictInt]], Field(description="Comma-separated list of Security Group IDs to ignore instances attached")] = None,
+        exact_environment_match: Annotated[Optional[StrictBool], Field(description="Flag to filter environment by exact match instead of partial match")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4345,6 +4354,8 @@ class VirtualMachineApi:
         :type environment: str
         :param exclude_firewalls: Comma-separated list of Security Group IDs to ignore instances attached
         :type exclude_firewalls: List[int]
+        :param exact_environment_match: Flag to filter environment by exact match instead of partial match
+        :type exact_environment_match: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4373,6 +4384,7 @@ class VirtualMachineApi:
             search=search,
             environment=environment,
             exclude_firewalls=exclude_firewalls,
+            exact_environment_match=exact_environment_match,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4399,6 +4411,7 @@ class VirtualMachineApi:
         search,
         environment,
         exclude_firewalls,
+        exact_environment_match,
         _request_auth,
         _content_type,
         _headers,
@@ -4441,6 +4454,10 @@ class VirtualMachineApi:
         if exclude_firewalls is not None:
             
             _query_params.append(('exclude_firewalls', exclude_firewalls))
+            
+        if exact_environment_match is not None:
+            
+            _query_params.append(('exact_environment_match', exact_environment_match))
             
         # process the header parameters
         # process the form parameters

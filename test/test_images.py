@@ -41,6 +41,7 @@ class TestImages(unittest.TestCase):
                             hyperstack.models.image_fields.Image_Fields(
                                 description = '', 
                                 display_size = '', 
+                                flavor_restrictions = hyperstack.models.flavor_restrictions.flavor_restrictions(), 
                                 id = 56, 
                                 is_public = True, 
                                 labels = [

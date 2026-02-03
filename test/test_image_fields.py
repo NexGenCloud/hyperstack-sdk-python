@@ -37,6 +37,17 @@ class TestImageFields(unittest.TestCase):
             return ImageFields(
                 description = '',
                 display_size = '',
+                flavor_restrictions = hyperstack.models.flavor_restrictions.FlavorRestrictions(
+                    compatible_flavors = [
+                        hyperstack.models.compatible_flavor.CompatibleFlavor(
+                            constraints = hyperstack.models.constraints.constraints(), 
+                            flavor_id = 56, 
+                            flavor_name = '', 
+                            link_type = '', 
+                            reason = '', )
+                        ], 
+                    has_flavor_restrictions = True, 
+                    restriction_type = '', ),
                 id = 56,
                 is_public = True,
                 labels = [

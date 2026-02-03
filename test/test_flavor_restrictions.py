@@ -14,10 +14,10 @@
 
 import unittest
 
-from hyperstack.models.image import Image
+from hyperstack.models.flavor_restrictions import FlavorRestrictions
 
-class TestImage(unittest.TestCase):
-    """Image unit test stubs"""
+class TestFlavorRestrictions(unittest.TestCase):
+    """FlavorRestrictions unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,40 +25,34 @@ class TestImage(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Image:
-        """Test Image
+    def make_instance(self, include_optional) -> FlavorRestrictions:
+        """Test FlavorRestrictions
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `Image`
+        # uncomment below to create an instance of `FlavorRestrictions`
         """
-        model = Image()
+        model = FlavorRestrictions()
         if include_optional:
-            return Image(
-                image = hyperstack.models.image_fields.Image_Fields(
-                    description = '', 
-                    display_size = '', 
-                    flavor_restrictions = hyperstack.models.flavor_restrictions.flavor_restrictions(), 
-                    id = 56, 
-                    is_public = True, 
-                    labels = [
-                        hyperstack.models.lable_resonse.LableResonse(
-                            id = 56, 
-                            label = '', )
-                        ], 
-                    name = '', 
-                    region_name = '', 
-                    size = 56, 
-                    type = '', 
-                    version = '', )
+            return FlavorRestrictions(
+                compatible_flavors = [
+                    hyperstack.models.compatible_flavor.CompatibleFlavor(
+                        constraints = hyperstack.models.constraints.constraints(), 
+                        flavor_id = 56, 
+                        flavor_name = '', 
+                        link_type = '', 
+                        reason = '', )
+                    ],
+                has_flavor_restrictions = True,
+                restriction_type = ''
             )
         else:
-            return Image(
+            return FlavorRestrictions(
         )
         """
 
-    def testImage(self):
-        """Test Image"""
+    def testFlavorRestrictions(self):
+        """Test FlavorRestrictions"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
