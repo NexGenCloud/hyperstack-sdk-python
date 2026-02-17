@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.49.0-alpha"
+__version__ = "v1.50.0-alpha"
 
 # import apis into sdk package
 from hyperstack.api.access_keys_api import AccessKeysApi
@@ -380,6 +380,7 @@ from hyperstack.models.user_organizations_response import UserOrganizationsRespo
 from hyperstack.models.user_permission_fields import UserPermissionFields
 from hyperstack.models.users_info_fields import UsersInfoFields
 from hyperstack.models.users_info_list_response import UsersInfoListResponse
+from hyperstack.models.vm_quota import VMQuota
 from hyperstack.models.vncurl import VNCURL
 from hyperstack.models.vncurl_fields import VNCURLFields
 from hyperstack.models.volume import Volume

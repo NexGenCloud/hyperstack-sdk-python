@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **check_vm_name_availability**
-> NameAvailableModel check_vm_name_availability(name)
+> NameAvailableModel check_vm_name_availability(name, count=count)
 
 Fetch virtual machine name availability
 
@@ -238,10 +238,11 @@ with hyperstack.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = hyperstack.VirtualMachineApi(api_client)
     name = 'name_example' # str | 
+    count = 'count_example' # str | Nr of instances to handle (optional, default: 1) (optional)
 
     try:
         # Fetch virtual machine name availability
-        api_response = api_instance.check_vm_name_availability(name)
+        api_response = api_instance.check_vm_name_availability(name, count=count)
         print("The response of VirtualMachineApi->check_vm_name_availability:\n")
         pprint(api_response)
     except Exception as e:
@@ -256,6 +257,7 @@ with hyperstack.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**|  | 
+ **count** | **str**| Nr of instances to handle (optional, default: 1) | [optional] 
 
 ### Return type
 

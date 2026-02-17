@@ -312,6 +312,7 @@ from .user_organizations_response import UserOrganizationsResponse
 from .user_permission_fields import UserPermissionFields
 from .users_info_fields import UsersInfoFields
 from .users_info_list_response import UsersInfoListResponse
+from .vm_quota import VMQuota
 from .vncurl import VNCURL
 from .vncurl_fields import VNCURLFields
 from .volume import Volume

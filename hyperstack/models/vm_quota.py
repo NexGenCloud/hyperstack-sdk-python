@@ -17,22 +17,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Voucher(BaseModel):
+class VMQuota(BaseModel):
     """
-    Voucher
+    VMQuota
     """ # noqa: E501
-    code: StrictStr = Field(description="Voucher code")
-    id: StrictInt = Field(description="Voucher ID")
-    max_redemption_count: Optional[StrictInt] = Field(default=None, description="Max redemption count for a General Voucher")
-    redemption_count: Optional[StrictInt] = Field(default=None, description="Current redemption count for a General Voucher")
-    remaining_redemptions: Optional[StrictInt] = Field(default=None, description="Remaining redemptions")
-    status: StrictStr = Field(description="Voucher status")
-    __properties: ClassVar[List[str]] = ["code", "id", "max_redemption_count", "redemption_count", "remaining_redemptions", "status"]
+    available_vms: Optional[StrictInt] = None
+    cidr: Optional[StrictStr] = None
+    current_vms: Optional[StrictInt] = None
+    max_vms: Optional[StrictInt] = None
+    message: Optional[StrictStr] = None
+    percentage_used: Optional[Union[StrictFloat, StrictInt]] = None
+    status: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["available_vms", "cidr", "current_vms", "max_vms", "message", "percentage_used", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +53,7 @@ class Voucher(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Voucher from a JSON string"""
+        """Create an instance of VMQuota from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,7 +78,7 @@ class Voucher(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Voucher from a dict"""
+        """Create an instance of VMQuota from a dict"""
         if obj is None:
             return None
 
@@ -85,11 +86,12 @@ class Voucher(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "code": obj.get("code"),
-            "id": obj.get("id"),
-            "max_redemption_count": obj.get("max_redemption_count"),
-            "redemption_count": obj.get("redemption_count"),
-            "remaining_redemptions": obj.get("remaining_redemptions"),
+            "available_vms": obj.get("available_vms"),
+            "cidr": obj.get("cidr"),
+            "current_vms": obj.get("current_vms"),
+            "max_vms": obj.get("max_vms"),
+            "message": obj.get("message"),
+            "percentage_used": obj.get("percentage_used"),
             "status": obj.get("status")
         })
         return _obj

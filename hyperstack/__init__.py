@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.49.0-alpha"
+__version__ = "v1.50.0-alpha"
 
 # import apis into sdk package
 from .api.access_keys_api import AccessKeysApi
@@ -380,6 +380,7 @@ from .models.user_organizations_response import UserOrganizationsResponse
 from .models.user_permission_fields import UserPermissionFields
 from .models.users_info_fields import UsersInfoFields
 from .models.users_info_list_response import UsersInfoListResponse
+from .models.vm_quota import VMQuota
 from .models.vncurl import VNCURL
 from .models.vncurl_fields import VNCURLFields
 from .models.volume import Volume

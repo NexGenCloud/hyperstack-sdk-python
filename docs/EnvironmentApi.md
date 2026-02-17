@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_environment**](EnvironmentApi.md#delete_environment) | **DELETE** /core/environments/{id} | Delete environment
 [**fetch_environment_name_availability**](EnvironmentApi.md#fetch_environment_name_availability) | **GET** /core/environments/name-availability/{name} | Fetch environment name availability
 [**get_environment**](EnvironmentApi.md#get_environment) | **GET** /core/environments/{id} | Retrieve environment
+[**get_environment_vm_quota**](EnvironmentApi.md#get_environment_vm_quota) | **GET** /core/environments/{id}/vm-quota | Get environment VM quota
 [**list_environments**](EnvironmentApi.md#list_environments) | **GET** /core/environments | List environments
 [**update_environment**](EnvironmentApi.md#update_environment) | **PUT** /core/environments/{id} | Update environment
 
@@ -339,6 +340,89 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Environment details retrieved successfully. |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_environment_vm_quota**
+> VMQuota get_environment_vm_quota(id)
+
+Get environment VM quota
+
+Retrieves VM quota information for a specific environment, including current VM count, maximum VMs allowed, available VMs, and percentage used in an environment before reaching the subnet IP limit.
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.vm_quota import VMQuota
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.EnvironmentApi(api_client)
+    id = 56 # int | 
+
+    try:
+        # Get environment VM quota
+        api_response = api_instance.get_environment_vm_quota(id)
+        print("The response of EnvironmentApi->get_environment_vm_quota:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EnvironmentApi->get_environment_vm_quota: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  | 
+
+### Return type
+
+[**VMQuota**](VMQuota.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | VM quota information retrieved successfully. |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |

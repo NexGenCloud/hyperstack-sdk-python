@@ -14,10 +14,10 @@
 
 import unittest
 
-from hyperstack.models.voucher_redeem_response_schema import VoucherRedeemResponseSchema
+from hyperstack.models.vm_quota import VMQuota
 
-class TestVoucherRedeemResponseSchema(unittest.TestCase):
-    """VoucherRedeemResponseSchema unit test stubs"""
+class TestVMQuota(unittest.TestCase):
+    """VMQuota unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,35 +25,31 @@ class TestVoucherRedeemResponseSchema(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> VoucherRedeemResponseSchema:
-        """Test VoucherRedeemResponseSchema
+    def make_instance(self, include_optional) -> VMQuota:
+        """Test VMQuota
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `VoucherRedeemResponseSchema`
+        # uncomment below to create an instance of `VMQuota`
         """
-        model = VoucherRedeemResponseSchema()
+        model = VMQuota()
         if include_optional:
-            return VoucherRedeemResponseSchema(
+            return VMQuota(
+                available_vms = 56,
+                cidr = '',
+                current_vms = 56,
+                max_vms = 56,
                 message = '',
-                status = True,
-                voucher = hyperstack.models.voucher.voucher(
-                    code = '', 
-                    id = 56, 
-                    max_redemption_count = 56, 
-                    redemption_count = 56, 
-                    remaining_redemptions = 56, 
-                    status = '', )
+                percentage_used = 1.337,
+                status = True
             )
         else:
-            return VoucherRedeemResponseSchema(
-                message = '',
-                status = True,
+            return VMQuota(
         )
         """
 
-    def testVoucherRedeemResponseSchema(self):
-        """Test VoucherRedeemResponseSchema"""
+    def testVMQuota(self):
+        """Test VMQuota"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -7,6 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **str** | Voucher code | 
 **id** | **int** | Voucher ID | 
+**max_redemption_count** | **int** | Max redemption count for a General Voucher | [optional] 
+**redemption_count** | **int** | Current redemption count for a General Voucher | [optional] 
+**remaining_redemptions** | **int** | Remaining redemptions | [optional] 
 **status** | **str** | Voucher status | 
 
 ## Example

@@ -37,6 +37,9 @@ class TestVoucher(unittest.TestCase):
             return Voucher(
                 code = '',
                 id = 56,
+                max_redemption_count = 56,
+                redemption_count = 56,
+                remaining_redemptions = 56,
                 status = ''
             )
         else:

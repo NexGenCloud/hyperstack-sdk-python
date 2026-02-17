@@ -665,6 +665,7 @@ class VirtualMachineApi:
     def check_vm_name_availability(
         self,
         name: StrictStr,
+        count: Annotated[Optional[StrictStr], Field(description="Nr of instances to handle (optional, default: 1)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -684,6 +685,8 @@ class VirtualMachineApi:
 
         :param name: (required)
         :type name: str
+        :param count: Nr of instances to handle (optional, default: 1)
+        :type count: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -708,6 +711,7 @@ class VirtualMachineApi:
 
         _param = self._check_vm_name_availability_serialize(
             name=name,
+            count=count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -736,6 +740,7 @@ class VirtualMachineApi:
     def check_vm_name_availability_with_http_info(
         self,
         name: StrictStr,
+        count: Annotated[Optional[StrictStr], Field(description="Nr of instances to handle (optional, default: 1)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -755,6 +760,8 @@ class VirtualMachineApi:
 
         :param name: (required)
         :type name: str
+        :param count: Nr of instances to handle (optional, default: 1)
+        :type count: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -779,6 +786,7 @@ class VirtualMachineApi:
 
         _param = self._check_vm_name_availability_serialize(
             name=name,
+            count=count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -807,6 +815,7 @@ class VirtualMachineApi:
     def check_vm_name_availability_without_preload_content(
         self,
         name: StrictStr,
+        count: Annotated[Optional[StrictStr], Field(description="Nr of instances to handle (optional, default: 1)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -826,6 +835,8 @@ class VirtualMachineApi:
 
         :param name: (required)
         :type name: str
+        :param count: Nr of instances to handle (optional, default: 1)
+        :type count: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -850,6 +861,7 @@ class VirtualMachineApi:
 
         _param = self._check_vm_name_availability_serialize(
             name=name,
+            count=count,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -873,6 +885,7 @@ class VirtualMachineApi:
     def _check_vm_name_availability_serialize(
         self,
         name,
+        count,
         _request_auth,
         _content_type,
         _headers,
@@ -897,6 +910,10 @@ class VirtualMachineApi:
         if name is not None:
             _path_params['name'] = name
         # process the query parameters
+        if count is not None:
+            
+            _query_params.append(('count', count))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
