@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
+**firewall_ids** | **List[int]** |  | [optional] 
+**firewalls** | [**List[ClusterNodeGroupFirewallFields]**](ClusterNodeGroupFirewallFields.md) |  | [optional] 
 **flavor** | [**ClusterFlavorFields**](ClusterFlavorFields.md) |  | [optional] 
 **id** | **int** |  | [optional] 
 **max_count** | **int** |  | [optional] 

@@ -5,7 +5,7 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**change_organization_for_token**](AuthApi.md#change_organization_for_token) | **GET** /auth/token/change-org/{org_id} | 
-[**disable_mfa**](AuthApi.md#disable_mfa) | **GET** /auth/me/mfa/disable | 
+[**disable_mfa**](AuthApi.md#disable_mfa) | **POST** /auth/me/mfa/disable | 
 [**get_user_mfa_status**](AuthApi.md#get_user_mfa_status) | **GET** /auth/me/mfa | Get MFA status for authenticated user
 [**get_user_organizations**](AuthApi.md#get_user_organizations) | **GET** /auth/me/organizations | Get User Organizations
 [**retrieve_authenticated_user_details**](AuthApi.md#retrieve_authenticated_user_details) | **GET** /auth/me | Retrieve Authenticated User Details
@@ -165,6 +165,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | MFA Disabled |  -  |
 **401** | Unauthorized |  -  |
+**403** | Forbidden - CSRF validation failed |  -  |
 **404** | User not found |  -  |
 **500** | Internal Server Error |  -  |
 

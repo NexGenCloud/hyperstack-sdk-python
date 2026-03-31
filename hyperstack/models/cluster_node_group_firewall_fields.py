@@ -17,30 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ..models.cluster_flavor_fields import ClusterFlavorFields
-from ..models.cluster_node_group_firewall_fields import ClusterNodeGroupFirewallFields
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ClusterNodeGroupFields(BaseModel):
+class ClusterNodeGroupFirewallFields(BaseModel):
     """
-    ClusterNodeGroupFields
+    ClusterNodeGroupFirewallFields
     """ # noqa: E501
-    count: Optional[StrictInt] = None
-    created_at: Optional[datetime] = None
-    firewall_ids: Optional[List[StrictInt]] = None
-    firewalls: Optional[List[ClusterNodeGroupFirewallFields]] = None
-    flavor: Optional[ClusterFlavorFields] = None
     id: Optional[StrictInt] = None
-    max_count: Optional[StrictInt] = None
-    min_count: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
-    role: Optional[StrictStr] = None
-    updated_at: Optional[datetime] = None
-    __properties: ClassVar[List[str]] = ["count", "created_at", "firewall_ids", "firewalls", "flavor", "id", "max_count", "min_count", "name", "role", "updated_at"]
+    status: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["id", "name", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -60,7 +49,7 @@ class ClusterNodeGroupFields(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ClusterNodeGroupFields from a JSON string"""
+        """Create an instance of ClusterNodeGroupFirewallFields from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -81,21 +70,11 @@ class ClusterNodeGroupFields(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in firewalls (list)
-        _items = []
-        if self.firewalls:
-            for _item_firewalls in self.firewalls:
-                if _item_firewalls:
-                    _items.append(_item_firewalls.to_dict())
-            _dict['firewalls'] = _items
-        # override the default output from pydantic by calling `to_dict()` of flavor
-        if self.flavor:
-            _dict['flavor'] = self.flavor.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ClusterNodeGroupFields from a dict"""
+        """Create an instance of ClusterNodeGroupFirewallFields from a dict"""
         if obj is None:
             return None
 
@@ -103,17 +82,9 @@ class ClusterNodeGroupFields(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "count": obj.get("count"),
-            "created_at": obj.get("created_at"),
-            "firewall_ids": obj.get("firewall_ids"),
-            "firewalls": [ClusterNodeGroupFirewallFields.from_dict(_item) for _item in obj["firewalls"]] if obj.get("firewalls") is not None else None,
-            "flavor": ClusterFlavorFields.from_dict(obj["flavor"]) if obj.get("flavor") is not None else None,
             "id": obj.get("id"),
-            "max_count": obj.get("max_count"),
-            "min_count": obj.get("min_count"),
             "name": obj.get("name"),
-            "role": obj.get("role"),
-            "updated_at": obj.get("updated_at")
+            "status": obj.get("status")
         })
         return _obj
 

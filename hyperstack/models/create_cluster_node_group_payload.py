@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -28,12 +28,13 @@ class CreateClusterNodeGroupPayload(BaseModel):
     CreateClusterNodeGroupPayload
     """ # noqa: E501
     count: Optional[Annotated[int, Field(strict=True, ge=1)]] = None
+    firewall_ids: Optional[List[StrictInt]] = Field(default=None, description="IDs of the firewalls to apply to all nodes in this node group")
     flavor_name: StrictStr
     max_count: Optional[Annotated[int, Field(le=20, strict=True)]] = None
     min_count: Optional[Annotated[int, Field(strict=True, ge=1)]] = None
     name: Annotated[str, Field(strict=True, max_length=20)]
     role: StrictStr
-    __properties: ClassVar[List[str]] = ["count", "flavor_name", "max_count", "min_count", "name", "role"]
+    __properties: ClassVar[List[str]] = ["count", "firewall_ids", "flavor_name", "max_count", "min_count", "name", "role"]
 
     @field_validator('role')
     def role_validate_enum(cls, value):
@@ -94,6 +95,7 @@ class CreateClusterNodeGroupPayload(BaseModel):
 
         _obj = cls.model_validate({
             "count": obj.get("count"),
+            "firewall_ids": obj.get("firewall_ids"),
             "flavor_name": obj.get("flavor_name"),
             "max_count": obj.get("max_count"),
             "min_count": obj.get("min_count"),

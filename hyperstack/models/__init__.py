@@ -51,6 +51,7 @@ from .cluster_flavor_fields import ClusterFlavorFields
 from .cluster_list_response import ClusterListResponse
 from .cluster_node_fields import ClusterNodeFields
 from .cluster_node_group_fields import ClusterNodeGroupFields
+from .cluster_node_group_firewall_fields import ClusterNodeGroupFirewallFields
 from .cluster_node_groups_create_response import ClusterNodeGroupsCreateResponse
 from .cluster_node_groups_get_response import ClusterNodeGroupsGetResponse
 from .cluster_node_groups_list_response import ClusterNodeGroupsListResponse

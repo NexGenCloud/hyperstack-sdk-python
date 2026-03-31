@@ -14,10 +14,10 @@
 
 import unittest
 
-from hyperstack.models.update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
+from hyperstack.models.cluster_node_group_firewall_fields import ClusterNodeGroupFirewallFields
 
-class TestUpdateClusterNodeGroupPayload(unittest.TestCase):
-    """UpdateClusterNodeGroupPayload unit test stubs"""
+class TestClusterNodeGroupFirewallFields(unittest.TestCase):
+    """ClusterNodeGroupFirewallFields unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,29 +25,27 @@ class TestUpdateClusterNodeGroupPayload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UpdateClusterNodeGroupPayload:
-        """Test UpdateClusterNodeGroupPayload
+    def make_instance(self, include_optional) -> ClusterNodeGroupFirewallFields:
+        """Test ClusterNodeGroupFirewallFields
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `UpdateClusterNodeGroupPayload`
+        # uncomment below to create an instance of `ClusterNodeGroupFirewallFields`
         """
-        model = UpdateClusterNodeGroupPayload()
+        model = ClusterNodeGroupFirewallFields()
         if include_optional:
-            return UpdateClusterNodeGroupPayload(
-                firewall_ids = [
-                    56
-                    ],
-                max_count = 56,
-                min_count = 1
+            return ClusterNodeGroupFirewallFields(
+                id = 56,
+                name = '',
+                status = ''
             )
         else:
-            return UpdateClusterNodeGroupPayload(
+            return ClusterNodeGroupFirewallFields(
         )
         """
 
-    def testUpdateClusterNodeGroupPayload(self):
-        """Test UpdateClusterNodeGroupPayload"""
+    def testClusterNodeGroupFirewallFields(self):
+        """Test ClusterNodeGroupFirewallFields"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

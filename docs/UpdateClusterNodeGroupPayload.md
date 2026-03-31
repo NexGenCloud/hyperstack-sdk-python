@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**firewall_ids** | **List[int]** | IDs of the firewalls to apply to all nodes in this node group | [optional] 
 **max_count** | **int** |  | [optional] 
 **min_count** | **int** |  | [optional] 
 

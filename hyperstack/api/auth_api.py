@@ -366,6 +366,7 @@ class AuthApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CommonResponseModel",
             '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
             '404': "ErrorResponseModel",
             '500': "ErrorResponseModel",
         }
@@ -432,6 +433,7 @@ class AuthApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CommonResponseModel",
             '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
             '404': "ErrorResponseModel",
             '500': "ErrorResponseModel",
         }
@@ -498,6 +500,7 @@ class AuthApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CommonResponseModel",
             '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
             '404': "ErrorResponseModel",
             '500': "ErrorResponseModel",
         }
@@ -552,7 +555,7 @@ class AuthApi:
         ]
 
         return self.api_client.param_serialize(
-            method='GET',
+            method='POST',
             resource_path='/auth/me/mfa/disable',
             path_params=_path_params,
             query_params=_query_params,

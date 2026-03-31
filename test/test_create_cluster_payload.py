@@ -47,6 +47,9 @@ class TestCreateClusterPayload(unittest.TestCase):
                 node_groups = [
                     hyperstack.models.create_cluster_node_group_payload.Create_ClusterNodeGroup_payload(
                         count = 1, 
+                        firewall_ids = [
+                            56
+                            ], 
                         flavor_name = '', 
                         max_count = 56, 
                         min_count = 1, 

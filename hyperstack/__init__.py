@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.50.2-alpha"
+__version__ = "v1.51.0-alpha"
 
 # import apis into sdk package
 from .api.access_keys_api import AccessKeysApi
@@ -119,6 +119,7 @@ from .models.cluster_flavor_fields import ClusterFlavorFields
 from .models.cluster_list_response import ClusterListResponse
 from .models.cluster_node_fields import ClusterNodeFields
 from .models.cluster_node_group_fields import ClusterNodeGroupFields
+from .models.cluster_node_group_firewall_fields import ClusterNodeGroupFirewallFields
 from .models.cluster_node_groups_create_response import ClusterNodeGroupsCreateResponse
 from .models.cluster_node_groups_get_response import ClusterNodeGroupsGetResponse
 from .models.cluster_node_groups_list_response import ClusterNodeGroupsListResponse

@@ -36,6 +36,9 @@ class TestCreateClusterNodeGroupPayload(unittest.TestCase):
         if include_optional:
             return CreateClusterNodeGroupPayload(
                 count = 1,
+                firewall_ids = [
+                    56
+                    ],
                 flavor_name = '',
                 max_count = 56,
                 min_count = 1,

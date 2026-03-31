@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | [optional] 
+**firewall_ids** | **List[int]** | IDs of the firewalls to apply to all nodes in this node group | [optional] 
 **flavor_name** | **str** |  | 
 **max_count** | **int** |  | [optional] 
 **min_count** | **int** |  | [optional] 

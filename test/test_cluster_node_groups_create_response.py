@@ -39,6 +39,15 @@ class TestClusterNodeGroupsCreateResponse(unittest.TestCase):
                 node_group = hyperstack.models.cluster_node_group_fields.ClusterNodeGroupFields(
                     count = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    firewall_ids = [
+                        56
+                        ], 
+                    firewalls = [
+                        hyperstack.models.cluster_node_group_firewall_fields.ClusterNodeGroupFirewallFields(
+                            id = 56, 
+                            name = '', 
+                            status = '', )
+                        ], 
                     flavor = hyperstack.models.cluster_flavor_fields.Cluster_Flavor_Fields(
                         cpu = 56, 
                         disk = 56, 

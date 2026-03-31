@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.50.2-alpha"
+__version__ = "v1.51.0-alpha"
 
 # import apis into sdk package
 from hyperstack.api.access_keys_api import AccessKeysApi
@@ -119,6 +119,7 @@ from hyperstack.models.cluster_flavor_fields import ClusterFlavorFields
 from hyperstack.models.cluster_list_response import ClusterListResponse
 from hyperstack.models.cluster_node_fields import ClusterNodeFields
 from hyperstack.models.cluster_node_group_fields import ClusterNodeGroupFields
+from hyperstack.models.cluster_node_group_firewall_fields import ClusterNodeGroupFirewallFields
 from hyperstack.models.cluster_node_groups_create_response import ClusterNodeGroupsCreateResponse
 from hyperstack.models.cluster_node_groups_get_response import ClusterNodeGroupsGetResponse
 from hyperstack.models.cluster_node_groups_list_response import ClusterNodeGroupsListResponse

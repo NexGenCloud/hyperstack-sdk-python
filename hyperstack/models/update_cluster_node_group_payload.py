@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -27,9 +27,10 @@ class UpdateClusterNodeGroupPayload(BaseModel):
     """
     UpdateClusterNodeGroupPayload
     """ # noqa: E501
+    firewall_ids: Optional[List[StrictInt]] = Field(default=None, description="IDs of the firewalls to apply to all nodes in this node group")
     max_count: Optional[Annotated[int, Field(le=20, strict=True)]] = None
     min_count: Optional[Annotated[int, Field(strict=True, ge=1)]] = None
-    __properties: ClassVar[List[str]] = ["max_count", "min_count"]
+    __properties: ClassVar[List[str]] = ["firewall_ids", "max_count", "min_count"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +83,7 @@ class UpdateClusterNodeGroupPayload(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "firewall_ids": obj.get("firewall_ids"),
             "max_count": obj.get("max_count"),
             "min_count": obj.get("min_count")
         })
