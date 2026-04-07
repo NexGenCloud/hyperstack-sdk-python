@@ -37,6 +37,7 @@ class TestRegionFields(unittest.TestCase):
             return RegionFields(
                 country = '',
                 description = '',
+                features = None,
                 green_status = 'GREEN',
                 id = 56,
                 name = ''

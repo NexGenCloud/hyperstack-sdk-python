@@ -28,10 +28,11 @@ class RegionFields(BaseModel):
     """ # noqa: E501
     country: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    features: Optional[Dict[str, Any]] = None
     green_status: Optional[StrictStr] = Field(default=None, description="Green status")
     id: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["country", "description", "green_status", "id", "name"]
+    __properties: ClassVar[List[str]] = ["country", "description", "features", "green_status", "id", "name"]
 
     @field_validator('green_status')
     def green_status_validate_enum(cls, value):
@@ -96,6 +97,7 @@ class RegionFields(BaseModel):
         _obj = cls.model_validate({
             "country": obj.get("country"),
             "description": obj.get("description"),
+            "features": obj.get("features"),
             "green_status": obj.get("green_status"),
             "id": obj.get("id"),
             "name": obj.get("name")

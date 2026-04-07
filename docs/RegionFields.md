@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **country** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**features** | **object** |  | [optional] 
 **green_status** | **str** | Green status | [optional] 
 **id** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 

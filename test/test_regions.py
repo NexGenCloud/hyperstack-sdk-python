@@ -40,6 +40,7 @@ class TestRegions(unittest.TestCase):
                     hyperstack.models.region_fields.Region_Fields(
                         country = '', 
                         description = '', 
+                        features = hyperstack.models.features.features(), 
                         green_status = 'GREEN', 
                         id = 56, 
                         name = '', )
