@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.51.2-alpha"
+__version__ = "v1.52.0-alpha"
 
 # import apis into sdk package
 from hyperstack.api.access_keys_api import AccessKeysApi
@@ -61,6 +61,8 @@ from hyperstack.api.snapshot_events_api import SnapshotEventsApi
 from hyperstack.api.stock_api import StockApi
 from hyperstack.api.template_api import TemplateApi
 from hyperstack.api.user_api import UserApi
+from hyperstack.api.user_consent_api import UserConsentApi
+from hyperstack.api.user_consent_events_api import UserConsentEventsApi
 from hyperstack.api.user_detail_choice_api import UserDetailChoiceApi
 from hyperstack.api.user_permission_api import UserPermissionApi
 from hyperstack.api.virtual_machine_api import VirtualMachineApi
@@ -135,6 +137,11 @@ from hyperstack.models.compliance_fields import ComplianceFields
 from hyperstack.models.compliance_model_fields import ComplianceModelFields
 from hyperstack.models.compliance_payload import CompliancePayload
 from hyperstack.models.compliance_response import ComplianceResponse
+from hyperstack.models.consent_action_response import ConsentActionResponse
+from hyperstack.models.consent_block import ConsentBlock
+from hyperstack.models.consent_events_response import ConsentEventsResponse
+from hyperstack.models.consent_template import ConsentTemplate
+from hyperstack.models.consent_templates_response import ConsentTemplatesResponse
 from hyperstack.models.container_overview_fields import ContainerOverviewFields
 from hyperstack.models.contract import Contract
 from hyperstack.models.contract_discount_plan_fields import ContractDiscountPlanFields
@@ -294,6 +301,7 @@ from hyperstack.models.rbac_role_detail_response_model import RbacRoleDetailResp
 from hyperstack.models.rbac_role_detail_response_model_fixed import RbacRoleDetailResponseModelFixed
 from hyperstack.models.rbac_role_field import RbacRoleField
 from hyperstack.models.rbac_role_fields import RbacRoleFields
+from hyperstack.models.record_consent_request import RecordConsentRequest
 from hyperstack.models.redeem_voucher_payload import RedeemVoucherPayload
 from hyperstack.models.region_fields import RegionFields
 from hyperstack.models.regions import Regions
@@ -365,6 +373,7 @@ from hyperstack.models.templates import Templates
 from hyperstack.models.token_based_billing_history_response import TokenBasedBillingHistoryResponse
 from hyperstack.models.uris import URIs
 from hyperstack.models.update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
+from hyperstack.models.update_consent_request import UpdateConsentRequest
 from hyperstack.models.update_environment import UpdateEnvironment
 from hyperstack.models.update_keypair_name import UpdateKeypairName
 from hyperstack.models.update_keypair_name_response import UpdateKeypairNameResponse
@@ -374,6 +383,9 @@ from hyperstack.models.update_template import UpdateTemplate
 from hyperstack.models.update_volume_attachment_payload import UpdateVolumeAttachmentPayload
 from hyperstack.models.update_volume_payload import UpdateVolumePayload
 from hyperstack.models.update_volume_response import UpdateVolumeResponse
+from hyperstack.models.user_consent import UserConsent
+from hyperstack.models.user_consent_event import UserConsentEvent
+from hyperstack.models.user_consents_response import UserConsentsResponse
 from hyperstack.models.user_default_choice_for_user_fields import UserDefaultChoiceForUserFields
 from hyperstack.models.user_default_choices_for_user_response import UserDefaultChoicesForUserResponse
 from hyperstack.models.user_info_post_payload import UserInfoPostPayload

@@ -45,6 +45,8 @@ from .snapshot_events_api import SnapshotEventsApi
 from .stock_api import StockApi
 from .template_api import TemplateApi
 from .user_api import UserApi
+from .user_consent_api import UserConsentApi
+from .user_consent_events_api import UserConsentEventsApi
 from .user_detail_choice_api import UserDetailChoiceApi
 from .user_permission_api import UserPermissionApi
 from .virtual_machine_api import VirtualMachineApi

@@ -17,25 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
-from typing import Any, ClassVar, Dict, List
-from typing_extensions import Annotated
+from pydantic import BaseModel, ConfigDict, Field
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class InviteUserPayload(BaseModel):
+class ConsentTemplatesResponse(BaseModel):
     """
-    InviteUserPayload
+    ConsentTemplatesResponse
     """ # noqa: E501
-    email: Annotated[str, Field(min_length=6, strict=True, max_length=254)] = Field(description="The email for sending invitation.")
-    __properties: ClassVar[List[str]] = ["email"]
-
-    @field_validator('email')
-    def email_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if not re.match(r"^[A-Za-z0-9](?:[A-Za-z0-9._+-]{0,62}[A-Za-z0-9])?@(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,}$", value):
-            raise ValueError(r"must validate the regular expression /^[A-Za-z0-9](?:[A-Za-z0-9._+-]{0,62}[A-Za-z0-9])?@(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/")
-        return value
+    templates: Optional[Dict[str, Any]] = Field(default=None, description="Templates keyed by consent type")
+    __properties: ClassVar[List[str]] = ["templates"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -55,7 +47,7 @@ class InviteUserPayload(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of InviteUserPayload from a JSON string"""
+        """Create an instance of ConsentTemplatesResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,7 +72,7 @@ class InviteUserPayload(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of InviteUserPayload from a dict"""
+        """Create an instance of ConsentTemplatesResponse from a dict"""
         if obj is None:
             return None
 
@@ -88,7 +80,7 @@ class InviteUserPayload(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "email": obj.get("email")
+            "templates": obj.get("templates")
         })
         return _obj
 

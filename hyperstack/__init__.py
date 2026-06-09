@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.51.2-alpha"
+__version__ = "v1.52.0-alpha"
 
 # import apis into sdk package
 from .api.access_keys_api import AccessKeysApi
@@ -61,6 +61,8 @@ from .api.snapshot_events_api import SnapshotEventsApi
 from .api.stock_api import StockApi
 from .api.template_api import TemplateApi
 from .api.user_api import UserApi
+from .api.user_consent_api import UserConsentApi
+from .api.user_consent_events_api import UserConsentEventsApi
 from .api.user_detail_choice_api import UserDetailChoiceApi
 from .api.user_permission_api import UserPermissionApi
 from .api.virtual_machine_api import VirtualMachineApi
@@ -135,6 +137,11 @@ from .models.compliance_fields import ComplianceFields
 from .models.compliance_model_fields import ComplianceModelFields
 from .models.compliance_payload import CompliancePayload
 from .models.compliance_response import ComplianceResponse
+from .models.consent_action_response import ConsentActionResponse
+from .models.consent_block import ConsentBlock
+from .models.consent_events_response import ConsentEventsResponse
+from .models.consent_template import ConsentTemplate
+from .models.consent_templates_response import ConsentTemplatesResponse
 from .models.container_overview_fields import ContainerOverviewFields
 from .models.contract import Contract
 from .models.contract_discount_plan_fields import ContractDiscountPlanFields
@@ -294,6 +301,7 @@ from .models.rbac_role_detail_response_model import RbacRoleDetailResponseModel
 from .models.rbac_role_detail_response_model_fixed import RbacRoleDetailResponseModelFixed
 from .models.rbac_role_field import RbacRoleField
 from .models.rbac_role_fields import RbacRoleFields
+from .models.record_consent_request import RecordConsentRequest
 from .models.redeem_voucher_payload import RedeemVoucherPayload
 from .models.region_fields import RegionFields
 from .models.regions import Regions
@@ -365,6 +373,7 @@ from .models.templates import Templates
 from .models.token_based_billing_history_response import TokenBasedBillingHistoryResponse
 from .models.uris import URIs
 from .models.update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
+from .models.update_consent_request import UpdateConsentRequest
 from .models.update_environment import UpdateEnvironment
 from .models.update_keypair_name import UpdateKeypairName
 from .models.update_keypair_name_response import UpdateKeypairNameResponse
@@ -374,6 +383,9 @@ from .models.update_template import UpdateTemplate
 from .models.update_volume_attachment_payload import UpdateVolumeAttachmentPayload
 from .models.update_volume_payload import UpdateVolumePayload
 from .models.update_volume_response import UpdateVolumeResponse
+from .models.user_consent import UserConsent
+from .models.user_consent_event import UserConsentEvent
+from .models.user_consents_response import UserConsentsResponse
 from .models.user_default_choice_for_user_fields import UserDefaultChoiceForUserFields
 from .models.user_default_choices_for_user_response import UserDefaultChoicesForUserResponse
 from .models.user_info_post_payload import UserInfoPostPayload

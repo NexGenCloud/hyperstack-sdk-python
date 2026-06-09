@@ -17,24 +17,27 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
-from typing import Any, ClassVar, Dict, List
-from typing_extensions import Annotated
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class InviteUserPayload(BaseModel):
+class ConsentBlock(BaseModel):
     """
-    InviteUserPayload
+    ConsentBlock
     """ # noqa: E501
-    email: Annotated[str, Field(min_length=6, strict=True, max_length=254)] = Field(description="The email for sending invitation.")
-    __properties: ClassVar[List[str]] = ["email"]
+    text: Optional[StrictStr] = Field(default=None, description="Block text, may contain ${variable} placeholders")
+    type: Optional[StrictStr] = Field(default=None, description="Block display type")
+    __properties: ClassVar[List[str]] = ["text", "type"]
 
-    @field_validator('email')
-    def email_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if not re.match(r"^[A-Za-z0-9](?:[A-Za-z0-9._+-]{0,62}[A-Za-z0-9])?@(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,}$", value):
-            raise ValueError(r"must validate the regular expression /^[A-Za-z0-9](?:[A-Za-z0-9._+-]{0,62}[A-Za-z0-9])?@(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/")
+    @field_validator('type')
+    def type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['text', 'warning', 'info', 'success', 'failure']):
+            raise ValueError("must be one of enum values ('text', 'warning', 'info', 'success', 'failure')")
         return value
 
     model_config = ConfigDict(
@@ -55,7 +58,7 @@ class InviteUserPayload(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of InviteUserPayload from a JSON string"""
+        """Create an instance of ConsentBlock from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,7 +83,7 @@ class InviteUserPayload(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of InviteUserPayload from a dict"""
+        """Create an instance of ConsentBlock from a dict"""
         if obj is None:
             return None
 
@@ -88,7 +91,8 @@ class InviteUserPayload(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "email": obj.get("email")
+            "text": obj.get("text"),
+            "type": obj.get("type")
         })
         return _obj
 

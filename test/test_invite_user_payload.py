@@ -35,11 +35,11 @@ class TestInviteUserPayload(unittest.TestCase):
         model = InviteUserPayload()
         if include_optional:
             return InviteUserPayload(
-                email = ''
+                email = 'g98JLe5iL60+aa+-Ctq9dcsc-2+790gAa7Xa5u50ArrlGpCQjkQVRmF@9w-v0dZfUofvKERjsmInY9G.UMH6kw8gsnXv2Z7jRPK542XP.q.WR8pb-ziKqEde8fXg9wdpfxR.n.k.G.EU4NCUavTrirUe4ba7JnjrgEdBCJE-ArE6U3CZ-Vnrj9RmauZ.J.mRsCjOv6MeuvKGSDRGKUIQ8yNXhf.VbZpGptfI46.5.z.6-kwy.icMEEkIauY.eNaDi5ackLH.3.z-zmvqRnM-dar09VaHCQz0Tl8.D.rml4PJXMbVMO8G0e5q9Z4WMWovY63Gk6ixTd5NxRU25mQYd6VBLRK.Q.6-FH2v5iUaMQ6iIJ-7auxDSR-lIIfhhw9bP3XhsKpT6YkX2ymMVYtu.vpmKomcxVsOGUxBEnBeWManfNDKlIkmrRWZVNfdnqpXxVctlspfiaiRtKRxTMOFnGptSZASFERyiXQnrPBfV012345'
             )
         else:
             return InviteUserPayload(
-                email = '',
+                email = 'g98JLe5iL60+aa+-Ctq9dcsc-2+790gAa7Xa5u50ArrlGpCQjkQVRmF@9w-v0dZfUofvKERjsmInY9G.UMH6kw8gsnXv2Z7jRPK542XP.q.WR8pb-ziKqEde8fXg9wdpfxR.n.k.G.EU4NCUavTrirUe4ba7JnjrgEdBCJE-ArE6U3CZ-Vnrj9RmauZ.J.mRsCjOv6MeuvKGSDRGKUIQ8yNXhf.VbZpGptfI46.5.z.6-kwy.icMEEkIauY.eNaDi5ackLH.3.z-zmvqRnM-dar09VaHCQz0Tl8.D.rml4PJXMbVMO8G0e5q9Z4WMWovY63Gk6ixTd5NxRU25mQYd6VBLRK.Q.6-FH2v5iUaMQ6iIJ-7auxDSR-lIIfhhw9bP3XhsKpT6YkX2ymMVYtu.vpmKomcxVsOGUxBEnBeWManfNDKlIkmrRWZVNfdnqpXxVctlspfiaiRtKRxTMOFnGptSZASFERyiXQnrPBfV012345',
         )
         """
 

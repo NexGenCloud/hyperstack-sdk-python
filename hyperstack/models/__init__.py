@@ -67,6 +67,11 @@ from .compliance_fields import ComplianceFields
 from .compliance_model_fields import ComplianceModelFields
 from .compliance_payload import CompliancePayload
 from .compliance_response import ComplianceResponse
+from .consent_action_response import ConsentActionResponse
+from .consent_block import ConsentBlock
+from .consent_events_response import ConsentEventsResponse
+from .consent_template import ConsentTemplate
+from .consent_templates_response import ConsentTemplatesResponse
 from .container_overview_fields import ContainerOverviewFields
 from .contract import Contract
 from .contract_discount_plan_fields import ContractDiscountPlanFields
@@ -226,6 +231,7 @@ from .rbac_role_detail_response_model import RbacRoleDetailResponseModel
 from .rbac_role_detail_response_model_fixed import RbacRoleDetailResponseModelFixed
 from .rbac_role_field import RbacRoleField
 from .rbac_role_fields import RbacRoleFields
+from .record_consent_request import RecordConsentRequest
 from .redeem_voucher_payload import RedeemVoucherPayload
 from .region_fields import RegionFields
 from .regions import Regions
@@ -297,6 +303,7 @@ from .templates import Templates
 from .token_based_billing_history_response import TokenBasedBillingHistoryResponse
 from .uris import URIs
 from .update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
+from .update_consent_request import UpdateConsentRequest
 from .update_environment import UpdateEnvironment
 from .update_keypair_name import UpdateKeypairName
 from .update_keypair_name_response import UpdateKeypairNameResponse
@@ -306,6 +313,9 @@ from .update_template import UpdateTemplate
 from .update_volume_attachment_payload import UpdateVolumeAttachmentPayload
 from .update_volume_payload import UpdateVolumePayload
 from .update_volume_response import UpdateVolumeResponse
+from .user_consent import UserConsent
+from .user_consent_event import UserConsentEvent
+from .user_consents_response import UserConsentsResponse
 from .user_default_choice_for_user_fields import UserDefaultChoiceForUserFields
 from .user_default_choices_for_user_response import UserDefaultChoicesForUserResponse
 from .user_info_post_payload import UserInfoPostPayload
