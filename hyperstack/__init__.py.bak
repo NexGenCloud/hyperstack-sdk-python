@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.52.0-alpha"
+__version__ = "v1.52.3-alpha"
 
 # import apis into sdk package
 from hyperstack.api.access_keys_api import AccessKeysApi
@@ -30,6 +30,7 @@ from hyperstack.api.alive_api import AliveApi
 from hyperstack.api.api_key_api import ApiKeyApi
 from hyperstack.api.assigning_member_role_api import AssigningMemberRoleApi
 from hyperstack.api.auth_api import AuthApi
+from hyperstack.api.auto_topup_api import AutoTopupApi
 from hyperstack.api.beta_access_api import BetaAccessApi
 from hyperstack.api.billing_api import BillingApi
 from hyperstack.api.callbacks_api import CallbacksApi
@@ -101,6 +102,9 @@ from hyperstack.models.attributes import Attributes
 from hyperstack.models.auth_get_token_response_model import AuthGetTokenResponseModel
 from hyperstack.models.auth_user_fields import AuthUserFields
 from hyperstack.models.auth_user_info_response_model import AuthUserInfoResponseModel
+from hyperstack.models.auto_topup import AutoTopup
+from hyperstack.models.auto_topup_error_response import AutoTopupErrorResponse
+from hyperstack.models.auto_topup_status_schema import AutoTopupStatusSchema
 from hyperstack.models.beta_access_request_fields import BetaAccessRequestFields
 from hyperstack.models.beta_access_request_payload import BetaAccessRequestPayload
 from hyperstack.models.beta_access_request_response_model import BetaAccessRequestResponseModel
@@ -109,6 +113,7 @@ from hyperstack.models.beta_access_status_response_model import BetaAccessStatus
 from hyperstack.models.billing_history import BillingHistory
 from hyperstack.models.billing_history_data_synthesis_details import BillingHistoryDataSynthesisDetails
 from hyperstack.models.billing_history_fine_tuning import BillingHistoryFineTuning
+from hyperstack.models.billing_history_image_generation_details import BillingHistoryImageGenerationDetails
 from hyperstack.models.billing_history_model_evalutation_details import BillingHistoryModelEvalutationDetails
 from hyperstack.models.billing_history_serverless_inference import BillingHistoryServerlessInference
 from hyperstack.models.billing_history_serverless_inference_details import BillingHistoryServerlessInferenceDetails
@@ -148,6 +153,8 @@ from hyperstack.models.contract_discount_plan_fields import ContractDiscountPlan
 from hyperstack.models.contract_gpu_allocation_graph_response import ContractGPUAllocationGraphResponse
 from hyperstack.models.contract_instance_fields import ContractInstanceFields
 from hyperstack.models.contract_instances_response import ContractInstancesResponse
+from hyperstack.models.create_auto_topup_payload import CreateAutoTopupPayload
+from hyperstack.models.create_auto_topup_response import CreateAutoTopupResponse
 from hyperstack.models.create_cluster_node_fields import CreateClusterNodeFields
 from hyperstack.models.create_cluster_node_group_payload import CreateClusterNodeGroupPayload
 from hyperstack.models.create_cluster_payload import CreateClusterPayload
@@ -176,6 +183,7 @@ from hyperstack.models.deployment_fields_for_start_deployments import Deployment
 from hyperstack.models.deployments import Deployments
 from hyperstack.models.detach_volumes import DetachVolumes
 from hyperstack.models.detach_volumes_payload import DetachVolumesPayload
+from hyperstack.models.disable_auto_topup_response import DisableAutoTopupResponse
 from hyperstack.models.edit_label_of_an_existing_vm_payload import EditLabelOfAnExistingVMPayload
 from hyperstack.models.environment import Environment
 from hyperstack.models.environment_features import EnvironmentFeatures
@@ -204,6 +212,7 @@ from hyperstack.models.gpu_region_fields import GPURegionFields
 from hyperstack.models.generate_update_api_key_payload import GenerateUpdateApiKeyPayload
 from hyperstack.models.generate_update_api_key_response_model import GenerateUpdateApiKeyResponseModel
 from hyperstack.models.get_api_keys_response_model import GetApiKeysResponseModel
+from hyperstack.models.get_auto_topup_response import GetAutoTopupResponse
 from hyperstack.models.get_credit_and_threshold_info import GetCreditAndThresholdInfo
 from hyperstack.models.get_credit_and_threshold_info_in_response import GetCreditAndThresholdInfoInResponse
 from hyperstack.models.get_customer_contracts_list_response_model import GetCustomerContractsListResponseModel
@@ -217,6 +226,7 @@ from hyperstack.models.get_user_permissions_response_model import GetUserPermiss
 from hyperstack.models.graph_datetime_value_model import GraphDatetimeValueModel
 from hyperstack.models.image import Image
 from hyperstack.models.image_fields import ImageFields
+from hyperstack.models.image_generation_billing_history_details_response_schema import ImageGenerationBillingHistoryDetailsResponseSchema
 from hyperstack.models.image_get_response import ImageGetResponse
 from hyperstack.models.images import Images
 from hyperstack.models.import_keypair_payload import ImportKeypairPayload
@@ -249,6 +259,7 @@ from hyperstack.models.mfa_status_response import MFAStatusResponse
 from hyperstack.models.manual_reconciliation_model import ManualReconciliationModel
 from hyperstack.models.master_flavors_response import MasterFlavorsResponse
 from hyperstack.models.metric_item_fields import MetricItemFields
+from hyperstack.models.metrics import Metrics
 from hyperstack.models.metrics_fields import MetricsFields
 from hyperstack.models.model_evaluation_billing_history_details_response_schema import ModelEvaluationBillingHistoryDetailsResponseSchema
 from hyperstack.models.name_available_model import NameAvailableModel
@@ -372,6 +383,8 @@ from hyperstack.models.template_fields import TemplateFields
 from hyperstack.models.templates import Templates
 from hyperstack.models.token_based_billing_history_response import TokenBasedBillingHistoryResponse
 from hyperstack.models.uris import URIs
+from hyperstack.models.update_auto_topup_payload import UpdateAutoTopupPayload
+from hyperstack.models.update_auto_topup_response import UpdateAutoTopupResponse
 from hyperstack.models.update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
 from hyperstack.models.update_consent_request import UpdateConsentRequest
 from hyperstack.models.update_environment import UpdateEnvironment

@@ -27,7 +27,7 @@ class PaymentDetailsResponse(BaseModel):
     """
     PaymentDetailsResponse
     """ # noqa: E501
-    data: Optional[PaymentDetailsFields] = None
+    data: Optional[List[PaymentDetailsFields]] = None
     message: Optional[StrictStr] = None
     status: Optional[StrictBool] = None
     __properties: ClassVar[List[str]] = ["data", "message", "status"]
@@ -71,9 +71,13 @@ class PaymentDetailsResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of data
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
         if self.data:
-            _dict['data'] = self.data.to_dict()
+            for _item_data in self.data:
+                if _item_data:
+                    _items.append(_item_data.to_dict())
+            _dict['data'] = _items
         return _dict
 
     @classmethod
@@ -86,7 +90,7 @@ class PaymentDetailsResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "data": PaymentDetailsFields.from_dict(obj["data"]) if obj.get("data") is not None else None,
+            "data": [PaymentDetailsFields.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None,
             "message": obj.get("message"),
             "status": obj.get("status")
         })

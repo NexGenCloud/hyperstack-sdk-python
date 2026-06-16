@@ -88,6 +88,26 @@ class TestBillingApi(unittest.TestCase):
         """
         pass
 
+    def test_get_image_generation_billing_history(self) -> None:
+        """Test case for get_image_generation_billing_history
+
+        Retrieve Billing History of image generation for a specific Billing Cycle
+        """
+        pass
+
+    def test_get_image_generation_billing_history_graph(self) -> None:
+        """Test case for get_image_generation_billing_history_graph
+
+        Retrieve hourly cost datapoints of a Specific Image Generation for a specific
+        """
+        pass
+
+    def test_get_image_generation_history_for_resource(self) -> None:
+        """Test case for get_image_generation_history_for_resource
+
+        """
+        pass
+
     def test_get_last_day_cost(self) -> None:
         """Test case for get_last_day_cost
 

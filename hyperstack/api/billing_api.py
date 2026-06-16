@@ -21,6 +21,7 @@ from typing import Optional
 from typing_extensions import Annotated
 from ..models.billing_metrices_response import BillingMetricesResponse
 from ..models.data_synthesis_billing_history_details_response_schema import DataSynthesisBillingHistoryDetailsResponseSchema
+from ..models.image_generation_billing_history_details_response_schema import ImageGenerationBillingHistoryDetailsResponseSchema
 from ..models.last_day_cost_response import LastDayCostResponse
 from ..models.model_evaluation_billing_history_details_response_schema import ModelEvaluationBillingHistoryDetailsResponseSchema
 from ..models.organization_level_billing_history_response_model import OrganizationLevelBillingHistoryResponseModel
@@ -2911,6 +2912,972 @@ class BillingApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/billing/billing/history/fine_tuning/{resource_id}/graph',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_image_generation_billing_history(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> TokenBasedBillingHistoryResponse:
+        """Retrieve Billing History of image generation for a specific Billing Cycle
+
+        User will receive billing history of image_generation for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_image_generation_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TokenBasedBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_image_generation_billing_history_with_http_info(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[TokenBasedBillingHistoryResponse]:
+        """Retrieve Billing History of image generation for a specific Billing Cycle
+
+        User will receive billing history of image_generation for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_image_generation_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TokenBasedBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_image_generation_billing_history_without_preload_content(
+        self,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        search: Annotated[Optional[StrictStr], Field(description="Search by resource \"Name\" or \"ID\"")] = None,
+        per_page: Annotated[Optional[StrictInt], Field(description="Number of items to return per page")] = None,
+        page: Annotated[Optional[StrictInt], Field(description="Page number")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve Billing History of image generation for a specific Billing Cycle
+
+        User will receive billing history of image_generation for the specified billing cycle.
+
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param search: Search by resource \"Name\" or \"ID\"
+        :type search: str
+        :param per_page: Number of items to return per page
+        :type per_page: int
+        :param page: Page number
+        :type page: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_image_generation_billing_history_serialize(
+            start_date=start_date,
+            end_date=end_date,
+            search=search,
+            per_page=per_page,
+            page=page,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TokenBasedBillingHistoryResponse",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_image_generation_billing_history_serialize(
+        self,
+        start_date,
+        end_date,
+        search,
+        per_page,
+        page,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if per_page is not None:
+            
+            _query_params.append(('per_page', per_page))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/image_generation',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_image_generation_billing_history_graph(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ImageGenerationBillingHistoryDetailsResponseSchema:
+        """Retrieve hourly cost datapoints of a Specific Image Generation for a specific
+
+        User will receive hourly cost datapoints for an image generation job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_image_generation_billing_history_graph_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ImageGenerationBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_image_generation_billing_history_graph_with_http_info(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ImageGenerationBillingHistoryDetailsResponseSchema]:
+        """Retrieve hourly cost datapoints of a Specific Image Generation for a specific
+
+        User will receive hourly cost datapoints for an image generation job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_image_generation_billing_history_graph_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ImageGenerationBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_image_generation_billing_history_graph_without_preload_content(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="Date should be formatted in YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Retrieve hourly cost datapoints of a Specific Image Generation for a specific
+
+        User will receive hourly cost datapoints for an image generation job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: Date should be formatted in YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_image_generation_billing_history_graph_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ImageGenerationBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_image_generation_billing_history_graph_serialize(
+        self,
+        resource_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if resource_id is not None:
+            _path_params['resource_id'] = resource_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/image_generation/{resource_id}/graph',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_image_generation_history_for_resource(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ImageGenerationBillingHistoryDetailsResponseSchema:
+        """get_image_generation_history_for_resource
+
+        Retrieve billing history for a specific Image Generation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_image_generation_history_for_resource_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ImageGenerationBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_image_generation_history_for_resource_with_http_info(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ImageGenerationBillingHistoryDetailsResponseSchema]:
+        """get_image_generation_history_for_resource
+
+        Retrieve billing history for a specific Image Generation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_image_generation_history_for_resource_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ImageGenerationBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_image_generation_history_for_resource_without_preload_content(
+        self,
+        resource_id: StrictInt,
+        start_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        end_date: Annotated[Optional[StrictStr], Field(description="YYYY-MM-DDTHH:MM:SS")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """get_image_generation_history_for_resource
+
+        Retrieve billing history for a specific Image Generation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+
+        :param resource_id: (required)
+        :type resource_id: int
+        :param start_date: YYYY-MM-DDTHH:MM:SS
+        :type start_date: str
+        :param end_date: YYYY-MM-DDTHH:MM:SS
+        :type end_date: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_image_generation_history_for_resource_serialize(
+            resource_id=resource_id,
+            start_date=start_date,
+            end_date=end_date,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ImageGenerationBillingHistoryDetailsResponseSchema",
+            '400': "ErrorResponseModel",
+            '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_image_generation_history_for_resource_serialize(
+        self,
+        resource_id,
+        start_date,
+        end_date,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if resource_id is not None:
+            _path_params['resource_id'] = resource_id
+        # process the query parameters
+        if start_date is not None:
+            
+            _query_params.append(('start_date', start_date))
+            
+        if end_date is not None:
+            
+            _query_params.append(('end_date', end_date))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'apiKey'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/billing/billing/history/image_generation/{resource_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

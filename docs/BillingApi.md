@@ -13,6 +13,9 @@ Method | HTTP request | Description
 [**get_data_synthesis_history_for_resource**](BillingApi.md#get_data_synthesis_history_for_resource) | **GET** /billing/billing/history/data_synthesis/{resource_id} | 
 [**get_fine_tuning_billing_history**](BillingApi.md#get_fine_tuning_billing_history) | **GET** /billing/billing/history/fine_tuning | Retrieve Billing History of model evaluation for a specific Billing Cycle
 [**get_fine_tuning_billing_history_graph**](BillingApi.md#get_fine_tuning_billing_history_graph) | **GET** /billing/billing/history/fine_tuning/{resource_id}/graph | Retrieve hourly cost datapoints of a Specific Fine Tuning for a specific billing cycle
+[**get_image_generation_billing_history**](BillingApi.md#get_image_generation_billing_history) | **GET** /billing/billing/history/image_generation | Retrieve Billing History of image generation for a specific Billing Cycle
+[**get_image_generation_billing_history_graph**](BillingApi.md#get_image_generation_billing_history_graph) | **GET** /billing/billing/history/image_generation/{resource_id}/graph | Retrieve hourly cost datapoints of a Specific Image Generation for a specific
+[**get_image_generation_history_for_resource**](BillingApi.md#get_image_generation_history_for_resource) | **GET** /billing/billing/history/image_generation/{resource_id} | 
 [**get_last_day_cost**](BillingApi.md#get_last_day_cost) | **GET** /billing/billing/last-day-cost | GET: Last Day Cost
 [**get_model_evaluation_billing_history**](BillingApi.md#get_model_evaluation_billing_history) | **GET** /billing/billing/history/model_evaluation | Retrieve Billing History of model evaluation for a specific Billing Cycle
 [**get_model_evaluation_billing_history_graph**](BillingApi.md#get_model_evaluation_billing_history_graph) | **GET** /billing/billing/history/model_evaluation/{resource_id}/graph | Retrieve hourly cost datapoints of a Specific Model Evaluation for a specific
@@ -819,6 +822,273 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResourceLevelVolumeGraphBillingDetailsResponseModel**](ResourceLevelVolumeGraphBillingDetailsResponseModel.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_image_generation_billing_history**
+> TokenBasedBillingHistoryResponse get_image_generation_billing_history(start_date=start_date, end_date=end_date, search=search, per_page=per_page, page=page)
+
+Retrieve Billing History of image generation for a specific Billing Cycle
+
+User will receive billing history of image_generation for the specified billing cycle.
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.token_based_billing_history_response import TokenBasedBillingHistoryResponse
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.BillingApi(api_client)
+    start_date = 'start_date_example' # str | Date should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
+    end_date = 'end_date_example' # str | Date should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
+    search = 'search_example' # str | Search by resource \"Name\" or \"ID\" (optional)
+    per_page = 56 # int | Number of items to return per page (optional)
+    page = 56 # int | Page number (optional)
+
+    try:
+        # Retrieve Billing History of image generation for a specific Billing Cycle
+        api_response = api_instance.get_image_generation_billing_history(start_date=start_date, end_date=end_date, search=search, per_page=per_page, page=page)
+        print("The response of BillingApi->get_image_generation_billing_history:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BillingApi->get_image_generation_billing_history: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **str**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **end_date** | **str**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **search** | **str**| Search by resource \&quot;Name\&quot; or \&quot;ID\&quot; | [optional] 
+ **per_page** | **int**| Number of items to return per page | [optional] 
+ **page** | **int**| Page number | [optional] 
+
+### Return type
+
+[**TokenBasedBillingHistoryResponse**](TokenBasedBillingHistoryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_image_generation_billing_history_graph**
+> ImageGenerationBillingHistoryDetailsResponseSchema get_image_generation_billing_history_graph(resource_id, start_date=start_date, end_date=end_date)
+
+Retrieve hourly cost datapoints of a Specific Image Generation for a specific
+
+User will receive hourly cost datapoints for an image generation job for a specified billing cycle. This data will include 'incurred_bill' graph datapoints. billing cycle
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.image_generation_billing_history_details_response_schema import ImageGenerationBillingHistoryDetailsResponseSchema
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.BillingApi(api_client)
+    resource_id = 56 # int | 
+    start_date = 'start_date_example' # str | Date should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
+    end_date = 'end_date_example' # str | Date should be formatted in YYYY-MM-DDTHH:MM:SS (optional)
+
+    try:
+        # Retrieve hourly cost datapoints of a Specific Image Generation for a specific
+        api_response = api_instance.get_image_generation_billing_history_graph(resource_id, start_date=start_date, end_date=end_date)
+        print("The response of BillingApi->get_image_generation_billing_history_graph:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BillingApi->get_image_generation_billing_history_graph: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resource_id** | **int**|  | 
+ **start_date** | **str**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+ **end_date** | **str**| Date should be formatted in YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ImageGenerationBillingHistoryDetailsResponseSchema**](ImageGenerationBillingHistoryDetailsResponseSchema.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_image_generation_history_for_resource**
+> ImageGenerationBillingHistoryDetailsResponseSchema get_image_generation_history_for_resource(resource_id, start_date=start_date, end_date=end_date)
+
+
+
+Retrieve billing history for a specific Image Generation resource. Includes: 'resource_name', 'infrahub_id', 'base_model', 'base_model_display_name', 'lora_adapter', 'incurred_bill', 'non_discounted_bill', 'usage_time', 'input_tokens', 'output_tokens', 'input_tokens_incurred_bill', 'input_tokens_non_discounted_bill', 'output_tokens_incurred_bill', 'output_tokens_non_discounted_bill'
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.models.image_generation_billing_history_details_response_schema import ImageGenerationBillingHistoryDetailsResponseSchema
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.BillingApi(api_client)
+    resource_id = 56 # int | 
+    start_date = 'start_date_example' # str | YYYY-MM-DDTHH:MM:SS (optional)
+    end_date = 'end_date_example' # str | YYYY-MM-DDTHH:MM:SS (optional)
+
+    try:
+        api_response = api_instance.get_image_generation_history_for_resource(resource_id, start_date=start_date, end_date=end_date)
+        print("The response of BillingApi->get_image_generation_history_for_resource:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BillingApi->get_image_generation_history_for_resource: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resource_id** | **int**|  | 
+ **start_date** | **str**| YYYY-MM-DDTHH:MM:SS | [optional] 
+ **end_date** | **str**| YYYY-MM-DDTHH:MM:SS | [optional] 
+
+### Return type
+
+[**ImageGenerationBillingHistoryDetailsResponseSchema**](ImageGenerationBillingHistoryDetailsResponseSchema.md)
 
 ### Authorization
 

@@ -28,18 +28,22 @@ class PaymentDetailsFields(BaseModel):
     PaymentDetailsFields
     """ # noqa: E501
     amount: Optional[Union[StrictFloat, StrictInt]] = None
+    attempt_number: Optional[StrictInt] = None
+    auto_topup_id: Optional[StrictInt] = None
     created_at: Optional[datetime] = None
     currency: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     gateway_response: Optional[StrictStr] = None
     invoice: Optional[StrictStr] = None
+    max_attempts: Optional[StrictInt] = None
     paid_from: Optional[StrictStr] = None
     payment_id: Optional[StrictStr] = None
+    payment_type: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
     tax_amount: Optional[Union[StrictFloat, StrictInt]] = None
     transaction_id: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
-    __properties: ClassVar[List[str]] = ["amount", "created_at", "currency", "description", "gateway_response", "invoice", "paid_from", "payment_id", "status", "tax_amount", "transaction_id", "updated_at"]
+    __properties: ClassVar[List[str]] = ["amount", "attempt_number", "auto_topup_id", "created_at", "currency", "description", "gateway_response", "invoice", "max_attempts", "paid_from", "payment_id", "payment_type", "status", "tax_amount", "transaction_id", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,13 +97,17 @@ class PaymentDetailsFields(BaseModel):
 
         _obj = cls.model_validate({
             "amount": obj.get("amount"),
+            "attempt_number": obj.get("attempt_number"),
+            "auto_topup_id": obj.get("auto_topup_id"),
             "created_at": obj.get("created_at"),
             "currency": obj.get("currency"),
             "description": obj.get("description"),
             "gateway_response": obj.get("gateway_response"),
             "invoice": obj.get("invoice"),
+            "max_attempts": obj.get("max_attempts"),
             "paid_from": obj.get("paid_from"),
             "payment_id": obj.get("payment_id"),
+            "payment_type": obj.get("payment_type"),
             "status": obj.get("status"),
             "tax_amount": obj.get("tax_amount"),
             "transaction_id": obj.get("transaction_id"),

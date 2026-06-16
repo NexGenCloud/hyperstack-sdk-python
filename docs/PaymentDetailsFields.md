@@ -6,13 +6,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **float** |  | [optional] 
+**attempt_number** | **int** |  | [optional] 
+**auto_topup_id** | **int** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
 **currency** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **gateway_response** | **str** |  | [optional] 
 **invoice** | **str** |  | [optional] 
+**max_attempts** | **int** |  | [optional] 
 **paid_from** | **str** |  | [optional] 
 **payment_id** | **str** |  | [optional] 
+**payment_type** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **tax_amount** | **float** |  | [optional] 
 **transaction_id** | **str** |  | [optional] 

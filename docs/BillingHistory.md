@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**Attributes**](Attributes.md) |  | [optional] 
-**metrics** | **object** |  | [optional] 
+**metrics** | [**Metrics**](Metrics.md) |  | [optional] 
 
 ## Example
 

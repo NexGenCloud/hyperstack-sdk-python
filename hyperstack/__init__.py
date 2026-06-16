@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.52.0-alpha"
+__version__ = "v1.52.3-alpha"
 
 # import apis into sdk package
 from .api.access_keys_api import AccessKeysApi
@@ -30,6 +30,7 @@ from .api.alive_api import AliveApi
 from .api.api_key_api import ApiKeyApi
 from .api.assigning_member_role_api import AssigningMemberRoleApi
 from .api.auth_api import AuthApi
+from .api.auto_topup_api import AutoTopupApi
 from .api.beta_access_api import BetaAccessApi
 from .api.billing_api import BillingApi
 from .api.callbacks_api import CallbacksApi
@@ -101,6 +102,9 @@ from .models.attributes import Attributes
 from .models.auth_get_token_response_model import AuthGetTokenResponseModel
 from .models.auth_user_fields import AuthUserFields
 from .models.auth_user_info_response_model import AuthUserInfoResponseModel
+from .models.auto_topup import AutoTopup
+from .models.auto_topup_error_response import AutoTopupErrorResponse
+from .models.auto_topup_status_schema import AutoTopupStatusSchema
 from .models.beta_access_request_fields import BetaAccessRequestFields
 from .models.beta_access_request_payload import BetaAccessRequestPayload
 from .models.beta_access_request_response_model import BetaAccessRequestResponseModel
@@ -109,6 +113,7 @@ from .models.beta_access_status_response_model import BetaAccessStatusResponseMo
 from .models.billing_history import BillingHistory
 from .models.billing_history_data_synthesis_details import BillingHistoryDataSynthesisDetails
 from .models.billing_history_fine_tuning import BillingHistoryFineTuning
+from .models.billing_history_image_generation_details import BillingHistoryImageGenerationDetails
 from .models.billing_history_model_evalutation_details import BillingHistoryModelEvalutationDetails
 from .models.billing_history_serverless_inference import BillingHistoryServerlessInference
 from .models.billing_history_serverless_inference_details import BillingHistoryServerlessInferenceDetails
@@ -148,6 +153,8 @@ from .models.contract_discount_plan_fields import ContractDiscountPlanFields
 from .models.contract_gpu_allocation_graph_response import ContractGPUAllocationGraphResponse
 from .models.contract_instance_fields import ContractInstanceFields
 from .models.contract_instances_response import ContractInstancesResponse
+from .models.create_auto_topup_payload import CreateAutoTopupPayload
+from .models.create_auto_topup_response import CreateAutoTopupResponse
 from .models.create_cluster_node_fields import CreateClusterNodeFields
 from .models.create_cluster_node_group_payload import CreateClusterNodeGroupPayload
 from .models.create_cluster_payload import CreateClusterPayload
@@ -176,6 +183,7 @@ from .models.deployment_fields_for_start_deployments import DeploymentFieldsForS
 from .models.deployments import Deployments
 from .models.detach_volumes import DetachVolumes
 from .models.detach_volumes_payload import DetachVolumesPayload
+from .models.disable_auto_topup_response import DisableAutoTopupResponse
 from .models.edit_label_of_an_existing_vm_payload import EditLabelOfAnExistingVMPayload
 from .models.environment import Environment
 from .models.environment_features import EnvironmentFeatures
@@ -204,6 +212,7 @@ from .models.gpu_region_fields import GPURegionFields
 from .models.generate_update_api_key_payload import GenerateUpdateApiKeyPayload
 from .models.generate_update_api_key_response_model import GenerateUpdateApiKeyResponseModel
 from .models.get_api_keys_response_model import GetApiKeysResponseModel
+from .models.get_auto_topup_response import GetAutoTopupResponse
 from .models.get_credit_and_threshold_info import GetCreditAndThresholdInfo
 from .models.get_credit_and_threshold_info_in_response import GetCreditAndThresholdInfoInResponse
 from .models.get_customer_contracts_list_response_model import GetCustomerContractsListResponseModel
@@ -217,6 +226,7 @@ from .models.get_user_permissions_response_model import GetUserPermissionsRespon
 from .models.graph_datetime_value_model import GraphDatetimeValueModel
 from .models.image import Image
 from .models.image_fields import ImageFields
+from .models.image_generation_billing_history_details_response_schema import ImageGenerationBillingHistoryDetailsResponseSchema
 from .models.image_get_response import ImageGetResponse
 from .models.images import Images
 from .models.import_keypair_payload import ImportKeypairPayload
@@ -249,6 +259,7 @@ from .models.mfa_status_response import MFAStatusResponse
 from .models.manual_reconciliation_model import ManualReconciliationModel
 from .models.master_flavors_response import MasterFlavorsResponse
 from .models.metric_item_fields import MetricItemFields
+from .models.metrics import Metrics
 from .models.metrics_fields import MetricsFields
 from .models.model_evaluation_billing_history_details_response_schema import ModelEvaluationBillingHistoryDetailsResponseSchema
 from .models.name_available_model import NameAvailableModel
@@ -372,6 +383,8 @@ from .models.template_fields import TemplateFields
 from .models.templates import Templates
 from .models.token_based_billing_history_response import TokenBasedBillingHistoryResponse
 from .models.uris import URIs
+from .models.update_auto_topup_payload import UpdateAutoTopupPayload
+from .models.update_auto_topup_response import UpdateAutoTopupResponse
 from .models.update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
 from .models.update_consent_request import UpdateConsentRequest
 from .models.update_environment import UpdateEnvironment

@@ -14,6 +14,7 @@ from .alive_api import AliveApi
 from .api_key_api import ApiKeyApi
 from .assigning_member_role_api import AssigningMemberRoleApi
 from .auth_api import AuthApi
+from .auto_topup_api import AutoTopupApi
 from .beta_access_api import BetaAccessApi
 from .billing_api import BillingApi
 from .callbacks_api import CallbacksApi

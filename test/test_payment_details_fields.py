@@ -36,13 +36,17 @@ class TestPaymentDetailsFields(unittest.TestCase):
         if include_optional:
             return PaymentDetailsFields(
                 amount = 1.337,
+                attempt_number = 56,
+                auto_topup_id = 56,
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 currency = '',
                 description = '',
                 gateway_response = '',
                 invoice = '',
+                max_attempts = 56,
                 paid_from = '',
                 payment_id = '',
+                payment_type = '',
                 status = '',
                 tax_amount = 1.337,
                 transaction_id = '',

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**PaymentDetailsFields**](PaymentDetailsFields.md) |  | [optional] 
+**data** | [**List[PaymentDetailsFields]**](PaymentDetailsFields.md) |  | [optional] 
 **message** | **str** |  | [optional] 
 **status** | **bool** |  | [optional] 
 

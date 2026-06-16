@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from ..models.attributes import Attributes
+from ..models.metrics import Metrics
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class BillingHistory(BaseModel):
     BillingHistory
     """ # noqa: E501
     attributes: Optional[Attributes] = None
-    metrics: Optional[Dict[str, Any]] = None
+    metrics: Optional[Metrics] = None
     __properties: ClassVar[List[str]] = ["attributes", "metrics"]
 
     model_config = ConfigDict(
@@ -73,6 +74,9 @@ class BillingHistory(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of attributes
         if self.attributes:
             _dict['attributes'] = self.attributes.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of metrics
+        if self.metrics:
+            _dict['metrics'] = self.metrics.to_dict()
         return _dict
 
     @classmethod
@@ -86,7 +90,7 @@ class BillingHistory(BaseModel):
 
         _obj = cls.model_validate({
             "attributes": Attributes.from_dict(obj["attributes"]) if obj.get("attributes") is not None else None,
-            "metrics": obj.get("metrics")
+            "metrics": Metrics.from_dict(obj["metrics"]) if obj.get("metrics") is not None else None
         })
         return _obj
 

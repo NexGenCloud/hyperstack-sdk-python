@@ -44,7 +44,15 @@ class TestBillingHistoryModelEvalutationDetails(unittest.TestCase):
                             lora_adapter = '', 
                             resource_name = '', 
                             status = '', ), 
-                        metrics = hyperstack.models.metrics.metrics(), )
+                        metrics = hyperstack.models.metrics.metrics(
+                            incurred_bill = 1.337, 
+                            input_tokens = 1.337, 
+                            input_tokens_incurred_bill = 1.337, 
+                            input_tokens_non_discounted_bill = 1.337, 
+                            non_discounted_bill = 1.337, 
+                            output_tokens = 1.337, 
+                            output_tokens_incurred_bill = 1.337, 
+                            output_tokens_non_discounted_bill = 1.337, ), )
                     ],
                 org_id = 56,
                 pagination = hyperstack.models.pagination.pagination(

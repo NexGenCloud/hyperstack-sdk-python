@@ -31,6 +31,9 @@ from .attributes import Attributes
 from .auth_get_token_response_model import AuthGetTokenResponseModel
 from .auth_user_fields import AuthUserFields
 from .auth_user_info_response_model import AuthUserInfoResponseModel
+from .auto_topup import AutoTopup
+from .auto_topup_error_response import AutoTopupErrorResponse
+from .auto_topup_status_schema import AutoTopupStatusSchema
 from .beta_access_request_fields import BetaAccessRequestFields
 from .beta_access_request_payload import BetaAccessRequestPayload
 from .beta_access_request_response_model import BetaAccessRequestResponseModel
@@ -39,6 +42,7 @@ from .beta_access_status_response_model import BetaAccessStatusResponseModel
 from .billing_history import BillingHistory
 from .billing_history_data_synthesis_details import BillingHistoryDataSynthesisDetails
 from .billing_history_fine_tuning import BillingHistoryFineTuning
+from .billing_history_image_generation_details import BillingHistoryImageGenerationDetails
 from .billing_history_model_evalutation_details import BillingHistoryModelEvalutationDetails
 from .billing_history_serverless_inference import BillingHistoryServerlessInference
 from .billing_history_serverless_inference_details import BillingHistoryServerlessInferenceDetails
@@ -78,6 +82,8 @@ from .contract_discount_plan_fields import ContractDiscountPlanFields
 from .contract_gpu_allocation_graph_response import ContractGPUAllocationGraphResponse
 from .contract_instance_fields import ContractInstanceFields
 from .contract_instances_response import ContractInstancesResponse
+from .create_auto_topup_payload import CreateAutoTopupPayload
+from .create_auto_topup_response import CreateAutoTopupResponse
 from .create_cluster_node_fields import CreateClusterNodeFields
 from .create_cluster_node_group_payload import CreateClusterNodeGroupPayload
 from .create_cluster_payload import CreateClusterPayload
@@ -106,6 +112,7 @@ from .deployment_fields_for_start_deployments import DeploymentFieldsForStartDep
 from .deployments import Deployments
 from .detach_volumes import DetachVolumes
 from .detach_volumes_payload import DetachVolumesPayload
+from .disable_auto_topup_response import DisableAutoTopupResponse
 from .edit_label_of_an_existing_vm_payload import EditLabelOfAnExistingVMPayload
 from .environment import Environment
 from .environment_features import EnvironmentFeatures
@@ -134,6 +141,7 @@ from .gpu_region_fields import GPURegionFields
 from .generate_update_api_key_payload import GenerateUpdateApiKeyPayload
 from .generate_update_api_key_response_model import GenerateUpdateApiKeyResponseModel
 from .get_api_keys_response_model import GetApiKeysResponseModel
+from .get_auto_topup_response import GetAutoTopupResponse
 from .get_credit_and_threshold_info import GetCreditAndThresholdInfo
 from .get_credit_and_threshold_info_in_response import GetCreditAndThresholdInfoInResponse
 from .get_customer_contracts_list_response_model import GetCustomerContractsListResponseModel
@@ -147,6 +155,7 @@ from .get_user_permissions_response_model import GetUserPermissionsResponseModel
 from .graph_datetime_value_model import GraphDatetimeValueModel
 from .image import Image
 from .image_fields import ImageFields
+from .image_generation_billing_history_details_response_schema import ImageGenerationBillingHistoryDetailsResponseSchema
 from .image_get_response import ImageGetResponse
 from .images import Images
 from .import_keypair_payload import ImportKeypairPayload
@@ -179,6 +188,7 @@ from .mfa_status_response import MFAStatusResponse
 from .manual_reconciliation_model import ManualReconciliationModel
 from .master_flavors_response import MasterFlavorsResponse
 from .metric_item_fields import MetricItemFields
+from .metrics import Metrics
 from .metrics_fields import MetricsFields
 from .model_evaluation_billing_history_details_response_schema import ModelEvaluationBillingHistoryDetailsResponseSchema
 from .name_available_model import NameAvailableModel
@@ -302,6 +312,8 @@ from .template_fields import TemplateFields
 from .templates import Templates
 from .token_based_billing_history_response import TokenBasedBillingHistoryResponse
 from .uris import URIs
+from .update_auto_topup_payload import UpdateAutoTopupPayload
+from .update_auto_topup_response import UpdateAutoTopupResponse
 from .update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
 from .update_consent_request import UpdateConsentRequest
 from .update_environment import UpdateEnvironment
