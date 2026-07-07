@@ -33,6 +33,13 @@ class TestUserApi(unittest.TestCase):
         """
         pass
 
+    def test_get_allowed_country_codes(self) -> None:
+        """Test case for get_allowed_country_codes
+
+        GET: Retrieve allowed country codes
+        """
+        pass
+
     def test_get_user_billing_info(self) -> None:
         """Test case for get_user_billing_info
 
