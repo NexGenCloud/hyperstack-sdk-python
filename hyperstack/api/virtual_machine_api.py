@@ -2481,6 +2481,7 @@ class VirtualMachineApi:
             '200': "ContractInstancesResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2563,6 +2564,7 @@ class VirtualMachineApi:
             '200': "ContractInstancesResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2645,6 +2647,7 @@ class VirtualMachineApi:
             '200': "ContractInstancesResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
+            '404': "ErrorResponseModel",
             '500': None,
         }
         response_data = self.api_client.call_api(
