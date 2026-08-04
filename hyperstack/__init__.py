@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.53.6-alpha"
+__version__ = "v1.54.7-alpha"
 
 # import apis into sdk package
 from .api.access_keys_api import AccessKeysApi
@@ -40,6 +40,7 @@ from .api.compliance_api import ComplianceApi
 from .api.credit_api import CreditApi
 from .api.dashboard_api import DashboardApi
 from .api.deployment_api import DeploymentApi
+from .api.email_opt_in_out_api import EmailOptInOutApi
 from .api.environment_api import EnvironmentApi
 from .api.firewall_attachment_api import FirewallAttachmentApi
 from .api.firewalls_api import FirewallsApi
@@ -186,6 +187,9 @@ from .models.detach_volumes import DetachVolumes
 from .models.detach_volumes_payload import DetachVolumesPayload
 from .models.disable_auto_topup_response import DisableAutoTopupResponse
 from .models.edit_label_of_an_existing_vm_payload import EditLabelOfAnExistingVMPayload
+from .models.email_category import EmailCategory
+from .models.email_category_child import EmailCategoryChild
+from .models.email_preferences_response import EmailPreferencesResponse
 from .models.environment import Environment
 from .models.environment_features import EnvironmentFeatures
 from .models.environment_fields import EnvironmentFields
@@ -379,6 +383,7 @@ from .models.sub_resources_costs_response_model import SubResourcesCostsResponse
 from .models.sub_resources_graph_billing_history_fields import SubResourcesGraphBillingHistoryFields
 from .models.sub_resources_graph_response_model import SubResourcesGraphResponseModel
 from .models.subscribe_or_unsubscribe_update_payload import SubscribeOrUnsubscribeUpdatePayload
+from .models.supported_keypair_public_key_types_response import SupportedKeypairPublicKeyTypesResponse
 from .models.template import Template
 from .models.template_fields import TemplateFields
 from .models.templates import Templates
@@ -388,6 +393,8 @@ from .models.update_auto_topup_payload import UpdateAutoTopupPayload
 from .models.update_auto_topup_response import UpdateAutoTopupResponse
 from .models.update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
 from .models.update_consent_request import UpdateConsentRequest
+from .models.update_email_preference_input import UpdateEmailPreferenceInput
+from .models.update_email_preference_response import UpdateEmailPreferenceResponse
 from .models.update_environment import UpdateEnvironment
 from .models.update_keypair_name import UpdateKeypairName
 from .models.update_keypair_name_response import UpdateKeypairNameResponse

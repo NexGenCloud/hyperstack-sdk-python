@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.53.6-alpha"
+__version__ = "v1.54.7-alpha"
 
 # import apis into sdk package
 from hyperstack.api.access_keys_api import AccessKeysApi
@@ -40,6 +40,7 @@ from hyperstack.api.compliance_api import ComplianceApi
 from hyperstack.api.credit_api import CreditApi
 from hyperstack.api.dashboard_api import DashboardApi
 from hyperstack.api.deployment_api import DeploymentApi
+from hyperstack.api.email_opt_in_out_api import EmailOptInOutApi
 from hyperstack.api.environment_api import EnvironmentApi
 from hyperstack.api.firewall_attachment_api import FirewallAttachmentApi
 from hyperstack.api.firewalls_api import FirewallsApi
@@ -186,6 +187,9 @@ from hyperstack.models.detach_volumes import DetachVolumes
 from hyperstack.models.detach_volumes_payload import DetachVolumesPayload
 from hyperstack.models.disable_auto_topup_response import DisableAutoTopupResponse
 from hyperstack.models.edit_label_of_an_existing_vm_payload import EditLabelOfAnExistingVMPayload
+from hyperstack.models.email_category import EmailCategory
+from hyperstack.models.email_category_child import EmailCategoryChild
+from hyperstack.models.email_preferences_response import EmailPreferencesResponse
 from hyperstack.models.environment import Environment
 from hyperstack.models.environment_features import EnvironmentFeatures
 from hyperstack.models.environment_fields import EnvironmentFields
@@ -379,6 +383,7 @@ from hyperstack.models.sub_resources_costs_response_model import SubResourcesCos
 from hyperstack.models.sub_resources_graph_billing_history_fields import SubResourcesGraphBillingHistoryFields
 from hyperstack.models.sub_resources_graph_response_model import SubResourcesGraphResponseModel
 from hyperstack.models.subscribe_or_unsubscribe_update_payload import SubscribeOrUnsubscribeUpdatePayload
+from hyperstack.models.supported_keypair_public_key_types_response import SupportedKeypairPublicKeyTypesResponse
 from hyperstack.models.template import Template
 from hyperstack.models.template_fields import TemplateFields
 from hyperstack.models.templates import Templates
@@ -388,6 +393,8 @@ from hyperstack.models.update_auto_topup_payload import UpdateAutoTopupPayload
 from hyperstack.models.update_auto_topup_response import UpdateAutoTopupResponse
 from hyperstack.models.update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
 from hyperstack.models.update_consent_request import UpdateConsentRequest
+from hyperstack.models.update_email_preference_input import UpdateEmailPreferenceInput
+from hyperstack.models.update_email_preference_response import UpdateEmailPreferenceResponse
 from hyperstack.models.update_environment import UpdateEnvironment
 from hyperstack.models.update_keypair_name import UpdateKeypairName
 from hyperstack.models.update_keypair_name_response import UpdateKeypairNameResponse

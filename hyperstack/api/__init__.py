@@ -24,6 +24,7 @@ from .compliance_api import ComplianceApi
 from .credit_api import CreditApi
 from .dashboard_api import DashboardApi
 from .deployment_api import DeploymentApi
+from .email_opt_in_out_api import EmailOptInOutApi
 from .environment_api import EnvironmentApi
 from .firewall_attachment_api import FirewallAttachmentApi
 from .firewalls_api import FirewallsApi

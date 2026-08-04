@@ -115,6 +115,9 @@ from .detach_volumes import DetachVolumes
 from .detach_volumes_payload import DetachVolumesPayload
 from .disable_auto_topup_response import DisableAutoTopupResponse
 from .edit_label_of_an_existing_vm_payload import EditLabelOfAnExistingVMPayload
+from .email_category import EmailCategory
+from .email_category_child import EmailCategoryChild
+from .email_preferences_response import EmailPreferencesResponse
 from .environment import Environment
 from .environment_features import EnvironmentFeatures
 from .environment_fields import EnvironmentFields
@@ -308,6 +311,7 @@ from .sub_resources_costs_response_model import SubResourcesCostsResponseModel
 from .sub_resources_graph_billing_history_fields import SubResourcesGraphBillingHistoryFields
 from .sub_resources_graph_response_model import SubResourcesGraphResponseModel
 from .subscribe_or_unsubscribe_update_payload import SubscribeOrUnsubscribeUpdatePayload
+from .supported_keypair_public_key_types_response import SupportedKeypairPublicKeyTypesResponse
 from .template import Template
 from .template_fields import TemplateFields
 from .templates import Templates
@@ -317,6 +321,8 @@ from .update_auto_topup_payload import UpdateAutoTopupPayload
 from .update_auto_topup_response import UpdateAutoTopupResponse
 from .update_cluster_node_group_payload import UpdateClusterNodeGroupPayload
 from .update_consent_request import UpdateConsentRequest
+from .update_email_preference_input import UpdateEmailPreferenceInput
+from .update_email_preference_response import UpdateEmailPreferenceResponse
 from .update_environment import UpdateEnvironment
 from .update_keypair_name import UpdateKeypairName
 from .update_keypair_name_response import UpdateKeypairNameResponse

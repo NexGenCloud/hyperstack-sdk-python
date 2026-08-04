@@ -47,6 +47,13 @@ class TestKeypairApi(unittest.TestCase):
         """
         pass
 
+    def test_list_supported_key_pair_types(self) -> None:
+        """Test case for list_supported_key_pair_types
+
+        List supported key pair types
+        """
+        pass
+
     def test_update_key_pair_name(self) -> None:
         """Test case for update_key_pair_name
 

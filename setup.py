@@ -21,7 +21,7 @@ from setuptools import setup, find_packages  # noqa: H301
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "hyperstack"
-VERSION = "v1.53.6-alpha"
+VERSION = "v1.54.7-alpha"
 PYTHON_REQUIRES = ">= 3.10"
 REQUIRES = [
     "urllib3 >= 2.7.0, < 3.0.0",
