@@ -20,6 +20,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ..models.instance_enhanced_metrics_fields import InstanceEnhancedMetricsFields
 from ..models.instance_environment_fields import InstanceEnvironmentFields
 from ..models.instance_flavor_fields import InstanceFlavorFields
 from ..models.instance_image_fields import InstanceImageFields
@@ -36,6 +37,7 @@ class InstanceFields(BaseModel):
     callback_url: Optional[StrictStr] = None
     contract_id: Optional[StrictInt] = None
     created_at: Optional[datetime] = None
+    enhanced_metrics: Optional[InstanceEnhancedMetricsFields] = None
     environment: Optional[InstanceEnvironmentFields] = None
     features: Optional[Dict[str, Any]] = None
     fixed_ip: Optional[StrictStr] = None
@@ -57,7 +59,7 @@ class InstanceFields(BaseModel):
     status: Optional[StrictStr] = None
     vm_state: Optional[StrictStr] = None
     volume_attachments: Optional[List[VolumeAttachmentFields]] = None
-    __properties: ClassVar[List[str]] = ["callback_url", "contract_id", "created_at", "environment", "features", "fixed_ip", "flavor", "floating_ip", "floating_ip_status", "id", "image", "keypair", "labels", "locked", "name", "os", "port_randomization", "port_randomization_status", "power_state", "requires_public_ip", "security_rules", "status", "vm_state", "volume_attachments"]
+    __properties: ClassVar[List[str]] = ["callback_url", "contract_id", "created_at", "enhanced_metrics", "environment", "features", "fixed_ip", "flavor", "floating_ip", "floating_ip_status", "id", "image", "keypair", "labels", "locked", "name", "os", "port_randomization", "port_randomization_status", "power_state", "requires_public_ip", "security_rules", "status", "vm_state", "volume_attachments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +100,9 @@ class InstanceFields(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of enhanced_metrics
+        if self.enhanced_metrics:
+            _dict['enhanced_metrics'] = self.enhanced_metrics.to_dict()
         # override the default output from pydantic by calling `to_dict()` of environment
         if self.environment:
             _dict['environment'] = self.environment.to_dict()
@@ -139,6 +144,7 @@ class InstanceFields(BaseModel):
             "callback_url": obj.get("callback_url"),
             "contract_id": obj.get("contract_id"),
             "created_at": obj.get("created_at"),
+            "enhanced_metrics": InstanceEnhancedMetricsFields.from_dict(obj["enhanced_metrics"]) if obj.get("enhanced_metrics") is not None else None,
             "environment": InstanceEnvironmentFields.from_dict(obj["environment"]) if obj.get("environment") is not None else None,
             "features": obj.get("features"),
             "fixed_ip": obj.get("fixed_ip"),

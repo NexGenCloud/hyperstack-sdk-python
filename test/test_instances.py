@@ -41,6 +41,8 @@ class TestInstances(unittest.TestCase):
                         callback_url = '', 
                         contract_id = 56, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        enhanced_metrics = hyperstack.models.instance_enhanced_metrics_fields.Instance_Enhanced_Metrics_Fields(
+                            enabled = True, ), 
                         environment = hyperstack.models.instance_environment_fields.Instance_Environment_Fields(
                             features = hyperstack.models.environment_features.Environment_Features(
                                 green_status = 'GREEN', 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **count** | **int** | The number of virtual machines to be created. | 
 **create_bootable_volume** | **bool** | Indicates whether to create a bootable volume for the virtual machine. When set to &#x60;true&#x60;, a bootable volume will be created; the default value is &#x60;false&#x60;. | [optional] 
 **enable_port_randomization** | **bool** | Indicates whether to enable port randomization.This setting is only effective if &#39;assign_floating_ip&#39; is true. Defaults to true. | [optional] [default to True]
+**enhanced_monitoring_enabled** | **bool** | When true, the Hyperstack VM Agent is opted in for this VM and metrics ingestion is allowed by the prom-gateway. The agent must still be installed on the VM (typically via user_data cloud-init). | [optional] [default to False]
 **environment_name** | **str** | The name of the [environment](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/) in which the virtual machine is to be created. | 
 **flavor** | [**FlavorObjectFields**](FlavorObjectFields.md) |  | [optional] 
 **flavor_name** | **str** | The name of the GPU hardware configuration ([flavor](https://docs.hyperstack.cloud/docs/hardware/flavors)) for the virtual machines being created. | 

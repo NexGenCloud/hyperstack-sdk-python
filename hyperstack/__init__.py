@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.54.7-alpha"
+__version__ = "v1.55.1-alpha"
 
 # import apis into sdk package
 from .api.access_keys_api import AccessKeysApi
@@ -238,6 +238,7 @@ from .models.import_keypair_payload import ImportKeypairPayload
 from .models.import_keypair_response import ImportKeypairResponse
 from .models.infrahub_resource_object_response_for_customer import InfrahubResourceObjectResponseForCustomer
 from .models.instance import Instance
+from .models.instance_enhanced_metrics_fields import InstanceEnhancedMetricsFields
 from .models.instance_environment_fields import InstanceEnvironmentFields
 from .models.instance_events import InstanceEvents
 from .models.instance_events_fields import InstanceEventsFields
@@ -409,6 +410,9 @@ from .models.user_consent_event import UserConsentEvent
 from .models.user_consents_response import UserConsentsResponse
 from .models.user_default_choice_for_user_fields import UserDefaultChoiceForUserFields
 from .models.user_default_choices_for_user_response import UserDefaultChoicesForUserResponse
+from .models.user_enhanced_metrics_payload import UserEnhancedMetricsPayload
+from .models.user_enhanced_metrics_response import UserEnhancedMetricsResponse
+from .models.user_enhanced_metrics_response_fields import UserEnhancedMetricsResponseFields
 from .models.user_info_post_payload import UserInfoPostPayload
 from .models.user_organizations_response import UserOrganizationsResponse
 from .models.user_permission_fields import UserPermissionFields

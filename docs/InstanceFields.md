@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **callback_url** | **str** |  | [optional] 
 **contract_id** | **int** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
+**enhanced_metrics** | [**InstanceEnhancedMetricsFields**](InstanceEnhancedMetricsFields.md) |  | [optional] 
 **environment** | [**InstanceEnvironmentFields**](InstanceEnvironmentFields.md) |  | [optional] 
 **features** | **object** |  | [optional] 
 **fixed_ip** | **str** |  | [optional] 

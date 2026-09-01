@@ -166,6 +166,7 @@ from .import_keypair_payload import ImportKeypairPayload
 from .import_keypair_response import ImportKeypairResponse
 from .infrahub_resource_object_response_for_customer import InfrahubResourceObjectResponseForCustomer
 from .instance import Instance
+from .instance_enhanced_metrics_fields import InstanceEnhancedMetricsFields
 from .instance_environment_fields import InstanceEnvironmentFields
 from .instance_events import InstanceEvents
 from .instance_events_fields import InstanceEventsFields
@@ -337,6 +338,9 @@ from .user_consent_event import UserConsentEvent
 from .user_consents_response import UserConsentsResponse
 from .user_default_choice_for_user_fields import UserDefaultChoiceForUserFields
 from .user_default_choices_for_user_response import UserDefaultChoicesForUserResponse
+from .user_enhanced_metrics_payload import UserEnhancedMetricsPayload
+from .user_enhanced_metrics_response import UserEnhancedMetricsResponse
+from .user_enhanced_metrics_response_fields import UserEnhancedMetricsResponseFields
 from .user_info_post_payload import UserInfoPostPayload
 from .user_organizations_response import UserOrganizationsResponse
 from .user_permission_fields import UserPermissionFields

@@ -166,6 +166,13 @@ class TestVirtualMachineApi(unittest.TestCase):
         """
         pass
 
+    def test_toggle_enhanced_metrics_for_avm(self) -> None:
+        """Test case for toggle_enhanced_metrics_for_avm
+
+        Enable or disable Enhanced Metrics for a virtual machine
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
