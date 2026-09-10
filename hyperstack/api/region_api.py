@@ -54,7 +54,7 @@ class RegionApi:
     ) -> Regions:
         """List Regions
 
-        Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs...cloud/docs/resource-management/regions).
+        Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/regions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -120,7 +120,7 @@ class RegionApi:
     ) -> ApiResponse[Regions]:
         """List Regions
 
-        Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs...cloud/docs/resource-management/regions).
+        Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/regions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -186,7 +186,7 @@ class RegionApi:
     ) -> RESTResponseType:
         """List Regions
 
-        Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs...cloud/docs/resource-management/regions).
+        Lists the currently available regions, each representing a distinct geographic  location housing a data center. For additional information on regions, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/regions).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

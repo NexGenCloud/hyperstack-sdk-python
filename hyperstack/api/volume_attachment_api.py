@@ -61,7 +61,7 @@ class VolumeAttachmentApi:
     ) -> AttachVolumes:
         """Attach volumes to virtual machine
 
-        Attaches one or more volumes to an existing virtual machine, expanding its storage capacity by 2PB per attached volume. Include the VM ID in the path and the volume IDs in the request body to attach the specified volumes. For more detailson volume attachment, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-attachment/attach-volumes/).
+        Attaches one or more volumes to an existing virtual machine, expanding its storage capacity by 2PB per attached volume. Include the VM ID in the path and the volume IDs in the request body to attach the specified volumes. For more detailson volume attachment, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-attachment/attach-volumes/).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -137,7 +137,7 @@ class VolumeAttachmentApi:
     ) -> ApiResponse[AttachVolumes]:
         """Attach volumes to virtual machine
 
-        Attaches one or more volumes to an existing virtual machine, expanding its storage capacity by 2PB per attached volume. Include the VM ID in the path and the volume IDs in the request body to attach the specified volumes. For more detailson volume attachment, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-attachment/attach-volumes/).
+        Attaches one or more volumes to an existing virtual machine, expanding its storage capacity by 2PB per attached volume. Include the VM ID in the path and the volume IDs in the request body to attach the specified volumes. For more detailson volume attachment, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-attachment/attach-volumes/).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -213,7 +213,7 @@ class VolumeAttachmentApi:
     ) -> RESTResponseType:
         """Attach volumes to virtual machine
 
-        Attaches one or more volumes to an existing virtual machine, expanding its storage capacity by 2PB per attached volume. Include the VM ID in the path and the volume IDs in the request body to attach the specified volumes. For more detailson volume attachment, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-attachment/attach-volumes/).
+        Attaches one or more volumes to an existing virtual machine, expanding its storage capacity by 2PB per attached volume. Include the VM ID in the path and the volume IDs in the request body to attach the specified volumes. For more detailson volume attachment, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-attachment/attach-volumes/).
 
         :param vm_id: (required)
         :type vm_id: int

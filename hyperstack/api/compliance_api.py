@@ -620,7 +620,7 @@ class ComplianceApi:
     ) -> ComplianceResponse:
         """Retrieve GPU compliance
 
-        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs...cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
+        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
 
         :param gpu: This is for gpu model
         :type gpu: str
@@ -692,7 +692,7 @@ class ComplianceApi:
     ) -> ApiResponse[ComplianceResponse]:
         """Retrieve GPU compliance
 
-        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs...cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
+        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
 
         :param gpu: This is for gpu model
         :type gpu: str
@@ -764,7 +764,7 @@ class ComplianceApi:
     ) -> RESTResponseType:
         """Retrieve GPU compliance
 
-        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs...cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
+        Returns a list of compliance objects each corresponding to available GPU models. These compliance objects contain minimum and maximum values for RAM in GB, number of vCPUs, and system disk capacity in GB. Use the optional `gpu` model parameter in the query string to filter responses by GPU model. For additional details on GPU compliance, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#adhering-to-gpu-compliance).
 
         :param gpu: This is for gpu model
         :type gpu: str

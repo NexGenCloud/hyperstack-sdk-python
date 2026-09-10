@@ -662,7 +662,7 @@ class TemplateApi:
     ) -> Template:
         """Retrieve template details
 
-        Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs...cloud/docs/api-references/).
+        Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs.hyperstack.cloud/docs/api-references/).
 
         :param id: (required)
         :type id: int
@@ -733,7 +733,7 @@ class TemplateApi:
     ) -> ApiResponse[Template]:
         """Retrieve template details
 
-        Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs...cloud/docs/api-references/).
+        Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs.hyperstack.cloud/docs/api-references/).
 
         :param id: (required)
         :type id: int
@@ -804,7 +804,7 @@ class TemplateApi:
     ) -> RESTResponseType:
         """Retrieve template details
 
-        Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs...cloud/docs/api-references/).
+        Retrieves the resource configuration details for a specified template.Provide the template ID in the path to retrieve details for the specified template.For additional information on template configuration details,[**click here**](https://docs.hyperstack.cloud/docs/api-references/).
 
         :param id: (required)
         :type id: int
@@ -935,7 +935,7 @@ class TemplateApi:
     ) -> Templates:
         """List templates
 
-        Returns a comprehensive list of templates, providing resource configuration details for each. Optionally, specify the `visibility` as `public` or `private` to retrieve templates with the desired visibility status. To learn more about the templates feature, [**click here**](https://docs...cloud/docs/features/templates#view-a-list-of-templates).
+        Returns a comprehensive list of templates, providing resource configuration details for each. Optionally, specify the `visibility` as `public` or `private` to retrieve templates with the desired visibility status. To learn more about the templates feature, [**click here**](https://docs.hyperstack.cloud/docs/features/templates#view-a-list-of-templates).
 
         :param visibility: Specify the `visibility` status as either `public` or `private` to filter and retrieve templates with the desired visibility.
         :type visibility: str
@@ -1006,7 +1006,7 @@ class TemplateApi:
     ) -> ApiResponse[Templates]:
         """List templates
 
-        Returns a comprehensive list of templates, providing resource configuration details for each. Optionally, specify the `visibility` as `public` or `private` to retrieve templates with the desired visibility status. To learn more about the templates feature, [**click here**](https://docs...cloud/docs/features/templates#view-a-list-of-templates).
+        Returns a comprehensive list of templates, providing resource configuration details for each. Optionally, specify the `visibility` as `public` or `private` to retrieve templates with the desired visibility status. To learn more about the templates feature, [**click here**](https://docs.hyperstack.cloud/docs/features/templates#view-a-list-of-templates).
 
         :param visibility: Specify the `visibility` status as either `public` or `private` to filter and retrieve templates with the desired visibility.
         :type visibility: str
@@ -1077,7 +1077,7 @@ class TemplateApi:
     ) -> RESTResponseType:
         """List templates
 
-        Returns a comprehensive list of templates, providing resource configuration details for each. Optionally, specify the `visibility` as `public` or `private` to retrieve templates with the desired visibility status. To learn more about the templates feature, [**click here**](https://docs...cloud/docs/features/templates#view-a-list-of-templates).
+        Returns a comprehensive list of templates, providing resource configuration details for each. Optionally, specify the `visibility` as `public` or `private` to retrieve templates with the desired visibility status. To learn more about the templates feature, [**click here**](https://docs.hyperstack.cloud/docs/features/templates#view-a-list-of-templates).
 
         :param visibility: Specify the `visibility` status as either `public` or `private` to filter and retrieve templates with the desired visibility.
         :type visibility: str

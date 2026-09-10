@@ -59,7 +59,7 @@ class AssigningMemberRoleApi:
     ) -> RbacRoleDetailResponseModel:
         """Assign RBAC Role
 
-        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
+        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
 
         :param user_id: (required)
         :type user_id: int
@@ -134,7 +134,7 @@ class AssigningMemberRoleApi:
     ) -> ApiResponse[RbacRoleDetailResponseModel]:
         """Assign RBAC Role
 
-        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
+        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
 
         :param user_id: (required)
         :type user_id: int
@@ -209,7 +209,7 @@ class AssigningMemberRoleApi:
     ) -> RESTResponseType:
         """Assign RBAC Role
 
-        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
+        Assigns a specific RBAC role to a user within your organization, granting them access to the resource actions permitted by the role. Provide the user ID in the path and the role ID in the request body. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/assign-rbac-role).
 
         :param user_id: (required)
         :type user_id: int
@@ -359,7 +359,7 @@ class AssigningMemberRoleApi:
     ) -> CommonResponseModel:
         """Remove RBAC Role From User
 
-        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
+        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
 
         :param user_id: (required)
         :type user_id: int
@@ -430,7 +430,7 @@ class AssigningMemberRoleApi:
     ) -> ApiResponse[CommonResponseModel]:
         """Remove RBAC Role From User
 
-        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
+        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
 
         :param user_id: (required)
         :type user_id: int
@@ -501,7 +501,7 @@ class AssigningMemberRoleApi:
     ) -> RESTResponseType:
         """Remove RBAC Role From User
 
-        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
+        Removes an RBAC role from a user within your organization, revoking the resource permissions they had access to. Provide the user ID in the path. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/rbac/manage-member-roles/revoke-rbac-role).
 
         :param user_id: (required)
         :type user_id: int

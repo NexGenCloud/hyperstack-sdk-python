@@ -65,7 +65,7 @@ class FirewallsApi:
     ) -> FirewallRule:
         """Add firewall rule to firewall
 
-        Creates a [**firewall rule**](https://docs...cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
+        Creates a [**firewall rule**](https://docs.hyperstack.cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
 
         :param firewall_id: (required)
         :type firewall_id: int
@@ -140,7 +140,7 @@ class FirewallsApi:
     ) -> ApiResponse[FirewallRule]:
         """Add firewall rule to firewall
 
-        Creates a [**firewall rule**](https://docs...cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
+        Creates a [**firewall rule**](https://docs.hyperstack.cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
 
         :param firewall_id: (required)
         :type firewall_id: int
@@ -215,7 +215,7 @@ class FirewallsApi:
     ) -> RESTResponseType:
         """Add firewall rule to firewall
 
-        Creates a [**firewall rule**](https://docs...cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
+        Creates a [**firewall rule**](https://docs.hyperstack.cloud/docs/network-security/security-rules) and adds it to an existing firewall. Include the firewall ID in the path, and provide the firewall rule configuration in the request body.
 
         :param firewall_id: (required)
         :type firewall_id: int
@@ -365,7 +365,7 @@ class FirewallsApi:
     ) -> FirewallResponse:
         """Create firewall
 
-        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs...cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
+        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
 
         :param payload: (required)
         :type payload: CreateFirewallPayload
@@ -438,7 +438,7 @@ class FirewallsApi:
     ) -> ApiResponse[FirewallResponse]:
         """Create firewall
 
-        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs...cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
+        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
 
         :param payload: (required)
         :type payload: CreateFirewallPayload
@@ -511,7 +511,7 @@ class FirewallsApi:
     ) -> RESTResponseType:
         """Create firewall
 
-        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs...cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
+        Creates a firewall to which firewall rules can be added. A firewall can be attached to one or more virtual machines to control inbound and outbound traffic. In the body of the request, include the name of the firewall, the ID of the environment within which the firewall will be created, and an optional description. To obtain the ID of the environment, make a request to the [**list environments**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/list-environments) endpoint.
 
         :param payload: (required)
         :type payload: CreateFirewallPayload
@@ -657,7 +657,7 @@ class FirewallsApi:
     ) -> ResponseModel:
         """Delete firewall
 
-        Deletes a firewall by specifying the firewall ID in the path. If the firewall is currently attached to a virtual machine, it must be detached before deletion. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/delete-firewall).
+        Deletes a firewall by specifying the firewall ID in the path. If the firewall is currently attached to a virtual machine, it must be detached before deletion. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/delete-firewall).
 
         :param id: (required)
         :type id: int
@@ -730,7 +730,7 @@ class FirewallsApi:
     ) -> ApiResponse[ResponseModel]:
         """Delete firewall
 
-        Deletes a firewall by specifying the firewall ID in the path. If the firewall is currently attached to a virtual machine, it must be detached before deletion. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/delete-firewall).
+        Deletes a firewall by specifying the firewall ID in the path. If the firewall is currently attached to a virtual machine, it must be detached before deletion. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/delete-firewall).
 
         :param id: (required)
         :type id: int
@@ -803,7 +803,7 @@ class FirewallsApi:
     ) -> RESTResponseType:
         """Delete firewall
 
-        Deletes a firewall by specifying the firewall ID in the path. If the firewall is currently attached to a virtual machine, it must be detached before deletion. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/delete-firewall).
+        Deletes a firewall by specifying the firewall ID in the path. If the firewall is currently attached to a virtual machine, it must be detached before deletion. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/delete-firewall).
 
         :param id: (required)
         :type id: int
@@ -937,7 +937,7 @@ class FirewallsApi:
     ) -> ResponseModel:
         """Delete firewall rules from firewall
 
-        Removes a firewall rule from firewall by providing the firewall ID and firewall rule ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/remove-firewall-rule-from-firewall).
+        Removes a firewall rule from firewall by providing the firewall ID and firewall rule ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/remove-firewall-rule-from-firewall).
 
         :param firewall_id: (required)
         :type firewall_id: int
@@ -1014,7 +1014,7 @@ class FirewallsApi:
     ) -> ApiResponse[ResponseModel]:
         """Delete firewall rules from firewall
 
-        Removes a firewall rule from firewall by providing the firewall ID and firewall rule ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/remove-firewall-rule-from-firewall).
+        Removes a firewall rule from firewall by providing the firewall ID and firewall rule ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/remove-firewall-rule-from-firewall).
 
         :param firewall_id: (required)
         :type firewall_id: int
@@ -1091,7 +1091,7 @@ class FirewallsApi:
     ) -> RESTResponseType:
         """Delete firewall rules from firewall
 
-        Removes a firewall rule from firewall by providing the firewall ID and firewall rule ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/remove-firewall-rule-from-firewall).
+        Removes a firewall rule from firewall by providing the firewall ID and firewall rule ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/remove-firewall-rule-from-firewall).
 
         :param firewall_id: (required)
         :type firewall_id: int
@@ -1509,7 +1509,7 @@ class FirewallsApi:
     ) -> FirewallsListResponse:
         """List firewalls
 
-        Retrieves a list of existing firewalls and their details, including the security rules they contain and information about the virtual machines to which they are attached. For more information about the firewalls features offered by Infrahub, [**click here**](https://docs...cloud/docs/network-security/security-groups).
+        Retrieves a list of existing firewalls and their details, including the security rules they contain and information about the virtual machines to which they are attached. For more information about the firewalls features offered by Infrahub, [**click here**](https://docs.hyperstack.cloud/docs/network-security/security-groups).
 
         :param page:
         :type page: int
@@ -1592,7 +1592,7 @@ class FirewallsApi:
     ) -> ApiResponse[FirewallsListResponse]:
         """List firewalls
 
-        Retrieves a list of existing firewalls and their details, including the security rules they contain and information about the virtual machines to which they are attached. For more information about the firewalls features offered by Infrahub, [**click here**](https://docs...cloud/docs/network-security/security-groups).
+        Retrieves a list of existing firewalls and their details, including the security rules they contain and information about the virtual machines to which they are attached. For more information about the firewalls features offered by Infrahub, [**click here**](https://docs.hyperstack.cloud/docs/network-security/security-groups).
 
         :param page:
         :type page: int
@@ -1675,7 +1675,7 @@ class FirewallsApi:
     ) -> RESTResponseType:
         """List firewalls
 
-        Retrieves a list of existing firewalls and their details, including the security rules they contain and information about the virtual machines to which they are attached. For more information about the firewalls features offered by Infrahub, [**click here**](https://docs...cloud/docs/network-security/security-groups).
+        Retrieves a list of existing firewalls and their details, including the security rules they contain and information about the virtual machines to which they are attached. For more information about the firewalls features offered by Infrahub, [**click here**](https://docs.hyperstack.cloud/docs/network-security/security-groups).
 
         :param page:
         :type page: int

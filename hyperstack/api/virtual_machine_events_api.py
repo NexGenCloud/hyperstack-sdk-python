@@ -56,7 +56,7 @@ class VirtualMachineEventsApi:
     ) -> InstanceEvents:
         """List virtual machine events
 
-        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs...cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
+        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -127,7 +127,7 @@ class VirtualMachineEventsApi:
     ) -> ApiResponse[InstanceEvents]:
         """List virtual machine events
 
-        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs...cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
+        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -198,7 +198,7 @@ class VirtualMachineEventsApi:
     ) -> RESTResponseType:
         """List virtual machine events
 
-        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs...cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
+        Retrieves a list of all events in a virtual machine's history, which records actions performed on the specified virtual machine. Include the virtual machine ID in the path to retrieve the history of events. For more details on virtual machine events history, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#events-history).
 
         :param vm_id: (required)
         :type vm_id: int

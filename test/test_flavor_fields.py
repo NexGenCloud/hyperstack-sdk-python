@@ -44,6 +44,17 @@ class TestFlavorFields(unittest.TestCase):
                 gpu = '',
                 gpu_count = 56,
                 id = 56,
+                image_restrictions = hyperstack.models.image_restrictions.ImageRestrictions(
+                    compatible_images = [
+                        hyperstack.models.compatible_image.CompatibleImage(
+                            constraints = hyperstack.models.constraints.constraints(), 
+                            image_id = 56, 
+                            image_name = '', 
+                            link_type = '', 
+                            reason = '', )
+                        ], 
+                    has_image_restrictions = True, 
+                    restriction_type = '', ),
                 labels = [
                     hyperstack.models.lable_resonse.LableResonse(
                         id = 56, 

@@ -29,7 +29,7 @@ from pydantic import SecretStr
 from .configuration import Configuration
 from .api_response import ApiResponse, T as ApiResponseT
 from . import rest, models
-from .import rest
+from . import rest
 from .exceptions import (
     ApiValueError,
     ApiException,
@@ -90,7 +90,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/v1.55.1-alpha/python'
+        self.user_agent = 'hyperstack-python-sdk/v1.55.4-alpha'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -179,7 +179,7 @@ class ApiClient:
 
         # header parameters
         header_params = header_params or {}
-        header_params.update(self.default_headers)
+        header_params.update(self.default_headers); from ._user_agent import apply_hyperstack_headers; apply_hyperstack_headers(header_params)
         if self.cookie:
             header_params['Cookie'] = self.cookie
         if header_params:

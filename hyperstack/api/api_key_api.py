@@ -332,7 +332,7 @@ class ApiKeyApi:
     ) -> GenerateUpdateApiKeyResponseModel:
         """Generate API Key
 
-        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
+        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
 
         :param payload: (required)
         :type payload: GenerateUpdateApiKeyPayload
@@ -404,7 +404,7 @@ class ApiKeyApi:
     ) -> ApiResponse[GenerateUpdateApiKeyResponseModel]:
         """Generate API Key
 
-        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
+        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
 
         :param payload: (required)
         :type payload: GenerateUpdateApiKeyPayload
@@ -476,7 +476,7 @@ class ApiKeyApi:
     ) -> RESTResponseType:
         """Generate API Key
 
-        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
+        Generates your API key, providing access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/generate-api-key).
 
         :param payload: (required)
         :type payload: GenerateUpdateApiKeyPayload
@@ -620,7 +620,7 @@ class ApiKeyApi:
     ) -> GetApiKeysResponseModel:
         """Retrieve API Keys
 
-        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
+        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -686,7 +686,7 @@ class ApiKeyApi:
     ) -> ApiResponse[GetApiKeysResponseModel]:
         """Retrieve API Keys
 
-        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
+        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -752,7 +752,7 @@ class ApiKeyApi:
     ) -> RESTResponseType:
         """Retrieve API Keys
 
-        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
+        Retrieves your API keys, granting access to the Infrahub APIs. For further details on API keys, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/api-key/retrieve-api-key).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

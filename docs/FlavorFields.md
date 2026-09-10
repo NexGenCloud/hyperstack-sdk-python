@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **gpu** | **str** |  | [optional] 
 **gpu_count** | **int** |  | [optional] 
 **id** | **int** |  | [optional] 
+**image_restrictions** | [**ImageRestrictions**](ImageRestrictions.md) | Image compatibility restrictions for this flavor (flavor → image links) | [optional] 
 **labels** | [**List[LableResonse]**](LableResonse.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **ram** | **float** |  | [optional] 

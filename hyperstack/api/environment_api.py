@@ -64,7 +64,7 @@ class EnvironmentApi:
     ) -> Environment:
         """Create environment
 
-        Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://docs...cloud/docs/resource-management/regions/) in the request body.
+        Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://docs.hyperstack.cloud/docs/resource-management/regions/) in the request body.
 
         :param payload: (required)
         :type payload: CreateEnvironment
@@ -136,7 +136,7 @@ class EnvironmentApi:
     ) -> ApiResponse[Environment]:
         """Create environment
 
-        Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://docs...cloud/docs/resource-management/regions/) in the request body.
+        Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://docs.hyperstack.cloud/docs/resource-management/regions/) in the request body.
 
         :param payload: (required)
         :type payload: CreateEnvironment
@@ -208,7 +208,7 @@ class EnvironmentApi:
     ) -> RESTResponseType:
         """Create environment
 
-        Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://docs...cloud/docs/resource-management/regions/) in the request body.
+        Creates an environment—a container to organize your resources, including SSH key pairs, virtual machines, and volumes. To create your environment, provide your desired environment name, and [**region**](https://docs.hyperstack.cloud/docs/resource-management/regions/) in the request body.
 
         :param payload: (required)
         :type payload: CreateEnvironment
@@ -1447,7 +1447,7 @@ class EnvironmentApi:
     ) -> Environments:
         """List environments
 
-        Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://docs...cloud/docs/api-reference/core-resources/environments/), and the date and time of creation. For more information on environments, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/).
+        Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/), and the date and time of creation. For more information on environments, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/).
 
         :param page: Page Number
         :type page: str
@@ -1525,7 +1525,7 @@ class EnvironmentApi:
     ) -> ApiResponse[Environments]:
         """List environments
 
-        Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://docs...cloud/docs/api-reference/core-resources/environments/), and the date and time of creation. For more information on environments, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/).
+        Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/), and the date and time of creation. For more information on environments, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/).
 
         :param page: Page Number
         :type page: str
@@ -1603,7 +1603,7 @@ class EnvironmentApi:
     ) -> RESTResponseType:
         """List environments
 
-        Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://docs...cloud/docs/api-reference/core-resources/environments/), and the date and time of creation. For more information on environments, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/).
+        Returns a list of your existing environments, providing the following details for each; environment ID, name, [**region**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/), and the date and time of creation. For more information on environments, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/).
 
         :param page: Page Number
         :type page: str

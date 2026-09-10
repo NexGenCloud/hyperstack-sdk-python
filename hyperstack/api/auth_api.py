@@ -1103,7 +1103,7 @@ class AuthApi:
     ) -> AuthUserInfoResponseModel:
         """Retrieve Authenticated User Details
 
-        Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/auth).
+        Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1169,7 +1169,7 @@ class AuthApi:
     ) -> ApiResponse[AuthUserInfoResponseModel]:
         """Retrieve Authenticated User Details
 
-        Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/auth).
+        Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1235,7 +1235,7 @@ class AuthApi:
     ) -> RESTResponseType:
         """Retrieve Authenticated User Details
 
-        Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/auth).
+        Retrieves detailed information about the currently authenticated user. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/auth).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

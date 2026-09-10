@@ -58,7 +58,7 @@ class FlavorApi:
     ) -> FlavorListResponse:
         """List Flavors
 
-        Returns a list of available virtual machine hardware configurations, known as**flavors**. You can specify a `region_name` in the query string of the request toretrieve flavors available only in the specified region; by default, it returnsflavors available in all regions. For more details on flavors,[**click here**](https://docs...cloud/docs/hardware/flavors).
+        Returns a list of available virtual machine hardware configurations, known as**flavors**. You can specify a `region_name` in the query string of the request toretrieve flavors available only in the specified region; by default, it returnsflavors available in all regions. For more details on flavors,[**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors).
 
         :param region: Region Name
         :type region: str
@@ -129,7 +129,7 @@ class FlavorApi:
     ) -> ApiResponse[FlavorListResponse]:
         """List Flavors
 
-        Returns a list of available virtual machine hardware configurations, known as**flavors**. You can specify a `region_name` in the query string of the request toretrieve flavors available only in the specified region; by default, it returnsflavors available in all regions. For more details on flavors,[**click here**](https://docs...cloud/docs/hardware/flavors).
+        Returns a list of available virtual machine hardware configurations, known as**flavors**. You can specify a `region_name` in the query string of the request toretrieve flavors available only in the specified region; by default, it returnsflavors available in all regions. For more details on flavors,[**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors).
 
         :param region: Region Name
         :type region: str
@@ -200,7 +200,7 @@ class FlavorApi:
     ) -> RESTResponseType:
         """List Flavors
 
-        Returns a list of available virtual machine hardware configurations, known as**flavors**. You can specify a `region_name` in the query string of the request toretrieve flavors available only in the specified region; by default, it returnsflavors available in all regions. For more details on flavors,[**click here**](https://docs...cloud/docs/hardware/flavors).
+        Returns a list of available virtual machine hardware configurations, known as**flavors**. You can specify a `region_name` in the query string of the request toretrieve flavors available only in the specified region; by default, it returnsflavors available in all regions. For more details on flavors,[**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors).
 
         :param region: Region Name
         :type region: str

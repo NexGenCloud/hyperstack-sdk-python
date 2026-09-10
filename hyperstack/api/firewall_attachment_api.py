@@ -58,7 +58,7 @@ class FirewallAttachmentApi:
     ) -> ResponseModel:
         """Attach Firewalls to VMs
 
-        Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
+        Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
 
         :param firewall_id: (required)
         :type firewall_id: int
@@ -135,7 +135,7 @@ class FirewallAttachmentApi:
     ) -> ApiResponse[ResponseModel]:
         """Attach Firewalls to VMs
 
-        Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
+        Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
 
         :param firewall_id: (required)
         :type firewall_id: int
@@ -212,7 +212,7 @@ class FirewallAttachmentApi:
     ) -> RESTResponseType:
         """Attach Firewalls to VMs
 
-        Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
+        Attach a firewall to one or more virtual machines by providing the virtual machine IDs in the request body and the firewall ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/firewalls/attach-firewall-to-vms).
 
         :param firewall_id: (required)
         :type firewall_id: int

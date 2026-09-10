@@ -48,6 +48,7 @@ class TestFlavorListResponse(unittest.TestCase):
                                 gpu = '', 
                                 gpu_count = 56, 
                                 id = 56, 
+                                image_restrictions = hyperstack.models.image_restrictions.image_restrictions(), 
                                 labels = [
                                     hyperstack.models.lable_resonse.LableResonse(
                                         id = 56, 

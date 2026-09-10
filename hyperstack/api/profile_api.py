@@ -59,7 +59,7 @@ class ProfileApi:
     ) -> CreateProfileResponse:
         """Create profile
 
-        Creates a provisioning profile to save the configuration of a virtual machinefor future use. Include the profile name, description, and virtual machine configuration details in the request body. For more information about virtual machine profiles,[**click here**](https://docs...cloud/docs/virtual-machines/provisioning-profiles).
+        Creates a provisioning profile to save the configuration of a virtual machinefor future use. Include the profile name, description, and virtual machine configuration details in the request body. For more information about virtual machine profiles,[**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
 
         :param payload: (required)
         :type payload: CreateProfilePayload
@@ -130,7 +130,7 @@ class ProfileApi:
     ) -> ApiResponse[CreateProfileResponse]:
         """Create profile
 
-        Creates a provisioning profile to save the configuration of a virtual machinefor future use. Include the profile name, description, and virtual machine configuration details in the request body. For more information about virtual machine profiles,[**click here**](https://docs...cloud/docs/virtual-machines/provisioning-profiles).
+        Creates a provisioning profile to save the configuration of a virtual machinefor future use. Include the profile name, description, and virtual machine configuration details in the request body. For more information about virtual machine profiles,[**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
 
         :param payload: (required)
         :type payload: CreateProfilePayload
@@ -201,7 +201,7 @@ class ProfileApi:
     ) -> RESTResponseType:
         """Create profile
 
-        Creates a provisioning profile to save the configuration of a virtual machinefor future use. Include the profile name, description, and virtual machine configuration details in the request body. For more information about virtual machine profiles,[**click here**](https://docs...cloud/docs/virtual-machines/provisioning-profiles).
+        Creates a provisioning profile to save the configuration of a virtual machinefor future use. Include the profile name, description, and virtual machine configuration details in the request body. For more information about virtual machine profiles,[**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
 
         :param payload: (required)
         :type payload: CreateProfilePayload
@@ -618,7 +618,7 @@ class ProfileApi:
     ) -> CreateProfileResponse:
         """Retrieve profile details
 
-        Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs...cloud/docs/virtual-machines/provisioning-profiles).
+        Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
 
         :param id: (required)
         :type id: int
@@ -689,7 +689,7 @@ class ProfileApi:
     ) -> ApiResponse[CreateProfileResponse]:
         """Retrieve profile details
 
-        Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs...cloud/docs/virtual-machines/provisioning-profiles).
+        Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
 
         :param id: (required)
         :type id: int
@@ -760,7 +760,7 @@ class ProfileApi:
     ) -> RESTResponseType:
         """Retrieve profile details
 
-        Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs...cloud/docs/virtual-machines/provisioning-profiles).
+        Retrieves details for an existing provisioning profile by supplying the profile ID in the request path. For more information about profiles, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles).
 
         :param id: (required)
         :type id: int
@@ -890,7 +890,7 @@ class ProfileApi:
     ) -> ProfileListResponse:
         """List profiles
 
-        Returns a list of your existing provisioning profiles, providing virtual machine configuration details for each. For additional information about profiles,[**click here**](https://docs...cloud/docs/virtual-machines/provisioning-profiles#load-a-provisioning-profile).
+        Returns a list of your existing provisioning profiles, providing virtual machine configuration details for each. For additional information about profiles,[**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles#load-a-provisioning-profile).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -956,7 +956,7 @@ class ProfileApi:
     ) -> ApiResponse[ProfileListResponse]:
         """List profiles
 
-        Returns a list of your existing provisioning profiles, providing virtual machine configuration details for each. For additional information about profiles,[**click here**](https://docs...cloud/docs/virtual-machines/provisioning-profiles#load-a-provisioning-profile).
+        Returns a list of your existing provisioning profiles, providing virtual machine configuration details for each. For additional information about profiles,[**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles#load-a-provisioning-profile).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1022,7 +1022,7 @@ class ProfileApi:
     ) -> RESTResponseType:
         """List profiles
 
-        Returns a list of your existing provisioning profiles, providing virtual machine configuration details for each. For additional information about profiles,[**click here**](https://docs...cloud/docs/virtual-machines/provisioning-profiles#load-a-provisioning-profile).
+        Returns a list of your existing provisioning profiles, providing virtual machine configuration details for each. For additional information about profiles,[**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/provisioning-profiles#load-a-provisioning-profile).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

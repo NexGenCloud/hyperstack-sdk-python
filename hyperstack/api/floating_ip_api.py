@@ -56,7 +56,7 @@ class FloatingIpApi:
     ) -> ResponseModel:
         """Attach public IP to virtual machine
 
-        Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/attach-floating-ip/).
+        Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/attach-floating-ip/).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -128,7 +128,7 @@ class FloatingIpApi:
     ) -> ApiResponse[ResponseModel]:
         """Attach public IP to virtual machine
 
-        Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/attach-floating-ip/).
+        Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/attach-floating-ip/).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -200,7 +200,7 @@ class FloatingIpApi:
     ) -> RESTResponseType:
         """Attach public IP to virtual machine
 
-        Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/attach-floating-ip/).
+        Initiates the creation of a public IP address and attaches it to an existing virtual machine, making it accessible through the internet. Include the virtual machine ID in the path to attach a public IP to the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/floating-ip/attach-floating-ip/).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -332,7 +332,7 @@ class FloatingIpApi:
     ) -> ResponseModel:
         """Detach public IP from virtual machine
 
-        Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://docs...cloud/docs/virtual-machines/public-ip).
+        Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/public-ip).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -403,7 +403,7 @@ class FloatingIpApi:
     ) -> ApiResponse[ResponseModel]:
         """Detach public IP from virtual machine
 
-        Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://docs...cloud/docs/virtual-machines/public-ip).
+        Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/public-ip).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -474,7 +474,7 @@ class FloatingIpApi:
     ) -> RESTResponseType:
         """Detach public IP from virtual machine
 
-        Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://docs...cloud/docs/virtual-machines/public-ip).
+        Removes a public IP address from an existing virtual machine, disabling internet accessibility to the VM. Include the virtual machine ID in the path to detach the public IP from the specified VM. For more information on public IP addresses, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/public-ip).
 
         :param vm_id: (required)
         :type vm_id: int

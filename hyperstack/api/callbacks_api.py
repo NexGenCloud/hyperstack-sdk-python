@@ -59,7 +59,7 @@ class CallbacksApi:
     ) -> AttachCallbackResponse:
         """Attach callback to virtual machine
 
-        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/attach-callback-vm).
+        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/attach-callback-vm).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -134,7 +134,7 @@ class CallbacksApi:
     ) -> ApiResponse[AttachCallbackResponse]:
         """Attach callback to virtual machine
 
-        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/attach-callback-vm).
+        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/attach-callback-vm).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -209,7 +209,7 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Attach callback to virtual machine
 
-        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/attach-callback-vm).
+        Creates a callback URL for a specified virtual machine, enabling the posting of action events executed on the virtual machine to the specified URL. Provide the callback URL in the request body and the ID of the virtual machine to which it is being attached in the path. For more details on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/attach-callback-vm).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -360,7 +360,7 @@ class CallbacksApi:
     ) -> AttachCallbackResponse:
         """Attach callback to volume
 
-        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/attach-callback-volume).
+        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/attach-callback-volume).
 
         :param volume_id: (required)
         :type volume_id: int
@@ -435,7 +435,7 @@ class CallbacksApi:
     ) -> ApiResponse[AttachCallbackResponse]:
         """Attach callback to volume
 
-        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/attach-callback-volume).
+        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/attach-callback-volume).
 
         :param volume_id: (required)
         :type volume_id: int
@@ -510,7 +510,7 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Attach callback to volume
 
-        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/attach-callback-volume).
+        Creates a callback URL for a specified volume, enabling the posting of action events executed on the volume to the specified URL. Provide the callback URL in the request body and the ID of the volume to which it is being attached in the path. For more details on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/attach-callback-volume).
 
         :param volume_id: (required)
         :type volume_id: int
@@ -660,7 +660,7 @@ class CallbacksApi:
     ) -> ResponseModel:
         """Delete virtual machine callback
 
-        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/delete-callback-vm).
+        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/delete-callback-vm).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -731,7 +731,7 @@ class CallbacksApi:
     ) -> ApiResponse[ResponseModel]:
         """Delete virtual machine callback
 
-        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/delete-callback-vm).
+        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/delete-callback-vm).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -802,7 +802,7 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Delete virtual machine callback
 
-        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/delete-callback-vm).
+        Permanently deletes the callback URL associated with a specified virtual machine by providing the virtual machine ID in the request path. For additional information on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms/delete-callback-vm).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -933,7 +933,7 @@ class CallbacksApi:
     ) -> ResponseModel:
         """Delete volume callback
 
-        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/delete-callback-volume).
+        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/delete-callback-volume).
 
         :param volume_id: (required)
         :type volume_id: int
@@ -1004,7 +1004,7 @@ class CallbacksApi:
     ) -> ApiResponse[ResponseModel]:
         """Delete volume callback
 
-        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/delete-callback-volume).
+        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/delete-callback-volume).
 
         :param volume_id: (required)
         :type volume_id: int
@@ -1075,7 +1075,7 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Delete volume callback
 
-        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/delete-callback-volume).
+        Permanently deletes the callback URL associated with a specified volume by providing the volume ID in the request path. For additional information on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/delete-callback-volume).
 
         :param volume_id: (required)
         :type volume_id: int
@@ -1207,7 +1207,7 @@ class CallbacksApi:
     ) -> AttachCallbackResponse:
         """Update virtual machine callback
 
-        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms).
+        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -1282,7 +1282,7 @@ class CallbacksApi:
     ) -> ApiResponse[AttachCallbackResponse]:
         """Update virtual machine callback
 
-        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms).
+        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -1357,7 +1357,7 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Update virtual machine callback
 
-        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms).
+        Updates the callback URL for a specified virtual machine. Provide the new callback URL in the request body, along with the ID of the associated virtual machine in the path. For additional information on virtual machine callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/callbacks-vms).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -1508,7 +1508,7 @@ class CallbacksApi:
     ) -> AttachCallbackResponse:
         """Update volume callback
 
-        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/update-callback-volume/).
+        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/update-callback-volume/).
 
         :param volume_id: (required)
         :type volume_id: int
@@ -1583,7 +1583,7 @@ class CallbacksApi:
     ) -> ApiResponse[AttachCallbackResponse]:
         """Update volume callback
 
-        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/update-callback-volume/).
+        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/update-callback-volume/).
 
         :param volume_id: (required)
         :type volume_id: int
@@ -1658,7 +1658,7 @@ class CallbacksApi:
     ) -> RESTResponseType:
         """Update volume callback
 
-        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/volumes/volume-callbacks/update-callback-volume/).
+        Updates the callback URL for a specified volume. Provide the new callback URL in the request body, along with the ID of the associated volume in the path. For additional information on volume callback URLs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/volumes/volume-callbacks/update-callback-volume/).
 
         :param volume_id: (required)
         :type volume_id: int

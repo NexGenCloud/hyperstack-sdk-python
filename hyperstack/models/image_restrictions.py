@@ -17,24 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from typing_extensions import Annotated
+from ..models.compatible_image import CompatibleImage
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CreateVolumePayload(BaseModel):
+class ImageRestrictions(BaseModel):
     """
-    CreateVolumePayload
+    ImageRestrictions
     """ # noqa: E501
-    callback_url: Optional[Annotated[str, Field(strict=True, max_length=250)]] = Field(default=None, description="A URL that can be attached to the volume you are creating. This `callback_url` will post any action events that occur to your volume to the provided URL.")
-    description: Optional[StrictStr] = Field(default=None, description="A brief description or comment about the volume.")
-    environment_name: StrictStr = Field(description="The name of the [environment](https://docs.hyperstack.cloud/docs/api-reference/core-resources/environments/) within which the volume is being created.")
-    image_id: Optional[StrictInt] = Field(default=None, description="The ID of the operating system image that will be associated with the volume. By providing an `image_id` in the create volume request, you will create a bootable volume.")
-    name: Annotated[str, Field(strict=True, max_length=50)] = Field(description="The name of the volume being created.")
-    size: StrictInt = Field(description="The size of the volume in GB. 1048576GB storage capacity per volume.")
-    volume_type: StrictStr = Field(description="Specifies the type of volume being created, which determines the storage technology it will use. Call the [List volume types](https://infrahub-api-doc.nexgencloud.com/#get-/core/volumes) endpoint to retrieve a list of available volume model types.")
-    __properties: ClassVar[List[str]] = ["callback_url", "description", "environment_name", "image_id", "name", "size", "volume_type"]
+    compatible_images: Optional[List[CompatibleImage]] = Field(default=None, description="List of images this flavor is allowed to launch, with link metadata")
+    has_image_restrictions: Optional[StrictBool] = Field(default=None, description="Whether the flavor is restricted to a set of images")
+    restriction_type: Optional[StrictStr] = Field(default=None, description="Either 'hard', 'soft', or null if no restrictions")
+    __properties: ClassVar[List[str]] = ["compatible_images", "has_image_restrictions", "restriction_type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -54,7 +50,7 @@ class CreateVolumePayload(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CreateVolumePayload from a JSON string"""
+        """Create an instance of ImageRestrictions from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,11 +71,18 @@ class CreateVolumePayload(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in compatible_images (list)
+        _items = []
+        if self.compatible_images:
+            for _item_compatible_images in self.compatible_images:
+                if _item_compatible_images:
+                    _items.append(_item_compatible_images.to_dict())
+            _dict['compatible_images'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CreateVolumePayload from a dict"""
+        """Create an instance of ImageRestrictions from a dict"""
         if obj is None:
             return None
 
@@ -87,13 +90,9 @@ class CreateVolumePayload(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "callback_url": obj.get("callback_url"),
-            "description": obj.get("description"),
-            "environment_name": obj.get("environment_name"),
-            "image_id": obj.get("image_id"),
-            "name": obj.get("name"),
-            "size": obj.get("size"),
-            "volume_type": obj.get("volume_type")
+            "compatible_images": [CompatibleImage.from_dict(_item) for _item in obj["compatible_images"]] if obj.get("compatible_images") is not None else None,
+            "has_image_restrictions": obj.get("has_image_restrictions"),
+            "restriction_type": obj.get("restriction_type")
         })
         return _obj
 

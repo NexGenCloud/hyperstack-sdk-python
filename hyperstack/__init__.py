@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.55.1-alpha"
+__version__ = "v1.55.4-alpha"
 
 # import apis into sdk package
 from .api.access_keys_api import AccessKeysApi
@@ -140,6 +140,7 @@ from .models.cluster_versions import ClusterVersions
 from .models.colors import Colors
 from .models.common_response_model import CommonResponseModel
 from .models.compatible_flavor import CompatibleFlavor
+from .models.compatible_image import CompatibleImage
 from .models.compliance_fields import ComplianceFields
 from .models.compliance_model_fields import ComplianceModelFields
 from .models.compliance_payload import CompliancePayload
@@ -233,6 +234,7 @@ from .models.image import Image
 from .models.image_fields import ImageFields
 from .models.image_generation_billing_history_details_response_schema import ImageGenerationBillingHistoryDetailsResponseSchema
 from .models.image_get_response import ImageGetResponse
+from .models.image_restrictions import ImageRestrictions
 from .models.images import Images
 from .models.import_keypair_payload import ImportKeypairPayload
 from .models.import_keypair_response import ImportKeypairResponse

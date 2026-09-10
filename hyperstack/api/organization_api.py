@@ -59,7 +59,7 @@ class OrganizationApi:
     ) -> RemoveMemberFromOrganizationResponseModel:
         """Remove Organization Member
 
-        Removes a member from your organization. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/remove-member).
+        Removes a member from your organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/remove-member).
 
         :param payload: (required)
         :type payload: RemoveMemberPayload
@@ -129,7 +129,7 @@ class OrganizationApi:
     ) -> ApiResponse[RemoveMemberFromOrganizationResponseModel]:
         """Remove Organization Member
 
-        Removes a member from your organization. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/remove-member).
+        Removes a member from your organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/remove-member).
 
         :param payload: (required)
         :type payload: RemoveMemberPayload
@@ -199,7 +199,7 @@ class OrganizationApi:
     ) -> RESTResponseType:
         """Remove Organization Member
 
-        Removes a member from your organization. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/remove-member).
+        Removes a member from your organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/remove-member).
 
         :param payload: (required)
         :type payload: RemoveMemberPayload
@@ -341,7 +341,7 @@ class OrganizationApi:
     ) -> GetOrganizationResponseModel:
         """Retrieve Organization Information
 
-        Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/retrieve-org-details).
+        Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/retrieve-org-details).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -407,7 +407,7 @@ class OrganizationApi:
     ) -> ApiResponse[GetOrganizationResponseModel]:
         """Retrieve Organization Information
 
-        Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/retrieve-org-details).
+        Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/retrieve-org-details).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -473,7 +473,7 @@ class OrganizationApi:
     ) -> RESTResponseType:
         """Retrieve Organization Information
 
-        Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/retrieve-org-details).
+        Retrieves detailed information about your organization, including current credit, threshold, number of instances, and number of volumes. For additional information on organizations, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/retrieve-org-details).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -597,7 +597,7 @@ class OrganizationApi:
     ) -> UpdateOrganizationResponseModel:
         """Update Organization Information
 
-        Updates the name of the organization. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/update-org-name).
+        Updates the name of the organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/update-org-name).
 
         :param payload: (required)
         :type payload: UpdateOrganizationPayload
@@ -667,7 +667,7 @@ class OrganizationApi:
     ) -> ApiResponse[UpdateOrganizationResponseModel]:
         """Update Organization Information
 
-        Updates the name of the organization. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/update-org-name).
+        Updates the name of the organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/update-org-name).
 
         :param payload: (required)
         :type payload: UpdateOrganizationPayload
@@ -737,7 +737,7 @@ class OrganizationApi:
     ) -> RESTResponseType:
         """Update Organization Information
 
-        Updates the name of the organization. For additional information, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/update-org-name).
+        Updates the name of the organization. For additional information, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/update-org-name).
 
         :param payload: (required)
         :type payload: UpdateOrganizationPayload

@@ -58,7 +58,7 @@ class VncUrlApi:
     ) -> VNCURL:
         """Get VNC Console Link
 
-        Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
+        Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -133,7 +133,7 @@ class VncUrlApi:
     ) -> ApiResponse[VNCURL]:
         """Get VNC Console Link
 
-        Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
+        Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -208,7 +208,7 @@ class VncUrlApi:
     ) -> RESTResponseType:
         """Get VNC Console Link
 
-        Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
+        Retrieves the URL to access the VNC console for a specified virtual machine by providing the virtual machine ID and the job ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-vnc-url).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -345,7 +345,7 @@ class VncUrlApi:
     ) -> RequestConsole:
         """Request Instance Console
 
-        Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
+        Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -416,7 +416,7 @@ class VncUrlApi:
     ) -> ApiResponse[RequestConsole]:
         """Request Instance Console
 
-        Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
+        Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -487,7 +487,7 @@ class VncUrlApi:
     ) -> RESTResponseType:
         """Request Instance Console
 
-        Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
+        Retrieves the path of the VNC console for the given virtual machine ID by providing the virtual machine ID in the path. For more information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vnc-console/retrieve-console-path).
 
         :param vm_id: (required)
         :type vm_id: int

@@ -18,8 +18,9 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from ..models.image_restrictions import ImageRestrictions
 from ..models.lable_resonse import LableResonse
 from typing import Optional, Set
 from typing_extensions import Self
@@ -37,12 +38,13 @@ class FlavorFields(BaseModel):
     gpu: Optional[StrictStr] = None
     gpu_count: Optional[StrictInt] = None
     id: Optional[StrictInt] = None
+    image_restrictions: Optional[ImageRestrictions] = Field(default=None, description="Image compatibility restrictions for this flavor (flavor → image links)")
     labels: Optional[List[LableResonse]] = None
     name: Optional[StrictStr] = None
     ram: Optional[Union[StrictFloat, StrictInt]] = None
     region_name: Optional[StrictStr] = None
     stock_available: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["cpu", "created_at", "disk", "display_name", "ephemeral", "features", "gpu", "gpu_count", "id", "labels", "name", "ram", "region_name", "stock_available"]
+    __properties: ClassVar[List[str]] = ["cpu", "created_at", "disk", "display_name", "ephemeral", "features", "gpu", "gpu_count", "id", "image_restrictions", "labels", "name", "ram", "region_name", "stock_available"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,6 +85,9 @@ class FlavorFields(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of image_restrictions
+        if self.image_restrictions:
+            _dict['image_restrictions'] = self.image_restrictions.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in labels (list)
         _items = []
         if self.labels:
@@ -111,6 +116,7 @@ class FlavorFields(BaseModel):
             "gpu": obj.get("gpu"),
             "gpu_count": obj.get("gpu_count"),
             "id": obj.get("id"),
+            "image_restrictions": ImageRestrictions.from_dict(obj["image_restrictions"]) if obj.get("image_restrictions") is not None else None,
             "labels": [LableResonse.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
             "name": obj.get("name"),
             "ram": obj.get("ram"),

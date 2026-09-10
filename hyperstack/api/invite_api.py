@@ -332,7 +332,7 @@ class InviteApi:
     ) -> CommonResponseModel:
         """Accept Invite
 
-        Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/invites/delete-invite).
+        Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/delete-invite).
 
         :param id: (required)
         :type id: int
@@ -403,7 +403,7 @@ class InviteApi:
     ) -> ApiResponse[CommonResponseModel]:
         """Accept Invite
 
-        Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/invites/delete-invite).
+        Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/delete-invite).
 
         :param id: (required)
         :type id: int
@@ -474,7 +474,7 @@ class InviteApi:
     ) -> RESTResponseType:
         """Accept Invite
 
-        Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/invites/delete-invite).
+        Deletes an invitation for a user to join your organization. For additional information on deleting an invitation, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/delete-invite).
 
         :param id: (required)
         :type id: int
@@ -605,7 +605,7 @@ class InviteApi:
     ) -> InviteUserResponseModel:
         """Invite User to Organization
 
-        Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/invites/invite-member).
+        Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/invite-member).
 
         :param payload: (required)
         :type payload: InviteUserPayload
@@ -676,7 +676,7 @@ class InviteApi:
     ) -> ApiResponse[InviteUserResponseModel]:
         """Invite User to Organization
 
-        Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/invites/invite-member).
+        Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/invite-member).
 
         :param payload: (required)
         :type payload: InviteUserPayload
@@ -747,7 +747,7 @@ class InviteApi:
     ) -> RESTResponseType:
         """Invite User to Organization
 
-        Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://docs...cloud/docs/api-reference/auth-resources/organization/invites/invite-member).
+        Invites a user to join your organization. For additional information on inviting users to the organization, [click here](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/invite-member).
 
         :param payload: (required)
         :type payload: InviteUserPayload
@@ -890,7 +890,7 @@ class InviteApi:
     ) -> GetInvitesResponseModel:
         """List Invites
 
-        Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/organization/invites/list-invites).
+        Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/list-invites).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -956,7 +956,7 @@ class InviteApi:
     ) -> ApiResponse[GetInvitesResponseModel]:
         """List Invites
 
-        Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/organization/invites/list-invites).
+        Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/list-invites).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1022,7 +1022,7 @@ class InviteApi:
     ) -> RESTResponseType:
         """List Invites
 
-        Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://docs...cloud/docs/api-reference/auth-resources/organization/invites/list-invites).
+        Retrieve a list of email invitations from your organization. For additional information on listing invited users, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/auth-resources/organization/invites/list-invites).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

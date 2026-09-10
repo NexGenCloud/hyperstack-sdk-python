@@ -68,6 +68,7 @@ from .cluster_versions import ClusterVersions
 from .colors import Colors
 from .common_response_model import CommonResponseModel
 from .compatible_flavor import CompatibleFlavor
+from .compatible_image import CompatibleImage
 from .compliance_fields import ComplianceFields
 from .compliance_model_fields import ComplianceModelFields
 from .compliance_payload import CompliancePayload
@@ -161,6 +162,7 @@ from .image import Image
 from .image_fields import ImageFields
 from .image_generation_billing_history_details_response_schema import ImageGenerationBillingHistoryDetailsResponseSchema
 from .image_get_response import ImageGetResponse
+from .image_restrictions import ImageRestrictions
 from .images import Images
 from .import_keypair_payload import ImportKeypairPayload
 from .import_keypair_response import ImportKeypairResponse

@@ -973,7 +973,7 @@ class VirtualMachineApi:
     ) -> SecurityGroupRule:
         """Add firewall rule to virtual machine
 
-        Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
+        Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -1049,7 +1049,7 @@ class VirtualMachineApi:
     ) -> ApiResponse[SecurityGroupRule]:
         """Add firewall rule to virtual machine
 
-        Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
+        Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -1125,7 +1125,7 @@ class VirtualMachineApi:
     ) -> RESTResponseType:
         """Add firewall rule to virtual machine
 
-        Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs...cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
+        Creates a firewall rule for a virtual machine. Include the virtual machine ID in the path, and provide the firewall rule configuration in the request body, as detailed below. For additional information on firewall rules, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/virtual-machines/vm-firewall-rules/add-firewall-rule-to-vm).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -1577,7 +1577,7 @@ class VirtualMachineApi:
     ) -> CreateInstancesResponse:
         """Create virtual machines
 
-        Creates one or more virtual machines with the specified custom configuration and features provided in the request body. For more information about the virtual machine features offered by Infrahub, [**click here**](https://docs...cloud/docs/virtual-machines/virtual-machine-features#create-a-virtual-machine-with-custom-features).
+        Creates one or more virtual machines with the specified custom configuration and features provided in the request body. For more information about the virtual machine features offered by Infrahub, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/virtual-machine-features#create-a-virtual-machine-with-custom-features).
 
         :param payload: (required)
         :type payload: CreateInstancesPayload
@@ -1650,7 +1650,7 @@ class VirtualMachineApi:
     ) -> ApiResponse[CreateInstancesResponse]:
         """Create virtual machines
 
-        Creates one or more virtual machines with the specified custom configuration and features provided in the request body. For more information about the virtual machine features offered by Infrahub, [**click here**](https://docs...cloud/docs/virtual-machines/virtual-machine-features#create-a-virtual-machine-with-custom-features).
+        Creates one or more virtual machines with the specified custom configuration and features provided in the request body. For more information about the virtual machine features offered by Infrahub, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/virtual-machine-features#create-a-virtual-machine-with-custom-features).
 
         :param payload: (required)
         :type payload: CreateInstancesPayload
@@ -1723,7 +1723,7 @@ class VirtualMachineApi:
     ) -> RESTResponseType:
         """Create virtual machines
 
-        Creates one or more virtual machines with the specified custom configuration and features provided in the request body. For more information about the virtual machine features offered by Infrahub, [**click here**](https://docs...cloud/docs/virtual-machines/virtual-machine-features#create-a-virtual-machine-with-custom-features).
+        Creates one or more virtual machines with the specified custom configuration and features provided in the request body. For more information about the virtual machine features offered by Infrahub, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/virtual-machine-features#create-a-virtual-machine-with-custom-features).
 
         :param payload: (required)
         :type payload: CreateInstancesPayload
@@ -3324,7 +3324,7 @@ class VirtualMachineApi:
     ) -> MetricsFields:
         """Retrieve virtual machine performance metrics
 
-        Retrieves performance metrics data for a virtual machine. Provide the virtual machine ID in the path to retrieve the following data for the specified virtual machine: CPU usage, memory usage (RAM), `network.in`, `network.out`, `disk.read`, and `disk.write`. The optional `duration` parameter can be used to specify the period for retrieving performance metrics; the default value will retrieve all available data. To learn more about virtual machine performance metrics, [**click here**](https://docs...cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#performance-metrics).
+        Retrieves performance metrics data for a virtual machine. Provide the virtual machine ID in the path to retrieve the following data for the specified virtual machine: CPU usage, memory usage (RAM), `network.in`, `network.out`, `disk.read`, and `disk.write`. The optional `duration` parameter can be used to specify the period for retrieving performance metrics; the default value will retrieve all available data. To learn more about virtual machine performance metrics, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#performance-metrics).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -3400,7 +3400,7 @@ class VirtualMachineApi:
     ) -> ApiResponse[MetricsFields]:
         """Retrieve virtual machine performance metrics
 
-        Retrieves performance metrics data for a virtual machine. Provide the virtual machine ID in the path to retrieve the following data for the specified virtual machine: CPU usage, memory usage (RAM), `network.in`, `network.out`, `disk.read`, and `disk.write`. The optional `duration` parameter can be used to specify the period for retrieving performance metrics; the default value will retrieve all available data. To learn more about virtual machine performance metrics, [**click here**](https://docs...cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#performance-metrics).
+        Retrieves performance metrics data for a virtual machine. Provide the virtual machine ID in the path to retrieve the following data for the specified virtual machine: CPU usage, memory usage (RAM), `network.in`, `network.out`, `disk.read`, and `disk.write`. The optional `duration` parameter can be used to specify the period for retrieving performance metrics; the default value will retrieve all available data. To learn more about virtual machine performance metrics, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#performance-metrics).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -3476,7 +3476,7 @@ class VirtualMachineApi:
     ) -> RESTResponseType:
         """Retrieve virtual machine performance metrics
 
-        Retrieves performance metrics data for a virtual machine. Provide the virtual machine ID in the path to retrieve the following data for the specified virtual machine: CPU usage, memory usage (RAM), `network.in`, `network.out`, `disk.read`, and `disk.write`. The optional `duration` parameter can be used to specify the period for retrieving performance metrics; the default value will retrieve all available data. To learn more about virtual machine performance metrics, [**click here**](https://docs...cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#performance-metrics).
+        Retrieves performance metrics data for a virtual machine. Provide the virtual machine ID in the path to retrieve the following data for the specified virtual machine: CPU usage, memory usage (RAM), `network.in`, `network.out`, `disk.read`, and `disk.write`. The optional `duration` parameter can be used to specify the period for retrieving performance metrics; the default value will retrieve all available data. To learn more about virtual machine performance metrics, [**click here**](https://docs.hyperstack.cloud/docs/virtual-machines/vm-performance-metrics-and-events-history#performance-metrics).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -4842,7 +4842,7 @@ class VirtualMachineApi:
     ) -> ResponseModel:
         """Resize virtual machine
 
-        Updates the hardware configuration for an existing virtual machine. Include the virtual machine ID in the path and provide the new configuration, referred to as a `flavor`, in the body of the request. For additional information resizing, [**click here**](https://docs...cloud/docs/hardware/flavors#modify-the-flavor-of-an-existing-virtual-machine).
+        Updates the hardware configuration for an existing virtual machine. Include the virtual machine ID in the path and provide the new configuration, referred to as a `flavor`, in the body of the request. For additional information resizing, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#modify-the-flavor-of-an-existing-virtual-machine).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -4918,7 +4918,7 @@ class VirtualMachineApi:
     ) -> ApiResponse[ResponseModel]:
         """Resize virtual machine
 
-        Updates the hardware configuration for an existing virtual machine. Include the virtual machine ID in the path and provide the new configuration, referred to as a `flavor`, in the body of the request. For additional information resizing, [**click here**](https://docs...cloud/docs/hardware/flavors#modify-the-flavor-of-an-existing-virtual-machine).
+        Updates the hardware configuration for an existing virtual machine. Include the virtual machine ID in the path and provide the new configuration, referred to as a `flavor`, in the body of the request. For additional information resizing, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#modify-the-flavor-of-an-existing-virtual-machine).
 
         :param vm_id: (required)
         :type vm_id: int
@@ -4994,7 +4994,7 @@ class VirtualMachineApi:
     ) -> RESTResponseType:
         """Resize virtual machine
 
-        Updates the hardware configuration for an existing virtual machine. Include the virtual machine ID in the path and provide the new configuration, referred to as a `flavor`, in the body of the request. For additional information resizing, [**click here**](https://docs...cloud/docs/hardware/flavors#modify-the-flavor-of-an-existing-virtual-machine).
+        Updates the hardware configuration for an existing virtual machine. Include the virtual machine ID in the path and provide the new configuration, referred to as a `flavor`, in the body of the request. For additional information resizing, [**click here**](https://docs.hyperstack.cloud/docs/hardware/flavors#modify-the-flavor-of-an-existing-virtual-machine).
 
         :param vm_id: (required)
         :type vm_id: int

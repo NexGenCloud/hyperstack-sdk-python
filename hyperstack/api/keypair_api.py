@@ -337,7 +337,7 @@ class KeypairApi:
     ) -> ImportKeypairResponse:
         """Import key pair
 
-        Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/import-keypair).
+        Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/import-keypair).
 
         :param payload: (required)
         :type payload: ImportKeypairPayload
@@ -409,7 +409,7 @@ class KeypairApi:
     ) -> ApiResponse[ImportKeypairResponse]:
         """Import key pair
 
-        Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/import-keypair).
+        Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/import-keypair).
 
         :param payload: (required)
         :type payload: ImportKeypairPayload
@@ -481,7 +481,7 @@ class KeypairApi:
     ) -> RESTResponseType:
         """Import key pair
 
-        Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/import-keypair).
+        Imports a new key pair for secure shell (SSH) access to your resources. Provide the key name, environment name, and public key in the request body. For more details on importing SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/import-keypair).
 
         :param payload: (required)
         :type payload: ImportKeypairPayload
@@ -628,7 +628,7 @@ class KeypairApi:
     ) -> Keypairs:
         """List key pairs
 
-        Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/).
+        Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/).
 
         :param page: Page Number
         :type page: str
@@ -706,7 +706,7 @@ class KeypairApi:
     ) -> ApiResponse[Keypairs]:
         """List key pairs
 
-        Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/).
+        Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/).
 
         :param page: Page Number
         :type page: str
@@ -784,7 +784,7 @@ class KeypairApi:
     ) -> RESTResponseType:
         """List key pairs
 
-        Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs...cloud/docs/api-reference/core-resources/keypairs/).
+        Retrieves a list of your existing SSH key pairs, providing details for each. For more information on SSH key pairs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/core-resources/keypairs/).
 
         :param page: Page Number
         :type page: str
