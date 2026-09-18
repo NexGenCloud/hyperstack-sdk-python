@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Retrieve Dashboard
 
-Returns hardware and pricing overview for your active resources, includingvirtual machines, containers, and volumes. For more details on the Dashboard feature, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/dashboard/).
+Returns hardware and pricing overview for your active resources, includingvirtual machines and volumes. For more details on the Dashboard feature, [**click here**](https://docs.hyperstack.cloud/docs/resource-management/dashboard/).
 
 ### Example
 

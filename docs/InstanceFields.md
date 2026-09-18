@@ -6,8 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **callback_url** | **str** |  | [optional] 
+**cluster_id** | **int** | The COE cluster this VM is a node of, or null. | [optional] 
 **contract_id** | **int** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
+**dedicated_inference_id** | **int** | The dedicated inference endpoint this VM serves, or null. | [optional] 
 **enhanced_metrics** | [**InstanceEnhancedMetricsFields**](InstanceEnhancedMetricsFields.md) |  | [optional] 
 **environment** | [**InstanceEnvironmentFields**](InstanceEnvironmentFields.md) |  | [optional] 
 **features** | **object** |  | [optional] 

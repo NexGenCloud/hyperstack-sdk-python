@@ -19,7 +19,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from ..models.container_overview_fields import ContainerOverviewFields
 from ..models.instance_overview_fields import InstanceOverviewFields
 from ..models.volume_overview_fields import VolumeOverviewFields
 from typing import Optional, Set
@@ -29,10 +28,9 @@ class OverviewInfo(BaseModel):
     """
     OverviewInfo
     """ # noqa: E501
-    container: Optional[ContainerOverviewFields] = None
     instance: Optional[InstanceOverviewFields] = None
     volume: Optional[VolumeOverviewFields] = None
-    __properties: ClassVar[List[str]] = ["container", "instance", "volume"]
+    __properties: ClassVar[List[str]] = ["instance", "volume"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,9 +71,6 @@ class OverviewInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of container
-        if self.container:
-            _dict['container'] = self.container.to_dict()
         # override the default output from pydantic by calling `to_dict()` of instance
         if self.instance:
             _dict['instance'] = self.instance.to_dict()
@@ -94,7 +89,6 @@ class OverviewInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "container": ContainerOverviewFields.from_dict(obj["container"]) if obj.get("container") is not None else None,
             "instance": InstanceOverviewFields.from_dict(obj["instance"]) if obj.get("instance") is not None else None,
             "volume": VolumeOverviewFields.from_dict(obj["volume"]) if obj.get("volume") is not None else None
         })

@@ -32,12 +32,6 @@ class TestAuthApi(unittest.TestCase):
         """
         pass
 
-    def test_disable_mfa(self) -> None:
-        """Test case for disable_mfa
-
-        """
-        pass
-
     def test_get_user_mfa_status(self) -> None:
         """Test case for get_user_mfa_status
 

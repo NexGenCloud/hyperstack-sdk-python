@@ -17,8 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from pydantic import BaseModel, ConfigDict, Field
+from typing import Any, ClassVar, Dict, List, Union
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +27,7 @@ class PaymentInitiatePayload(BaseModel):
     """
     PaymentInitiatePayload
     """ # noqa: E501
-    amount: Optional[Union[StrictFloat, StrictInt]] = None
+    amount: Union[Annotated[float, Field(strict=True, ge=5)], Annotated[int, Field(strict=True, ge=5)]] = Field(description="The amount to pay, in dollars. Must be at least $5.00.")
     __properties: ClassVar[List[str]] = ["amount"]
 
     model_config = ConfigDict(

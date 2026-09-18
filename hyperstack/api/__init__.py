@@ -20,10 +20,8 @@ from .billing_api import BillingApi
 from .callbacks_api import CallbacksApi
 from .cluster_events_api import ClusterEventsApi
 from .clusters_api import ClustersApi
-from .compliance_api import ComplianceApi
 from .credit_api import CreditApi
 from .dashboard_api import DashboardApi
-from .deployment_api import DeploymentApi
 from .email_opt_in_out_api import EmailOptInOutApi
 from .environment_api import EnvironmentApi
 from .firewall_attachment_api import FirewallAttachmentApi
@@ -45,7 +43,6 @@ from .region_api import RegionApi
 from .security_rules_api import SecurityRulesApi
 from .snapshot_events_api import SnapshotEventsApi
 from .stock_api import StockApi
-from .template_api import TemplateApi
 from .user_api import UserApi
 from .user_consent_api import UserConsentApi
 from .user_consent_events_api import UserConsentEventsApi

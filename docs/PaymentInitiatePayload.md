@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **float** |  | [optional] 
+**amount** | **float** | The amount to pay, in dollars. Must be at least $5.00. | 
 
 ## Example
 

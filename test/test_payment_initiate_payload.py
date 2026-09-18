@@ -35,10 +35,11 @@ class TestPaymentInitiatePayload(unittest.TestCase):
         model = PaymentInitiatePayload()
         if include_optional:
             return PaymentInitiatePayload(
-                amount = 1.337
+                amount = 5
             )
         else:
             return PaymentInitiatePayload(
+                amount = 5,
         )
         """
 

@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ..models.instance_enhanced_metrics_fields import InstanceEnhancedMetricsFields
 from ..models.instance_environment_fields import InstanceEnvironmentFields
@@ -35,8 +35,10 @@ class InstanceFields(BaseModel):
     InstanceFields
     """ # noqa: E501
     callback_url: Optional[StrictStr] = None
+    cluster_id: Optional[StrictInt] = Field(default=None, description="The COE cluster this VM is a node of, or null.")
     contract_id: Optional[StrictInt] = None
     created_at: Optional[datetime] = None
+    dedicated_inference_id: Optional[StrictInt] = Field(default=None, description="The dedicated inference endpoint this VM serves, or null.")
     enhanced_metrics: Optional[InstanceEnhancedMetricsFields] = None
     environment: Optional[InstanceEnvironmentFields] = None
     features: Optional[Dict[str, Any]] = None
@@ -59,7 +61,7 @@ class InstanceFields(BaseModel):
     status: Optional[StrictStr] = None
     vm_state: Optional[StrictStr] = None
     volume_attachments: Optional[List[VolumeAttachmentFields]] = None
-    __properties: ClassVar[List[str]] = ["callback_url", "contract_id", "created_at", "enhanced_metrics", "environment", "features", "fixed_ip", "flavor", "floating_ip", "floating_ip_status", "id", "image", "keypair", "labels", "locked", "name", "os", "port_randomization", "port_randomization_status", "power_state", "requires_public_ip", "security_rules", "status", "vm_state", "volume_attachments"]
+    __properties: ClassVar[List[str]] = ["callback_url", "cluster_id", "contract_id", "created_at", "dedicated_inference_id", "enhanced_metrics", "environment", "features", "fixed_ip", "flavor", "floating_ip", "floating_ip_status", "id", "image", "keypair", "labels", "locked", "name", "os", "port_randomization", "port_randomization_status", "power_state", "requires_public_ip", "security_rules", "status", "vm_state", "volume_attachments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -142,8 +144,10 @@ class InstanceFields(BaseModel):
 
         _obj = cls.model_validate({
             "callback_url": obj.get("callback_url"),
+            "cluster_id": obj.get("cluster_id"),
             "contract_id": obj.get("contract_id"),
             "created_at": obj.get("created_at"),
+            "dedicated_inference_id": obj.get("dedicated_inference_id"),
             "enhanced_metrics": InstanceEnhancedMetricsFields.from_dict(obj["enhanced_metrics"]) if obj.get("enhanced_metrics") is not None else None,
             "environment": InstanceEnvironmentFields.from_dict(obj["environment"]) if obj.get("environment") is not None else None,
             "features": obj.get("features"),

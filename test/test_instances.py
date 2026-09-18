@@ -39,8 +39,10 @@ class TestInstances(unittest.TestCase):
                 instances = [
                     hyperstack.models.instance_fields.Instance_Fields(
                         callback_url = '', 
+                        cluster_id = 56, 
                         contract_id = 56, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        dedicated_inference_id = 56, 
                         enhanced_metrics = hyperstack.models.instance_enhanced_metrics_fields.Instance_Enhanced_Metrics_Fields(
                             enabled = True, ), 
                         environment = hyperstack.models.instance_environment_fields.Instance_Environment_Fields(
