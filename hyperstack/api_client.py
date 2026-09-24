@@ -90,7 +90,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'hyperstack-python-sdk/v1.55.6-alpha'
+        self.user_agent = 'hyperstack-python-sdk/v1.55.7-alpha'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -701,7 +701,9 @@ class ApiClient:
                 content_disposition
             )
             assert m is not None, "Unexpected 'content-disposition' header value"
-            filename = m.group(1)
+            filename = os.path.basename(m.group(1))
+            if filename in ("", ".", ".."):
+                filename = "download"
             path = os.path.join(os.path.dirname(path), filename)
 
         with open(path, "wb") as f:
