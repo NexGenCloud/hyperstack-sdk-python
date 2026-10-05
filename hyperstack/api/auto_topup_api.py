@@ -853,7 +853,7 @@ class AutoTopupApi:
     ) -> AutoTopupStatusSchema:
         """Get auto top-up status and configuration
 
-        Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](None/docs/api-reference/billing-resources/).
+        Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -919,7 +919,7 @@ class AutoTopupApi:
     ) -> ApiResponse[AutoTopupStatusSchema]:
         """Get auto top-up status and configuration
 
-        Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](None/docs/api-reference/billing-resources/).
+        Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -985,7 +985,7 @@ class AutoTopupApi:
     ) -> RESTResponseType:
         """Get auto top-up status and configuration
 
-        Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](None/docs/api-reference/billing-resources/).
+        Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

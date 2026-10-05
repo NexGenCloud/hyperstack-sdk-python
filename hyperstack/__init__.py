@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.55.7-alpha"
+__version__ = "v1.55.10-alpha"
 
 # import apis into sdk package
 from .api.access_keys_api import AccessKeysApi
@@ -295,6 +295,7 @@ from .models.payment_details_response import PaymentDetailsResponse
 from .models.payment_initiate_fields import PaymentInitiateFields
 from .models.payment_initiate_payload import PaymentInitiatePayload
 from .models.payment_initiate_response import PaymentInitiateResponse
+from .models.payment_receipt_response import PaymentReceiptResponse
 from .models.permission_fields import PermissionFields
 from .models.policy_fields import PolicyFields
 from .models.policy_permission_fields import PolicyPermissionFields

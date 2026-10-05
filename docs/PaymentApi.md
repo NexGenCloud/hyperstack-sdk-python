@@ -10,11 +10,11 @@ Method | HTTP request | Description
 
 
 # **get_payment_receipt**
-> get_payment_receipt(payment_id)
+> PaymentReceiptResponse get_payment_receipt(payment_id)
 
 Retrieve Payment Receipt
 
-Retrieve the payment receipt from Stripe for a specific payment
+Retrieve the URL of the Stripe-hosted invoice page for a specific payment. The hosted URL is refreshed by Stripe on every retrieval, so it never expires.
 
 ### Example
 
@@ -22,6 +22,7 @@ Retrieve the payment receipt from Stripe for a specific payment
 
 ```python
 import hyperstack
+from hyperstack.models.payment_receipt_response import PaymentReceiptResponse
 from hyperstack.rest import ApiException
 from pprint import pprint
 
@@ -50,7 +51,9 @@ with hyperstack.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Payment Receipt
-        api_instance.get_payment_receipt(payment_id)
+        api_response = api_instance.get_payment_receipt(payment_id)
+        print("The response of PaymentApi->get_payment_receipt:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling PaymentApi->get_payment_receipt: %s\n" % e)
 ```
@@ -66,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**PaymentReceiptResponse**](PaymentReceiptResponse.md)
 
 ### Authorization
 
@@ -95,7 +98,7 @@ void (empty response body)
 
 POST: Initiate payment
 
-Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](None/docs/api-reference/billing-resources/create-payment).
+Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/create-payment).
 
 ### Example
 
@@ -180,7 +183,7 @@ Name | Type | Description  | Notes
 
 GET: View payment details
 
-Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
+Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/retrieve-payment-history/).
 
 ### Example
 

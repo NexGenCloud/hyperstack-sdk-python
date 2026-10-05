@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 GET: Alive
 
-Retrieve the billing status of your account to ensure that it is active. An active billing status ensures uninterrupted service. For additional information [**click here**](None/docs/api-reference/billing-resources/alive/).
+Retrieve the billing status of your account to ensure that it is active. An active billing status ensures uninterrupted service. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/alive/).
 
 ### Example
 

@@ -20,6 +20,7 @@ from pydantic import StrictStr
 from ..models.payment_details_response import PaymentDetailsResponse
 from ..models.payment_initiate_payload import PaymentInitiatePayload
 from ..models.payment_initiate_response import PaymentInitiateResponse
+from ..models.payment_receipt_response import PaymentReceiptResponse
 
 from ..api_client import ApiClient, RequestSerialized
 from ..api_response import ApiResponse
@@ -55,10 +56,10 @@ class PaymentApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> PaymentReceiptResponse:
         """Retrieve Payment Receipt
 
-        Retrieve the payment receipt from Stripe for a specific payment
+        Retrieve the URL of the Stripe-hosted invoice page for a specific payment. The hosted URL is refreshed by Stripe on every retrieval, so it never expires.
 
         :param payment_id: (required)
         :type payment_id: str
@@ -93,7 +94,7 @@ class PaymentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "PaymentReceiptResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -127,10 +128,10 @@ class PaymentApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[PaymentReceiptResponse]:
         """Retrieve Payment Receipt
 
-        Retrieve the payment receipt from Stripe for a specific payment
+        Retrieve the URL of the Stripe-hosted invoice page for a specific payment. The hosted URL is refreshed by Stripe on every retrieval, so it never expires.
 
         :param payment_id: (required)
         :type payment_id: str
@@ -165,7 +166,7 @@ class PaymentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "PaymentReceiptResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -202,7 +203,7 @@ class PaymentApi:
     ) -> RESTResponseType:
         """Retrieve Payment Receipt
 
-        Retrieve the payment receipt from Stripe for a specific payment
+        Retrieve the URL of the Stripe-hosted invoice page for a specific payment. The hosted URL is refreshed by Stripe on every retrieval, so it never expires.
 
         :param payment_id: (required)
         :type payment_id: str
@@ -237,7 +238,7 @@ class PaymentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "PaymentReceiptResponse",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
             '403': "ErrorResponseModel",
@@ -334,7 +335,7 @@ class PaymentApi:
     ) -> PaymentInitiateResponse:
         """POST: Initiate payment
 
-        Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](None/docs/api-reference/billing-resources/create-payment).
+        Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/create-payment).
 
         :param payload: (required)
         :type payload: PaymentInitiatePayload
@@ -406,7 +407,7 @@ class PaymentApi:
     ) -> ApiResponse[PaymentInitiateResponse]:
         """POST: Initiate payment
 
-        Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](None/docs/api-reference/billing-resources/create-payment).
+        Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/create-payment).
 
         :param payload: (required)
         :type payload: PaymentInitiatePayload
@@ -478,7 +479,7 @@ class PaymentApi:
     ) -> RESTResponseType:
         """POST: Initiate payment
 
-        Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](None/docs/api-reference/billing-resources/create-payment).
+        Creates a payment for a specified amount, adding credit to the balance of your [**organization**](/docs/rbac/organization). Include the `amount` in the body of the request to make a payment for the specified value in dollars. View a history of past payments by calling the [**Retrieve Payment History**](/docs/api-reference/billing-resources/retrieve-payment-history) API. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/create-payment).
 
         :param payload: (required)
         :type payload: PaymentInitiatePayload
@@ -622,7 +623,7 @@ class PaymentApi:
     ) -> PaymentDetailsResponse:
         """GET: View payment details
 
-        Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
+        Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/retrieve-payment-history/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -690,7 +691,7 @@ class PaymentApi:
     ) -> ApiResponse[PaymentDetailsResponse]:
         """GET: View payment details
 
-        Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
+        Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/retrieve-payment-history/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -758,7 +759,7 @@ class PaymentApi:
     ) -> RESTResponseType:
         """GET: View payment details
 
-        Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](None/docs/api-reference/billing-resources/retrieve-payment-history/).
+        Retrieves a list of all payments made within your [**organization**](/docs/rbac/organization) and their details, including the amount, payment status, and more. For additional information [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/retrieve-payment-history/).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

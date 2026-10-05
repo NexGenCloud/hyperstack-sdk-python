@@ -226,6 +226,7 @@ from .payment_details_response import PaymentDetailsResponse
 from .payment_initiate_fields import PaymentInitiateFields
 from .payment_initiate_payload import PaymentInitiatePayload
 from .payment_initiate_response import PaymentInitiateResponse
+from .payment_receipt_response import PaymentReceiptResponse
 from .permission_fields import PermissionFields
 from .policy_fields import PolicyFields
 from .policy_permission_fields import PolicyPermissionFields

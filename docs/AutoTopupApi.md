@@ -252,7 +252,7 @@ This endpoint does not need any parameter.
 
 Get auto top-up status and configuration
 
-Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](None/docs/api-reference/billing-resources/).
+Retrieves the current auto top-up configuration and status for your organization. Returns the status (active, disabled, pending_setup, or null if never configured), along with the threshold and top-up amounts. For additional information, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/).
 
 ### Example
 

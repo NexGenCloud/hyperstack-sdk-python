@@ -3911,7 +3911,7 @@ class BillingApi:
     ) -> LastDayCostResponse:
         """GET: Last Day Cost
 
-        Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](None/docs/api-reference/billing-resources/last-day-usage/)
+        Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/last-day-usage/)
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3979,7 +3979,7 @@ class BillingApi:
     ) -> ApiResponse[LastDayCostResponse]:
         """GET: Last Day Cost
 
-        Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](None/docs/api-reference/billing-resources/last-day-usage/)
+        Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/last-day-usage/)
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4047,7 +4047,7 @@ class BillingApi:
     ) -> RESTResponseType:
         """GET: Last Day Cost
 
-        Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](None/docs/api-reference/billing-resources/last-day-usage/)
+        Retrieve the previous day's costs for instances, volumes, and clusters. Returns a breakdown of  the costs and the total cost for the last day. For additional information on Retrieve Previous Day Usage Costs, [**click here**](https://docs.hyperstack.cloud/docs/api-reference/billing-resources/last-day-usage/)
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6994,7 +6994,7 @@ class BillingApi:
     ) -> BillingMetricesResponse:
         """GET: Billing usage
 
-        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
+        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](https://docs.hyperstack.cloud/docs/billing/pricebook/)
 
         :param deleted: `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
         :type deleted: str
@@ -7070,7 +7070,7 @@ class BillingApi:
     ) -> ApiResponse[BillingMetricesResponse]:
         """GET: Billing usage
 
-        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
+        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](https://docs.hyperstack.cloud/docs/billing/pricebook/)
 
         :param deleted: `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
         :type deleted: str
@@ -7146,7 +7146,7 @@ class BillingApi:
     ) -> RESTResponseType:
         """GET: Billing usage
 
-        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](None/docs/billing/pricebook/)
+        Retrieve active billing metrics for the organization's resources, including pricing, uptime, and total cost. Returns usage details for each active resource by defualt(`deleted=false` will return active resources). Additionally, adding `deleted=true` in query parameter will return inactive resources. For additional information on view usage costs for all resources, [**click here**](https://docs.hyperstack.cloud/docs/billing/pricebook/)
 
         :param deleted: `true` will return inactive resources and `false` will return active resources. By defualt(`deleted=false`)
         :type deleted: str
