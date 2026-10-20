@@ -39,6 +39,7 @@ class TestManualReconciliationModel(unittest.TestCase):
                     api_address = '', 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     environment_name = '', 
+                    has_persistent_storage = True, 
                     id = 56, 
                     is_reconciling = True, 
                     keypair_name = '', 

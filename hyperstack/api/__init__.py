@@ -10,6 +10,7 @@ from .health_api import HealthApi
 from .pricebook_api import PricebookApi
 from .regions_api import RegionsApi
 from .snapshots_api import SnapshotsApi
+from .zendesk_api import ZendeskApi
 from .alive_api import AliveApi
 from .api_key_api import ApiKeyApi
 from .assigning_member_role_api import AssigningMemberRoleApi

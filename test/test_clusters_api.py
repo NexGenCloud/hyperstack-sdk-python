@@ -138,6 +138,13 @@ class TestClustersApi(unittest.TestCase):
         """
         pass
 
+    def test_restore_a_hibernated_cluster(self) -> None:
+        """Test case for restore_a_hibernated_cluster
+
+        Restore a hibernated cluster's nodes and reconcile the cluster
+        """
+        pass
+
     def test_update_node_group(self) -> None:
         """Test case for update_node_group
 

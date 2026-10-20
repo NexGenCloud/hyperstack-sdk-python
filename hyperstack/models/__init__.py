@@ -63,6 +63,8 @@ from .cluster_node_groups_list_response import ClusterNodeGroupsListResponse
 from .cluster_node_instance_fields import ClusterNodeInstanceFields
 from .cluster_nodes_list_response import ClusterNodesListResponse
 from .cluster_response import ClusterResponse
+from .cluster_restore_failed_node import ClusterRestoreFailedNode
+from .cluster_restore_response import ClusterRestoreResponse
 from .cluster_version import ClusterVersion
 from .cluster_versions import ClusterVersions
 from .colors import Colors
@@ -198,6 +200,7 @@ from .object_storage_access_key_create_request import ObjectStorageAccessKeyCrea
 from .object_storage_access_key_create_response import ObjectStorageAccessKeyCreateResponse
 from .object_storage_access_key_list_response import ObjectStorageAccessKeyListResponse
 from .object_storage_access_key_response import ObjectStorageAccessKeyResponse
+from .object_storage_access_key_update_request import ObjectStorageAccessKeyUpdateRequest
 from .object_storage_bucket_list_response import ObjectStorageBucketListResponse
 from .object_storage_bucket_response import ObjectStorageBucketResponse
 from .object_storage_delete_response import ObjectStorageDeleteResponse
@@ -348,3 +351,4 @@ from .volumes_fields import VolumesFields
 from .voucher import Voucher
 from .voucher_redeem_response_schema import VoucherRedeemResponseSchema
 from .workload_billing_history_response import WorkloadBillingHistoryResponse
+from .zendesk_messaging_token import ZendeskMessagingToken

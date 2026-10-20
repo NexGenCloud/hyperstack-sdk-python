@@ -47,6 +47,13 @@ class TestAccessKeysApi(unittest.TestCase):
         """
         pass
 
+    def test_update_access_key_endpoint(self) -> None:
+        """Test case for update_access_key_endpoint
+
+        Rename an existing access key
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

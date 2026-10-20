@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **api_address** | **str** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
 **environment_name** | **str** |  | [optional] 
+**has_persistent_storage** | **bool** |  | [optional] 
 **id** | **int** |  | [optional] 
 **is_reconciling** | **bool** |  | [optional] 
 **keypair_name** | **str** |  | [optional] 

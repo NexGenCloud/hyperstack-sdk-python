@@ -33,6 +33,7 @@ class ClusterFields(BaseModel):
     api_address: Optional[StrictStr] = None
     created_at: Optional[datetime] = None
     environment_name: Optional[StrictStr] = None
+    has_persistent_storage: Optional[StrictBool] = None
     id: Optional[StrictInt] = None
     is_reconciling: Optional[StrictBool] = None
     keypair_name: Optional[StrictStr] = None
@@ -44,7 +45,7 @@ class ClusterFields(BaseModel):
     nodes: Optional[List[ClusterNodeFields]] = None
     status: Optional[StrictStr] = None
     status_reason: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["api_address", "created_at", "environment_name", "id", "is_reconciling", "keypair_name", "kube_config", "kubernetes_version", "master_flavor", "name", "node_groups", "nodes", "status", "status_reason"]
+    __properties: ClassVar[List[str]] = ["api_address", "created_at", "environment_name", "has_persistent_storage", "id", "is_reconciling", "keypair_name", "kube_config", "kubernetes_version", "master_flavor", "name", "node_groups", "nodes", "status", "status_reason"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -117,6 +118,7 @@ class ClusterFields(BaseModel):
             "api_address": obj.get("api_address"),
             "created_at": obj.get("created_at"),
             "environment_name": obj.get("environment_name"),
+            "has_persistent_storage": obj.get("has_persistent_storage"),
             "id": obj.get("id"),
             "is_reconciling": obj.get("is_reconciling"),
             "keypair_name": obj.get("keypair_name"),

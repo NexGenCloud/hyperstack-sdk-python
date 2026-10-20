@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.55.10-alpha"
+__version__ = "v1.56.0-alpha"
 
 # import apis into sdk package
 from .api.access_keys_api import AccessKeysApi
@@ -26,6 +26,7 @@ from .api.health_api import HealthApi
 from .api.pricebook_api import PricebookApi
 from .api.regions_api import RegionsApi
 from .api.snapshots_api import SnapshotsApi
+from .api.zendesk_api import ZendeskApi
 from .api.alive_api import AliveApi
 from .api.api_key_api import ApiKeyApi
 from .api.assigning_member_role_api import AssigningMemberRoleApi
@@ -132,6 +133,8 @@ from .models.cluster_node_groups_list_response import ClusterNodeGroupsListRespo
 from .models.cluster_node_instance_fields import ClusterNodeInstanceFields
 from .models.cluster_nodes_list_response import ClusterNodesListResponse
 from .models.cluster_response import ClusterResponse
+from .models.cluster_restore_failed_node import ClusterRestoreFailedNode
+from .models.cluster_restore_response import ClusterRestoreResponse
 from .models.cluster_version import ClusterVersion
 from .models.cluster_versions import ClusterVersions
 from .models.colors import Colors
@@ -267,6 +270,7 @@ from .models.object_storage_access_key_create_request import ObjectStorageAccess
 from .models.object_storage_access_key_create_response import ObjectStorageAccessKeyCreateResponse
 from .models.object_storage_access_key_list_response import ObjectStorageAccessKeyListResponse
 from .models.object_storage_access_key_response import ObjectStorageAccessKeyResponse
+from .models.object_storage_access_key_update_request import ObjectStorageAccessKeyUpdateRequest
 from .models.object_storage_bucket_list_response import ObjectStorageBucketListResponse
 from .models.object_storage_bucket_response import ObjectStorageBucketResponse
 from .models.object_storage_delete_response import ObjectStorageDeleteResponse
@@ -417,3 +421,4 @@ from .models.volumes_fields import VolumesFields
 from .models.voucher import Voucher
 from .models.voucher_redeem_response_schema import VoucherRedeemResponseSchema
 from .models.workload_billing_history_response import WorkloadBillingHistoryResponse
+from .models.zendesk_messaging_token import ZendeskMessagingToken
