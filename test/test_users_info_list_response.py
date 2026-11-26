@@ -41,6 +41,7 @@ class TestUsersInfoListResponse(unittest.TestCase):
                     billing_address1 = '', 
                     billing_address2 = '', 
                     business = True, 
+                    city = '', 
                     company_name = '', 
                     country = '', 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

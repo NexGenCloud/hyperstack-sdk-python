@@ -30,6 +30,7 @@ class UsersInfoFields(BaseModel):
     billing_address1: Optional[StrictStr] = None
     billing_address2: Optional[StrictStr] = None
     business: Optional[StrictBool] = None
+    city: Optional[StrictStr] = None
     company_name: Optional[StrictStr] = None
     country: Optional[StrictStr] = None
     created_at: Optional[datetime] = None
@@ -42,7 +43,7 @@ class UsersInfoFields(BaseModel):
     stripe_user_id: Optional[StrictStr] = None
     vat_number: Optional[StrictStr] = None
     zip_code: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["billing_address1", "billing_address2", "business", "company_name", "country", "created_at", "email", "id", "name", "organization_id", "phone", "state", "stripe_user_id", "vat_number", "zip_code"]
+    __properties: ClassVar[List[str]] = ["billing_address1", "billing_address2", "business", "city", "company_name", "country", "created_at", "email", "id", "name", "organization_id", "phone", "state", "stripe_user_id", "vat_number", "zip_code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +99,7 @@ class UsersInfoFields(BaseModel):
             "billing_address1": obj.get("billing_address1"),
             "billing_address2": obj.get("billing_address2"),
             "business": obj.get("business"),
+            "city": obj.get("city"),
             "company_name": obj.get("company_name"),
             "country": obj.get("country"),
             "created_at": obj.get("created_at"),

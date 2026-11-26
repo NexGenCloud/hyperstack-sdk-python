@@ -17,7 +17,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,8 +27,12 @@ class PaymentInitiateFields(BaseModel):
     """
     PaymentInitiateFields
     """ # noqa: E501
+    auto_topup_linked: Optional[StrictBool] = Field(default=None, description="Whether the purchase is linked to a pending auto top up. If true, the checkout saves the card for off-session use (setup_future_usage=off_session).")
+    checkout_url: Optional[StrictStr] = None
+    expires_at: Optional[datetime] = None
     payment_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["payment_id"]
+    session_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["auto_topup_linked", "checkout_url", "expires_at", "payment_id", "session_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,7 +85,11 @@ class PaymentInitiateFields(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "payment_id": obj.get("payment_id")
+            "auto_topup_linked": obj.get("auto_topup_linked"),
+            "checkout_url": obj.get("checkout_url"),
+            "expires_at": obj.get("expires_at"),
+            "payment_id": obj.get("payment_id"),
+            "session_id": obj.get("session_id")
         })
         return _obj
 

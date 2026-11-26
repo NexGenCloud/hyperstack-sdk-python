@@ -99,6 +99,7 @@ class ImageApi:
             '200': "ResponseModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
             '404': "ErrorResponseModel",
             '500': None,
         }
@@ -170,6 +171,7 @@ class ImageApi:
             '200': "ResponseModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
             '404': "ErrorResponseModel",
             '500': None,
         }
@@ -241,6 +243,7 @@ class ImageApi:
             '200': "ResponseModel",
             '400': "ErrorResponseModel",
             '401': "ErrorResponseModel",
+            '403': "ErrorResponseModel",
             '404': "ErrorResponseModel",
             '500': None,
         }

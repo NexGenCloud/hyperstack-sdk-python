@@ -38,6 +38,7 @@ class TestUserInfoPostPayload(unittest.TestCase):
                 billing_address1 = '',
                 billing_address2 = '',
                 business = True,
+                city = '',
                 company_name = '',
                 country = '',
                 email = '',

@@ -29,6 +29,7 @@ class UserInfoPostPayload(BaseModel):
     billing_address1: Optional[StrictStr] = None
     billing_address2: Optional[StrictStr] = None
     business: StrictBool
+    city: Optional[StrictStr] = None
     company_name: Optional[StrictStr] = None
     country: StrictStr
     email: Optional[StrictStr] = None
@@ -37,7 +38,7 @@ class UserInfoPostPayload(BaseModel):
     state: Optional[StrictStr] = None
     vat_number: Optional[StrictStr] = None
     zip_code: StrictStr
-    __properties: ClassVar[List[str]] = ["billing_address1", "billing_address2", "business", "company_name", "country", "email", "name", "phone", "state", "vat_number", "zip_code"]
+    __properties: ClassVar[List[str]] = ["billing_address1", "billing_address2", "business", "city", "company_name", "country", "email", "name", "phone", "state", "vat_number", "zip_code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class UserInfoPostPayload(BaseModel):
             "billing_address1": obj.get("billing_address1"),
             "billing_address2": obj.get("billing_address2"),
             "business": obj.get("business"),
+            "city": obj.get("city"),
             "company_name": obj.get("company_name"),
             "country": obj.get("country"),
             "email": obj.get("email"),

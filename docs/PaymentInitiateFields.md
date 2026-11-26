@@ -5,7 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**auto_topup_linked** | **bool** | Whether the purchase is linked to a pending auto top up. If true, the checkout saves the card for off-session use (setup_future_usage&#x3D;off_session). | [optional] 
+**checkout_url** | **str** |  | [optional] 
+**expires_at** | **datetime** |  | [optional] 
 **payment_id** | **str** |  | [optional] 
+**session_id** | **str** |  | [optional] 
 
 ## Example
 

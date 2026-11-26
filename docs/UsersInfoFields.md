@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **billing_address1** | **str** |  | [optional] 
 **billing_address2** | **str** |  | [optional] 
 **business** | **bool** |  | [optional] 
+**city** | **str** |  | [optional] 
 **company_name** | **str** |  | [optional] 
 **country** | **str** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 

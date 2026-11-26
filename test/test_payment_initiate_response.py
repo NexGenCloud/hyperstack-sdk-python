@@ -36,7 +36,11 @@ class TestPaymentInitiateResponse(unittest.TestCase):
         if include_optional:
             return PaymentInitiateResponse(
                 data = hyperstack.models.payment_initiate_fields.Payment_Initiate_Fields(
-                    payment_id = '', ),
+                    auto_topup_linked = True, 
+                    checkout_url = '', 
+                    expires_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    payment_id = '', 
+                    session_id = '', ),
                 message = '',
                 status = True
             )
