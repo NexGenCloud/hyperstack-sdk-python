@@ -32,6 +32,13 @@ class TestAuthApi(unittest.TestCase):
         """
         pass
 
+    def test_check_access_token_status(self) -> None:
+        """Test case for check_access_token_status
+
+        Check the authenticated access token
+        """
+        pass
+
     def test_get_user_mfa_status(self) -> None:
         """Test case for get_user_mfa_status
 

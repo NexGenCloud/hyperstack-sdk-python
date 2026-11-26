@@ -5,6 +5,7 @@ All URIs are relative to *https://infrahub-api.nexgencloud.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**change_organization_for_token**](AuthApi.md#change_organization_for_token) | **GET** /auth/token/change-org/{org_id} | 
+[**check_access_token_status**](AuthApi.md#check_access_token_status) | **GET** /auth/token/status | Check the authenticated access token
 [**get_user_mfa_status**](AuthApi.md#get_user_mfa_status) | **GET** /auth/me/mfa | Get MFA status for authenticated user
 [**get_user_organizations**](AuthApi.md#get_user_organizations) | **GET** /auth/me/organizations | Get User Organizations
 [**retrieve_authenticated_user_details**](AuthApi.md#retrieve_authenticated_user_details) | **GET** /auth/me | Retrieve Authenticated User Details
@@ -88,6 +89,80 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **check_access_token_status**
+> check_access_token_status()
+
+Check the authenticated access token
+
+Returns active=true when the token is accepted, otherwise 401 with error_reason `token_revoked` (logged out, or issued before a password change / MFA disable / admin revoke) or `unauthorized` (expired, invalid, from another environment, or the user no longer exists). Only Bearer access tokens are accepted; API keys are rejected.
+
+### Example
+
+* Api Key Authentication (apiKey):
+
+```python
+import hyperstack
+from hyperstack.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://infrahub-api.nexgencloud.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = hyperstack.Configuration(
+    host = "https://infrahub-api.nexgencloud.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with hyperstack.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = hyperstack.AuthApi(api_client)
+
+    try:
+        # Check the authenticated access token
+        api_instance.check_access_token_status()
+    except Exception as e:
+        print("Exception when calling AuthApi->check_access_token_status: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Access token is active |  -  |
+**401** | Unauthorized or revoked token |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v1.56.9-alpha"
+__version__ = "v1.57.7-alpha1"
 
 # import apis into sdk package
 from .api.access_keys_api import AccessKeysApi
