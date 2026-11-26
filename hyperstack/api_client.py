@@ -90,7 +90,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'hyperstack-python-sdk/v1.57.7-alpha1'
+        self.user_agent = 'hyperstack-python-sdk/v1.57.8-alpha'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
